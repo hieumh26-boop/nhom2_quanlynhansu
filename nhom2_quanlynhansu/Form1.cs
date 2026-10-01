@@ -5,6 +5,7 @@ namespace nhom2_quanlynhansu
         public Form1()
         {
             InitializeComponent();
+            //muhaha
         }
     }
 }
