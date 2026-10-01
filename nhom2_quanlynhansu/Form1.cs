@@ -6,6 +6,7 @@ namespace nhom2_quanlynhansu
         {
             InitializeComponent();
             //muhaha
+            //haha
         }
     }
 }
