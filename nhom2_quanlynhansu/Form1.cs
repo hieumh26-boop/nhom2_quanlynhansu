@@ -12,6 +12,7 @@ namespace nhom2_quanlynhansu
             //ggg
             //hieu
             //Hoàn ăn cức ôthi xin õil treu 1 ýt 
+            // moa moa
             biến
                 éo cần chuyển ổ nữa m xoas ngay các app kia cho t
 
