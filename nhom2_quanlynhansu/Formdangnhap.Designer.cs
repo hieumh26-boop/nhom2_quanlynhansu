@@ -1,6 +1,6 @@
 ﻿namespace nhom2_quanlynhansu
 {
-    partial class Form1
+    partial class Formdangnhap
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            tbdn = new TextBox();
+            tbmk = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -37,26 +37,27 @@
             cbttk = new CheckBox();
             label4 = new Label();
             linkLabel1 = new LinkLabel();
+            cbmk = new CheckBox();
             SuspendLayout();
             // 
-            // textBox1
+            // tbdn
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.ForeColor = Color.Black;
-            textBox1.Location = new Point(469, 107);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(267, 27);
-            textBox1.TabIndex = 2;
+            tbdn.BorderStyle = BorderStyle.FixedSingle;
+            tbdn.ForeColor = Color.Black;
+            tbdn.Location = new Point(469, 107);
+            tbdn.Name = "tbdn";
+            tbdn.Size = new Size(267, 27);
+            tbdn.TabIndex = 2;
             // 
-            // textBox2
+            // tbmk
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.ForeColor = Color.YellowGreen;
-            textBox2.Location = new Point(469, 179);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(267, 27);
-            textBox2.TabIndex = 3;
-            textBox2.TextChanged += textBox2_TextChanged;
+            tbmk.BorderStyle = BorderStyle.FixedSingle;
+            tbmk.ForeColor = Color.YellowGreen;
+            tbmk.Location = new Point(469, 179);
+            tbmk.Name = "tbmk";
+            tbmk.Size = new Size(267, 27);
+            tbmk.TabIndex = 3;
+            tbmk.TextChanged += textBox2_TextChanged;
             // 
             // label1
             // 
@@ -85,7 +86,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(12, 88);
+            label3.Location = new Point(12, 71);
             label3.Name = "label3";
             label3.Size = new Size(194, 46);
             label3.TabIndex = 6;
@@ -108,6 +109,7 @@
             cbdn.TabIndex = 7;
             cbdn.Text = "Đăng nhập";
             cbdn.UseVisualStyleBackColor = false;
+            cbdn.CheckedChanged += cbdn_CheckedChanged;
             // 
             // cbttk
             // 
@@ -144,12 +146,24 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Quên mật Khẩu ?";
             // 
-            // Form1
+            // cbmk
+            // 
+            cbmk.Appearance = Appearance.Button;
+            cbmk.FlatStyle = FlatStyle.Flat;
+            cbmk.Image = Properties.Resources.mătdong;
+            cbmk.Location = new Point(742, 180);
+            cbmk.Name = "cbmk";
+            cbmk.Size = new Size(50, 27);
+            cbmk.TabIndex = 11;
+            cbmk.UseVisualStyleBackColor = true;
+            // 
+            // Formdangnhap
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(804, 450);
+            Controls.Add(cbmk);
             Controls.Add(linkLabel1);
             Controls.Add(label4);
             Controls.Add(cbttk);
@@ -157,16 +171,16 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Name = "Form1";
+            Controls.Add(tbmk);
+            Controls.Add(tbdn);
+            Name = "Formdangnhap";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox tbdn;
+        private TextBox tbmk;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -174,5 +188,6 @@
         private CheckBox cbttk;
         private Label label4;
         private LinkLabel linkLabel1;
+        private CheckBox cbmk;
     }
 }
