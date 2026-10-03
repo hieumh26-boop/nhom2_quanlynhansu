@@ -19,5 +19,15 @@ namespace nhom2_quanlynhansu
 
                 treeu gif t cos gian gì đâu bây h t dùngg ổ D k cần chuyển qua nưadx
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
