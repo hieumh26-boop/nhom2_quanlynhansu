@@ -61,20 +61,22 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.DarkBlue;
-            label1.Location = new Point(341, 114);
+            label1.Location = new Point(323, 106);
             label1.Name = "label1";
-            label1.Size = new Size(107, 20);
+            label1.Size = new Size(140, 28);
             label1.TabIndex = 4;
             label1.Text = "Tên đăng nhập";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.DarkBlue;
-            label2.Location = new Point(378, 186);
+            label2.Location = new Point(370, 179);
             label2.Name = "label2";
-            label2.Size = new Size(70, 20);
+            label2.Size = new Size(93, 28);
             label2.TabIndex = 5;
             label2.Text = "mật khẩu";
             label2.Click += label2_Click;
