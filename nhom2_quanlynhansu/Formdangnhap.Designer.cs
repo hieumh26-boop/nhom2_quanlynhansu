@@ -52,7 +52,7 @@
             // tbmk
             // 
             tbmk.BorderStyle = BorderStyle.FixedSingle;
-            tbmk.ForeColor = Color.YellowGreen;
+            tbmk.ForeColor = Color.Black;
             tbmk.Location = new Point(469, 179);
             tbmk.Name = "tbmk";
             tbmk.Size = new Size(267, 27);
@@ -156,6 +156,7 @@
             cbmk.Size = new Size(50, 27);
             cbmk.TabIndex = 11;
             cbmk.UseVisualStyleBackColor = true;
+            cbmk.CheckedChanged += cbmk_CheckedChanged;
             // 
             // Formdangnhap
             // 
@@ -174,6 +175,8 @@
             Controls.Add(tbmk);
             Controls.Add(tbdn);
             Name = "Formdangnhap";
+            FormClosing += Formdangnhap_FormClosing;
+            Load += Formdangnhap_Load;
             ResumeLayout(false);
             PerformLayout();
         }

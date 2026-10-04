@@ -34,10 +34,12 @@ namespace nhom2_quanlynhansu
                     {
                         kn.Open();
                         SqlCommand lenh = new SqlCommand(csdl_nguoidung, kn);
-                       
+                        lenh.Parameters.AddWithValue("@tendangnhap", tbdn.Text.Trim());//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
+                        lenh.Parameters.AddWithValue("@matkhau", tbmk.Text.Trim());
                         lenh.ExecuteScalar();// thuc thi bien "lenh";
-                        
-                        if("@tendangnhap"==tbdn.Text.Trim()&&"@matkhau"==tbmk.Text.Trim())//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
+                        int kt = (int)lenh.ExecuteScalar();
+
+                        if (kt > 0)//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
                         {
                             MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -48,17 +50,48 @@ namespace nhom2_quanlynhansu
 
                     }
                 }
-               catch (SqlException ex)
+                catch (SqlException ex)
                 {
                     MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
-                    //THUggg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 2goilay
+
                 }
 
         }
+
+        private void cbmk_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (cbmk.Checked)
+            {
+                tbmk.PasswordChar = '\0';
+                cbmk.Image = Properties.Resources.matmo;
+            }
+            else
+            {
+                tbmk.PasswordChar = '*';
+                cbmk.Image = Properties.Resources.mătdong;
+            }
+            {
+            }
+        }
+
+        private void Formdangnhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Formdangnhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Mày chắc chưa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dialog == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
+}
 
 

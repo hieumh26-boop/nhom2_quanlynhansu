@@ -115,7 +115,7 @@
 			label3.Size = new Size(125, 28);
 			label3.TabIndex = 2;
 			label3.Text = "Số tài khoản:";
-			label3.Click += label3_Click;
+			
 			// 
 			// label4
 			// 
@@ -166,12 +166,9 @@
 			// 
 			// dtpNgayVaoLam
 			// 
-			this.dtpNgayVaoLam.CalendarFont = new Font("Segoe UI", 12F);
-			this.dtpNgayVaoLam.Font = new Font("Segoe UI", 10.8F);
-			this.dtpNgayVaoLam.Location = new Point(201, 299);
-			this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
-			this.dtpNgayVaoLam.Size = new Size(250, 31);
-			this.dtpNgayVaoLam.TabIndex = 9;
+								
+			
+			
 			// 
 			// label5
 			// 
