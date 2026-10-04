@@ -34,10 +34,10 @@ namespace nhom2_quanlynhansu
                     {
                         kn.Open();
                         SqlCommand lenh = new SqlCommand(csdl_nguoidung, kn);
-                       
+
                         lenh.ExecuteScalar();// thuc thi bien "lenh";
-                        
-                        if("@tendangnhap"==tbdn.Text.Trim()&&"@matkhau"==tbmk.Text.Trim())//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
+
+                        if ("@tendangnhap" == tbdn.Text.Trim() && "@matkhau" == tbmk.Text.Trim())//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
                         {
                             MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -48,7 +48,7 @@ namespace nhom2_quanlynhansu
 
                     }
                 }
-               catch (SqlException ex)
+                catch (SqlException ex)
                 {
                     MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -58,7 +58,21 @@ namespace nhom2_quanlynhansu
                 }
 
         }
+
+        private void btnHoan_Click(object sender, EventArgs e)
+        {
+            fXinNghiPhep f = new fXinNghiPhep();
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
+            this.Hide();
+
+        }
+
+        private void Formdangnhap_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
+}
 
 
