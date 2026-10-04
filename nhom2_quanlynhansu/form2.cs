@@ -15,6 +15,6 @@ namespace nhom2_quanlynhansu
 			InitializeComponent();
 		}
 
-		}
+		
 	}
 }

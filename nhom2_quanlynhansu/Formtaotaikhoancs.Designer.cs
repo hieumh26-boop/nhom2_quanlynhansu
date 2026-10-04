@@ -130,6 +130,7 @@
             btxnttk.TabIndex = 8;
             btxnttk.Text = "Xác nhận";
             btxnttk.UseVisualStyleBackColor = false;
+            btxnttk.Click += btxnttk_Click;
             // 
             // btt
             // 

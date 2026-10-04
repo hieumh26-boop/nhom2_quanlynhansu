@@ -18,6 +18,11 @@ namespace nhom2_quanlynhansu
 
         private void Formtaotaikhoancs_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btxnttk_Click(object sender, EventArgs e)
+        {
             string them = "INSERT INTO nguoidung (tendangnhap,matkhau) VALUES (@tdn,@mk)";
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
             {
@@ -34,7 +39,7 @@ namespace nhom2_quanlynhansu
                         SqlCommand lenh = new SqlCommand(them, kn);
                         lenh.Parameters.AddWithValue("@tdn", tbtdn2.Text);
                         lenh.Parameters.AddWithValue("@mk", tbmk2.Text);
-                        if(tbmk2.Text!= tbxnmk.Text)
+                        if (tbmk2.Text != tbxnmk.Text)
                         {
                             MessageBox.Show("Sai mật khẩu xác nhận", "Warning", MessageBoxButtons.OK);
                         }
