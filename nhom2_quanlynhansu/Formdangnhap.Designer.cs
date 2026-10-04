@@ -39,6 +39,7 @@
             linkLabel1 = new LinkLabel();
             cbmk = new CheckBox();
             btnHoan = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // tbdn
@@ -172,11 +173,21 @@
             // 
             btnHoan.Location = new Point(443, 564);
             btnHoan.Name = "btnHoan";
-            btnHoan.Size = new Size(214, 45);
+            btnHoan.Size = new Size(214, 71);
             btnHoan.TabIndex = 12;
             btnHoan.Text = "Mượn dùng tạm";
             btnHoan.UseVisualStyleBackColor = true;
             btnHoan.Click += btnHoan_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(685, 573);
+            button1.Name = "button1";
+            button1.Size = new Size(229, 62);
+            button1.TabIndex = 13;
+            button1.Text = "mượn 2";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Formdangnhap
             // 
@@ -184,6 +195,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1407, 788);
+            Controls.Add(button1);
             Controls.Add(btnHoan);
             Controls.Add(cbmk);
             Controls.Add(linkLabel1);
@@ -214,5 +226,6 @@
         private LinkLabel linkLabel1;
         private CheckBox cbmk;
         private Button btnHoan;
+        private Button button1;
     }
 }

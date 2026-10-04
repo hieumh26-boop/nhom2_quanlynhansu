@@ -72,6 +72,15 @@ namespace nhom2_quanlynhansu
         {
             Environment.Exit(0);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            fTamUngLuong f = new fTamUngLuong(); 
+            f.WindowState = FormWindowState.Maximized;
+            f.Show();
+            this.Hide();
+        }
     }
 }
 
