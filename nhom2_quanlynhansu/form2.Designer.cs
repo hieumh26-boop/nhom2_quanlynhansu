@@ -29,12 +29,20 @@
 		private void InitializeComponent()
 		{
 			groupBox1 = new GroupBox();
+			txtMaCoSo = new TextBox();
+			txtMaNV = new TextBox();
+			label12 = new Label();
+			txtCCCD = new TextBox();
+			rdoPartTime = new RadioButton();
+			txtSDT = new TextBox();
+			label11 = new Label();
 			rdoFullTime = new RadioButton();
 			radioButton2 = new RadioButton();
 			radioButton1 = new RadioButton();
+			label10 = new Label();
 			label8 = new Label();
-			label7 = new Label();
 			label6 = new Label();
+			label7 = new Label();
 			label5 = new Label();
 			dtpNamSinh = new DateTimePicker();
 			txtCoSo = new TextBox();
@@ -46,11 +54,9 @@
 			label2 = new Label();
 			label1 = new Label();
 			groupBox2 = new GroupBox();
-			dateTimePicker1 = new DateTimePicker();
-			rdoPartTime = new RadioButton();
-			dgvLichLamViec = new DataGridView();
-			btnXemBangLuong = new Button();
 			btnXemPhieuLuong = new Button();
+			btnXemBangLuong = new Button();
+			dgvLichLamViec = new DataGridView();
 			colThu = new DataGridViewTextBoxColumn();
 			colCalam = new DataGridViewTextBoxColumn();
 			colThoigian = new DataGridViewTextBoxColumn();
@@ -62,14 +68,20 @@
 			// 
 			// groupBox1
 			// 
+			groupBox1.Controls.Add(txtMaCoSo);
+			groupBox1.Controls.Add(txtMaNV);
+			groupBox1.Controls.Add(label12);
+			groupBox1.Controls.Add(txtCCCD);
 			groupBox1.Controls.Add(rdoPartTime);
-			groupBox1.Controls.Add(dateTimePicker1);
+			groupBox1.Controls.Add(txtSDT);
+			groupBox1.Controls.Add(label11);
 			groupBox1.Controls.Add(rdoFullTime);
 			groupBox1.Controls.Add(radioButton2);
 			groupBox1.Controls.Add(radioButton1);
+			groupBox1.Controls.Add(label10);
 			groupBox1.Controls.Add(label8);
-			groupBox1.Controls.Add(label7);
 			groupBox1.Controls.Add(label6);
+			groupBox1.Controls.Add(label7);
 			groupBox1.Controls.Add(label5);
 			groupBox1.Controls.Add(dtpNamSinh);
 			groupBox1.Controls.Add(txtCoSo);
@@ -83,16 +95,78 @@
 			groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
 			groupBox1.Location = new Point(58, 50);
 			groupBox1.Name = "groupBox1";
-			groupBox1.Size = new Size(495, 497);
+			groupBox1.Size = new Size(495, 565);
 			groupBox1.TabIndex = 0;
 			groupBox1.TabStop = false;
 			groupBox1.Text = "Thông tin cá nhân";
+			// 
+			// txtMaCoSo
+			// 
+			txtMaCoSo.Location = new Point(201, 308);
+			txtMaCoSo.Name = "txtMaCoSo";
+			txtMaCoSo.Size = new Size(194, 34);
+			txtMaCoSo.TabIndex = 9;
+			// 
+			// txtMaNV
+			// 
+			txtMaNV.Location = new Point(201, 36);
+			txtMaNV.Name = "txtMaNV";
+			txtMaNV.Size = new Size(194, 34);
+			txtMaNV.TabIndex = 19;
+			// 
+			// label12
+			// 
+			label12.AutoSize = true;
+			label12.Font = new Font("Times New Roman", 12F);
+			label12.ForeColor = Color.Black;
+			label12.Location = new Point(21, 310);
+			label12.Name = "label12";
+			label12.Size = new Size(91, 22);
+			label12.TabIndex = 6;
+			label12.Text = "Mã cơ sở:";
+			// 
+			// txtCCCD
+			// 
+			txtCCCD.Location = new Point(201, 218);
+			txtCCCD.Name = "txtCCCD";
+			txtCCCD.Size = new Size(194, 34);
+			txtCCCD.TabIndex = 8;
+			// 
+			// rdoPartTime
+			// 
+			rdoPartTime.AutoSize = true;
+			rdoPartTime.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+			rdoPartTime.Location = new Point(327, 486);
+			rdoPartTime.Name = "rdoPartTime";
+			rdoPartTime.Size = new Size(109, 32);
+			rdoPartTime.TabIndex = 18;
+			rdoPartTime.TabStop = true;
+			rdoPartTime.Text = "PartTime";
+			rdoPartTime.UseVisualStyleBackColor = true;
+			// 
+			// txtSDT
+			// 
+			txtSDT.Location = new Point(201, 169);
+			txtSDT.Name = "txtSDT";
+			txtSDT.Size = new Size(194, 34);
+			txtSDT.TabIndex = 7;
+			// 
+			// label11
+			// 
+			label11.AutoSize = true;
+			label11.Font = new Font("Times New Roman", 12F);
+			label11.ForeColor = Color.Black;
+			label11.Location = new Point(18, 227);
+			label11.Name = "label11";
+			label11.Size = new Size(69, 22);
+			label11.TabIndex = 5;
+			label11.Text = "CCCD:";
 			// 
 			// rdoFullTime
 			// 
 			rdoFullTime.AutoSize = true;
 			rdoFullTime.Font = new Font("Segoe UI", 12F);
-			rdoFullTime.Location = new Point(165, 409);
+			rdoFullTime.Location = new Point(201, 486);
 			rdoFullTime.Name = "rdoFullTime";
 			rdoFullTime.Size = new Size(106, 32);
 			rdoFullTime.TabIndex = 16;
@@ -104,7 +178,7 @@
 			// 
 			radioButton2.AutoSize = true;
 			radioButton2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-			radioButton2.Location = new Point(319, 351);
+			radioButton2.Location = new Point(327, 448);
 			radioButton2.Name = "radioButton2";
 			radioButton2.Size = new Size(60, 32);
 			radioButton2.TabIndex = 15;
@@ -115,52 +189,68 @@
 			// radioButton1
 			// 
 			radioButton1.AutoSize = true;
-			radioButton1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-			radioButton1.Location = new Point(165, 351);
+			radioButton1.Font = new Font("Times New Roman", 12F);
+			radioButton1.ForeColor = Color.Black;
+			radioButton1.Location = new Point(201, 442);
 			radioButton1.Name = "radioButton1";
-			radioButton1.Size = new Size(80, 32);
+			radioButton1.Size = new Size(73, 26);
 			radioButton1.TabIndex = 14;
 			radioButton1.TabStop = true;
 			radioButton1.Text = "Nam ";
 			radioButton1.UseVisualStyleBackColor = true;
 			// 
+			// label10
+			// 
+			label10.AutoSize = true;
+			label10.Font = new Font("Times New Roman", 12F);
+			label10.ForeColor = Color.Black;
+			label10.Location = new Point(18, 178);
+			label10.Name = "label10";
+			label10.Size = new Size(120, 22);
+			label10.TabIndex = 4;
+			label10.Text = "Số điện thoại:";
+			// 
 			// label8
 			// 
 			label8.AutoSize = true;
-			label8.Font = new Font("Segoe UI", 12F);
-			label8.Location = new Point(26, 409);
+			label8.Font = new Font("Times New Roman", 12F);
+			label8.ForeColor = Color.Black;
+			label8.Location = new Point(29, 494);
 			label8.Name = "label8";
-			label8.Size = new Size(95, 28);
+			label8.Size = new Size(90, 22);
 			label8.TabIndex = 13;
 			label8.Text = "Loại hình:";
-			// 
-			// label7
-			// 
-			label7.AutoSize = true;
-			label7.Font = new Font("Segoe UI", 12F);
-			label7.Location = new Point(26, 355);
-			label7.Name = "label7";
-			label7.Size = new Size(91, 28);
-			label7.TabIndex = 12;
-			label7.Text = "Giới tính:";
 			// 
 			// label6
 			// 
 			label6.AutoSize = true;
-			label6.Font = new Font("Segoe UI", 12F);
-			label6.Location = new Point(26, 299);
+			label6.Font = new Font("Times New Roman", 12F);
+			label6.ForeColor = Color.Black;
+			label6.Location = new Point(18, 39);
 			label6.Name = "label6";
-			label6.Size = new Size(137, 28);
-			label6.TabIndex = 11;
-			label6.Text = "Ngày vào làm:";
+			label6.Size = new Size(122, 22);
+			label6.TabIndex = 3;
+			label6.Text = "Mã nhân viên:";
+			// 
+			// label7
+			// 
+			label7.AutoSize = true;
+			label7.Font = new Font("Times New Roman", 12F);
+			label7.ForeColor = Color.Black;
+			label7.Location = new Point(29, 444);
+			label7.Name = "label7";
+			label7.Size = new Size(87, 22);
+			label7.TabIndex = 12;
+			label7.Text = "Giới tính:";
 			// 
 			// label5
 			// 
 			label5.AutoSize = true;
-			label5.Font = new Font("Segoe UI", 12F);
-			label5.Location = new Point(26, 247);
+			label5.Font = new Font("Times New Roman", 12F);
+			label5.ForeColor = Color.Black;
+			label5.Location = new Point(22, 401);
 			label5.Name = "label5";
-			label5.Size = new Size(103, 28);
+			label5.Size = new Size(94, 22);
 			label5.TabIndex = 10;
 			label5.Text = "Ngày sinh:";
 			// 
@@ -168,35 +258,36 @@
 			// 
 			dtpNamSinh.CalendarFont = new Font("Segoe UI", 12F);
 			dtpNamSinh.Font = new Font("Segoe UI", 10.8F);
-			dtpNamSinh.Location = new Point(201, 245);
+			dtpNamSinh.Location = new Point(201, 401);
 			dtpNamSinh.Name = "dtpNamSinh";
 			dtpNamSinh.Size = new Size(250, 31);
 			dtpNamSinh.TabIndex = 8;
 			// 
 			// txtCoSo
 			// 
-			txtCoSo.Location = new Point(201, 183);
+			txtCoSo.Location = new Point(201, 352);
 			txtCoSo.Name = "txtCoSo";
 			txtCoSo.Size = new Size(194, 34);
 			txtCoSo.TabIndex = 7;
+			txtCoSo.TextChanged += txtCoSo_TextChanged;
 			// 
 			// txtSTK
 			// 
-			txtSTK.Location = new Point(201, 132);
+			txtSTK.Location = new Point(201, 261);
 			txtSTK.Name = "txtSTK";
 			txtSTK.Size = new Size(194, 34);
 			txtSTK.TabIndex = 6;
 			// 
 			// texChucVu
 			// 
-			texChucVu.Location = new Point(201, 89);
+			texChucVu.Location = new Point(201, 125);
 			texChucVu.Name = "texChucVu";
 			texChucVu.Size = new Size(194, 34);
 			texChucVu.TabIndex = 5;
 			// 
 			// txtHoTen
 			// 
-			txtHoTen.Location = new Point(201, 40);
+			txtHoTen.Location = new Point(201, 80);
 			txtHoTen.Name = "txtHoTen";
 			txtHoTen.Size = new Size(194, 34);
 			txtHoTen.TabIndex = 4;
@@ -204,40 +295,44 @@
 			// label4
 			// 
 			label4.AutoSize = true;
-			label4.Font = new Font("Segoe UI", 12F);
-			label4.Location = new Point(26, 186);
+			label4.Font = new Font("Times New Roman", 12F);
+			label4.ForeColor = Color.Black;
+			label4.Location = new Point(22, 357);
 			label4.Name = "label4";
-			label4.Size = new Size(152, 28);
+			label4.Size = new Size(140, 22);
 			label4.TabIndex = 3;
 			label4.Text = "Cơ sở đang làm:";
 			// 
 			// label3
 			// 
 			label3.AutoSize = true;
-			label3.Font = new Font("Segoe UI", 12F);
-			label3.Location = new Point(26, 135);
+			label3.Font = new Font("Times New Roman", 12F);
+			label3.ForeColor = Color.Black;
+			label3.Location = new Point(18, 270);
 			label3.Name = "label3";
-			label3.Size = new Size(125, 28);
+			label3.Size = new Size(113, 22);
 			label3.TabIndex = 2;
 			label3.Text = "Số tài khoản:";
 			// 
 			// label2
 			// 
 			label2.AutoSize = true;
-			label2.Font = new Font("Segoe UI", 12F);
-			label2.Location = new Point(26, 95);
+			label2.Font = new Font("Times New Roman", 12F);
+			label2.ForeColor = Color.Black;
+			label2.Location = new Point(18, 137);
 			label2.Name = "label2";
-			label2.Size = new Size(86, 28);
+			label2.Size = new Size(82, 22);
 			label2.TabIndex = 1;
 			label2.Text = "Chức vụ:";
 			// 
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-			label1.Location = new Point(26, 46);
+			label1.Font = new Font("Times New Roman", 12F);
+			label1.ForeColor = Color.Black;
+			label1.Location = new Point(18, 89);
 			label1.Name = "label1";
-			label1.Size = new Size(75, 28);
+			label1.Size = new Size(68, 22);
 			label1.TabIndex = 0;
 			label1.Text = "Họ tên:";
 			// 
@@ -255,37 +350,15 @@
 			groupBox2.TabStop = false;
 			groupBox2.Text = "Lịch làm việc và lương ";
 			// 
-			// dateTimePicker1
+			// btnXemPhieuLuong
 			// 
-			dateTimePicker1.CalendarFont = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-			dateTimePicker1.CalendarTitleForeColor = SystemColors.ActiveBorder;
-			dateTimePicker1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 163);
-			dateTimePicker1.Location = new Point(201, 293);
-			dateTimePicker1.Name = "dateTimePicker1";
-			dateTimePicker1.Size = new Size(250, 31);
-			dateTimePicker1.TabIndex = 17;
-			// 
-			// rdoPartTime
-			// 
-			rdoPartTime.AutoSize = true;
-			rdoPartTime.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-			rdoPartTime.Location = new Point(319, 409);
-			rdoPartTime.Name = "rdoPartTime";
-			rdoPartTime.Size = new Size(109, 32);
-			rdoPartTime.TabIndex = 18;
-			rdoPartTime.TabStop = true;
-			rdoPartTime.Text = "PartTime";
-			rdoPartTime.UseVisualStyleBackColor = true;
-			// 
-			// dgvLichLamViec
-			// 
-			dgvLichLamViec.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvLichLamViec.Columns.AddRange(new DataGridViewColumn[] { colThu, colCalam, colThoigian });
-			dgvLichLamViec.Location = new Point(27, 76);
-			dgvLichLamViec.Name = "dgvLichLamViec";
-			dgvLichLamViec.RowHeadersWidth = 51;
-			dgvLichLamViec.Size = new Size(457, 188);
-			dgvLichLamViec.TabIndex = 0;
+			btnXemPhieuLuong.Font = new Font("Segoe UI", 12F);
+			btnXemPhieuLuong.Location = new Point(39, 394);
+			btnXemPhieuLuong.Name = "btnXemPhieuLuong";
+			btnXemPhieuLuong.Size = new Size(248, 40);
+			btnXemPhieuLuong.TabIndex = 2;
+			btnXemPhieuLuong.Text = "Xem phiếu lương chi tiết";
+			btnXemPhieuLuong.UseVisualStyleBackColor = true;
 			// 
 			// btnXemBangLuong
 			// 
@@ -297,15 +370,15 @@
 			btnXemBangLuong.Text = "Xem bảng lương";
 			btnXemBangLuong.UseVisualStyleBackColor = true;
 			// 
-			// btnXemPhieuLuong
+			// dgvLichLamViec
 			// 
-			btnXemPhieuLuong.Font = new Font("Segoe UI", 12F);
-			btnXemPhieuLuong.Location = new Point(39, 394);
-			btnXemPhieuLuong.Name = "btnXemPhieuLuong";
-			btnXemPhieuLuong.Size = new Size(248, 40);
-			btnXemPhieuLuong.TabIndex = 2;
-			btnXemPhieuLuong.Text = "Xem phiếu lương chi tiết";
-			btnXemPhieuLuong.UseVisualStyleBackColor = true;
+			dgvLichLamViec.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgvLichLamViec.Columns.AddRange(new DataGridViewColumn[] { colThu, colCalam, colThoigian });
+			dgvLichLamViec.Location = new Point(27, 76);
+			dgvLichLamViec.Name = "dgvLichLamViec";
+			dgvLichLamViec.RowHeadersWidth = 51;
+			dgvLichLamViec.Size = new Size(428, 188);
+			dgvLichLamViec.TabIndex = 0;
 			// 
 			// colThu
 			// 
@@ -366,7 +439,6 @@
 		private Label label2;
 		private Label label8;
 		private Label label7;
-		private Label label6;
 		private Label label5;
 		private DateTimePicker dateTimePicker2;
 		private DateTimePicker dtpNamSinh;
@@ -378,7 +450,6 @@
 		private RadioButton rdoFullTime;
 		private RadioButton radioButton2;
 		private RadioButton radioButton1;
-		private DateTimePicker dateTimePicker1;
 		private RadioButton rdoPartTime;
 		private DataGridView dgvLichLamViec;
 		private Button btnXemPhieuLuong;
@@ -387,5 +458,13 @@
 		private DataGridViewTextBoxColumn colCalam;
 		private DataGridViewTextBoxColumn colThoigian;
 		private Label label9;
+		private TextBox txtMaNV;
+		private Label label6;
+		private Label label10;
+		private Label label11;
+		private Label label12;
+		private TextBox txtSDT;
+		private TextBox txtCCCD;
+		private TextBox txtMaCoSo;
 	}
 }

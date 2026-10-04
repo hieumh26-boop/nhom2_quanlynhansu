@@ -15,6 +15,9 @@ namespace nhom2_quanlynhansu
 			InitializeComponent();
 		}
 
-		
+		private void txtCoSo_TextChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
