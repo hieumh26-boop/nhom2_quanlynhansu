@@ -15,12 +15,6 @@ namespace nhom2_quanlynhansu
         {
             InitializeComponent();
         }
-
-        private void Formtaotaikhoancs_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btxnttk_Click(object sender, EventArgs e)
         {
             string them = "INSERT INTO nguoidung (tendangnhap,matkhau) VALUES (@tdn,@mk)";

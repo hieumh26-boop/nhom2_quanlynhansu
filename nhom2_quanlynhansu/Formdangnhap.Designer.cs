@@ -168,9 +168,8 @@
             Controls.Add(tbmk);
             Controls.Add(tbdn);
             Name = "Formdangnhap";
-            FormClosing += Formdangnhap_FormClosing;
-            Load += Formdangnhap_Load;
-            Click += Formdangnhap_Click;
+            
+           
             ResumeLayout(false);
             PerformLayout();
         }

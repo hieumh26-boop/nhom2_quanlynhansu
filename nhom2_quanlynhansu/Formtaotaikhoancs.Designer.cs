@@ -184,7 +184,7 @@
             ForeColor = Color.Navy;
             Name = "Formtaotaikhoancs";
             Text = "Formtaotaikhoancs";
-            Load += Formtaotaikhoancs_Load;
+           
             ResumeLayout(false);
             PerformLayout();
         }

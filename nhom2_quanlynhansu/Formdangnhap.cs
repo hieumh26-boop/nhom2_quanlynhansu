@@ -38,27 +38,6 @@ namespace nhom2_quanlynhansu
             {
             }
         }
-
-        private void Formdangnhap_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Formdangnhap_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
-        private void Formdangnhap_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbdn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btdn_Click(object sender, EventArgs e)
         {
             string csdl_nguoidung = "SELECT COUNT(*) FROM nguoidung WHERE tendangnhap = @tendangnhap AND matkhau = @matkhau";// truy van SQL để kiểm tra thông tin đăng nhập
@@ -92,16 +71,15 @@ namespace nhom2_quanlynhansu
 
                     }
                 }
-                catch 
+                catch(Exception ex)
                 {
-                   
+                    MessageBox.Show("Lỗi: " + ex.Message);
                 }
                 finally
                 {
 
                 }
         }
-
         private void btttk_Click(object sender, EventArgs e)
         {
             this.Hide();
