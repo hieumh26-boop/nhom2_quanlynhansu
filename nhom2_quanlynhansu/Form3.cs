@@ -8,11 +8,16 @@ using System.Windows.Forms;
 
 namespace nhom2_quanlynhansu
 {
-    public partial class form2: Form
-    {
-        public form2()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class Form3 : Form
+	{
+		public Form3()
+		{
+			InitializeComponent();
+		}
+
+		private void groupBox2_Enter(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

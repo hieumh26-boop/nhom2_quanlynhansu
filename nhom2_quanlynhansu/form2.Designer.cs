@@ -54,6 +54,7 @@
 			colThu = new DataGridViewTextBoxColumn();
 			colCalam = new DataGridViewTextBoxColumn();
 			colThoigian = new DataGridViewTextBoxColumn();
+			label9 = new Label();
 			groupBox1.SuspendLayout();
 			groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dgvLichLamViec).BeginInit();
@@ -327,11 +328,22 @@
 			colThoigian.Name = "colThoigian";
 			colThoigian.Width = 125;
 			// 
+			// label9
+			// 
+			label9.AutoSize = true;
+			label9.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
+			label9.Location = new Point(84, 9);
+			label9.Name = "label9";
+			label9.Size = new Size(325, 31);
+			label9.TabIndex = 2;
+			label9.Text = "QUẢN LÝ HỒ SƠ NHÂN VIÊN";
+			// 
 			// form2
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(1175, 688);
+			Controls.Add(label9);
 			Controls.Add(groupBox2);
 			Controls.Add(groupBox1);
 			Name = "form2";
@@ -341,6 +353,7 @@
 			groupBox2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)dgvLichLamViec).EndInit();
 			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
@@ -373,5 +386,6 @@
 		private DataGridViewTextBoxColumn colThu;
 		private DataGridViewTextBoxColumn colCalam;
 		private DataGridViewTextBoxColumn colThoigian;
+		private Label label9;
 	}
 }
