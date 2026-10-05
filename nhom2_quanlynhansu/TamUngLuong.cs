@@ -24,5 +24,10 @@ namespace nhom2_quanlynhansu
         {
 
         }
+
+        private void fTamUngLuong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

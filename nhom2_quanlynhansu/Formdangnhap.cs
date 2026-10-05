@@ -8,7 +8,7 @@ namespace nhom2_quanlynhansu
         {
             InitializeComponent();
         }
-        
+
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
         }
@@ -71,7 +71,7 @@ namespace nhom2_quanlynhansu
 
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Lỗi: " + ex.Message);
                 }
@@ -86,6 +86,26 @@ namespace nhom2_quanlynhansu
             Formtaotaikhoancs formttk = new Formtaotaikhoancs();
             formttk.ShowDialog();
             this.Close();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbmk_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btdn_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
