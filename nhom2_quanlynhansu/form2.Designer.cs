@@ -61,6 +61,8 @@
 			colCalam = new DataGridViewTextBoxColumn();
 			colThoigian = new DataGridViewTextBoxColumn();
 			label9 = new Label();
+			btnChinhSua = new Button();
+			btnLuu = new Button();
 			groupBox1.SuspendLayout();
 			groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dgvLichLamViec).BeginInit();
@@ -68,6 +70,8 @@
 			// 
 			// groupBox1
 			// 
+			groupBox1.Controls.Add(btnLuu);
+			groupBox1.Controls.Add(btnChinhSua);
 			groupBox1.Controls.Add(txtMaCoSo);
 			groupBox1.Controls.Add(txtMaNV);
 			groupBox1.Controls.Add(label12);
@@ -95,7 +99,7 @@
 			groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
 			groupBox1.Location = new Point(58, 50);
 			groupBox1.Name = "groupBox1";
-			groupBox1.Size = new Size(495, 565);
+			groupBox1.Size = new Size(495, 606);
 			groupBox1.TabIndex = 0;
 			groupBox1.TabStop = false;
 			groupBox1.Text = "Thông tin cá nhân";
@@ -407,9 +411,30 @@
 			label9.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
 			label9.Location = new Point(84, 9);
 			label9.Name = "label9";
-			label9.Size = new Size(325, 31);
+			label9.Size = new Size(348, 31);
 			label9.TabIndex = 2;
-			label9.Text = "QUẢN LÝ HỒ SƠ NHÂN VIÊN";
+			label9.Text = "QUẢN LÝ HỒ SƠ NGƯỜI DÙNG";
+			// 
+			// btnChinhSua
+			// 
+			btnChinhSua.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+			btnChinhSua.Location = new Point(60, 539);
+			btnChinhSua.Name = "btnChinhSua";
+			btnChinhSua.Size = new Size(121, 51);
+			btnChinhSua.TabIndex = 20;
+			btnChinhSua.Text = "Chỉnh sửa";
+			btnChinhSua.UseVisualStyleBackColor = true;
+			// 
+			// btnLuu
+			// 
+			btnLuu.Enabled = false;
+			btnLuu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+			btnLuu.Location = new Point(280, 539);
+			btnLuu.Name = "btnLuu";
+			btnLuu.Size = new Size(156, 51);
+			btnLuu.TabIndex = 21;
+			btnLuu.Text = "Lưu thay đổi";
+			btnLuu.UseVisualStyleBackColor = true;
 			// 
 			// form2
 			// 
@@ -466,5 +491,7 @@
 		private TextBox txtSDT;
 		private TextBox txtCCCD;
 		private TextBox txtMaCoSo;
+		private Button btnLuu;
+		private Button btnChinhSua;
 	}
 }
