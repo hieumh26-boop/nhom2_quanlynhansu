@@ -115,9 +115,9 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            label2.Location = new Point(3, 45);
+            label2.Location = new Point(3, 37);
             label2.Name = "label2";
-            label2.Size = new Size(243, 67);
+            label2.Size = new Size(243, 71);
             label2.TabIndex = 2;
             label2.Text = "Tên Nhân Viên:";
             // 
@@ -126,9 +126,9 @@
             label3.AutoSize = true;
             label3.Dock = DockStyle.Fill;
             label3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            label3.Location = new Point(514, 112);
+            label3.Location = new Point(514, 108);
             label3.Name = "label3";
-            label3.Size = new Size(391, 68);
+            label3.Size = new Size(391, 72);
             label3.TabIndex = 3;
             label3.Text = "Số buổi nghỉ tối đa trong tháng:";
             // 
@@ -136,10 +136,10 @@
             // 
             tbxTenNhanVien.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxTenNhanVien.Font = new Font("Segoe UI", 14F);
-            tbxTenNhanVien.Location = new Point(252, 115);
+            tbxTenNhanVien.Location = new Point(252, 111);
             tbxTenNhanVien.Name = "tbxTenNhanVien";
             tbxTenNhanVien.ReadOnly = true;
-            tbxTenNhanVien.Size = new Size(256, 45);
+            tbxTenNhanVien.Size = new Size(256, 39);
             tbxTenNhanVien.TabIndex = 6;
             // 
             // label1
@@ -147,9 +147,9 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            label1.Location = new Point(3, 112);
+            label1.Location = new Point(3, 108);
             label1.Name = "label1";
-            label1.Size = new Size(243, 68);
+            label1.Size = new Size(243, 72);
             label1.TabIndex = 1;
             label1.Text = "Mã Nhân Viên:";
             // 
@@ -157,10 +157,10 @@
             // 
             tbxMaNhanVien.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxMaNhanVien.Font = new Font("Segoe UI", 14F);
-            tbxMaNhanVien.Location = new Point(252, 48);
+            tbxMaNhanVien.Location = new Point(252, 40);
             tbxMaNhanVien.Name = "tbxMaNhanVien";
             tbxMaNhanVien.ReadOnly = true;
-            tbxMaNhanVien.Size = new Size(256, 45);
+            tbxMaNhanVien.Size = new Size(256, 39);
             tbxMaNhanVien.TabIndex = 5;
             // 
             // label4
@@ -168,9 +168,9 @@
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            label4.Location = new Point(514, 45);
+            label4.Location = new Point(514, 37);
             label4.Name = "label4";
-            label4.Size = new Size(391, 67);
+            label4.Size = new Size(391, 71);
             label4.TabIndex = 4;
             label4.Text = "Số buổi nghỉ còn lại:";
             // 
@@ -184,7 +184,7 @@
             label8.ForeColor = SystemColors.MenuHighlight;
             label8.Location = new Point(3, 0);
             label8.Name = "label8";
-            label8.Size = new Size(1030, 45);
+            label8.Size = new Size(1030, 37);
             label8.TabIndex = 9;
             label8.Text = "THÔNG TIN VÀ HẠN MỨC";
             // 
@@ -192,18 +192,18 @@
             // 
             textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox3.Font = new Font("Segoe UI", 14F);
-            textBox3.Location = new Point(911, 48);
+            textBox3.Location = new Point(911, 40);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(122, 45);
+            textBox3.Size = new Size(122, 39);
             textBox3.TabIndex = 10;
             // 
             // textBox4
             // 
             textBox4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBox4.Font = new Font("Segoe UI", 14F);
-            textBox4.Location = new Point(911, 115);
+            textBox4.Location = new Point(911, 111);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(122, 45);
+            textBox4.Size = new Size(122, 39);
             textBox4.TabIndex = 11;
             // 
             // tableLayoutPanel2
@@ -240,8 +240,9 @@
             // btnDuyet
             // 
             btnDuyet.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnDuyet.BackColor = Color.LimeGreen;
+            btnDuyet.BackColor = Color.FromArgb(0, 0, 192);
             btnDuyet.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            btnDuyet.ForeColor = Color.White;
             btnDuyet.Location = new Point(3, 142);
             btnDuyet.Name = "btnDuyet";
             btnDuyet.Size = new Size(337, 65);
@@ -309,8 +310,9 @@
             // btnTuChoi
             // 
             btnTuChoi.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btnTuChoi.BackColor = Color.Coral;
+            btnTuChoi.BackColor = Color.White;
             btnTuChoi.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            btnTuChoi.ForeColor = Color.FromArgb(0, 0, 192);
             btnTuChoi.Location = new Point(346, 142);
             btnTuChoi.Name = "btnTuChoi";
             btnTuChoi.Size = new Size(337, 65);
@@ -365,10 +367,10 @@
             // 
             // btnXinNghi
             // 
-            btnXinNghi.BackColor = SystemColors.GradientInactiveCaption;
+            btnXinNghi.BackColor = Color.FromArgb(0, 0, 192);
             btnXinNghi.Dock = DockStyle.Fill;
             btnXinNghi.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnXinNghi.ForeColor = Color.DodgerBlue;
+            btnXinNghi.ForeColor = Color.White;
             btnXinNghi.Location = new Point(774, 167);
             btnXinNghi.Name = "btnXinNghi";
             btnXinNghi.Size = new Size(253, 81);
@@ -394,7 +396,7 @@
             comboBox1.Items.AddRange(new object[] { "Nghỉ phép năm", "Nghỉ đột xuất (việc riêng)", "Nghỉ ốm", "Nghỉ không lương" });
             comboBox1.Location = new Point(517, 167);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(251, 43);
+            comboBox1.Size = new Size(251, 28);
             comboBox1.TabIndex = 8;
             // 
             // textBox1
@@ -427,7 +429,7 @@
             comboBox3.Items.AddRange(new object[] { "Ca sáng", "Ca chiều", "Ca tối" });
             comboBox3.Location = new Point(774, 85);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(253, 46);
+            comboBox3.Size = new Size(253, 39);
             comboBox3.TabIndex = 15;
             // 
             // dateTimePicker1
@@ -438,7 +440,7 @@
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(3, 85);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(251, 45);
+            dateTimePicker1.Size = new Size(251, 39);
             dateTimePicker1.TabIndex = 10;
             // 
             // label12
@@ -482,7 +484,7 @@
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.Location = new Point(517, 85);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(251, 45);
+            dateTimePicker2.Size = new Size(251, 39);
             dateTimePicker2.TabIndex = 11;
             // 
             // comboBox2
@@ -493,7 +495,7 @@
             comboBox2.Items.AddRange(new object[] { "Ca sáng", "Ca chiều", "Ca tối" });
             comboBox2.Location = new Point(260, 85);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(251, 46);
+            comboBox2.Size = new Size(251, 39);
             comboBox2.TabIndex = 9;
             // 
             // label10
@@ -524,6 +526,7 @@
             // fXinNghiPhep
             // 
             AutoScaleMode = AutoScaleMode.None;
+            BackColor = Color.White;
             ClientSize = new Size(1036, 707);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel2);

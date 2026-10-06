@@ -19,5 +19,10 @@ namespace nhom2_quanlynhansu
         {
             Environment.Exit(0);
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
