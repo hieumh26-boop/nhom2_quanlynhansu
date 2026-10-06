@@ -109,12 +109,14 @@
             // 
             // btnDaDoc
             // 
+            btnDaDoc.BackColor = Color.FromArgb(0, 0, 192);
+            btnDaDoc.ForeColor = Color.White;
             btnDaDoc.Location = new Point(47, 413);
             btnDaDoc.Name = "btnDaDoc";
             btnDaDoc.Size = new Size(221, 43);
             btnDaDoc.TabIndex = 7;
             btnDaDoc.Text = "Đánh dấu đã đọc";
-            btnDaDoc.UseVisualStyleBackColor = true;
+            btnDaDoc.UseVisualStyleBackColor = false;
             // 
             // rtbNoiDung
             // 

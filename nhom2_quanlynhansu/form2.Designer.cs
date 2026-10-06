@@ -89,23 +89,29 @@
             // 
             // btnXemPhieuLuong
             // 
+            btnXemPhieuLuong.BackColor = Color.FromArgb(0, 0, 192);
+            btnXemPhieuLuong.FlatStyle = FlatStyle.Popup;
             btnXemPhieuLuong.Font = new Font("Segoe UI", 12F);
+            btnXemPhieuLuong.ForeColor = Color.White;
             btnXemPhieuLuong.Location = new Point(27, 432);
             btnXemPhieuLuong.Name = "btnXemPhieuLuong";
             btnXemPhieuLuong.Size = new Size(248, 40);
             btnXemPhieuLuong.TabIndex = 2;
             btnXemPhieuLuong.Text = "Xem phiếu lương chi tiết";
-            btnXemPhieuLuong.UseVisualStyleBackColor = true;
+            btnXemPhieuLuong.UseVisualStyleBackColor = false;
             // 
             // btnXemBangLuong
             // 
+            btnXemBangLuong.BackColor = Color.FromArgb(0, 0, 192);
+            btnXemBangLuong.FlatStyle = FlatStyle.Popup;
             btnXemBangLuong.Font = new Font("Segoe UI", 12F);
+            btnXemBangLuong.ForeColor = Color.White;
             btnXemBangLuong.Location = new Point(27, 357);
             btnXemBangLuong.Name = "btnXemBangLuong";
             btnXemBangLuong.Size = new Size(186, 42);
             btnXemBangLuong.TabIndex = 1;
             btnXemBangLuong.Text = "Xem bảng lương";
-            btnXemBangLuong.UseVisualStyleBackColor = true;
+            btnXemBangLuong.UseVisualStyleBackColor = false;
             // 
             // dgvLichLamViec
             // 
@@ -202,24 +208,30 @@
             // 
             // btnLuu
             // 
+            btnLuu.BackColor = Color.FromArgb(0, 0, 192);
             btnLuu.Enabled = false;
+            btnLuu.FlatStyle = FlatStyle.Popup;
             btnLuu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            btnLuu.ForeColor = Color.White;
             btnLuu.Location = new Point(280, 539);
             btnLuu.Name = "btnLuu";
             btnLuu.Size = new Size(156, 51);
             btnLuu.TabIndex = 21;
             btnLuu.Text = "Lưu thay đổi";
-            btnLuu.UseVisualStyleBackColor = true;
+            btnLuu.UseVisualStyleBackColor = false;
             // 
             // btnChinhSua
             // 
+            btnChinhSua.BackColor = Color.White;
+            btnChinhSua.FlatStyle = FlatStyle.Popup;
             btnChinhSua.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            btnChinhSua.ForeColor = Color.FromArgb(0, 0, 192);
             btnChinhSua.Location = new Point(60, 539);
             btnChinhSua.Name = "btnChinhSua";
             btnChinhSua.Size = new Size(121, 51);
             btnChinhSua.TabIndex = 20;
             btnChinhSua.Text = "Chỉnh sửa";
-            btnChinhSua.UseVisualStyleBackColor = true;
+            btnChinhSua.UseVisualStyleBackColor = false;
             // 
             // txtMaCoSo
             // 
