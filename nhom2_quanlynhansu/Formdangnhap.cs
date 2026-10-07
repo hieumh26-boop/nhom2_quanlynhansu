@@ -82,10 +82,11 @@ namespace nhom2_quanlynhansu
         }
         private void btttk_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             Formtaotaikhoancs formttk = new Formtaotaikhoancs();
-            formttk.ShowDialog();
-            this.Close();
+            formttk.Show();
+            this.Hide();
+
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -107,6 +108,13 @@ namespace nhom2_quanlynhansu
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
     }
 }
 

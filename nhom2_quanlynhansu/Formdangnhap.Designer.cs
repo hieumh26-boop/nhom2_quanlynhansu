@@ -59,6 +59,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(804, 450);
             panel1.TabIndex = 10;
+            panel1.Paint += panel1_Paint;
             // 
             // label3
             // 
@@ -104,6 +105,7 @@
             btttk.TabIndex = 13;
             btttk.Text = "Tạo tài khoản";
             btttk.UseVisualStyleBackColor = true;
+            btttk.Click += btttk_Click;
             // 
             // btdn
             // 
@@ -117,7 +119,7 @@
             btdn.TabIndex = 12;
             btdn.Text = "Đăng nhập";
             btdn.UseVisualStyleBackColor = false;
-            btdn.Click += btdn_Click_1;
+            btdn.Click += btdn_Click;
             // 
             // tbdn
             // 
