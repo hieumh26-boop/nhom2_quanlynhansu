@@ -319,7 +319,7 @@
             // 
             // tableLayoutPanel3
             // 
-            tableLayoutPanel3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel3.ColumnCount = 2;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.85755F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.14245F));
@@ -330,9 +330,9 @@
             tableLayoutPanel3.Location = new Point(13, 474);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 3;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 11.3821115F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 55.2845573F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 18.6906548F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 56.9795F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 24.3298378F));
             tableLayoutPanel3.Size = new Size(1053, 293);
             tableLayoutPanel3.TabIndex = 2;
             // 
@@ -343,10 +343,10 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Don, ThoiGian, SoTien, TrangThai });
             tableLayoutPanel3.SetColumnSpan(dataGridView1, 2);
             dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 36);
+            dataGridView1.Location = new Point(3, 57);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1047, 155);
+            dataGridView1.Size = new Size(1047, 160);
             dataGridView1.TabIndex = 0;
             // 
             // Don
@@ -387,7 +387,7 @@
             label11.ForeColor = SystemColors.ActiveCaptionText;
             label11.Location = new Point(3, 0);
             label11.Name = "label11";
-            label11.Size = new Size(1047, 33);
+            label11.Size = new Size(1047, 54);
             label11.TabIndex = 1;
             label11.Text = "ĐƠN GẦN ĐÂY";
             label11.TextAlign = ContentAlignment.MiddleCenter;
@@ -397,9 +397,9 @@
             button2.BackColor = Color.YellowGreen;
             button2.Dock = DockStyle.Fill;
             button2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            button2.Location = new Point(3, 197);
+            button2.Location = new Point(3, 223);
             button2.Name = "button2";
-            button2.Size = new Size(519, 93);
+            button2.Size = new Size(519, 67);
             button2.TabIndex = 2;
             button2.Text = "Duyệt";
             button2.UseVisualStyleBackColor = false;
@@ -409,9 +409,9 @@
             button3.BackColor = Color.OrangeRed;
             button3.Dock = DockStyle.Fill;
             button3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
-            button3.Location = new Point(528, 197);
+            button3.Location = new Point(528, 223);
             button3.Name = "button3";
-            button3.Size = new Size(522, 93);
+            button3.Size = new Size(522, 67);
             button3.TabIndex = 3;
             button3.Text = "Từ chối";
             button3.UseVisualStyleBackColor = false;
