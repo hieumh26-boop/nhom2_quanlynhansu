@@ -1,3 +1,4 @@
+using System.Data.SqlClient;
 using System;
 using Microsoft.Data.SqlClient;
 namespace nhom2_quanlynhansu
@@ -27,12 +28,12 @@ namespace nhom2_quanlynhansu
 
             if (cbmk.Checked)
             {
-                tbmk.PasswordChar = '\0';
+                txtmk.PasswordChar = '\0';
                 cbmk.Image = Properties.Resources.matmo;
             }
             else
             {
-                tbmk.PasswordChar = '*';
+                txtmk.PasswordChar = '*';
                 cbmk.Image = Properties.Resources.mătdong;
             }
             {
@@ -46,10 +47,10 @@ namespace nhom2_quanlynhansu
                 {
                     kn.Open();
                     SqlCommand lenh = new SqlCommand(csdl_nguoidung, kn);
-                    string tdn = tbdn.Text.Trim();
-                    string mk = tbmk.Text.Trim();
+                    string tdn = txtdn.Text.Trim();
+                    string mk = txtmk.Text.Trim();
 
-                    if (String.IsNullOrWhiteSpace(tbdn.Text) || String.IsNullOrWhiteSpace(tbmk.Text))
+                    if (String.IsNullOrWhiteSpace(txtdn.Text) || String.IsNullOrWhiteSpace(txtmk.Text))
                     {
                         MessageBox.Show("Vui lòng nhập đầy đủ thông tin đăng nhậpp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
@@ -107,7 +108,19 @@ namespace nhom2_quanlynhansu
         {
 
         }
+        
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {   string taiKhoan = txtdn.Text.Trim();
+            string matKhau = txtmk.Text.Trim();
+
+                if (taiKhoan == "" || matKhau == "")
+                {
+                    MessageBox.Show("Vui lòng nhập đủ Tài khoản và Mật khẩu!");
+                    return;
+                }
+            }
+        }
     }
-}
+
 
 

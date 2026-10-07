@@ -34,10 +34,10 @@
             label1 = new Label();
             btttk = new Button();
             btdn = new Button();
-            tbdn = new TextBox();
+            txtdn = new TextBox();
             linkLabel1 = new LinkLabel();
             cbmk = new CheckBox();
-            tbmk = new TextBox();
+            txtmk = new TextBox();
             label2 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -50,10 +50,10 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btttk);
             panel1.Controls.Add(btdn);
-            panel1.Controls.Add(tbdn);
+            panel1.Controls.Add(txtdn);
             panel1.Controls.Add(linkLabel1);
             panel1.Controls.Add(cbmk);
-            panel1.Controls.Add(tbmk);
+            panel1.Controls.Add(txtmk);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -119,14 +119,14 @@
             btdn.UseVisualStyleBackColor = false;
             btdn.Click += btdn_Click_1;
             // 
-            // tbdn
+            // txtdn
             // 
-            tbdn.BorderStyle = BorderStyle.FixedSingle;
-            tbdn.ForeColor = Color.Black;
-            tbdn.Location = new Point(443, 149);
-            tbdn.Name = "tbdn";
-            tbdn.Size = new Size(262, 27);
-            tbdn.TabIndex = 2;
+            txtdn.BorderStyle = BorderStyle.FixedSingle;
+            txtdn.ForeColor = Color.Black;
+            txtdn.Location = new Point(443, 149);
+            txtdn.Name = "txtdn";
+            txtdn.Size = new Size(262, 27);
+            txtdn.TabIndex = 2;
             // 
             // linkLabel1
             // 
@@ -150,14 +150,14 @@
             cbmk.UseVisualStyleBackColor = true;
             cbmk.CheckedChanged += cbmk_CheckedChanged_1;
             // 
-            // tbmk
+            // txtmk
             // 
-            tbmk.BorderStyle = BorderStyle.FixedSingle;
-            tbmk.ForeColor = Color.Black;
-            tbmk.Location = new Point(443, 203);
-            tbmk.Name = "tbmk";
-            tbmk.Size = new Size(262, 27);
-            tbmk.TabIndex = 3;
+            txtmk.BorderStyle = BorderStyle.FixedSingle;
+            txtmk.ForeColor = Color.Black;
+            txtmk.Location = new Point(443, 203);
+            txtmk.Name = "txtmk";
+            txtmk.Size = new Size(262, 27);
+            txtmk.TabIndex = 3;
             // 
             // label2
             // 
@@ -189,10 +189,10 @@
         private Button btttk;
         private Label label1;
         private Button btdn;
-        private TextBox tbdn;
+        private TextBox txtdn;
         private LinkLabel linkLabel1;
         private CheckBox cbmk;
-        private TextBox tbmk;
+        private TextBox txtmk;
         private Label label2;
         private Label label4;
         private Label label3;
