@@ -221,11 +221,11 @@
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.GradientActiveCaption;
+            button1.BackColor = Color.FromArgb(0, 0, 192);
             tableLayoutPanel2.SetColumnSpan(button1, 2);
             button1.Dock = DockStyle.Fill;
             button1.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.MenuHighlight;
+            button1.ForeColor = Color.White;
             button1.Location = new Point(2, 146);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
@@ -418,9 +418,10 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.YellowGreen;
+            button2.BackColor = Color.FromArgb(0, 0, 192);
             button2.Dock = DockStyle.Fill;
             button2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+            button2.ForeColor = Color.White;
             button2.Location = new Point(2, 113);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
@@ -431,9 +432,10 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.OrangeRed;
+            button3.BackColor = Color.White;
             button3.Dock = DockStyle.Fill;
             button3.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold);
+            button3.ForeColor = Color.FromArgb(0, 0, 192);
             button3.Location = new Point(660, 113);
             button3.Margin = new Padding(2);
             button3.Name = "button3";
@@ -446,6 +448,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1332, 1055);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel2);
