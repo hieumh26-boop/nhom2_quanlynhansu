@@ -83,7 +83,7 @@ namespace nhom2_quanlynhansu
         }
         private void btttk_Click(object sender, EventArgs e)
         {
-            
+
             Formtaotaikhoancs formttk = new Formtaotaikhoancs();
             formttk.Show();
             this.Hide();
@@ -109,29 +109,31 @@ namespace nhom2_quanlynhansu
         {
 
         }
-<<<<<<< HEAD
-        
+
+
         private void btnDangNhap_Click(object sender, EventArgs e)
-        {   string taiKhoan = txtdn.Text.Trim();
+        {
+            string taiKhoan = txtdn.Text.Trim();
             string matKhau = txtmk.Text.Trim();
 
-                if (taiKhoan == "" || matKhau == "")
-                {
-                    MessageBox.Show("Vui lòng nhập đủ Tài khoản và Mật khẩu!");
-                    return;
-                }
+            if (taiKhoan == "" || matKhau == "")
+            {
+                MessageBox.Show("Vui lòng nhập đủ Tài khoản và Mật khẩu!");
+                return;
             }
         }
-=======
+
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        
->>>>>>> 1a333d8e1621c1cbf4be487f21da6f93b9ef2e0c
+
+
     }
+}
 
 
 
