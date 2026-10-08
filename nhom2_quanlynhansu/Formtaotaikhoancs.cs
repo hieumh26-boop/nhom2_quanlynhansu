@@ -38,7 +38,9 @@ namespace nhom2_quanlynhansu
                             MessageBox.Show("Sai mật khẩu xác nhận", "Warning", MessageBoxButtons.OK);
                         }
                         lenh.ExecuteNonQuery();// Thực hiện câu lệnh SQL
+                        MessageBox.Show("Tạo tài Khoản tành công", "Thông báo", MessageBoxButtons.OK);
                     }
+
                 }
                 catch (Exception ex)
                 {
@@ -48,6 +50,14 @@ namespace nhom2_quanlynhansu
             }
         }
 
-       
+        private void btt_Click(object sender, EventArgs e)
+        {
+            
+            Formdangnhap formdn = new Formdangnhap();
+            formdn.Show();
+            this.Close();
+        }
+
+        
     }
 }

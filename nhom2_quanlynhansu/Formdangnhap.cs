@@ -83,10 +83,11 @@ namespace nhom2_quanlynhansu
         }
         private void btttk_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             Formtaotaikhoancs formttk = new Formtaotaikhoancs();
-            formttk.ShowDialog();
-            this.Close();
+            formttk.Show();
+            this.Hide();
+
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -108,6 +109,7 @@ namespace nhom2_quanlynhansu
         {
 
         }
+<<<<<<< HEAD
         
         private void btnDangNhap_Click(object sender, EventArgs e)
         {   string taiKhoan = txtdn.Text.Trim();
@@ -120,6 +122,15 @@ namespace nhom2_quanlynhansu
                 }
             }
         }
+=======
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
+>>>>>>> 1a333d8e1621c1cbf4be487f21da6f93b9ef2e0c
     }
 
 

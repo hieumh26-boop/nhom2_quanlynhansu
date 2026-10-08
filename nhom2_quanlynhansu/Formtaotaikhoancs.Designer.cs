@@ -141,7 +141,7 @@
             btt.TabIndex = 9;
             btt.Text = "Thoát";
             btt.UseVisualStyleBackColor = true;
-            
+            btt.Click += btt_Click;
             // 
             // cbmkttk
             // 
@@ -185,6 +185,7 @@
             ForeColor = Color.Navy;
             Name = "Formtaotaikhoancs";
             Text = "Formtaotaikhoancs";
+       
             ResumeLayout(false);
             PerformLayout();
         }
