@@ -33,10 +33,15 @@ namespace nhom2_quanlynhansu
         private void CenterMainPanel()
         {
             // pnlMain là tên Panel mẹ bọc toàn bộ giao diện
-          
+
         }
 
         private void txtCoSo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
         {
 
         }

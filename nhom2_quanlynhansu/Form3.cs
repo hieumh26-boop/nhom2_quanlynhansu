@@ -8,16 +8,26 @@ using System.Windows.Forms;
 
 namespace nhom2_quanlynhansu
 {
-	public partial class Form3 : Form
-	{
-		public Form3()
-		{
-			InitializeComponent();
-		}
+    public partial class Form3 : Form
+    {
+        public Form3()
+        {
+            InitializeComponent();
+        }
 
-		private void groupBox2_Enter(object sender, EventArgs e)
-		{
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
 
-		}
-	}
+        }
+
+        private void dgvThongBao_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnDaDoc_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -71,6 +71,7 @@
             dgvThongBao.RowHeadersWidth = 51;
             dgvThongBao.Size = new Size(279, 282);
             dgvThongBao.TabIndex = 0;
+            dgvThongBao.CellContentClick += dgvThongBao_CellContentClick;
             // 
             // colNguoiGui
             // 
@@ -117,6 +118,7 @@
             btnDaDoc.TabIndex = 7;
             btnDaDoc.Text = "Đánh dấu đã đọc";
             btnDaDoc.UseVisualStyleBackColor = false;
+            btnDaDoc.Click += btnDaDoc_Click;
             // 
             // rtbNoiDung
             // 

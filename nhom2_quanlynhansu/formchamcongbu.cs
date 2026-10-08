@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace nhom2_quanlynhansu
+{
+    public partial class formchamcongbu : Form
+    {
+        public formchamcongbu()
+        {
+            InitializeComponent();
+        }
+
+        private void btnGuiDon_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}

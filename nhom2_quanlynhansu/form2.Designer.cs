@@ -219,6 +219,7 @@
             btnLuu.TabIndex = 21;
             btnLuu.Text = "Lưu thay đổi";
             btnLuu.UseVisualStyleBackColor = false;
+            btnLuu.Click += btnLuu_Click;
             // 
             // btnChinhSua
             // 
