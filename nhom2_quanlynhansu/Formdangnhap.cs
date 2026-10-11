@@ -1,3 +1,4 @@
+using System.Data.SqlClient;
 using System;
 using Microsoft.Data.SqlClient;
 namespace nhom2_quanlynhansu
@@ -11,33 +12,56 @@ namespace nhom2_quanlynhansu
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
+        private void cbttk_CheckedChanged(object sender, EventArgs e)
+        {
 
-        private void cbdn_CheckedChanged(object sender, EventArgs e)
+        }
+
+        private void cbmk_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (cbmk.Checked)
+            {
+                txtmk.PasswordChar = '\0';
+                cbmk.Image = Properties.Resources.matmo;
+            }
+            else
+            {
+                txtmk.PasswordChar = '*';
+                cbmk.Image = Properties.Resources.mătdong;
+            }
+            {
+            }
+        }
+        private void btdn_Click(object sender, EventArgs e)
         {
             string csdl_nguoidung = "SELECT COUNT(*) FROM nguoidung WHERE tendangnhap = @tendangnhap AND matkhau = @matkhau";// truy van SQL để kiểm tra thông tin đăng nhập
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
                 try
                 {
-                    if (String.IsNullOrWhiteSpace(tbdn.Text) || String.IsNullOrWhiteSpace(tbmk.Text))
+                    kn.Open();
+                    SqlCommand lenh = new SqlCommand(csdl_nguoidung, kn);
+                    string tdn = txtdn.Text.Trim();
+                    string mk = txtmk.Text.Trim();
+
+                    if (String.IsNullOrWhiteSpace(txtdn.Text) || String.IsNullOrWhiteSpace(txtmk.Text))
                     {
-                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin đăng nhậpp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     else
                     {
-                        kn.Open();
-                        SqlCommand lenh = new SqlCommand(csdl_nguoidung, kn);
+                        lenh.Parameters.AddWithValue("@tendangnhap", tdn);//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
+                        lenh.Parameters.AddWithValue("@matkhau", mk);
+                        int kt = (int)lenh.ExecuteScalar();// thuc thi bien "lenh"
 
-                        lenh.ExecuteScalar();// thuc thi bien "lenh";
-
-                        if ("@tendangnhap" == tbdn.Text.Trim() && "@matkhau" == tbmk.Text.Trim())//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
+                        if (kt > 0)//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
                         {
                             MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -48,40 +72,68 @@ namespace nhom2_quanlynhansu
 
                     }
                 }
-                catch (SqlException ex)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi: " + ex.Message);
                 }
                 finally
                 {
-                    //THUggg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 2goilay
+
                 }
-
         }
-
-        private void btnHoan_Click(object sender, EventArgs e)
+        private void btttk_Click(object sender, EventArgs e)
         {
-            fXinNghiPhep f = new fXinNghiPhep();
-            f.WindowState = FormWindowState.Maximized;
-            f.Show();
+
+            Formtaotaikhoancs formttk = new Formtaotaikhoancs();
+            formttk.Show();
             this.Hide();
 
         }
 
-        private void Formdangnhap_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
-            fTamUngLuong f = new fTamUngLuong(); 
-            f.WindowState = FormWindowState.Maximized;
-            f.Show();
-            this.Hide();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbmk_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btdn_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            string taiKhoan = txtdn.Text.Trim();
+            string matKhau = txtmk.Text.Trim();
+
+            if (taiKhoan == "" || matKhau == "")
+            {
+                MessageBox.Show("Vui lòng nhập đủ Tài khoản và Mật khẩu!");
+                return;
+            }
+        }
+
+
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
     }
 }
+
 
 

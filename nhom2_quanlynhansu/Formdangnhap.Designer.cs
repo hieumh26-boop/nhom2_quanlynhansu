@@ -28,131 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tbdn = new TextBox();
-            tbmk = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
+            panel1 = new Panel();
             label3 = new Label();
-            cbdn = new CheckBox();
-            cbttk = new CheckBox();
             label4 = new Label();
+            label1 = new Label();
+            btttk = new Button();
+            btdn = new Button();
+            txtdn = new TextBox();
             linkLabel1 = new LinkLabel();
             cbmk = new CheckBox();
-            btnHoan = new Button();
-            button1 = new Button();
+            txtmk = new TextBox();
+            label2 = new Label();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // tbdn
+            // panel1
             // 
-            tbdn.BorderStyle = BorderStyle.FixedSingle;
-            tbdn.ForeColor = Color.Black;
-            tbdn.Location = new Point(821, 187);
-            tbdn.Margin = new Padding(5);
-            tbdn.Name = "tbdn";
-            tbdn.Size = new Size(466, 41);
-            tbdn.TabIndex = 2;
-            // 
-            // tbmk
-            // 
-            tbmk.BorderStyle = BorderStyle.FixedSingle;
-            tbmk.ForeColor = Color.YellowGreen;
-            tbmk.Location = new Point(821, 313);
-            tbmk.Margin = new Padding(5);
-            tbmk.Name = "tbmk";
-            tbmk.Size = new Size(466, 41);
-            tbmk.TabIndex = 3;
-            tbmk.TextChanged += textBox2_TextChanged;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.DarkBlue;
-            label1.Location = new Point(565, 186);
-            label1.Margin = new Padding(5, 0, 5, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 32);
-            label1.TabIndex = 4;
-            label1.Text = "Tên đăng nhập";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.DarkBlue;
-            label2.Location = new Point(648, 313);
-            label2.Margin = new Padding(5, 0, 5, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(114, 32);
-            label2.TabIndex = 5;
-            label2.Text = "mật khẩu";
-            label2.Click += label2_Click;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(btttk);
+            panel1.Controls.Add(btdn);
+            panel1.Controls.Add(txtdn);
+            panel1.Controls.Add(linkLabel1);
+            panel1.Controls.Add(cbmk);
+            panel1.Controls.Add(txtmk);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(804, 450);
+            panel1.TabIndex = 10;
+            panel1.Paint += panel1_Paint;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(21, 124);
-            label3.Margin = new Padding(5, 0, 5, 0);
+            label3.Location = new Point(12, 71);
             label3.Name = "label3";
-            label3.Size = new Size(230, 54);
-            label3.TabIndex = 6;
+            label3.Size = new Size(194, 46);
+            label3.TabIndex = 11;
             label3.Text = "Đăng nhập";
-            // 
-            // cbdn
-            // 
-            cbdn.AccessibleRole = AccessibleRole.None;
-            cbdn.Appearance = Appearance.Button;
-            cbdn.AutoSize = true;
-            cbdn.BackColor = Color.FromArgb(0, 0, 192);
-            cbdn.BackgroundImageLayout = ImageLayout.Center;
-            cbdn.CheckAlign = ContentAlignment.TopLeft;
-            cbdn.FlatStyle = FlatStyle.Popup;
-            cbdn.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbdn.ForeColor = Color.White;
-            cbdn.Location = new Point(821, 460);
-            cbdn.Margin = new Padding(5);
-            cbdn.Name = "cbdn";
-            cbdn.Size = new Size(126, 40);
-            cbdn.TabIndex = 7;
-            cbdn.Text = "Đăng nhập";
-            cbdn.UseVisualStyleBackColor = false;
-            cbdn.CheckedChanged += cbdn_CheckedChanged;
-            // 
-            // cbttk
-            // 
-            cbttk.Appearance = Appearance.Button;
-            cbttk.AutoSize = true;
-            cbttk.BackColor = Color.White;
-            cbttk.FlatStyle = FlatStyle.Popup;
-            cbttk.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cbttk.ForeColor = Color.FromArgb(0, 0, 192);
-            cbttk.Location = new Point(1071, 460);
-            cbttk.Margin = new Padding(5);
-            cbttk.Name = "cbttk";
-            cbttk.Size = new Size(149, 40);
-            cbttk.TabIndex = 8;
-            cbttk.Text = "Tạo tài khoản";
-            cbttk.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(21, 16);
-            label4.Margin = new Padding(5, 0, 5, 0);
+            label4.Location = new Point(12, 9);
             label4.Name = "label4";
-            label4.Size = new Size(181, 76);
-            label4.TabIndex = 9;
+            label4.Size = new Size(150, 62);
+            label4.TabIndex = 12;
             label4.Text = "QLNS";
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.DarkBlue;
+            label1.Location = new Point(297, 144);
+            label1.Name = "label1";
+            label1.Size = new Size(140, 28);
+            label1.TabIndex = 4;
+            label1.Text = "Tên đăng nhập";
+            label1.Click += label1_Click;
+            // 
+            // btttk
+            // 
+            btttk.FlatStyle = FlatStyle.Popup;
+            btttk.Font = new Font("Segoe UI", 10F);
+            btttk.ForeColor = Color.Navy;
+            btttk.Location = new Point(573, 271);
+            btttk.Name = "btttk";
+            btttk.Size = new Size(132, 29);
+            btttk.TabIndex = 13;
+            btttk.Text = "Tạo tài khoản";
+            btttk.UseVisualStyleBackColor = true;
+            btttk.Click += btttk_Click;
+            // 
+            // btdn
+            // 
+            btdn.BackColor = Color.FromArgb(0, 0, 192);
+            btdn.FlatStyle = FlatStyle.Popup;
+            btdn.Font = new Font("Segoe UI", 10F);
+            btdn.ForeColor = Color.White;
+            btdn.Location = new Point(443, 271);
+            btdn.Name = "btdn";
+            btdn.Size = new Size(124, 29);
+            btdn.TabIndex = 12;
+            btdn.Text = "Đăng nhập";
+            btdn.UseVisualStyleBackColor = false;
+            btdn.Click += btdn_Click;
+            // 
+            // txtdn
+            // 
+            txtdn.BorderStyle = BorderStyle.FixedSingle;
+            txtdn.ForeColor = Color.Black;
+            txtdn.Location = new Point(443, 149);
+            txtdn.Name = "txtdn";
+            txtdn.Size = new Size(262, 27);
+            txtdn.TabIndex = 2;
             // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(821, 396);
-            linkLabel1.Margin = new Padding(5, 0, 5, 0);
+            linkLabel1.Location = new Point(443, 233);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(206, 35);
+            linkLabel1.Size = new Size(122, 20);
             linkLabel1.TabIndex = 10;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Quên mật Khẩu ?";
@@ -162,70 +145,58 @@
             cbmk.Appearance = Appearance.Button;
             cbmk.FlatStyle = FlatStyle.Flat;
             cbmk.Image = Properties.Resources.mătdong;
-            cbmk.Location = new Point(1298, 315);
-            cbmk.Margin = new Padding(5);
+            cbmk.Location = new Point(726, 203);
             cbmk.Name = "cbmk";
-            cbmk.Size = new Size(88, 47);
+            cbmk.Size = new Size(50, 27);
             cbmk.TabIndex = 11;
             cbmk.UseVisualStyleBackColor = true;
+            cbmk.CheckedChanged += cbmk_CheckedChanged_1;
             // 
-            // btnHoan
+            // txtmk
             // 
-            btnHoan.Location = new Point(443, 564);
-            btnHoan.Name = "btnHoan";
-            btnHoan.Size = new Size(214, 71);
-            btnHoan.TabIndex = 12;
-            btnHoan.Text = "Mượn dùng tạm";
-            btnHoan.UseVisualStyleBackColor = true;
-            btnHoan.Click += btnHoan_Click;
+            txtmk.BorderStyle = BorderStyle.FixedSingle;
+            txtmk.ForeColor = Color.Black;
+            txtmk.Location = new Point(443, 203);
+            txtmk.Name = "txtmk";
+            txtmk.Size = new Size(262, 27);
+            txtmk.TabIndex = 3;
             // 
-            // button1
+            // label2
             // 
-            button1.Location = new Point(685, 573);
-            button1.Name = "button1";
-            button1.Size = new Size(229, 62);
-            button1.TabIndex = 13;
-            button1.Text = "mượn 2";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.DarkBlue;
+            label2.Location = new Point(344, 203);
+            label2.Name = "label2";
+            label2.Size = new Size(93, 28);
+            label2.TabIndex = 5;
+            label2.Text = "mật khẩu";
             // 
             // Formdangnhap
             // 
-            AutoScaleDimensions = new SizeF(14F, 35F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1407, 788);
-            Controls.Add(button1);
-            Controls.Add(btnHoan);
-            Controls.Add(cbmk);
-            Controls.Add(linkLabel1);
-            Controls.Add(label4);
-            Controls.Add(cbttk);
-            Controls.Add(cbdn);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(tbmk);
-            Controls.Add(tbdn);
-            Margin = new Padding(5);
+            ClientSize = new Size(804, 450);
+            Controls.Add(panel1);
             Name = "Formdangnhap";
-            FormClosed += Formdangnhap_FormClosed;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private TextBox tbdn;
-        private TextBox tbmk;
+
+        private Panel panel1;
+        private Button btttk;
         private Label label1;
-        private Label label2;
-        private Label label3;
-        private CheckBox cbdn;
-        private CheckBox cbttk;
-        private Label label4;
+        private Button btdn;
+        private TextBox txtdn;
         private LinkLabel linkLabel1;
         private CheckBox cbmk;
-        private Button btnHoan;
-        private Button button1;
+        private TextBox txtmk;
+        private Label label2;
+        private Label label4;
+        private Label label3;
     }
 }

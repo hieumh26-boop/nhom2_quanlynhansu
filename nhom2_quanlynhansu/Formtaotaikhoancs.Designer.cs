@@ -130,6 +130,7 @@
             btxnttk.TabIndex = 8;
             btxnttk.Text = "Xác nhận";
             btxnttk.UseVisualStyleBackColor = false;
+            btxnttk.Click += btxnttk_Click;
             // 
             // btt
             // 
@@ -140,6 +141,7 @@
             btt.TabIndex = 9;
             btt.Text = "Thoát";
             btt.UseVisualStyleBackColor = true;
+            btt.Click += btt_Click;
             // 
             // cbmkttk
             // 
@@ -183,6 +185,7 @@
             ForeColor = Color.Navy;
             Name = "Formtaotaikhoancs";
             Text = "Formtaotaikhoancs";
+       
             ResumeLayout(false);
             PerformLayout();
         }
@@ -201,5 +204,7 @@
         private Button btt;
         private CheckBox cbmkttk;
         private CheckBox ccmkttk2;
+
+       
     }
 }

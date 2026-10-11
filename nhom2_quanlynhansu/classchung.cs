@@ -7,6 +7,6 @@ namespace nhom2_quanlynhansu
 {
     internal class classchung
     {
-        public static string ketnoi = @"Data Source = DESKTOP-2SO8IFE\SQLEXPRESS;Database=qlns;User Id=nhom2_quanlynhansu;password=010226;trustServerCertificate=True;";
+        public static string ketnoi = @"Data Source = .\SQLEXPRESS;Database=qlns;User Id=nhom2_quanlynhansu;password=010226;trustServerCertificate=True;";
     }
 }
