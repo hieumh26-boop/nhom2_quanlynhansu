@@ -383,7 +383,7 @@
             cboxLnp.Items.AddRange(new object[] { "Nghỉ phép năm", "Nghỉ đột xuất (việc riêng)", "Nghỉ ốm", "Nghỉ không lương" });
             cboxLnp.Location = new Point(517, 167);
             cboxLnp.Name = "cboxLnp";
-            cboxLnp.Size = new Size(251, 43);
+            cboxLnp.Size = new Size(251, 38);
             cboxLnp.TabIndex = 8;
             // 
             // tbxLydo
