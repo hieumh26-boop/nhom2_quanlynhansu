@@ -107,6 +107,7 @@
             tbmk2.BorderStyle = BorderStyle.FixedSingle;
             tbmk2.Location = new Point(443, 171);
             tbmk2.Name = "tbmk2";
+            tbmk2.PasswordChar = '*';
             tbmk2.Size = new Size(260, 27);
             tbmk2.TabIndex = 6;
             // 
@@ -115,6 +116,7 @@
             tbxnmk.BorderStyle = BorderStyle.FixedSingle;
             tbxnmk.Location = new Point(443, 231);
             tbxnmk.Name = "tbxnmk";
+            tbxnmk.PasswordChar = '*';
             tbxnmk.Size = new Size(260, 27);
             tbxnmk.TabIndex = 7;
             // 
@@ -153,6 +155,7 @@
             cbmkttk.Size = new Size(42, 27);
             cbmkttk.TabIndex = 10;
             cbmkttk.UseVisualStyleBackColor = true;
+            cbmkttk.CheckedChanged += cbmkttk_CheckedChanged;
             // 
             // ccmkttk2
             // 
@@ -185,7 +188,7 @@
             ForeColor = Color.Navy;
             Name = "Formtaotaikhoancs";
             Text = "Formtaotaikhoancs";
-       
+            FormClosing += Formtaotaikhoancs_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

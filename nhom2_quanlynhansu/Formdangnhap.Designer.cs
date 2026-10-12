@@ -59,7 +59,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(804, 450);
             panel1.TabIndex = 10;
-            panel1.Paint += panel1_Paint;
             // 
             // label3
             // 
@@ -70,6 +69,7 @@
             label3.Size = new Size(194, 46);
             label3.TabIndex = 11;
             label3.Text = "Đăng nhập";
+            label3.Click += cbmk_CheckedChanged;
             // 
             // label4
             // 
@@ -92,7 +92,6 @@
             label1.Size = new Size(140, 28);
             label1.TabIndex = 4;
             label1.Text = "Tên đăng nhập";
-            label1.Click += label1_Click;
             // 
             // btttk
             // 
@@ -150,7 +149,7 @@
             cbmk.Size = new Size(50, 27);
             cbmk.TabIndex = 11;
             cbmk.UseVisualStyleBackColor = true;
-            cbmk.CheckedChanged += cbmk_CheckedChanged_1;
+            cbmk.CheckedChanged += cbmk_CheckedChanged;
             // 
             // txtmk
             // 
@@ -158,6 +157,7 @@
             txtmk.ForeColor = Color.Black;
             txtmk.Location = new Point(443, 203);
             txtmk.Name = "txtmk";
+            txtmk.PasswordChar = '*';
             txtmk.Size = new Size(262, 27);
             txtmk.TabIndex = 3;
             // 
@@ -180,6 +180,8 @@
             ClientSize = new Size(804, 450);
             Controls.Add(panel1);
             Name = "Formdangnhap";
+            FormClosing += Formdangnhap_FormClosing;
+            
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
