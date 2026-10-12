@@ -20,7 +20,7 @@ namespace nhom2_quanlynhansu
         {
 
             LoadDataXinNghiPhep();
-         
+
         }
 
         private void LoadDataXinNghiPhep()
@@ -75,6 +75,25 @@ namespace nhom2_quanlynhansu
             }
         }
 
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXinNghi_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
