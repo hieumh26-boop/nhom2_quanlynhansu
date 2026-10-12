@@ -17,7 +17,8 @@ namespace nhom2_quanlynhansu
         }
         private void btxnttk_Click(object sender, EventArgs e)
         {
-            string them = "INSERT INTO nguoidung (tendangnhap,matkhau) VALUES (@tdn,@mk)";
+            string them = "INSERT INTO NguoiDung (TenDangNhap,MatKhau) VALUES (@tdn,@mk)";
+            string kiemtratontai = "SELECT COUNT(*) FROM NguoiDung WHERE TenDangNhap = @tdn";
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
             {
                 try
@@ -31,14 +32,25 @@ namespace nhom2_quanlynhansu
                     {
                         kn.Open();
                         SqlCommand lenh = new SqlCommand(them, kn);
+                        SqlCommand kt1 = new SqlCommand(kiemtratontai, kn);
                         lenh.Parameters.AddWithValue("@tdn", tbtdn2.Text);
                         lenh.Parameters.AddWithValue("@mk", tbmk2.Text);
+                        kt1.Parameters.AddWithValue("@tdn", tbtdn2.Text);
+                        int kt2 = (int)kt1.ExecuteScalar();
                         if (tbmk2.Text != tbxnmk.Text)
                         {
                             MessageBox.Show("Sai mật khẩu xác nhận", "Warning", MessageBoxButtons.OK);
                         }
-                        lenh.ExecuteNonQuery();// Thực hiện câu lệnh SQL
-                        MessageBox.Show("Tạo tài Khoản tành công", "Thông báo", MessageBoxButtons.OK);
+                        else if (kt2 > 0)
+                        {
+                            MessageBox.Show("Tên đăng nhập đã tồn tại", "Warning", MessageBoxButtons.OK);
+                        }
+                        else
+                        {
+                            lenh.ExecuteNonQuery();// Thực hiện câu lệnh SQL
+                            MessageBox.Show("Tạo tài Khoản tành công", "Thông báo", MessageBoxButtons.OK);
+                        }
+
                     }
 
                 }
@@ -52,12 +64,38 @@ namespace nhom2_quanlynhansu
 
         private void btt_Click(object sender, EventArgs e)
         {
-            
             Formdangnhap formdn = new Formdangnhap();
             formdn.Show();
             this.Close();
         }
 
-        
+        private void cbmkttk_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbmkttk.Checked)
+            {
+                tbmk2.PasswordChar = '\0';
+                cbmkttk.Image = Properties.Resources.matmo;
+            }
+            else
+            {
+                tbmk2.PasswordChar = '*';
+                cbmkttk.Image = Properties.Resources.mătdong;
+            }
+            {
+            }
+        }
+
+        private void Formtaotaikhoancs_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; // Hủy sự kiện đóng form
+            }
+            else
+            {
+                // Application.Exit();
+            }
+        }
     }
 }
