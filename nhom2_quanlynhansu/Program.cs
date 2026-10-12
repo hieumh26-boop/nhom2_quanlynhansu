@@ -14,7 +14,7 @@ namespace nhom2_quanlynhansu
 
             Application.Run(new Form4());
 
-            Application.Run(new fXinNghiPhep());
+            Application.Run(new Formdangnhap ());
 
         }
     }
