@@ -15,10 +15,19 @@ namespace nhom2_quanlynhansu
             InitializeComponent();
         }
 
-        private void btpq_Click(object sender, EventArgs e)
+        private void btlg_Click(object sender, EventArgs e)
         {
-            
-            
+            this.Show();
+            FormChinh fc = new FormChinh();
+            fc.Close();
+
+
+
+        }
+
+        private void FormChinh_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

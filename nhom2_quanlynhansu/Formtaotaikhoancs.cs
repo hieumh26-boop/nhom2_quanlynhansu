@@ -97,5 +97,10 @@ namespace nhom2_quanlynhansu
                 // Application.Exit();
             }
         }
+
+        private void Formdangnhap_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }

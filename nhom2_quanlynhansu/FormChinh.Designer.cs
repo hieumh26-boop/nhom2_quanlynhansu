@@ -47,9 +47,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChinh));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -63,9 +64,11 @@
             btqlns = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            btlg = new Guna.UI2.WinForms.Guna2ImageButton();
             guna2Panel1.SuspendLayout();
             guna2Panel2.SuspendLayout();
+            guna2CustomGradientPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // guna2Panel1
@@ -84,7 +87,7 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2Panel1.Size = new Size(137, 496);
+            guna2Panel1.Size = new Size(137, 478);
             guna2Panel1.TabIndex = 1;
             // 
             // btpq
@@ -109,7 +112,6 @@
             btpq.Size = new Size(123, 45);
             btpq.TabIndex = 2;
             btpq.Text = "Phân quyền";
-            btpq.Click += btpq_Click;
             // 
             // btbc
             // 
@@ -276,46 +278,63 @@
             guna2Panel2.AutoScroll = true;
             guna2Panel2.AutoScrollMinSize = new Size(1000, 1200);
             guna2Panel2.BackColor = Color.MediumAquamarine;
-            guna2Panel2.BorderRadius = 30;
-            guna2Panel2.Controls.Add(guna2ImageButton1);
-            guna2Panel2.CustomizableEdges = customizableEdges20;
+            guna2Panel2.BorderRadius = 60;
+            guna2Panel2.Controls.Add(guna2CustomGradientPanel1);
+            guna2Panel2.CustomizableEdges = customizableEdges22;
             guna2Panel2.Dock = DockStyle.Fill;
-            guna2Panel2.FillColor = Color.White;
+            guna2Panel2.FillColor = Color.MediumAquamarine;
             guna2Panel2.Location = new Point(137, 0);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges21;
-            guna2Panel2.Size = new Size(678, 496);
+            guna2Panel2.Padding = new Padding(15);
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            guna2Panel2.Size = new Size(1063, 478);
             guna2Panel2.TabIndex = 2;
             // 
-            // guna2ImageButton1
+            // guna2CustomGradientPanel1
             // 
-            guna2ImageButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ImageButton1.CheckedState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.HoverState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.Image = (Image)resources.GetObject("guna2ImageButton1.Image");
-            guna2ImageButton1.ImageOffset = new Point(0, 0);
-            guna2ImageButton1.ImageRotate = 0F;
-            guna2ImageButton1.Location = new Point(614, 0);
-            guna2ImageButton1.Name = "guna2ImageButton1";
-            guna2ImageButton1.PressedState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges19;
-            guna2ImageButton1.Size = new Size(41, 32);
-            guna2ImageButton1.TabIndex = 2;
+            guna2CustomGradientPanel1.BorderRadius = 30;
+            guna2CustomGradientPanel1.Controls.Add(btlg);
+            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges20;
+            guna2CustomGradientPanel1.Dock = DockStyle.Fill;
+            guna2CustomGradientPanel1.Location = new Point(15, 15);
+            guna2CustomGradientPanel1.Margin = new Padding(0);
+            guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            guna2CustomGradientPanel1.Size = new Size(1012, 1200);
+            guna2CustomGradientPanel1.TabIndex = 0;
+            // 
+            // btlg
+            // 
+            btlg.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btlg.CheckedState.ImageSize = new Size(64, 64);
+            btlg.HoverState.ImageSize = new Size(64, 64);
+            btlg.Image = Properties.Resources.logout;
+            btlg.ImageOffset = new Point(0, 0);
+            btlg.ImageRotate = 0F;
+            btlg.Location = new Point(913, 3);
+            btlg.Name = "btlg";
+            btlg.PressedState.ImageSize = new Size(64, 64);
+            btlg.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            btlg.Size = new Size(63, 40);
+            btlg.TabIndex = 0;
+            btlg.Click += btlg_Click;
             // 
             // FormChinh
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumAquamarine;
-            ClientSize = new Size(815, 496);
+            ClientSize = new Size(1200, 478);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
             Name = "FormChinh";
             Text = "FormChinh";
             WindowState = FormWindowState.Maximized;
+            FormClosing += FormChinh_FormClosing;
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             guna2Panel2.ResumeLayout(false);
+            guna2CustomGradientPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -333,6 +352,7 @@
         private Guna.UI2.WinForms.Guna2Button btqlhs;
         private Guna.UI2.WinForms.Guna2Button btbc;
         private Guna.UI2.WinForms.Guna2Button btpq;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2ImageButton btlg;
     }
 }

@@ -12,9 +12,9 @@ namespace nhom2_quanlynhansu
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-          //  Application.Run(new Form4());
-
-            Application.Run(new FormChinh());
+            
+            
+            Application.Run(new Formdangnhap());
 
         }
     }

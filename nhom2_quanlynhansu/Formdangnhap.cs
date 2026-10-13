@@ -48,7 +48,9 @@ namespace nhom2_quanlynhansu
                         int kt = (int)lenh.ExecuteScalar();// thuc thi bien "lenh"
                         if (kt > 0)//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
                         {
-                            MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            FormChinh fc = new FormChinh();
+                            this.Hide();
+                            fc.Show();
                         }
                         else
                         {
@@ -73,7 +75,7 @@ namespace nhom2_quanlynhansu
         }
         private void Formdangnhap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("nhấn xác nhận để thoát", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(result == DialogResult.No)
             {
                 e.Cancel = true; // Hủy sự kiện đóng form
