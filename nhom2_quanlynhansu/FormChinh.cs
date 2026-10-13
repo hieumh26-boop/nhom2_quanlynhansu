@@ -14,5 +14,11 @@ namespace nhom2_quanlynhansu
         {
             InitializeComponent();
         }
+
+        private void btpq_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
     }
 }
