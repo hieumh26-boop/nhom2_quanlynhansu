@@ -331,6 +331,7 @@
             Text = "FormChinh";
             WindowState = FormWindowState.Maximized;
             FormClosing += FormChinh_FormClosing;
+            Load += FormChinh_Load;
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             guna2Panel2.ResumeLayout(false);

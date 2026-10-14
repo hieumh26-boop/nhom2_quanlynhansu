@@ -32,6 +32,7 @@ namespace nhom2_quanlynhansu
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
                 try
                 {
+
                     kn.Open();
                     SqlCommand lenh = new SqlCommand(csdl_nguoidung, kn);
                     string tdn = txtdn.Text.Trim();
@@ -48,9 +49,10 @@ namespace nhom2_quanlynhansu
                         int kt = (int)lenh.ExecuteScalar();// thuc thi bien "lenh"
                         if (kt > 0)//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
                         {
-                            FormChinh fc = new FormChinh();
-                            this.Hide();
-                            fc.Show();
+                            MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+
                         }
                         else
                         {
@@ -73,22 +75,11 @@ namespace nhom2_quanlynhansu
             formttk.Show();
             this.Hide();
         }
+
         private void Formdangnhap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("nhấn xác nhận để thoát", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(result == DialogResult.No)
-            {
-                e.Cancel = true; // Hủy sự kiện đóng form
-            }
-            else
-            {
-               // Application.Exit();
-            }
-            
-            
+           // this.Close();
         }
-
-        
     }
 }
 

@@ -8,13 +8,15 @@ namespace nhom2_quanlynhansu
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            
             ApplicationConfiguration.Initialize();
 
-            
-            
-            Application.Run(new Formdangnhap());
+
+
+            // Application.Run(new FormChinh());
+            Application.Run(new FormPhanQuyen());
+
+
 
         }
     }

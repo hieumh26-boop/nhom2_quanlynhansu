@@ -17,9 +17,10 @@ namespace nhom2_quanlynhansu
 
         private void btlg_Click(object sender, EventArgs e)
         {
-            this.Show();
-            FormChinh fc = new FormChinh();
-            fc.Close();
+            MessageBox.Show("Bạn có chắc chắn muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            this.Hide();
+            Formdangnhap fdn = new Formdangnhap();
+            fdn.ShowDialog();
 
 
 
@@ -28,6 +29,23 @@ namespace nhom2_quanlynhansu
         private void FormChinh_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void FormChinh_Load(object sender, EventArgs e)
+        {
+            this.Hide();
+            Formdangnhap fdn = new Formdangnhap();
+            fdn.ShowDialog();
+            if(fdn.DialogResult == DialogResult.OK)
+            {
+                this.Show();
+            }
+            else
+            {
+                this.Close();
+            }   
+            
+
         }
     }
 }
