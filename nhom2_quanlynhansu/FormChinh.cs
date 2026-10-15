@@ -21,31 +21,54 @@ namespace nhom2_quanlynhansu
             this.Hide();
             Formdangnhap fdn = new Formdangnhap();
             fdn.ShowDialog();
-
-
-
         }
 
         private void FormChinh_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; // Hủy sự kiện đóng form
+            }
         }
-
         private void FormChinh_Load(object sender, EventArgs e)
         {
             this.Hide();
             Formdangnhap fdn = new Formdangnhap();
             fdn.ShowDialog();
-            if(fdn.DialogResult == DialogResult.OK)
+            if (fdn.DialogResult == DialogResult.OK)
             {
                 this.Show();
             }
             else
             {
                 this.Close();
-            }   
-            
+            }
+        }
+            private Form HienForm = null;
+        private void MoForm(Form FormCon)
+        {
+            if (HienForm != null)
+            {
+                HienForm.Close();
+            }
+            HienForm = FormCon;
+            FormCon.TopLevel = false;// bỏ cơ chế của sổ
+            FormCon.FormBorderStyle = FormBorderStyle.None;// bỏ viền của form
+            FormCon.Dock = DockStyle.Fill;// cho form con full panel
+            png.Controls.Clear();
+            png.Controls.Add(FormCon);
+            png.Tag = FormCon;
+            FormCon.BringToFront();// đưa form con lên trên cùng
+            FormCon.Show();
+        }
 
+        private void btqlhs_Click(object sender, EventArgs e)
+        {
+            MoForm(new FormQLHS());
         }
     }
 }
+
+

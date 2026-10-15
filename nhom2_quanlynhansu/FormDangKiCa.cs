@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace nhom2_quanlynhansu
 {
-    public partial class Form4 : Form
+    public partial class FormDangKiCa : Form
     {        // 1. Danh sách tạm để lưu dữ liệu
         private List<CaLamViec> danhSachCaLam = new List<CaLamViec>();
 
@@ -21,7 +21,7 @@ namespace nhom2_quanlynhansu
             public DateTime NgayLam { get; set; }
             public string Ca { get; set; }
         }
-        public Form4()
+        public FormDangKiCa()
         {
             InitializeComponent();
         }

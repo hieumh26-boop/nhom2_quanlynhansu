@@ -1,6 +1,6 @@
 ﻿namespace nhom2_quanlynhansu
 {
-	partial class form2
+	partial class FormQLHS
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -112,6 +112,7 @@
             btnXemBangLuong.TabIndex = 1;
             btnXemBangLuong.Text = "Xem bảng lương";
             btnXemBangLuong.UseVisualStyleBackColor = false;
+          //  btnXemBangLuong.Click += this.btnXemBangLuong_Click;
             // 
             // dgvLichLamViec
             // 
@@ -484,7 +485,7 @@
             tableLayoutPanel1.Size = new Size(1175, 909);
             tableLayoutPanel1.TabIndex = 2;
             // 
-            // form2
+            // FormQLHS
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -492,7 +493,7 @@
             ClientSize = new Size(1175, 909);
             Controls.Add(label9);
             Controls.Add(panel1);
-            Name = "form2";
+            Name = "FormQLHS";
             Text = "form2";
             WindowState = FormWindowState.Maximized;
             groupBox2.ResumeLayout(false);

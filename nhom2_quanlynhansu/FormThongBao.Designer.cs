@@ -1,6 +1,6 @@
 ﻿namespace nhom2_quanlynhansu
 {
-	partial class Form3
+	partial class FormThongBao
 	{
 		/// <summary>
 		/// Required designer variable.

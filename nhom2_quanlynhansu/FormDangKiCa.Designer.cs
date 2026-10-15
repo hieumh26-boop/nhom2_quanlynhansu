@@ -1,6 +1,6 @@
 ﻿namespace nhom2_quanlynhansu
 {
-    partial class Form4
+    partial class FormDangKiCa
     {
         /// <summary>
         /// Required designer variable.

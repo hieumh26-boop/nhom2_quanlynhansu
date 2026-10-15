@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace nhom2_quanlynhansu
 {
-	public partial class Form3 : Form
+	public partial class FormThongBao : Form
 	{
-		public Form3()
+		public FormThongBao()
 		{
 			InitializeComponent();
 		}

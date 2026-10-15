@@ -47,11 +47,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             btpq = new Guna.UI2.WinForms.Guna2Button();
@@ -65,6 +67,7 @@
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            png = new Guna.UI2.WinForms.Guna2Panel();
             btlg = new Guna.UI2.WinForms.Guna2ImageButton();
             guna2Panel1.SuspendLayout();
             guna2Panel2.SuspendLayout();
@@ -238,6 +241,7 @@
             btqlhs.Size = new Size(123, 45);
             btqlhs.TabIndex = 0;
             btqlhs.Text = "QL hồ sơ";
+            btqlhs.Click += btqlhs_Click;
             // 
             // btqlns
             // 
@@ -280,28 +284,41 @@
             guna2Panel2.BackColor = Color.MediumAquamarine;
             guna2Panel2.BorderRadius = 60;
             guna2Panel2.Controls.Add(guna2CustomGradientPanel1);
-            guna2Panel2.CustomizableEdges = customizableEdges22;
+            guna2Panel2.CustomizableEdges = customizableEdges24;
             guna2Panel2.Dock = DockStyle.Fill;
             guna2Panel2.FillColor = Color.MediumAquamarine;
             guna2Panel2.Location = new Point(137, 0);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.Padding = new Padding(15);
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges25;
             guna2Panel2.Size = new Size(1063, 478);
             guna2Panel2.TabIndex = 2;
             // 
             // guna2CustomGradientPanel1
             // 
             guna2CustomGradientPanel1.BorderRadius = 30;
+            guna2CustomGradientPanel1.Controls.Add(png);
             guna2CustomGradientPanel1.Controls.Add(btlg);
-            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges20;
+            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges22;
             guna2CustomGradientPanel1.Dock = DockStyle.Fill;
             guna2CustomGradientPanel1.Location = new Point(15, 15);
             guna2CustomGradientPanel1.Margin = new Padding(0);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            guna2CustomGradientPanel1.Padding = new Padding(0, 50, 0, 0);
+            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges23;
             guna2CustomGradientPanel1.Size = new Size(1012, 1200);
             guna2CustomGradientPanel1.TabIndex = 0;
+            // 
+            // png
+            // 
+            png.BackColor = Color.White;
+            png.CustomizableEdges = customizableEdges19;
+            png.Dock = DockStyle.Fill;
+            png.Location = new Point(0, 50);
+            png.Name = "png";
+            png.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            png.Size = new Size(1012, 1150);
+            png.TabIndex = 1;
             // 
             // btlg
             // 
@@ -311,10 +328,10 @@
             btlg.Image = Properties.Resources.logout;
             btlg.ImageOffset = new Point(0, 0);
             btlg.ImageRotate = 0F;
-            btlg.Location = new Point(913, 3);
+            btlg.Location = new Point(916, 4);
             btlg.Name = "btlg";
             btlg.PressedState.ImageSize = new Size(64, 64);
-            btlg.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            btlg.ShadowDecoration.CustomizableEdges = customizableEdges21;
             btlg.Size = new Size(63, 40);
             btlg.TabIndex = 0;
             btlg.Click += btlg_Click;
@@ -355,5 +372,6 @@
         private Guna.UI2.WinForms.Guna2Button btpq;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2ImageButton btlg;
+        private Guna.UI2.WinForms.Guna2Panel png;
     }
 }
