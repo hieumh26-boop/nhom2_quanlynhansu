@@ -181,7 +181,6 @@
             Controls.Add(panel1);
             Name = "Formdangnhap";
             FormClosing += Formdangnhap_FormClosing;
-            
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
