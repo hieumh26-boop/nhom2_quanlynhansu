@@ -112,7 +112,6 @@
             btnXemBangLuong.TabIndex = 1;
             btnXemBangLuong.Text = "Xem bảng lương";
             btnXemBangLuong.UseVisualStyleBackColor = false;
-          //  btnXemBangLuong.Click += this.btnXemBangLuong_Click;
             // 
             // dgvLichLamViec
             // 
@@ -220,6 +219,7 @@
             btnLuu.TabIndex = 21;
             btnLuu.Text = "Lưu thay đổi";
             btnLuu.UseVisualStyleBackColor = false;
+            btnLuu.Click += btnLuu_Click;
             // 
             // btnChinhSua
             // 
