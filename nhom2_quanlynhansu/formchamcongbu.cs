@@ -17,7 +17,20 @@ namespace nhom2_quanlynhansu
 
         private void btnGuiDon_Click(object sender, EventArgs e)
         {
+            if (txtMaNV.Text == "" || txtHoTen.Text == "" ||
+                txtLyDo.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+
+            MessageBox.Show("Gửi đơn chấm công bù thành công!");
+        }
+
+        private void btnhuy_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
 }
+

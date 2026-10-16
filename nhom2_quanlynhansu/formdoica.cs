@@ -26,14 +26,14 @@ namespace nhom2_quanlynhansu
 
         }
 
-        private void btnGuidon_Click(object sender, EventArgs e)
-        {
+      
+        
             private void btnGuiDon_Click(object sender, EventArgs e)
         {
-            if (txtMaNV.Text == "" || txtHoTen.Text == "" ||
-                cboCaHienTai.SelectedIndex == -1 ||
-                cboCaMoi.SelectedIndex == -1 ||
-                txtLyDo.Text == "")
+            if (txtMaNV.Text == "" || TxtHoTen.Text == "" ||
+               dtpcamuondoi.SelectedIndex == -1 ||
+                dtpcahientai.SelectedIndex == -1 ||
+               Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
@@ -46,6 +46,16 @@ namespace nhom2_quanlynhansu
         {
 
         }
+
+        private void dtpcamuondoi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpcahientai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-}
+

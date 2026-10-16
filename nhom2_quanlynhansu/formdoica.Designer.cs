@@ -47,7 +47,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(67, 63);
+            label1.Location = new Point(55, 63);
             label1.Name = "label1";
             label1.Size = new Size(97, 20);
             label1.TabIndex = 0;
@@ -56,7 +56,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(67, 104);
+            label2.Location = new Point(55, 104);
             label2.Name = "label2";
             label2.Size = new Size(58, 20);
             label2.TabIndex = 1;
@@ -75,7 +75,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(82, 210);
+            label4.Location = new Point(55, 209);
             label4.Name = "label4";
             label4.Size = new Size(77, 20);
             label4.TabIndex = 3;
@@ -84,7 +84,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(67, 175);
+            label5.Location = new Point(55, 177);
             label5.Name = "label5";
             label5.Size = new Size(92, 20);
             label5.TabIndex = 4;
@@ -93,7 +93,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(83, 259);
+            label6.Location = new Point(55, 267);
             label6.Name = "label6";
             label6.Size = new Size(42, 20);
             label6.TabIndex = 5;
@@ -129,6 +129,7 @@
             dtpcahientai.Name = "dtpcahientai";
             dtpcahientai.Size = new Size(151, 28);
             dtpcahientai.TabIndex = 9;
+            dtpcahientai.SelectedIndexChanged += dtpcahientai_SelectedIndexChanged;
             // 
             // dtpcamuondoi
             // 
@@ -138,6 +139,7 @@
             dtpcamuondoi.Name = "dtpcamuondoi";
             dtpcamuondoi.Size = new Size(151, 28);
             dtpcamuondoi.TabIndex = 10;
+            dtpcamuondoi.SelectedIndexChanged += dtpcamuondoi_SelectedIndexChanged;
             // 
             // txtLydo
             // 
@@ -153,9 +155,9 @@
             btnGuidon.Name = "btnGuidon";
             btnGuidon.Size = new Size(94, 29);
             btnGuidon.TabIndex = 12;
-            btnGuidon.Text = "gửi đơn";
+            btnGuidon.Text = "Gửi Đơn";
             btnGuidon.UseVisualStyleBackColor = true;
-            btnGuidon.Click += btnGuidon_Click;
+            btnGuidon.Click += btnGuiDon_Click; 
             // 
             // btnHuy
             // 

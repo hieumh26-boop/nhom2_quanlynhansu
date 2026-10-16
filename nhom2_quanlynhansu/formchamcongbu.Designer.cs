@@ -153,6 +153,7 @@
             btnhuy.TabIndex = 12;
             btnhuy.Text = "HỦY";
             btnhuy.UseVisualStyleBackColor = true;
+            btnhuy.Click += btnhuy_Click;
             // 
             // btnGuiDon
             // 
