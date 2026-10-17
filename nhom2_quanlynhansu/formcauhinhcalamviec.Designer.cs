@@ -37,6 +37,7 @@
             label4 = new Label();
             label3 = new Label();
             panelThongTin = new Panel();
+            label6 = new Label();
             btnLamMoi = new Button();
             btnXoa = new Button();
             btnsua = new Button();
@@ -51,8 +52,6 @@
             label8 = new Label();
             txtTenCa = new TextBox();
             label7 = new Label();
-            textBox1 = new TextBox();
-            label6 = new Label();
             label5 = new Label();
             panelDanhSach = new Panel();
             dgvCaLamViec = new DataGridView();
@@ -66,6 +65,7 @@
             colTrangThai = new DataGridViewTextBoxColumn();
             colHanhDong = new DataGridViewTextBoxColumn();
             label12 = new Label();
+            txtMaCa = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panelThongTin.SuspendLayout();
@@ -139,6 +139,8 @@
             // panelThongTin
             // 
             panelThongTin.BackColor = SystemColors.ButtonHighlight;
+            panelThongTin.Controls.Add(txtMaCa);
+            panelThongTin.Controls.Add(label6);
             panelThongTin.Controls.Add(btnLamMoi);
             panelThongTin.Controls.Add(btnXoa);
             panelThongTin.Controls.Add(btnsua);
@@ -153,13 +155,21 @@
             panelThongTin.Controls.Add(label8);
             panelThongTin.Controls.Add(txtTenCa);
             panelThongTin.Controls.Add(label7);
-            panelThongTin.Controls.Add(textBox1);
-            panelThongTin.Controls.Add(label6);
             panelThongTin.Controls.Add(label5);
             panelThongTin.Location = new Point(12, 109);
             panelThongTin.Name = "panelThongTin";
             panelThongTin.Size = new Size(1127, 315);
             panelThongTin.TabIndex = 4;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(19, 55);
+            label6.Name = "label6";
+            label6.Size = new Size(52, 20);
+            label6.TabIndex = 18;
+            label6.Text = "Mã Ca";
             // 
             // btnLamMoi
             // 
@@ -171,6 +181,7 @@
             btnLamMoi.TabIndex = 17;
             btnLamMoi.Text = "Làm Mới";
             btnLamMoi.UseVisualStyleBackColor = false;
+            btnLamMoi.Click += btnLamMoi_Click;
             // 
             // btnXoa
             // 
@@ -182,6 +193,7 @@
             btnXoa.TabIndex = 16;
             btnXoa.Text = "Xóa";
             btnXoa.UseVisualStyleBackColor = false;
+            btnXoa.Click += btnXoa_Click_1;
             // 
             // btnsua
             // 
@@ -193,6 +205,7 @@
             btnsua.TabIndex = 15;
             btnsua.Text = "Sửa";
             btnsua.UseVisualStyleBackColor = false;
+            btnsua.Click += btnsua_Click_1;
             // 
             // txtThemmoi
             // 
@@ -284,7 +297,7 @@
             // 
             // txtTenCa
             // 
-            txtTenCa.Location = new Point(130, 95);
+            txtTenCa.Location = new Point(130, 89);
             txtTenCa.Name = "txtTenCa";
             txtTenCa.Size = new Size(247, 27);
             txtTenCa.TabIndex = 4;
@@ -298,24 +311,6 @@
             label7.Size = new Size(54, 20);
             label7.TabIndex = 3;
             label7.Text = "Tên Ca";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(130, 50);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(247, 27);
-            textBox1.TabIndex = 2;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(13, 54);
-            label6.Name = "label6";
-            label6.Size = new Size(52, 20);
-            label6.TabIndex = 1;
-            label6.Text = "Mã Ca";
-            label6.Click += label6_Click;
             // 
             // label5
             // 
@@ -444,6 +439,13 @@
             label12.TabIndex = 0;
             label12.Text = "Danh Sách Ca Làm Việc";
             // 
+            // txtMaCa
+            // 
+            txtMaCa.Location = new Point(130, 52);
+            txtMaCa.Name = "txtMaCa";
+            txtMaCa.Size = new Size(250, 27);
+            txtMaCa.TabIndex = 19;
+            // 
             // formcauhinhcalamviec
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -458,6 +460,7 @@
             Name = "formcauhinhcalamviec";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "formcauhinhcalamviec";
+            Load += formcauhinhcalamviec_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -481,9 +484,7 @@
         private Label label4;
         private Panel panelThongTin;
         private Label label5;
-        private Label label6;
         private Label label7;
-        private TextBox textBox1;
         private DateTimePicker dtpGioBatDau;
         private Label label8;
         private TextBox txtTenCa;
@@ -494,7 +495,6 @@
         private Button txtThemmoi;
         private TextBox txtMoTa;
         private Label label11;
-        private Button btnLamMoi;
         private Button btnXoa;
         private Button btnsua;
         private Panel panelDanhSach;
@@ -509,5 +509,8 @@
         private DataGridViewTextBoxColumn colMota;
         private DataGridViewTextBoxColumn colTrangThai;
         private DataGridViewTextBoxColumn colHanhDong;
+        private Button btnLamMoi;
+        private Label label6;
+        private TextBox txtMaCa;
     }
 }
