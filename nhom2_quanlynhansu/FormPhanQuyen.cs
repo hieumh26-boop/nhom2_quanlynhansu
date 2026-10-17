@@ -15,19 +15,9 @@ namespace nhom2_quanlynhansu
             InitializeComponent();
         }
 
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void btxn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void guna2GroupBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
-        {
-
+            string  = "SELECT
         }
     }
 }

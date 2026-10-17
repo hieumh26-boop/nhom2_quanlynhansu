@@ -17,13 +17,13 @@ namespace nhom2_quanlynhansu
         }
         private void btxnttk_Click(object sender, EventArgs e)
         {
-            string them = "INSERT INTO NguoiDung (TenDangNhap,MatKhau) VALUES (@tdn,@mk)";
+            string them = "INSERT INTO NguoiDung (TenDangNhap,MatKhau,MaNhanVien) VALUES (@tdn,@mk,@mnv)";
             string kiemtratontai = "SELECT COUNT(*) FROM NguoiDung WHERE TenDangNhap = @tdn";
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
             {
                 try
                 {
-                    if (string.IsNullOrWhiteSpace(tbmk2.Text) || string.IsNullOrWhiteSpace(tbtdn2.Text))
+                    if (string.IsNullOrWhiteSpace(tbmk2.Text) || string.IsNullOrWhiteSpace(tbtdn2.Text)||string.IsNullOrWhiteSpace(tbmnv.Text))
                     {
                         MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK);
                         return;
@@ -35,6 +35,7 @@ namespace nhom2_quanlynhansu
                         SqlCommand kt1 = new SqlCommand(kiemtratontai, kn);
                         lenh.Parameters.AddWithValue("@tdn", tbtdn2.Text);
                         lenh.Parameters.AddWithValue("@mk", tbmk2.Text);
+                        lenh.Parameters.AddWithValue("@mnv", tbmnv.Text);
                         kt1.Parameters.AddWithValue("@tdn", tbtdn2.Text);
                         int kt2 = (int)kt1.ExecuteScalar();
                         if (tbmk2.Text != tbxnmk.Text)
@@ -65,8 +66,10 @@ namespace nhom2_quanlynhansu
         private void btt_Click(object sender, EventArgs e)
         {
             Formdangnhap formdn = new Formdangnhap();
-            formdn.Show();
-            this.Close();
+            this.Hide();
+            formdn.ShowDialog();
+           
+
         }
 
         private void cbmkttk_CheckedChanged(object sender, EventArgs e)
@@ -87,15 +90,7 @@ namespace nhom2_quanlynhansu
 
         private void Formtaotaikhoancs_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.No)
-            {
-                e.Cancel = true; // Hủy sự kiện đóng form
-            }
-            else
-            {
-                // Application.Exit();
-            }
+            Application.Exit();
         }
 
         private void Formdangnhap_FormClosed(object sender, FormClosedEventArgs e)
