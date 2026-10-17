@@ -160,6 +160,7 @@
             panelThongTin.Name = "panelThongTin";
             panelThongTin.Size = new Size(1127, 315);
             panelThongTin.TabIndex = 4;
+            panelThongTin.Paint += panelThongTin_Paint;
             // 
             // txtMaCa
             // 

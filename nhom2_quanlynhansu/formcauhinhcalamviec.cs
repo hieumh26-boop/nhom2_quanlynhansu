@@ -107,7 +107,7 @@ namespace nhom2_quanlynhansu
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            txtMaCa .Clear();
+            txtMaCa.Clear();
             txtTenCa.Clear();
             txtMoTa.Clear();
             numThoiLuongNghi.Value = 60;
@@ -162,6 +162,11 @@ namespace nhom2_quanlynhansu
         }
 
         private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelThongTin_Paint(object sender, PaintEventArgs e)
         {
 
         }
