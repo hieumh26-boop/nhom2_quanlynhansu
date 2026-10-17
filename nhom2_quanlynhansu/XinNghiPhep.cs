@@ -4,13 +4,13 @@ namespace nhom2_quanlynhansu
 {
     public partial class fXinNghiPhep : Form
     {
-        ClassDB db = new ClassDB();
+        classchung db = new classchung();
         public fXinNghiPhep()
         {
             InitializeComponent();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
         }
-
+        // thoat chuong trinh 
         private void fXinNghiPhep_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
@@ -18,84 +18,101 @@ namespace nhom2_quanlynhansu
 
         private void fXinNghiPhep_Load(object sender, EventArgs e)
         {
-
+            LoadDataThongTinNhanVien();
+            cboxLnp.Focus();
             LoadDataXinNghiPhep();
-
         }
 
         private void LoadDataXinNghiPhep()
         {
-            ClassDB db = new ClassDB();
-            string sql = "select * from XinNghiPhep";
+            classchung db = new classchung();
+            string sql = "select * from NghiPhep";
             DataTable dt = db.ReadData(sql);
             if (dt != null)
             {
-                dgvXinNghiPhep.AutoGenerateColumns = false;
+                // dgvXinNghiPhep.AutoGenerateColumns = false;
                 dgvXinNghiPhep.DataSource = dt;
             }
         }
 
-        private void btnXinNghi_Click(object sender, EventArgs e)
+        // viết hàm tự nạp dữ liệu vào groupbox thông tin và hạn mức theo tài khoản hiện đang đăng nhập vào form
+        private void LoadDataThongTinNhanVien()
         {
-            if (string.IsNullOrEmpty(tbxMnv.Text) || string.IsNullOrEmpty(tbxLydo.Text))
+            classchung db = new classchung();
+            string sql = "SELECT nd.MaNhanVien, nv.HoTen, np.SoNgayNghiToiDa, np.SoNgayNghiConLai, pq.TenVaiTro, cs.TenCoSo " +
+                 "FROM [NhanVien] nv " +
+                 "INNER JOIN [NguoiDung] nd ON nd.MaNhanVien = nv.MaNhanVien " +
+                 "INNER JOIN [NghiPhep] np ON np.MaNhanVien = nv.MaNhanVien " +
+                    "INNER JOIN [PhanQuyen] pq ON pq.MaNhanVien = nv.MaNhanVien " +
+                 "INNER JOIN [CoSo] cs ON cs.MaNhanVien = nv.MaNhanVien " +
+                 "WHERE nd.TenDangNhap = '" + Formdangnhap.TenTaiKhoanDangNhap + "'";
+            //"INNER JOIN [CoSo] cs ON cs.MaNhanVien = nv.MaNhanVien " +
+            //"INNER JOIN [PhanQuyen] pq ON pq.MaNhanVien = nv.MaNhanVien " +
+
+            DataTable dt = db.ReadData(sql);
+            if (dt != null && dt.Rows.Count > 0)
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ Mã nhân viên và Lý do xin nghỉ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                tbxMnv.Text = dt.Rows[0]["MaNhanVien"].ToString();
+                tbxTnv.Text = dt.Rows[0]["HoTen"].ToString();
+                tbxToida.Text = dt.Rows[0]["SoNgayNghiToiDa"].ToString();
+                tbxCon.Text = dt.Rows[0]["SoNgayNghiConLai"].ToString();
+                tbxCoSo.Text = dt.Rows[0]["TenCoSo"].ToString();
+                tbxChucVu.Text = dt.Rows[0]["TenVaiTro"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy thông tin nhân viên.");
+
+            }
+
+        }
+        // click tạo đơn
+        private void btnXinNghi_Click(object sender, EventArgs e)
+        {   
+            if (string.IsNullOrWhiteSpace(tbxLydo.Text) || cboxLnp.SelectedIndex == -1 || cboxCanghi1.SelectedIndex == -1 || cboxCanghi2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin đơn nghỉ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string maNV = tbxMnv.Text.Trim();
-            string loaiPhep = cboxLnp.Text;
-            string tuNgay = datetime1.Value.ToString("yyyy-MM-dd");
-            string caTu = cboxCanghi1.Text;
-            string denNgay = datetime2.Value.ToString("yyyy-MM-dd");
-            string caDen = cboxCaNghi2.Text;
-            string lyDo = tbxLydo.Text.Trim();
+            string loaiNghiPhep = cboxLnp.Text;
+            string lyDo = tbxLydo.Text;
+            int maNhanVien = int.Parse(tbxMnv.Text);
+            int soBuoiToiDa = int.Parse(tbxToida.Text);
+            int soBuoiConLaiHienTai = int.Parse(tbxCon.Text);
+            int soBuoiConLaiMoi = soBuoiConLaiHienTai - 1;
 
-            string sql = "INSERT INTO XinNghiPhep (MaNhanVien, LoaiNghiPhep, TuNgay, CaNghiTu, DenNgay, CaNghiDen, LyDo) " +
-                         $"VALUES ('{maNV}', N'{loaiPhep}', '{tuNgay}', N'{caTu}', '{denNgay}', N'{caDen}', N'{lyDo}')";
-
-            try
+            if (soBuoiConLaiMoi < 0)
             {
-                int roweffect = db.WriteData(sql);
-
-                if (roweffect > 0)
-                {
-                    MessageBox.Show("Gửi đơn xin nghỉ phép thành công! Đang chờ Quản lý phê duyệt.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    tbxLydo.Clear();
-                    LoadDataXinNghiPhep();
-                }
-                else
-                {
-                    MessageBox.Show("Gửi đơn thất bại! Hãy chắc chắn Mã nhân viên này đang tồn tại ở bảng Nhân viên gốc.", "Báo lỗi dữ liệu");
-                }
+                MessageBox.Show("Nhân viên này đã hết số buổi nghỉ phép còn lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            catch (Exception ex)
+
+            
+            string sqlInsert = "INSERT INTO [NghiPhep] (MaNhanVien, SoNgayNghiToiDa, SoNgayNghiConLai, LoaiNghiPhep, LyDo, TrangThaiDuyet) " +
+                               "VALUES (" + maNhanVien + ", " + soBuoiToiDa + ", " + soBuoiConLaiMoi + ", N'" + loaiNghiPhep + "', N'" + lyDo + "', N'Chờ duyệt')";
+
+           
+            classchung db = new classchung();
+            bool result = db.WriteData(sqlInsert);
+
+            if (result)
             {
-                MessageBox.Show("Lỗi hệ thống khi gửi đơn: " + ex.Message, "Lỗi");
+                MessageBox.Show("Tạo đơn xin nghỉ phép thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+             
+                tbxCon.Text = soBuoiConLaiMoi.ToString();
+
+                tbxLydo.Clear(); 
+                LoadDataXinNghiPhep(); 
+            }
+            else
+            {
+                MessageBox.Show("Tạo đơn thất bại, vui lòng kiểm tra lại kết nối SQL!");
             }
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnXinNghi_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
-
-
 }
+
 

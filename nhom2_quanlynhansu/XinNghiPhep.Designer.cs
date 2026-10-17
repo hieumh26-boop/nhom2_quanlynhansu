@@ -33,7 +33,7 @@
             groupBox2 = new GroupBox();
             button1 = new Button();
             btnXinNghi = new Button();
-            cboxCaNghi2 = new ComboBox();
+            cboxCanghi2 = new ComboBox();
             cboxLnp = new ComboBox();
             datetime2 = new DateTimePicker();
             label21 = new Label();
@@ -49,7 +49,7 @@
             groupBox1 = new GroupBox();
             tbxToida = new TextBox();
             tbxChucVu = new TextBox();
-            tbxPhongBan = new TextBox();
+            tbxCoSo = new TextBox();
             label16 = new Label();
             label15 = new Label();
             tbxCon = new TextBox();
@@ -107,7 +107,7 @@
             groupBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox2.Controls.Add(button1);
             groupBox2.Controls.Add(btnXinNghi);
-            groupBox2.Controls.Add(cboxCaNghi2);
+            groupBox2.Controls.Add(cboxCanghi2);
             groupBox2.Controls.Add(cboxLnp);
             groupBox2.Controls.Add(datetime2);
             groupBox2.Controls.Add(label21);
@@ -140,7 +140,6 @@
             button1.TabIndex = 29;
             button1.Text = "Hủy Đơn";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // btnXinNghi
             // 
@@ -155,18 +154,18 @@
             btnXinNghi.Text = "Tạo Đơn";
             btnXinNghi.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnXinNghi.UseVisualStyleBackColor = false;
-            btnXinNghi.Click += btnXinNghi_Click_1;
+            btnXinNghi.Click += btnXinNghi_Click;
             // 
-            // cboxCaNghi2
+            // cboxCanghi2
             // 
-            cboxCaNghi2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            cboxCaNghi2.Font = new Font("Calibri", 14F);
-            cboxCaNghi2.FormattingEnabled = true;
-            cboxCaNghi2.Items.AddRange(new object[] { "Ca sáng", "Ca chiều", "Ca tối" });
-            cboxCaNghi2.Location = new Point(227, 325);
-            cboxCaNghi2.Name = "cboxCaNghi2";
-            cboxCaNghi2.Size = new Size(218, 43);
-            cboxCaNghi2.TabIndex = 27;
+            cboxCanghi2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            cboxCanghi2.Font = new Font("Calibri", 14F);
+            cboxCanghi2.FormattingEnabled = true;
+            cboxCanghi2.Items.AddRange(new object[] { "Ca sáng", "Ca chiều", "Ca tối" });
+            cboxCanghi2.Location = new Point(227, 325);
+            cboxCanghi2.Name = "cboxCanghi2";
+            cboxCanghi2.Size = new Size(218, 43);
+            cboxCanghi2.TabIndex = 27;
             // 
             // cboxLnp
             // 
@@ -300,7 +299,7 @@
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Controls.Add(tbxToida);
             groupBox1.Controls.Add(tbxChucVu);
-            groupBox1.Controls.Add(tbxPhongBan);
+            groupBox1.Controls.Add(tbxCoSo);
             groupBox1.Controls.Add(label16);
             groupBox1.Controls.Add(label15);
             groupBox1.Controls.Add(tbxCon);
@@ -339,15 +338,15 @@
             tbxChucVu.Size = new Size(192, 42);
             tbxChucVu.TabIndex = 22;
             // 
-            // tbxPhongBan
+            // tbxCoSo
             // 
-            tbxPhongBan.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tbxPhongBan.Font = new Font("Calibri", 14F);
-            tbxPhongBan.Location = new Point(251, 166);
-            tbxPhongBan.Name = "tbxPhongBan";
-            tbxPhongBan.ReadOnly = true;
-            tbxPhongBan.Size = new Size(192, 42);
-            tbxPhongBan.TabIndex = 21;
+            tbxCoSo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbxCoSo.Font = new Font("Calibri", 14F);
+            tbxCoSo.Location = new Point(251, 166);
+            tbxCoSo.Name = "tbxCoSo";
+            tbxCoSo.ReadOnly = true;
+            tbxCoSo.Size = new Size(192, 42);
+            tbxCoSo.TabIndex = 21;
             // 
             // label16
             // 
@@ -367,9 +366,9 @@
             label15.Font = new Font("Calibri", 14F);
             label15.Location = new Point(6, 166);
             label15.Name = "label15";
-            label15.Size = new Size(136, 35);
+            label15.Size = new Size(129, 35);
             label15.TabIndex = 0;
-            label15.Text = "Phòng Ban";
+            label15.Text = "Tên cơ sở ";
             // 
             // tbxCon
             // 
@@ -524,6 +523,7 @@
             Controls.Add(groupBox3);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(label7);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "fXinNghiPhep";
             SizeGripStyle = SizeGripStyle.Show;
             StartPosition = FormStartPosition.CenterScreen;
@@ -546,7 +546,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private GroupBox groupBox2;
         private Button btnXinNghi;
-        private ComboBox cboxCaNghi2;
+        private ComboBox cboxCanghi2;
         private ComboBox cboxLnp;
         private DateTimePicker datetime2;
         private Label label21;
@@ -561,7 +561,7 @@
         private Label label9;
         private GroupBox groupBox1;
         private TextBox tbxChucVu;
-        private TextBox tbxPhongBan;
+        private TextBox tbxCoSo;
         private Label label16;
         private Label label15;
         private TextBox tbxCon;

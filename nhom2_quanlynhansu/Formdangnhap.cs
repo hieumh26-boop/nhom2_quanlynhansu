@@ -5,7 +5,10 @@ namespace nhom2_quanlynhansu
 {
     public partial class Formdangnhap : Form
     {
-        public Formdangnhap()
+        //orion - Thêm dòng này để lưu tài khoản đăng nhập chung cho cả nhóm xài
+            public static string TenTaiKhoanDangNhap = "";
+        
+            public Formdangnhap()
         {
             InitializeComponent();
         }
@@ -50,8 +53,10 @@ namespace nhom2_quanlynhansu
                         if (kt > 0)//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
                         {
                             MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            TenTaiKhoanDangNhap = txtdn.Text;
                             this.DialogResult = DialogResult.OK;
                             this.Close();
+                           
 
                         }
                         else
