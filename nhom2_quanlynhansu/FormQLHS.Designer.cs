@@ -227,7 +227,7 @@
             cbcs2.FlatStyle = FlatStyle.Popup;
             cbcs2.Font = new Font("Segoe UI", 12F);
             cbcs2.ForeColor = Color.FromArgb(0, 0, 192);
-            cbcs2.Location = new Point(42, 666);
+            cbcs2.Location = new Point(66, 676);
             cbcs2.Name = "cbcs2";
             cbcs2.Size = new Size(121, 51);
             cbcs2.TabIndex = 20;
