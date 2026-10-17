@@ -51,15 +51,23 @@ namespace nhom2_quanlynhansu
 
                         if (doc.Read() )//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
                         {
-                            PhienDangNhap.MaNhanVien = Convert.ToInt32(doc["MaNhanVien"]);
-                            PhienDangNhap.HoTen = Convert.ToString(doc["HoTen"])??"";
-                            PhienDangNhap.SDT = Convert.ToString(doc["SDT"]) ?? "";
-                            PhienDangNhap.CCCD = Convert.ToString(doc["CCCD"]) ?? "";
-                            PhienDangNhap.STK = Convert.ToString(doc["STK"]) ?? "";
+                            PhienDangNhap.MaNhanVien = doc["MaNhanVien"] != DBNull.Value ? Convert.ToInt32(doc["MaNhanVien"]) : 0;
+                            PhienDangNhap.HoTen = doc["HoTen"] != DBNull.Value ? doc["HoTen"].ToString() : "";
+                            PhienDangNhap.SDT = doc["SDT"] != DBNull.Value ? doc["SDT"].ToString() : "";
+                            PhienDangNhap.CCCD = doc["CCCD"] != DBNull.Value ? doc["CCCD"].ToString() : "";
+                            PhienDangNhap.STK = doc["STK"] != DBNull.Value ? doc["STK"].ToString() : "";
                             PhienDangNhap.HinhThucLamViec = Convert.ToString(doc["HinhThucLamViec"]) ?? "";
-                            PhienDangNhap.MaCoSo = Convert.ToInt32(doc["MaCoSo"]);
-                            PhienDangNhap.NgaySinh = Convert.ToDateTime(doc["NgaySinh"]);
-                            PhienDangNhap.GioiTinh = Convert.ToString(doc["GioiTinh"]) ?? "";
+                            if (doc["MaCoSo"] != DBNull.Value)
+                            {
+                                PhienDangNhap.MaCoSo = Convert.ToInt32(doc["MaCoSo"]);
+                            }
+                            if (doc["NgaySinh"] != DBNull.Value)
+                            {
+                                PhienDangNhap.NgaySinh = Convert.ToDateTime(doc["NgaySinh"]);
+                            }
+                            PhienDangNhap.VaiTro = doc["NgaySinh"] != DBNull.Value ? doc["NgaySinh"].ToString() : "";
+                            PhienDangNhap.GioiTinh = doc["GioiTinh"]!= DBNull.Value ? doc["TenVaiTro"].ToString() : "";
+                            PhienDangNhap.VaiTro = doc["TenVaiTro"] != DBNull.Value ? doc["TenVaiTro"].ToString() : "";
                             MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.DialogResult = DialogResult.OK;
                             this.Close();

@@ -11,6 +11,7 @@ namespace nhom2_quanlynhansu
         public static string SDT { get; set; }
         public static string STK { get; set; }
         public static string CCCD { get; set; }
+        public static string VaiTro { get; set; }
         public static string HinhThucLamViec { get; set; }
         public static int MaCoSo { get; set; }
         public static DateTime NgaySinh { get; set; }

@@ -17,7 +17,7 @@ namespace nhom2_quanlynhansu
 
         private void btxn_Click(object sender, EventArgs e)
         {
-            string  = "SELECT
+            //string  = "SELECT
         }
     }
 }
