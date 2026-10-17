@@ -31,6 +31,11 @@ namespace nhom2_quanlynhansu
         {
             this.Close();
         }
+
+        private void txtMaNV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

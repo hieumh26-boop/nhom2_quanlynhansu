@@ -148,6 +148,7 @@
             txtLydo.Name = "txtLydo";
             txtLydo.Size = new Size(209, 56);
             txtLydo.TabIndex = 11;
+            txtLydo.TextChanged += txtLydo_TextChanged;
             // 
             // btnGuidon
             // 
@@ -157,7 +158,7 @@
             btnGuidon.TabIndex = 12;
             btnGuidon.Text = "Gửi Đơn";
             btnGuidon.UseVisualStyleBackColor = true;
-            btnGuidon.Click += btnGuiDon_Click; 
+            btnGuidon.Click += btnGuiDon_Click;
             // 
             // btnHuy
             // 

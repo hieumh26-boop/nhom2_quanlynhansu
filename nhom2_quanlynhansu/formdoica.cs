@@ -26,9 +26,9 @@ namespace nhom2_quanlynhansu
 
         }
 
-      
-        
-            private void btnGuiDon_Click(object sender, EventArgs e)
+
+
+        private void btnGuiDon_Click(object sender, EventArgs e)
         {
             if (txtMaNV.Text == "" || TxtHoTen.Text == "" ||
                dtpcamuondoi.SelectedIndex == -1 ||
@@ -53,6 +53,11 @@ namespace nhom2_quanlynhansu
         }
 
         private void dtpcahientai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLydo_TextChanged(object sender, EventArgs e)
         {
 
         }

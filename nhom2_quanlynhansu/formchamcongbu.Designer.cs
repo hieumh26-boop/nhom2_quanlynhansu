@@ -104,6 +104,7 @@
             txtMaNV.Name = "txtMaNV";
             txtMaNV.Size = new Size(250, 27);
             txtMaNV.TabIndex = 6;
+            txtMaNV.TextChanged += txtMaNV_TextChanged;
             // 
             // txtHoTen
             // 
