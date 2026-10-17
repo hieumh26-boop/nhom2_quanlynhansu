@@ -68,7 +68,7 @@ namespace nhom2_quanlynhansu
         }
         // click tạo đơn
         private void btnXinNghi_Click(object sender, EventArgs e)
-        {   
+        {
             if (string.IsNullOrWhiteSpace(tbxLydo.Text) || cboxLnp.SelectedIndex == -1 || cboxCanghi1.SelectedIndex == -1 || cboxCanghi2.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin đơn nghỉ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -88,11 +88,11 @@ namespace nhom2_quanlynhansu
                 return;
             }
 
-            
+
             string sqlInsert = "INSERT INTO [NghiPhep] (MaNhanVien, SoNgayNghiToiDa, SoNgayNghiConLai, LoaiNghiPhep, LyDo, TrangThaiDuyet) " +
                                "VALUES (" + maNhanVien + ", " + soBuoiToiDa + ", " + soBuoiConLaiMoi + ", N'" + loaiNghiPhep + "', N'" + lyDo + "', N'Chờ duyệt')";
 
-           
+
             classchung db = new classchung();
             bool result = db.WriteData(sqlInsert);
 
@@ -100,11 +100,11 @@ namespace nhom2_quanlynhansu
             {
                 MessageBox.Show("Tạo đơn xin nghỉ phép thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-             
+
                 tbxCon.Text = soBuoiConLaiMoi.ToString();
 
-                tbxLydo.Clear(); 
-                LoadDataXinNghiPhep(); 
+                tbxLydo.Clear();
+                LoadDataXinNghiPhep();
             }
             else
             {
@@ -112,6 +112,49 @@ namespace nhom2_quanlynhansu
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        { 
+            if (dgvXinNghiPhep.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng click chọn một dòng đơn dưới bảng Lịch sử trước khi bấm Hủy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            DataGridViewRow selectRow = dgvXinNghiPhep.SelectedRows[0];
+
+            int maDonDuocChon = int.Parse(selectRow.Cells["MaDon"].Value.ToString());
+            string trangThai = selectRow.Cells["TrangThaiDuyet"].Value.ToString();
+
+            if (trangThai == "Yes" || trangThai == "Đã duyệt" || trangThai == "Từ chối")
+            {
+                MessageBox.Show("Đơn này đã được quản lý phê duyệt, bạn không thể hủy nữa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            DialogResult dialog = MessageBox.Show("Bạn có chắc chắn muốn hủy đơn xin nghỉ số " + maDonDuocChon + " này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.No) return;
+
+            int maNhanVien = int.Parse(tbxMnv.Text);
+            int soBuoiConLaiHienTai = int.Parse(tbxCon.Text);
+            int soBuoiConLaiMoi = soBuoiConLaiHienTai + 1;
+
+            string sqlDeleteDon = "DELETE FROM [NghiPhep] WHERE MaDon = " + maDonDuocChon;
+            string sqlUpdateHanMuc = "UPDATE [NghiPhep] SET SoNgayNghiConLai = " + soBuoiConLaiMoi + " WHERE MaNhanVien = " + maNhanVien;
+
+            classchung db = new classchung();
+            if (db.WriteData(sqlDeleteDon))
+            {
+                db.WriteData(sqlUpdateHanMuc); 
+
+                MessageBox.Show("Hủy đơn xin nghỉ phép số " + maDonDuocChon + " thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tbxCon.Text = soBuoiConLaiMoi.ToString();
+                tbxLydo.Clear();
+                LoadDataXinNghiPhep();
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi xảy ra trong quá trình hủy đơn, vui lòng kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }
 

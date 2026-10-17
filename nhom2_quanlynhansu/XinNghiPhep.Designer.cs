@@ -65,7 +65,7 @@
             MaDon = new DataGridViewTextBoxColumn();
             LoaiPhep = new DataGridViewTextBoxColumn();
             LyDo = new DataGridViewTextBoxColumn();
-            TrangThai = new DataGridViewTextBoxColumn();
+            TrangThaiDuyet = new DataGridViewTextBoxColumn();
             tableLayoutPanel1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -140,6 +140,7 @@
             button1.TabIndex = 29;
             button1.Text = "Hủy Đơn";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // btnXinNghi
             // 
@@ -474,7 +475,7 @@
             dgvXinNghiPhep.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvXinNghiPhep.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvXinNghiPhep.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvXinNghiPhep.Columns.AddRange(new DataGridViewColumn[] { MaDon, LoaiPhep, LyDo, TrangThai });
+            dgvXinNghiPhep.Columns.AddRange(new DataGridViewColumn[] { MaDon, LoaiPhep, LyDo, TrangThaiDuyet });
             dgvXinNghiPhep.Location = new Point(3, 47);
             dgvXinNghiPhep.Name = "dgvXinNghiPhep";
             dgvXinNghiPhep.ReadOnly = true;
@@ -507,13 +508,13 @@
             LyDo.Name = "LyDo";
             LyDo.ReadOnly = true;
             // 
-            // TrangThai
+            // TrangThaiDuyet
             // 
-            TrangThai.DataPropertyName = "TrangThaiDuyet";
-            TrangThai.HeaderText = "Trạng Thái Duyệt";
-            TrangThai.MinimumWidth = 8;
-            TrangThai.Name = "TrangThai";
-            TrangThai.ReadOnly = true;
+            TrangThaiDuyet.DataPropertyName = "TrangThaiDuyet";
+            TrangThaiDuyet.HeaderText = "Trạng Thái Duyệt";
+            TrangThaiDuyet.MinimumWidth = 8;
+            TrangThaiDuyet.Name = "TrangThaiDuyet";
+            TrangThaiDuyet.ReadOnly = true;
             // 
             // fXinNghiPhep
             // 
@@ -575,10 +576,10 @@
         private TextBox tbxToida;
         private GroupBox groupBox3;
         private DataGridView dgvXinNghiPhep;
+        private Button button1;
         private DataGridViewTextBoxColumn MaDon;
         private DataGridViewTextBoxColumn LoaiPhep;
         private DataGridViewTextBoxColumn LyDo;
-        private DataGridViewTextBoxColumn TrangThai;
-        private Button button1;
+        private DataGridViewTextBoxColumn TrangThaiDuyet;
     }
 }
