@@ -36,6 +36,11 @@ namespace nhom2_quanlynhansu
         {
 
         }
+
+        private void formchamcongbu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

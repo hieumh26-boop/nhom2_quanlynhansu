@@ -187,6 +187,7 @@
             Controls.Add(label1);
             Name = "formchamcongbu";
             Text = "formchamcongbu";
+            Load += formchamcongbu_Load;
             ResumeLayout(false);
             PerformLayout();
         }
