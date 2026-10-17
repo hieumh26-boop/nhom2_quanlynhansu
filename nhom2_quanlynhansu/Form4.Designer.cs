@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             lblMaNV = new Label();
-            txtMaNV = new TextBox();
             lblHoTen = new Label();
             txtHoTen = new TextBox();
             lblNgayLam = new Label();
@@ -44,6 +43,7 @@
             ColHoTen = new DataGridViewTextBoxColumn();
             ColNgayLam = new DataGridViewTextBoxColumn();
             ColCaLam = new DataGridViewTextBoxColumn();
+            cboMaNV = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvCaLam).BeginInit();
             SuspendLayout();
             // 
@@ -55,13 +55,6 @@
             lblMaNV.Size = new Size(97, 20);
             lblMaNV.TabIndex = 0;
             lblMaNV.Text = "Mã nhân viên";
-            // 
-            // txtMaNV
-            // 
-            txtMaNV.Location = new Point(330, 89);
-            txtMaNV.Name = "txtMaNV";
-            txtMaNV.Size = new Size(250, 27);
-            txtMaNV.TabIndex = 1;
             // 
             // lblHoTen
             // 
@@ -76,6 +69,7 @@
             // 
             txtHoTen.Location = new Point(330, 127);
             txtHoTen.Name = "txtHoTen";
+            txtHoTen.ReadOnly = true;
             txtHoTen.Size = new Size(250, 27);
             txtHoTen.TabIndex = 3;
             // 
@@ -99,7 +93,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
-            label1.ForeColor = Color.Crimson;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(207, 23);
             label1.Name = "label1";
             label1.Size = new Size(352, 41);
@@ -187,11 +181,20 @@
             ColCaLam.Name = "ColCaLam";
             ColCaLam.Width = 125;
             // 
+            // cboMaNV
+            // 
+            cboMaNV.FormattingEnabled = true;
+            cboMaNV.Location = new Point(330, 89);
+            cboMaNV.Name = "cboMaNV";
+            cboMaNV.Size = new Size(250, 28);
+            cboMaNV.TabIndex = 12;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 577);
+            Controls.Add(cboMaNV);
             Controls.Add(dgvCaLam);
             Controls.Add(btnHuy);
             Controls.Add(btnDangKy);
@@ -202,7 +205,6 @@
             Controls.Add(lblNgayLam);
             Controls.Add(txtHoTen);
             Controls.Add(lblHoTen);
-            Controls.Add(txtMaNV);
             Controls.Add(lblMaNV);
             Name = "Form4";
             Text = "Form4";
@@ -215,7 +217,6 @@
         #endregion
 
         private Label lblMaNV;
-        private TextBox txtMaNV;
         private Label lblHoTen;
         private TextBox txtHoTen;
         private Label lblNgayLam;
@@ -230,5 +231,6 @@
         private DataGridViewTextBoxColumn ColHoTen;
         private DataGridViewTextBoxColumn ColNgayLam;
         private DataGridViewTextBoxColumn ColCaLam;
+        private ComboBox cboMaNV;
     }
 }

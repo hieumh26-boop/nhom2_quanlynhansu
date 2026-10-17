@@ -1,75 +1,111 @@
-﻿using Microsoft.Data.SqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Drawing;
-using System.Text;
+using Microsoft.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace nhom2_quanlynhansu
 {
     public partial class Form4 : Form
-    {        // 1. Danh sách tạm để lưu dữ liệu
-        private List<CaLamViec> danhSachCaLam = new List<CaLamViec>();
+    {
+        // Khai báo chuỗi kết nối dùng chung cho cả form
+       
 
-        // 2. Class định nghĩa cấu trúc 1 ca làm việc
-        public class CaLamViec
-        {
-            public string MaNV { get; set; }
-            public string HoTen { get; set; }
-            public DateTime NgayLam { get; set; }
-            public string Ca { get; set; }
-        }
         public Form4()
         {
             InitializeComponent();
         }
 
+        // 1. Sự kiện Load Form
         private void Form4_Load(object sender, EventArgs e)
         {
-            dtpNgayLam.Value = DateTime.Now; // Mặc định ngày hôm nay
+            dtpNgayLam.Value = DateTime.Now;
 
-            // Nạp danh sách ca làm vào ComboBox
+            // Load danh sách ca làm vào ComboBox
+            cboCaLam.Items.Clear();
             cboCaLam.Items.AddRange(new object[] {
                 "Ca Sáng (6h - 12h)",
                 "Ca Chiều (12h - 18h)",
                 "Ca Tối (18h - 22h)"
             });
-            cboCaLam.SelectedIndex = 0; // Chọn mặc định ca đầu
+            cboCaLam.SelectedIndex = 0;
 
+            // Gọi 2 hàm tải dữ liệu từ SQL
+            LoadDanhSachNhanVien();
+            LoadDanhSachCaLam();
         }
 
+        // 2. Hàm tải danh sách nhân viên vào ComboBox
+        private void LoadDanhSachNhanVien()
+        {
+            string query = "SELECT MaNV, HoTen FROM NhanVien";
+
+            using (SqlConnection conn = new SqlConnection(classchung.ketnoi))
+                
+            {
+                try
+                {
+                    conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    cboMaNV.DataSource = dt;
+                    cboMaNV.DisplayMember = "HoTen";
+                    cboMaNV.ValueMember = "MaNV";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi tải danh sách nhân viên: " + ex.Message, "Lỗi");
+                }
+            }
+        }
+
+        // 3. Hàm tải danh sách ca đã đăng ký lên DataGridView
+        private void LoadDanhSachCaLam()
+        {
+            string query = "SELECT MaNV, HoTen, NgayLam, CaLam FROM DangKyCa";
+
+            using (SqlConnection conn = new SqlConnection(classchung.ketnoi))
+            {
+                try
+                {
+                    conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    dgvCaLam.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi tải danh sách ca làm: " + ex.Message, "Lỗi");
+                }
+            }
+        }
+
+        // 4. Sự kiện nút Đăng Ký
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            string maNV = txtMaNV.Text.Trim();
-            string hoTen = txtHoTen.Text.Trim();
-            DateTime ngayLam = dtpNgayLam.Value;
-            string caLam = cboCaLam.SelectedItem?.ToString();
+            if (cboMaNV.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên!", "Cảnh báo");
+                return;
+            }
 
-            // Kiểm tra dữ liệu
-            if (string.IsNullOrEmpty(maNV))
-            {
-                MessageBox.Show("Vui lòng nhập Mã nhân viên!", "Cảnh báo");
-                txtMaNV.Focus(); return;
-            }
-            if (string.IsNullOrEmpty(hoTen))
-            {
-                MessageBox.Show("Vui lòng nhập Họ tên!", "Cảnh báo");
-                txtHoTen.Focus(); return;
-            }
-            string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True;TrustServerCertificate=True";
+            string maNV = cboMaNV.SelectedValue.ToString();
+            string hoTen = cboMaNV.Text;
+            DateTime ngayLam = dtpNgayLam.Value;
+            string caLam = cboCaLam.SelectedItem.ToString();
 
             string query = "INSERT INTO DangKyCa (MaNV, HoTen, NgayLam, CaLam) VALUES (@MaNV, @HoTen, @NgayLam, @CaLam)";
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(classchung.ketnoi))
             {
                 try
                 {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        // Dùng Parameter để tránh lỗi SQL Injection và lỗi định dạng ngày tháng
                         cmd.Parameters.AddWithValue("@MaNV", maNV);
                         cmd.Parameters.AddWithValue("@HoTen", hoTen);
                         cmd.Parameters.AddWithValue("@NgayLam", ngayLam);
@@ -81,11 +117,13 @@ namespace nhom2_quanlynhansu
                         {
                             MessageBox.Show("Đăng ký ca làm việc thành công!", "Thông báo");
 
-                            // (Tùy chọn) Xóa trắng form sau khi đăng ký thành công
-                            txtMaNV.Clear();
-                            txtHoTen.Clear();
+                            // Làm sạch form
+                            cboMaNV.SelectedIndex = -1;
                             dtpNgayLam.Value = DateTime.Now;
                             cboCaLam.SelectedIndex = 0;
+
+                            // Load lại bảng để thấy dữ liệu mới
+                            LoadDanhSachCaLam();
                         }
                         else
                         {
@@ -99,14 +137,14 @@ namespace nhom2_quanlynhansu
                 }
             }
         }
+
+        // 5. Sự kiện nút Hủy
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            txtMaNV.Clear();
-            txtHoTen.Clear();
-            cboCaLam.SelectedIndex = 0;
+            cboMaNV.SelectedIndex = -1;
             dtpNgayLam.Value = DateTime.Now;
+            cboCaLam.SelectedIndex = 0;
             this.Close();
-
         }
     }
 }
