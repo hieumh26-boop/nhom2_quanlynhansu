@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
@@ -37,6 +37,7 @@
             label4 = new Label();
             label3 = new Label();
             panelThongTin = new Panel();
+            txtMaCa = new TextBox();
             label6 = new Label();
             btnLamMoi = new Button();
             btnXoa = new Button();
@@ -65,7 +66,6 @@
             colTrangThai = new DataGridViewTextBoxColumn();
             colHanhDong = new DataGridViewTextBoxColumn();
             label12 = new Label();
-            txtMaCa = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panelThongTin.SuspendLayout();
@@ -160,6 +160,13 @@
             panelThongTin.Name = "panelThongTin";
             panelThongTin.Size = new Size(1127, 315);
             panelThongTin.TabIndex = 4;
+            // 
+            // txtMaCa
+            // 
+            txtMaCa.Location = new Point(130, 52);
+            txtMaCa.Name = "txtMaCa";
+            txtMaCa.Size = new Size(250, 27);
+            txtMaCa.TabIndex = 19;
             // 
             // label6
             // 
@@ -337,24 +344,24 @@
             // 
             dgvCaLamViec.BackgroundColor = SystemColors.Control;
             dgvCaLamViec.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(128, 255, 255);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvCaLamViec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(128, 255, 255);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCaLamViec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCaLamViec.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCaLamViec.Columns.AddRange(new DataGridViewColumn[] { cloSTT, colMaCa, colTenCa, colGioBatDau, colGioKetThuc, colThoiLuongNghi, colMota, colTrangThai, colHanhDong });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvCaLamViec.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvCaLamViec.DefaultCellStyle = dataGridViewCellStyle2;
             dgvCaLamViec.Enabled = false;
             dgvCaLamViec.GridColor = Color.FromArgb(224, 224, 224);
             dgvCaLamViec.Location = new Point(3, 39);
@@ -439,13 +446,6 @@
             label12.TabIndex = 0;
             label12.Text = "Danh Sách Ca Làm Việc";
             // 
-            // txtMaCa
-            // 
-            txtMaCa.Location = new Point(130, 52);
-            txtMaCa.Name = "txtMaCa";
-            txtMaCa.Size = new Size(250, 27);
-            txtMaCa.TabIndex = 19;
-            // 
             // formcauhinhcalamviec
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -459,7 +459,7 @@
             Controls.Add(pictureBox1);
             Name = "formcauhinhcalamviec";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "formcauhinhcalamviec";
+            Text = "  ";
             Load += formcauhinhcalamviec_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
