@@ -8,66 +8,54 @@ namespace nhom2_quanlynhansu
 {
 	public partial class FormQLHS : Form
 	{
-		// Chuỗi kết nối SQL Server giống Form4
-		private string connectionString =
-			@"Data Source=100.125.54.43,1433;
-              Initial Catalog=qlns;
-              User ID=TEN_DANG_NHAP;
-              Password=MAT_KHAU;
-              TrustServerCertificate=True;";
 
 		public FormQLHS()
 		{
 			InitializeComponent();
 		}
 
-		// Khi mở Form2
-		private void form2_Load(object sender, EventArgs e)
+		private void KhoaThongTin(bool khoa)
 		{
-			this.WindowState = FormWindowState.Maximized;
+			// Các thông tin được phép chỉnh sửa
+			txtHoTen.ReadOnly = khoa;
+			txtSDT.ReadOnly = khoa;
+			txtCCCD.ReadOnly = khoa;
+			txtSoTaiKhoan.ReadOnly = khoa;
 
-			KhoaThongTin(true);
-			CauHinhBangLich();
+			dtpNgaySinh.Enabled = !khoa;
+			rdoNam.Enabled = !khoa;
+			rdoNu.Enabled = !khoa;
+			rdoFullTime.Enabled = !khoa;
+			rdoPartTime.Enabled = !khoa;
 
-			// Đổi NV001 thành mã nhân viên thực tế
-			LoadNhanVien("NV001");
-		}
-
-		// Cấu hình bảng lịch làm việc
-		private void CauHinhBangLich()
-		{
-			dgvLichLamViec.Columns.Clear();
-
-			dgvLichLamViec.Columns.Add("Thu", "Thứ");
-			dgvLichLamViec.Columns.Add("CaLam", "Ca làm");
-			dgvLichLamViec.Columns.Add("ThoiGian", "Thời gian");
-
-			dgvLichLamViec.AutoSizeColumnsMode =
-				DataGridViewAutoSizeColumnsMode.Fill;
-
-			dgvLichLamViec.AllowUserToAddRows = false;
-			dgvLichLamViec.ReadOnly = true;
+			// Các thông tin chỉ được xem, không được sửa
+			txtMaNV.ReadOnly = true;
+			txtVaiTro.ReadOnly = true;
+			txtCoSo.ReadOnly = true;
+			txtMaCoSo.ReadOnly = true;
 		}
 
 		// Lấy thông tin nhân viên từ SQL
 		private void LoadNhanVien(string maNV)
 		{
 			string sql = @"
-                SELECT MaNhanVien, HoTen, SDT, CCCD,
-                       STK, HinhThucLamViec, MaCoSo, VaiTro
+                SELECT MaNhanVien, HoTen, SDT, CCCD, STK,
+                       HinhThucLamViec, MaCoSo, TenVaiTro,
+                       NgaySinh, GioiTinh
                 FROM dbo.NhanVien
                 WHERE MaNhanVien = @MaNV";
 
 			try
 			{
-				using (SqlConnection conn =
-					new SqlConnection(connectionString))
-				using (SqlCommand cmd = new SqlCommand(sql, conn))
+				using (SqlConnection kn =
+					new SqlConnection(classchung.ketnoi))
+				using (SqlCommand cmd = new SqlCommand(sql, kn))
 				{
-					cmd.Parameters.Add("@MaNV", SqlDbType.NVarChar, 50)
-								  .Value = maNV;
+					cmd.Parameters.Add(
+						"@MaNV", SqlDbType.Int).Value =
+						int.Parse(maNV);
 
-					conn.Open();
+					kn.Open();
 
 					using (SqlDataReader reader = cmd.ExecuteReader())
 					{
@@ -92,62 +80,87 @@ namespace nhom2_quanlynhansu
 								reader["MaCoSo"].ToString();
 
 							txtVaiTro.Text =
-								reader["VaiTro"].ToString();
+								reader["TenVaiTro"].ToString();
 
-							// Bảng hiện tại có MaCoSo,
-							// chưa xác định có cột tên cơ sở hay không.
+							// Cơ sở đang làm: hiện mã cơ sở
 							txtCoSo.Text =
 								reader["MaCoSo"].ToString();
 
+							if (reader["NgaySinh"] != DBNull.Value)
+							{
+								dtpNgaySinh.Value =
+									Convert.ToDateTime(
+										reader["NgaySinh"]);
+							}
+
 							string hinhThuc =
-								reader["HinhThucLamViec"]?.ToString() ?? "";
+								reader["HinhThucLamViec"]
+								.ToString() ?? "";
 
 							rdoFullTime.Checked =
-								hinhThuc == "FullTime";
+								hinhThuc.Equals(
+									"fulltime",
+									StringComparison.OrdinalIgnoreCase);
 
 							rdoPartTime.Checked =
-								hinhThuc == "PartTime";
+								hinhThuc.Equals(
+									"parttime",
+									StringComparison.OrdinalIgnoreCase);
+
+							if (reader["GioiTinh"] != DBNull.Value)
+							{
+								int gioiTinh =
+									Convert.ToInt32(
+										reader["GioiTinh"]);
+
+								rdoNam.Checked = gioiTinh == 1;
+								rdoNu.Checked = gioiTinh == 0;
+							}
 						}
 						else
 						{
 							MessageBox.Show(
-								"Không tìm thấy nhân viên " + maNV);
+								"Không tìm thấy nhân viên có mã " + maNV);
+							return;
 						}
 					}
 				}
 
-				// Tải lịch làm việc của nhân viên
-				LoadLichLamViec(maNV);
+				// Nạp lương của nhân viên
+				LoadBangLuong(maNV);
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(
-					"Lỗi tải dữ liệu SQL: " + ex.Message,
+					"Lỗi tải thông tin: " + ex.Message,
 					"Lỗi",
 					MessageBoxButtons.OK,
 					MessageBoxIcon.Error);
 			}
 		}
 
-		// Tải lịch làm từ bảng DangKyCa của Form4
-		private void LoadLichLamViec(string maNV)
+		// Lấy dữ liệu từ bảng BangLuong
+		private void LoadBangLuong(string maNV)
 		{
 			string sql = @"
-                SELECT NgayLam, CaLam
-                FROM dbo.DangKyCa
-                WHERE MaNV = @MaNV
-                ORDER BY NgayLam";
+                SELECT MaPhieuLuong,
+                       [Luong/Thang],
+                       TienThuong,
+                       TongTienPhat
+                FROM dbo.BangLuong
+                WHERE MaNhanVien = @MaNV";
 
 			try
 			{
-				using (SqlConnection conn =
-					new SqlConnection(connectionString))
-				using (SqlCommand cmd = new SqlCommand(sql, conn))
+				using (SqlConnection kn =
+					new SqlConnection(classchung.ketnoi))
+				using (SqlCommand cmd = new SqlCommand(sql, kn))
 				{
-					cmd.Parameters.Add("@MaNV", SqlDbType.NVarChar, 20)
-								  .Value = maNV;
+					cmd.Parameters.Add(
+						"@MaNV", SqlDbType.Int).Value =
+						int.Parse(maNV);
 
-					conn.Open();
+					kn.Open();
 
 					using (SqlDataReader reader = cmd.ExecuteReader())
 					{
@@ -155,58 +168,76 @@ namespace nhom2_quanlynhansu
 
 						while (reader.Read())
 						{
-							DateTime ngay =
-								Convert.ToDateTime(reader["NgayLam"]);
-
-							string ca = reader["CaLam"]?.ToString() ?? "";
-
 							dgvLichLamViec.Rows.Add(
-                         ngay.ToString("dddd"),
-                         ca ?? "",
-                         ngay.ToString("dd/MM/yyyy"));
+								reader["MaPhieuLuong"],
+								reader["Luong/Thang"],
+								reader["TienThuong"],
+								reader["TongTienPhat"]);
 						}
 					}
 				}
 			}
-			catch (SqlException ex)
+			catch (Exception ex)
 			{
 				MessageBox.Show(
-					"Không tải được lịch làm việc. " +
-					"Kiểm tra bảng dbo.DangKyCa.\n" + ex.Message,
-					"Thông báo");
+					"Lỗi tải bảng lương: " + ex.Message);
 			}
 		}
-
-		// Khóa hoặc mở khóa các ô nhập
-		private void KhoaThongTin(bool khoa)
+		// Khi mở form
+		private void form2_Load(object sender, EventArgs e)
 		{
-			txtMaNV.ReadOnly = true;
+			this.WindowState = FormWindowState.Maximized;
 
-			txtHoTen.ReadOnly = khoa;
-			txtVaiTro.ReadOnly = khoa;
-			txtSDT.ReadOnly = khoa;
-			txtCCCD.ReadOnly = khoa;
-			txtSoTaiKhoan.ReadOnly = khoa;
-			txtMaCoSo.ReadOnly = khoa;
-			txtCoSo.ReadOnly = true;
+			btnLuu.Visible = false; // Ẩn nút Lưu
 
-			dtpNgaySinh.Enabled = !khoa;
-			rdoNam.Enabled = !khoa;
-			rdoNu.Enabled = !khoa;
-			rdoFullTime.Enabled = !khoa;
-			rdoPartTime.Enabled = !khoa;
+			CauHinhBangLuong();
+			KhoaThongTin(true);
+
+			// Đổi số 2 thành mã nhân viên cần xem
+			LoadNhanVien("5");
+		}
+
+		// Cấu hình bảng bên phải để hiển thị lương
+		private void CauHinhBangLuong()
+		{
+			dgvLichLamViec.Columns.Clear();
+
+			dgvLichLamViec.Columns.Add(
+				"MaPhieuLuong", "Mã phiếu lương");
+
+			dgvLichLamViec.Columns.Add(
+				"LuongThang", "Lương/tháng");
+
+			dgvLichLamViec.Columns.Add(
+				"TienThuong", "Tiền thưởng");
+
+			dgvLichLamViec.Columns.Add(
+				"TongTienPhat", "Tổng tiền phạt");
+
+			dgvLichLamViec.AutoSizeColumnsMode =
+				DataGridViewAutoSizeColumnsMode.Fill;
+
+			dgvLichLamViec.AllowUserToAddRows = false;
+			dgvLichLamViec.ReadOnly = true;
+			dgvLichLamViec.SelectionMode =
+				DataGridViewSelectionMode.FullRowSelect;
 		}
 
 		// Nút Chỉnh sửa
 		private void btnChinhSua_Click(object sender, EventArgs e)
 		{
 			KhoaThongTin(false);
-			MessageBox.Show("Bạn có thể chỉnh sửa thông tin.");
+			MessageBox.Show("Bạn có thể chỉnh sửa thông tin nhân viên.");
+
+			btnLuu.Visible = true; // Hiện nút Lưu
+
+			KhoaThongTin(false); // Cho phép sửa thông tin
 		}
 
 		// Nút Lưu thay đổi
 		private void btnLuuThayDoi_Click(object sender, EventArgs e)
 		{
+			MessageBox.Show("tttt");
 			if (string.IsNullOrWhiteSpace(txtHoTen.Text))
 			{
 				MessageBox.Show("Vui lòng nhập họ tên!");
@@ -214,8 +245,36 @@ namespace nhom2_quanlynhansu
 				return;
 			}
 
+			if (!int.TryParse(txtMaNV.Text, out int maNV))
+			{
+				MessageBox.Show("Mã nhân viên phải là số nguyên!");
+				return;
+			}
+
+			if (!int.TryParse(txtMaCoSo.Text, out int maCoSo))
+			{
+				MessageBox.Show("Mã cơ sở phải là số nguyên!");
+				txtMaCoSo.Focus();
+				return;
+			}
+
+			if (!rdoNam.Checked && !rdoNu.Checked)
+			{
+				MessageBox.Show("Vui lòng chọn giới tính!");
+				return;
+			}
+
+			if (!rdoFullTime.Checked && !rdoPartTime.Checked)
+			{
+				MessageBox.Show("Vui lòng chọn hình thức làm việc!");
+				return;
+			}
+
+			int gioiTinh = rdoNam.Checked ? 1 : 0;
+
 			string hinhThuc = rdoFullTime.Checked
-				? "FullTime" : "PartTime";
+				? "fulltime"
+				: "parttime";
 
 			string sql = @"
                 UPDATE dbo.NhanVien
@@ -225,51 +284,67 @@ namespace nhom2_quanlynhansu
                     STK = @STK,
                     HinhThucLamViec = @HinhThuc,
                     MaCoSo = @MaCoSo,
-                    VaiTro = @VaiTro
+                    TenVaiTro = @TenVaiTro,
+                    NgaySinh = @NgaySinh,
+                    GioiTinh = @GioiTinh
                 WHERE MaNhanVien = @MaNV";
 
 			try
 			{
-				using (SqlConnection conn =
-					new SqlConnection(connectionString))
-				using (SqlCommand cmd = new SqlCommand(sql, conn))
+				using (SqlConnection kn =
+					new SqlConnection(classchung.ketnoi))
+				using (SqlCommand cmd = new SqlCommand(sql, kn))
 				{
-					cmd.Parameters.Add("@MaNV", SqlDbType.NVarChar, 50)
-								  .Value = txtMaNV.Text.Trim();
+					cmd.Parameters.Add(
+						"@MaNV", SqlDbType.Int).Value = maNV;
 
-					cmd.Parameters.AddWithValue(
-						"@HoTen", txtHoTen.Text.Trim());
+					cmd.Parameters.Add(
+						"@HoTen", SqlDbType.NVarChar, 100).Value =
+						txtHoTen.Text.Trim();
 
-					cmd.Parameters.AddWithValue(
-						"@SDT", txtSDT.Text.Trim());
+					cmd.Parameters.Add(
+						"@SDT", SqlDbType.NVarChar, 20).Value =
+						txtSDT.Text.Trim();
 
-					cmd.Parameters.AddWithValue(
-						"@CCCD", txtCCCD.Text.Trim());
+					cmd.Parameters.Add(
+						"@CCCD", SqlDbType.NVarChar, 20).Value =
+						txtCCCD.Text.Trim();
 
-					cmd.Parameters.AddWithValue(
-						"@STK", txtSoTaiKhoan.Text.Trim());
+					cmd.Parameters.Add(
+						"@STK", SqlDbType.NVarChar, 50).Value =
+						txtSoTaiKhoan.Text.Trim();
 
-					cmd.Parameters.AddWithValue(
-						"@HinhThuc", hinhThuc);
+					cmd.Parameters.Add(
+						"@HinhThuc", SqlDbType.NVarChar, 30).Value =
+						hinhThuc;
 
-					cmd.Parameters.AddWithValue(
-						"@MaCoSo", txtMaCoSo.Text.Trim());
+					cmd.Parameters.Add(
+						"@MaCoSo", SqlDbType.Int).Value = maCoSo;
 
-					cmd.Parameters.AddWithValue(
-						"@VaiTro", txtVaiTro.Text.Trim());
+					cmd.Parameters.Add(
+						"@TenVaiTro", SqlDbType.NVarChar, 100).Value =
+						txtVaiTro.Text.Trim();
 
-					conn.Open();
+					cmd.Parameters.Add(
+						"@NgaySinh", SqlDbType.Date).Value =
+						dtpNgaySinh.Value.Date;
+
+					cmd.Parameters.Add(
+						"@GioiTinh", SqlDbType.Int).Value =
+						gioiTinh;
+
+					kn.Open();
 
 					int rows = cmd.ExecuteNonQuery();
 
 					if (rows > 0)
 					{
 						MessageBox.Show(
-							"Cập nhật nhân viên thành công!");
+							"Lưu thông tin nhân viên thành công!");
 
 						KhoaThongTin(true);
 
-						LoadNhanVien(txtMaNV.Text.Trim());
+						LoadNhanVien(maNV.ToString());
 					}
 					else
 					{
@@ -281,30 +356,65 @@ namespace nhom2_quanlynhansu
 			catch (Exception ex)
 			{
 				MessageBox.Show(
-					"Lỗi lưu dữ liệu: " + ex.Message);
+					"Lỗi lưu dữ liệu SQL: " + ex.Message);
 			}
+			MessageBox.Show("Lưu thay đổi thành công!");
+
+			btnLuu.Visible = false;
+			KhoaThongTin(true);
 		}
+
 
 		// Nút Xem bảng lương
 		private void btnXemBangLuong_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show(
-				"Mã nhân viên: " + txtMaNV.Text +
-				"\nChức năng bảng lương cần kết nối bảng BangLuong.");
+			if (string.IsNullOrWhiteSpace(txtMaNV.Text))
+			{
+				MessageBox.Show("Chưa có mã nhân viên!");
+				return;
+			}
+
+			LoadBangLuong(txtMaNV.Text.Trim());
 		}
 
 		// Nút Xem phiếu lương chi tiết
 		private void btnXemPhieuLuong_Click(object sender, EventArgs e)
 		{
+			if (dgvLichLamViec.CurrentRow == null ||
+				dgvLichLamViec.CurrentRow.IsNewRow)
+			{
+				MessageBox.Show("Vui lòng chọn một phiếu lương!");
+				return;
+			}
+
+			DataGridViewRow row = dgvLichLamViec.CurrentRow;
+
 			MessageBox.Show(
 				"Mã nhân viên: " + txtMaNV.Text +
-				"\nChức năng phiếu lương cần xác định cấu trúc bảng lương.");
+				"\nHọ tên: " + txtHoTen.Text +
+				"\nMã phiếu lương: " + row.Cells["MaPhieuLuong"].Value +
+				"\nLương/tháng: " + row.Cells["LuongThang"].Value +
+				"\nTiền thưởng: " + row.Cells["TienThuong"].Value +
+				"\nTổng tiền phạt: " + row.Cells["TongTienPhat"].Value,
+				"Chi tiết phiếu lương");
 		}
 
-		// Khi thay đổi kích thước form
 		private void form2_Resize(object sender, EventArgs e)
 		{
-			// Giao diện tự co giãn nếu đã dùng Dock/Anchor.
+			// Giao diện tự co giãn nếu đã cấu hình Dock/Anchor.
+		}
+
+		
+
+		private void dgvLichLamViec_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
+		private void formquanlyhoso_Load(object sender, EventArgs e)
+		{
+			txtMaNV.Text = PhienDangNhap.MaNhanVien.ToString();
+			
 		}
 	}
 }

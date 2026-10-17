@@ -35,26 +35,27 @@
 			colThu = new DataGridViewTextBoxColumn();
 			colCalam = new DataGridViewTextBoxColumn();
 			colThoigian = new DataGridViewTextBoxColumn();
+			btnLuu = new Button();
 			label9 = new Label();
 			panel1 = new Panel();
 			groupBox1 = new GroupBox();
-			dtpNgaySinh = new DateTimePicker();
+			grpHinhThuc = new GroupBox();
+			rdoFullTime = new RadioButton();
+			rdoPartTime = new RadioButton();
+			grpGioiTinh = new GroupBox();
+			rdoNam = new RadioButton();
 			rdoNu = new RadioButton();
-			btnLuu = new Button();
+			txtSoTaiKhoan = new TextBox();
+			dtpNgaySinh = new DateTimePicker();
 			btnChinhSua = new Button();
 			txtMaCoSo = new TextBox();
 			txtMaNV = new TextBox();
 			label12 = new Label();
 			txtCCCD = new TextBox();
-			rdoPartTime = new RadioButton();
 			txtSDT = new TextBox();
 			label11 = new Label();
-			rdoFullTime = new RadioButton();
-			rdoNam = new RadioButton();
 			label10 = new Label();
-			txtHinhThuc = new Label();
 			label6 = new Label();
-			label7 = new Label();
 			label5 = new Label();
 			txtCoSo = new TextBox();
 			txtVaiTro = new TextBox();
@@ -64,11 +65,12 @@
 			label2 = new Label();
 			label1 = new Label();
 			tableLayoutPanel1 = new TableLayoutPanel();
-			txtSoTaiKhoan = new TextBox();
 			groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dgvLichLamViec).BeginInit();
 			panel1.SuspendLayout();
 			groupBox1.SuspendLayout();
+			grpHinhThuc.SuspendLayout();
+			grpGioiTinh.SuspendLayout();
 			SuspendLayout();
 			// 
 			// groupBox2
@@ -82,7 +84,7 @@
 			groupBox2.ForeColor = Color.Black;
 			groupBox2.Location = new Point(588, 68);
 			groupBox2.Name = "groupBox2";
-			groupBox2.Size = new Size(575, 594);
+			groupBox2.Size = new Size(575, 742);
 			groupBox2.TabIndex = 1;
 			groupBox2.TabStop = false;
 			groupBox2.Text = "Lịch làm việc và lương ";
@@ -121,8 +123,9 @@
 			dgvLichLamViec.Location = new Point(27, 76);
 			dgvLichLamViec.Name = "dgvLichLamViec";
 			dgvLichLamViec.RowHeadersWidth = 51;
-			dgvLichLamViec.Size = new Size(428, 230);
+			dgvLichLamViec.Size = new Size(427, 230);
 			dgvLichLamViec.TabIndex = 0;
+			dgvLichLamViec.CellContentClick += dgvLichLamViec_CellContentClick;
 			// 
 			// colThu
 			// 
@@ -144,6 +147,22 @@
 			colThoigian.MinimumWidth = 6;
 			colThoigian.Name = "colThoigian";
 			colThoigian.Width = 125;
+			// 
+			// btnLuu
+			// 
+			btnLuu.BackColor = Color.FromArgb(0, 0, 192);
+			btnLuu.Cursor = Cursors.VSplit;
+			btnLuu.FlatStyle = FlatStyle.Popup;
+			btnLuu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+			btnLuu.ForeColor = Color.White;
+			btnLuu.Location = new Point(343, 676);
+			btnLuu.Name = "btnLuu";
+			btnLuu.Size = new Size(156, 51);
+			btnLuu.TabIndex = 21;
+			btnLuu.Text = "Lưu thay đổi";
+			btnLuu.UseVisualStyleBackColor = false;
+			btnLuu.Visible = false;
+			btnLuu.Click += btnLuuThayDoi_Click;
 			// 
 			// label9
 			// 
@@ -171,24 +190,20 @@
 			// 
 			groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
 			groupBox1.BackColor = SystemColors.Control;
+			groupBox1.Controls.Add(grpHinhThuc);
+			groupBox1.Controls.Add(grpGioiTinh);
 			groupBox1.Controls.Add(txtSoTaiKhoan);
 			groupBox1.Controls.Add(dtpNgaySinh);
-			groupBox1.Controls.Add(rdoNu);
 			groupBox1.Controls.Add(btnLuu);
 			groupBox1.Controls.Add(btnChinhSua);
 			groupBox1.Controls.Add(txtMaCoSo);
 			groupBox1.Controls.Add(txtMaNV);
 			groupBox1.Controls.Add(label12);
 			groupBox1.Controls.Add(txtCCCD);
-			groupBox1.Controls.Add(rdoPartTime);
 			groupBox1.Controls.Add(txtSDT);
 			groupBox1.Controls.Add(label11);
-			groupBox1.Controls.Add(rdoFullTime);
-			groupBox1.Controls.Add(rdoNam);
 			groupBox1.Controls.Add(label10);
-			groupBox1.Controls.Add(txtHinhThuc);
 			groupBox1.Controls.Add(label6);
-			groupBox1.Controls.Add(label7);
 			groupBox1.Controls.Add(label5);
 			groupBox1.Controls.Add(txtCoSo);
 			groupBox1.Controls.Add(txtVaiTro);
@@ -201,10 +216,91 @@
 			groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
 			groupBox1.Location = new Point(0, 68);
 			groupBox1.Name = "groupBox1";
-			groupBox1.Size = new Size(582, 594);
+			groupBox1.Size = new Size(582, 742);
 			groupBox1.TabIndex = 0;
 			groupBox1.TabStop = false;
 			groupBox1.Text = "Thông tin cá nhân";
+			// 
+			// grpHinhThuc
+			// 
+			grpHinhThuc.Controls.Add(rdoFullTime);
+			grpHinhThuc.Controls.Add(rdoPartTime);
+			grpHinhThuc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+			grpHinhThuc.Location = new Point(21, 535);
+			grpHinhThuc.Name = "grpHinhThuc";
+			grpHinhThuc.Size = new Size(430, 101);
+			grpHinhThuc.TabIndex = 4;
+			grpHinhThuc.TabStop = false;
+			grpHinhThuc.Text = "Hình thức làm việc";
+			// 
+			// rdoFullTime
+			// 
+			rdoFullTime.AutoSize = true;
+			rdoFullTime.Font = new Font("Segoe UI", 12F);
+			rdoFullTime.Location = new Point(166, 62);
+			rdoFullTime.Name = "rdoFullTime";
+			rdoFullTime.Size = new Size(106, 32);
+			rdoFullTime.TabIndex = 16;
+			rdoFullTime.TabStop = true;
+			rdoFullTime.Text = "FullTime";
+			rdoFullTime.UseVisualStyleBackColor = true;
+			// 
+			// rdoPartTime
+			// 
+			rdoPartTime.AutoSize = true;
+			rdoPartTime.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+			rdoPartTime.Location = new Point(304, 62);
+			rdoPartTime.Name = "rdoPartTime";
+			rdoPartTime.Size = new Size(109, 32);
+			rdoPartTime.TabIndex = 18;
+			rdoPartTime.TabStop = true;
+			rdoPartTime.Text = "PartTime";
+			rdoPartTime.UseVisualStyleBackColor = true;
+			// 
+			// grpGioiTinh
+			// 
+			grpGioiTinh.Controls.Add(rdoNam);
+			grpGioiTinh.Controls.Add(rdoNu);
+			grpGioiTinh.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+			grpGioiTinh.Location = new Point(22, 441);
+			grpGioiTinh.Name = "grpGioiTinh";
+			grpGioiTinh.Size = new Size(429, 88);
+			grpGioiTinh.TabIndex = 3;
+			grpGioiTinh.TabStop = false;
+			grpGioiTinh.Text = "Giới tính";
+			// 
+			// rdoNam
+			// 
+			rdoNam.AutoSize = true;
+			rdoNam.Font = new Font("Times New Roman", 12F);
+			rdoNam.ForeColor = Color.Black;
+			rdoNam.Location = new Point(165, 56);
+			rdoNam.Name = "rdoNam";
+			rdoNam.Size = new Size(73, 26);
+			rdoNam.TabIndex = 14;
+			rdoNam.TabStop = true;
+			rdoNam.Text = "Nam ";
+			rdoNam.UseVisualStyleBackColor = true;
+			// 
+			// rdoNu
+			// 
+			rdoNu.AutoSize = true;
+			rdoNu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
+			rdoNu.Location = new Point(303, 50);
+			rdoNu.Name = "rdoNu";
+			rdoNu.Size = new Size(60, 32);
+			rdoNu.TabIndex = 22;
+			rdoNu.TabStop = true;
+			rdoNu.Text = "Nữ";
+			rdoNu.UseVisualStyleBackColor = true;
+			// 
+			// txtSoTaiKhoan
+			// 
+			txtSoTaiKhoan.Location = new Point(201, 268);
+			txtSoTaiKhoan.Multiline = true;
+			txtSoTaiKhoan.Name = "txtSoTaiKhoan";
+			txtSoTaiKhoan.Size = new Size(194, 34);
+			txtSoTaiKhoan.TabIndex = 24;
 			// 
 			// dtpNgaySinh
 			// 
@@ -214,58 +310,36 @@
 			dtpNgaySinh.Size = new Size(250, 34);
 			dtpNgaySinh.TabIndex = 23;
 			// 
-			// rdoNu
-			// 
-			rdoNu.AutoSize = true;
-			rdoNu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-			rdoNu.Location = new Point(327, 442);
-			rdoNu.Name = "rdoNu";
-			rdoNu.Size = new Size(60, 32);
-			rdoNu.TabIndex = 22;
-			rdoNu.TabStop = true;
-			rdoNu.Text = "Nữ";
-			rdoNu.UseVisualStyleBackColor = true;
-			// 
-			// btnLuu
-			// 
-			btnLuu.BackColor = Color.FromArgb(0, 0, 192);
-			btnLuu.Enabled = false;
-			btnLuu.FlatStyle = FlatStyle.Popup;
-			btnLuu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-			btnLuu.ForeColor = Color.White;
-			btnLuu.Location = new Point(280, 539);
-			btnLuu.Name = "btnLuu";
-			btnLuu.Size = new Size(156, 51);
-			btnLuu.TabIndex = 21;
-			btnLuu.Text = "Lưu thay đổi";
-			btnLuu.UseVisualStyleBackColor = false;
-			// 
 			// btnChinhSua
 			// 
 			btnChinhSua.BackColor = Color.White;
 			btnChinhSua.FlatStyle = FlatStyle.Popup;
 			btnChinhSua.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
 			btnChinhSua.ForeColor = Color.FromArgb(0, 0, 192);
-			btnChinhSua.Location = new Point(60, 539);
+			btnChinhSua.Location = new Point(84, 676);
 			btnChinhSua.Name = "btnChinhSua";
 			btnChinhSua.Size = new Size(121, 51);
 			btnChinhSua.TabIndex = 20;
 			btnChinhSua.Text = "Chỉnh sửa";
 			btnChinhSua.UseVisualStyleBackColor = false;
+			btnChinhSua.Click += btnChinhSua_Click;
 			// 
 			// txtMaCoSo
 			// 
 			txtMaCoSo.Location = new Point(201, 308);
+			txtMaCoSo.Multiline = true;
 			txtMaCoSo.Name = "txtMaCoSo";
 			txtMaCoSo.Size = new Size(194, 34);
 			txtMaCoSo.TabIndex = 9;
 			// 
 			// txtMaNV
 			// 
-			txtMaNV.Location = new Point(201, 36);
+			txtMaNV.Location = new Point(201, 39);
+			txtMaNV.Multiline = true;
 			txtMaNV.Name = "txtMaNV";
 			txtMaNV.Size = new Size(194, 34);
 			txtMaNV.TabIndex = 19;
+//			txtMaNV.TextChanged += txtMaNV_TextChanged;
 			// 
 			// label12
 			// 
@@ -281,25 +355,15 @@
 			// txtCCCD
 			// 
 			txtCCCD.Location = new Point(201, 218);
+			txtCCCD.Multiline = true;
 			txtCCCD.Name = "txtCCCD";
 			txtCCCD.Size = new Size(194, 34);
 			txtCCCD.TabIndex = 8;
 			// 
-			// rdoPartTime
-			// 
-			rdoPartTime.AutoSize = true;
-			rdoPartTime.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-			rdoPartTime.Location = new Point(327, 486);
-			rdoPartTime.Name = "rdoPartTime";
-			rdoPartTime.Size = new Size(109, 32);
-			rdoPartTime.TabIndex = 18;
-			rdoPartTime.TabStop = true;
-			rdoPartTime.Text = "PartTime";
-			rdoPartTime.UseVisualStyleBackColor = true;
-			// 
 			// txtSDT
 			// 
 			txtSDT.Location = new Point(201, 169);
+			txtSDT.Multiline = true;
 			txtSDT.Name = "txtSDT";
 			txtSDT.Size = new Size(194, 34);
 			txtSDT.TabIndex = 7;
@@ -315,31 +379,6 @@
 			label11.TabIndex = 5;
 			label11.Text = "CCCD:";
 			// 
-			// rdoFullTime
-			// 
-			rdoFullTime.AutoSize = true;
-			rdoFullTime.Font = new Font("Segoe UI", 12F);
-			rdoFullTime.Location = new Point(201, 486);
-			rdoFullTime.Name = "rdoFullTime";
-			rdoFullTime.Size = new Size(106, 32);
-			rdoFullTime.TabIndex = 16;
-			rdoFullTime.TabStop = true;
-			rdoFullTime.Text = "FullTime";
-			rdoFullTime.UseVisualStyleBackColor = true;
-			// 
-			// rdoNam
-			// 
-			rdoNam.AutoSize = true;
-			rdoNam.Font = new Font("Times New Roman", 12F);
-			rdoNam.ForeColor = Color.Black;
-			rdoNam.Location = new Point(201, 448);
-			rdoNam.Name = "rdoNam";
-			rdoNam.Size = new Size(73, 26);
-			rdoNam.TabIndex = 14;
-			rdoNam.TabStop = true;
-			rdoNam.Text = "Nam ";
-			rdoNam.UseVisualStyleBackColor = true;
-			// 
 			// label10
 			// 
 			label10.AutoSize = true;
@@ -351,17 +390,6 @@
 			label10.TabIndex = 4;
 			label10.Text = "Số điện thoại:";
 			// 
-			// txtHinhThuc
-			// 
-			txtHinhThuc.AutoSize = true;
-			txtHinhThuc.Font = new Font("Times New Roman", 12F);
-			txtHinhThuc.ForeColor = Color.Black;
-			txtHinhThuc.Location = new Point(29, 494);
-			txtHinhThuc.Name = "txtHinhThuc";
-			txtHinhThuc.Size = new Size(166, 22);
-			txtHinhThuc.TabIndex = 13;
-			txtHinhThuc.Text = "Hình thức làm việc:";
-			// 
 			// label6
 			// 
 			label6.AutoSize = true;
@@ -372,17 +400,6 @@
 			label6.Size = new Size(122, 22);
 			label6.TabIndex = 3;
 			label6.Text = "Mã nhân viên:";
-			// 
-			// label7
-			// 
-			label7.AutoSize = true;
-			label7.Font = new Font("Times New Roman", 12F);
-			label7.ForeColor = Color.Black;
-			label7.Location = new Point(29, 444);
-			label7.Name = "label7";
-			label7.Size = new Size(87, 22);
-			label7.TabIndex = 12;
-			label7.Text = "Giới tính:";
 			// 
 			// label5
 			// 
@@ -398,6 +415,7 @@
 			// txtCoSo
 			// 
 			txtCoSo.Location = new Point(201, 352);
+			txtCoSo.Multiline = true;
 			txtCoSo.Name = "txtCoSo";
 			txtCoSo.Size = new Size(194, 34);
 			txtCoSo.TabIndex = 7;
@@ -405,6 +423,7 @@
 			// txtVaiTro
 			// 
 			txtVaiTro.Location = new Point(201, 125);
+			txtVaiTro.Multiline = true;
 			txtVaiTro.Name = "txtVaiTro";
 			txtVaiTro.Size = new Size(194, 34);
 			txtVaiTro.TabIndex = 5;
@@ -412,6 +431,7 @@
 			// txtHoTen
 			// 
 			txtHoTen.Location = new Point(201, 80);
+			txtHoTen.Multiline = true;
 			txtHoTen.Name = "txtHoTen";
 			txtHoTen.Size = new Size(194, 34);
 			txtHoTen.TabIndex = 4;
@@ -475,14 +495,7 @@
 			tableLayoutPanel1.Size = new Size(1175, 909);
 			tableLayoutPanel1.TabIndex = 2;
 			// 
-			// txtSoTaiKhoan
-			// 
-			txtSoTaiKhoan.Location = new Point(201, 268);
-			txtSoTaiKhoan.Name = "txtSoTaiKhoan";
-			txtSoTaiKhoan.Size = new Size(194, 34);
-			txtSoTaiKhoan.TabIndex = 24;
-			// 
-			// form2
+			// formquanlyhoso
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
@@ -490,14 +503,19 @@
 			ClientSize = new Size(1175, 909);
 			Controls.Add(label9);
 			Controls.Add(panel1);
-			Name = "form2";
+			Name = "formquanlyhoso";
 			Text = "form2";
 			WindowState = FormWindowState.Maximized;
+			Load += formquanlyhoso_Load;
 			groupBox2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)dgvLichLamViec).EndInit();
 			panel1.ResumeLayout(false);
 			groupBox1.ResumeLayout(false);
 			groupBox1.PerformLayout();
+			grpHinhThuc.ResumeLayout(false);
+			grpHinhThuc.PerformLayout();
+			grpGioiTinh.ResumeLayout(false);
+			grpGioiTinh.PerformLayout();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -529,9 +547,7 @@
         private RadioButton radioButton2;
         private RadioButton rdoNam;
         private Label label10;
-        private Label txtHinhThuc;
         private Label label6;
-        private Label label7;
         private Label label5;
         private DateTimePicker dtpNamSinh;
         private TextBox txtCoSo;
@@ -545,5 +561,7 @@
 		private RadioButton rdoNu;
 		private DateTimePicker dtpNgaySinh;
 		private TextBox txtSoTaiKhoan;
+		private GroupBox grpHinhThuc;
+		private GroupBox grpGioiTinh;
 	}
 }
