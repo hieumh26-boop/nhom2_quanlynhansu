@@ -40,6 +40,8 @@
             btt = new Button();
             cbmkttk = new CheckBox();
             ccmkttk2 = new CheckBox();
+            tbmnv = new TextBox();
+            label6 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -126,7 +128,7 @@
             btxnttk.FlatStyle = FlatStyle.Popup;
             btxnttk.Font = new Font("Segoe UI", 10.2F);
             btxnttk.ForeColor = Color.White;
-            btxnttk.Location = new Point(443, 300);
+            btxnttk.Location = new Point(443, 343);
             btxnttk.Name = "btxnttk";
             btxnttk.Size = new Size(94, 29);
             btxnttk.TabIndex = 8;
@@ -137,7 +139,7 @@
             // btt
             // 
             btt.FlatStyle = FlatStyle.Popup;
-            btt.Location = new Point(609, 300);
+            btt.Location = new Point(609, 343);
             btt.Name = "btt";
             btt.Size = new Size(94, 29);
             btt.TabIndex = 9;
@@ -168,11 +170,32 @@
             ccmkttk2.TabIndex = 11;
             ccmkttk2.UseVisualStyleBackColor = true;
             // 
+            // tbmnv
+            // 
+            tbmnv.BorderStyle = BorderStyle.FixedSingle;
+            tbmnv.Location = new Point(443, 284);
+            tbmnv.Name = "tbmnv";
+            tbmnv.Size = new Size(260, 27);
+            tbmnv.TabIndex = 13;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Navy;
+            label6.Location = new Point(222, 279);
+            label6.Name = "label6";
+            label6.Size = new Size(215, 28);
+            label6.TabIndex = 12;
+            label6.Text = "Mã nhân viên được cấp";
+            // 
             // Formtaotaikhoancs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(tbmnv);
+            Controls.Add(label6);
             Controls.Add(ccmkttk2);
             Controls.Add(cbmkttk);
             Controls.Add(btt);
@@ -207,7 +230,7 @@
         private Button btt;
         private CheckBox cbmkttk;
         private CheckBox ccmkttk2;
-
-       
+        private TextBox tbmnv;
+        private Label label6;
     }
 }

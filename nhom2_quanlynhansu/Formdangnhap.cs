@@ -27,14 +27,14 @@ namespace nhom2_quanlynhansu
         }
         private void btdn_Click(object sender, EventArgs e)
         {
-            string csdl_nguoidung = "SELECT COUNT(*) FROM NguoiDung WHERE TenDangNhap = @tendangnhap AND MatKhau = @matkhau";// truy van SQL để kiểm tra thông tin đăng nhập
-
+             //string csdl_nguoidung = "SELECT COUNT(*) FROM NguoiDung WHERE TenDangNhap = @tdn AND MatKhau = @mak";// truy van SQL để kiểm tra thông tin đăng nhập
+            string NguoiDung = "SELECT nv.MaNhanVien,nv.HoTen, nv.SDT,nv.CCCD, nv.STK, nv.HinhThucLamViec, nv.MaCoSo, nv.TenVaiTro, nv.NgaySinh, nv.GioiTinh FROM NhanVien nv INNER JOIN NguoiDung nd ON nv.MaNhanVien = nd.MaNhanVien WHERE nd.TenDangNhap = @tdn AND nd.MatKhau = @mk ";
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
                 try
                 {
 
                     kn.Open();
-                    SqlCommand lenh = new SqlCommand(csdl_nguoidung, kn);
+                    SqlCommand lenh = new SqlCommand(NguoiDung, kn);
                     string tdn = txtdn.Text.Trim();
                     string mk = txtmk.Text.Trim();
                     if (String.IsNullOrWhiteSpace(txtdn.Text) || String.IsNullOrWhiteSpace(txtmk.Text))
@@ -44,11 +44,22 @@ namespace nhom2_quanlynhansu
                     }
                     else
                     {
-                        lenh.Parameters.AddWithValue("@tendangnhap", tdn);
-                        lenh.Parameters.AddWithValue("@matkhau", mk);
-                        int kt = (int)lenh.ExecuteScalar();// thuc thi bien "lenh"
-                        if (kt > 0)//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
+                        
+                        lenh.Parameters.AddWithValue("@tdn", tdn);
+                        lenh.Parameters.AddWithValue("@mk", mk);
+                        SqlDataReader doc = lenh.ExecuteReader();// thuc thi bien "lenh"
+
+                        if (doc.Read() )//trim loại bỏ khoảng trắng ở đầu và cuối chuỗi
                         {
+                            PhienDangNhap.MaNhanVien = Convert.ToInt32(doc["MaNhanVien"]);
+                            PhienDangNhap.HoTen = Convert.ToString(doc["HoTen"])??"";
+                            PhienDangNhap.SDT = Convert.ToString(doc["SDT"]) ?? "";
+                            PhienDangNhap.CCCD = Convert.ToString(doc["CCCD"]) ?? "";
+                            PhienDangNhap.STK = Convert.ToString(doc["STK"]) ?? "";
+                            PhienDangNhap.HinhThucLamViec = Convert.ToString(doc["HinhThucLamViec"]) ?? "";
+                            PhienDangNhap.MaCoSo = Convert.ToInt32(doc["MaCoSo"]);
+                            PhienDangNhap.NgaySinh = Convert.ToDateTime(doc["NgaySinh"]);
+                            PhienDangNhap.GioiTinh = Convert.ToString(doc["GioiTinh"]) ?? "";
                             MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.DialogResult = DialogResult.OK;
                             this.Close();
@@ -71,9 +82,11 @@ namespace nhom2_quanlynhansu
         }
         private void btttk_Click(object sender, EventArgs e)
         {
+
             Formtaotaikhoancs formttk = new Formtaotaikhoancs();
-            formttk.Show();
             this.Hide();
+            formttk.ShowDialog();
+            
         }
 
         private void Formdangnhap_FormClosing(object sender, FormClosingEventArgs e)
