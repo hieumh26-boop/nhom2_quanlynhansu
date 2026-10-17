@@ -61,6 +61,11 @@ namespace nhom2_quanlynhansu
         {
 
         }
+
+        private void formdoica_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

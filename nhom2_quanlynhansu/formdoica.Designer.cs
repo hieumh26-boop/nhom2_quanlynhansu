@@ -47,62 +47,68 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(55, 63);
             label1.Name = "label1";
-            label1.Size = new Size(97, 20);
+            label1.Size = new Size(108, 20);
             label1.TabIndex = 0;
-            label1.Text = "mã nhân viên";
+            label1.Text = "Mã Nhân Viên";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(55, 104);
             label2.Name = "label2";
-            label2.Size = new Size(58, 20);
+            label2.Size = new Size(66, 20);
             label2.TabIndex = 1;
-            label2.Text = "họ tên :";
+            label2.Text = "Họ Tên :";
             label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(55, 144);
             label3.Name = "label3";
-            label3.Size = new Size(109, 20);
+            label3.Size = new Size(119, 20);
             label3.TabIndex = 2;
-            label3.Text = "ngày muốn đổi";
+            label3.Text = "Ngày Muốn Đổi";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(55, 209);
             label4.Name = "label4";
-            label4.Size = new Size(77, 20);
+            label4.Size = new Size(87, 20);
             label4.TabIndex = 3;
-            label4.Text = "ca hiện tại";
+            label4.Text = "Ca Hiện Tại";
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(55, 177);
             label5.Name = "label5";
-            label5.Size = new Size(92, 20);
+            label5.Size = new Size(99, 20);
             label5.TabIndex = 4;
-            label5.Text = "ca muốn đổi";
+            label5.Text = "Ca Muốn Đổi";
             // 
             // label6
             // 
             label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.Location = new Point(55, 267);
             label6.Name = "label6";
-            label6.Size = new Size(42, 20);
+            label6.Size = new Size(49, 20);
             label6.TabIndex = 5;
-            label6.Text = "lý do";
+            label6.Text = "Lý Do";
             label6.Click += label6_Click;
             // 
             // txtMaNV
             // 
-            txtMaNV.Location = new Point(175, 63);
+            txtMaNV.Location = new Point(175, 56);
             txtMaNV.Name = "txtMaNV";
             txtMaNV.Size = new Size(125, 27);
             txtMaNV.TabIndex = 6;
@@ -152,6 +158,7 @@
             // 
             // btnGuidon
             // 
+            btnGuidon.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuidon.Location = new Point(104, 366);
             btnGuidon.Name = "btnGuidon";
             btnGuidon.Size = new Size(94, 29);
@@ -162,6 +169,7 @@
             // 
             // btnHuy
             // 
+            btnHuy.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHuy.Location = new Point(290, 366);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(94, 29);
@@ -191,6 +199,7 @@
             Controls.Add(label1);
             Name = "formdoica";
             Text = "formdoica";
+            Load += formdoica_Load;
             ResumeLayout(false);
             PerformLayout();
         }
