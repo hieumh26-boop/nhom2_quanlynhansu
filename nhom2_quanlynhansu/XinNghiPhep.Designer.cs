@@ -126,7 +126,7 @@
             groupBox2.Size = new Size(456, 454);
             groupBox2.TabIndex = 21;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Tạo đơn mới";
+            groupBox2.Text = "Đơn nghỉ phép";
             // 
             // button1
             // 
