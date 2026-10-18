@@ -19,5 +19,10 @@ namespace nhom2_quanlynhansu
         {
             //string  = "SELECT
         }
+
+        private void cbmnv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           // string nhanvien ="SELECT HoTen,GioiTinh,NgaySinh,SDT,CCCD,TenVaiTro,MaCoSo,"
+        }
     }
 }

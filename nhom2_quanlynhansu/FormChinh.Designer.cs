@@ -57,7 +57,7 @@
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             btpq = new Guna.UI2.WinForms.Guna2Button();
-            btbc = new Guna.UI2.WinForms.Guna2Button();
+            bttnv = new Guna.UI2.WinForms.Guna2Button();
             btqld = new Guna.UI2.WinForms.Guna2Button();
             btcht = new Guna.UI2.WinForms.Guna2Button();
             btdkc = new Guna.UI2.WinForms.Guna2Button();
@@ -77,7 +77,7 @@
             // guna2Panel1
             // 
             guna2Panel1.Controls.Add(btpq);
-            guna2Panel1.Controls.Add(btbc);
+            guna2Panel1.Controls.Add(bttnv);
             guna2Panel1.Controls.Add(btqld);
             guna2Panel1.Controls.Add(btcht);
             guna2Panel1.Controls.Add(btdkc);
@@ -116,26 +116,27 @@
             btpq.TabIndex = 2;
             btpq.Text = "Phân quyền";
             // 
-            // btbc
+            // bttnv
             // 
-            btbc.BorderRadius = 15;
-            btbc.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btbc.CheckedState.FillColor = Color.White;
-            btbc.CheckedState.ForeColor = Color.Black;
-            btbc.CustomizableEdges = customizableEdges3;
-            btbc.DisabledState.BorderColor = Color.DarkGray;
-            btbc.DisabledState.CustomBorderColor = Color.DarkGray;
-            btbc.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btbc.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btbc.FillColor = Color.MediumAquamarine;
-            btbc.Font = new Font("Segoe UI", 9F);
-            btbc.ForeColor = Color.White;
-            btbc.Location = new Point(8, 415);
-            btbc.Name = "btbc";
-            btbc.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btbc.Size = new Size(123, 45);
-            btbc.TabIndex = 0;
-            btbc.Text = "báo cáo";
+            bttnv.BorderRadius = 15;
+            bttnv.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            bttnv.CheckedState.FillColor = Color.White;
+            bttnv.CheckedState.ForeColor = Color.Black;
+            bttnv.CustomizableEdges = customizableEdges3;
+            bttnv.DisabledState.BorderColor = Color.DarkGray;
+            bttnv.DisabledState.CustomBorderColor = Color.DarkGray;
+            bttnv.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            bttnv.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            bttnv.FillColor = Color.MediumAquamarine;
+            bttnv.Font = new Font("Segoe UI", 9F);
+            bttnv.ForeColor = Color.White;
+            bttnv.Location = new Point(8, 415);
+            bttnv.Name = "bttnv";
+            bttnv.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            bttnv.Size = new Size(123, 45);
+            bttnv.TabIndex = 0;
+            bttnv.Text = "tạo nhân viên";
+            bttnv.Click += bttnv_Click;
             // 
             // btqld
             // 
@@ -368,7 +369,7 @@
         private Guna.UI2.WinForms.Guna2Button btdkc;
         private Guna.UI2.WinForms.Guna2Button btchc;
         private Guna.UI2.WinForms.Guna2Button btqlhs;
-        private Guna.UI2.WinForms.Guna2Button btbc;
+        private Guna.UI2.WinForms.Guna2Button bttnv;
         private Guna.UI2.WinForms.Guna2Button btpq;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2ImageButton btlg;

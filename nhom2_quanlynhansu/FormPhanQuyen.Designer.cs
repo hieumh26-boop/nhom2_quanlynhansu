@@ -100,6 +100,7 @@
             cbmnv.Name = "cbmnv";
             cbmnv.Size = new Size(151, 28);
             cbmnv.TabIndex = 1;
+            cbmnv.SelectedIndexChanged += cbmnv_SelectedIndexChanged;
             // 
             // guna2HtmlLabel1
             // 

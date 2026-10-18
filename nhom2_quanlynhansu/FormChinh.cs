@@ -25,7 +25,7 @@ namespace nhom2_quanlynhansu
 
         private void FormChinh_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
             {
@@ -46,7 +46,7 @@ namespace nhom2_quanlynhansu
                 this.Close();
             }
         }
-            private Form HienForm = null;
+        private Form HienForm = null;
         private void MoForm(Form FormCon)
         {
             if (HienForm != null)
@@ -68,6 +68,12 @@ namespace nhom2_quanlynhansu
         {
             MoForm(new FormQLHS());
         }
+
+        private void bttnv_Click(object sender, EventArgs e)
+        {
+            MoForm(new Formtaonhanvien());
+        }
+
     }
 }
 
