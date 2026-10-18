@@ -39,12 +39,12 @@ namespace nhom2_quanlynhansu
         private void LoadDataThongTinNhanVien()
         {
             classchung db = new classchung();
-            string sql = "SELECT nd.MaNhanVien, nv.HoTen, np.SoNgayNghiToiDa, np.SoNgayNghiConLai, pq.TenVaiTro, cs.TenCoSo " +
+            string sql = "SELECT nd.MaNhanVien, nv.HoTen, np.SoNgayNghiToiDa, np.SoNgayNghiConLai " +
                  "FROM [NhanVien] nv " +
                  "INNER JOIN [NguoiDung] nd ON nd.MaNhanVien = nv.MaNhanVien " +
                  "INNER JOIN [NghiPhep] np ON np.MaNhanVien = nv.MaNhanVien " +
-                    "INNER JOIN [PhanQuyen] pq ON pq.MaNhanVien = nv.MaNhanVien " +
-                 "INNER JOIN [CoSo] cs ON cs.MaNhanVien = nv.MaNhanVien " +
+                  //  "INNER JOIN [PhanQuyen] pq ON pq.MaNhanVien = nv.MaNhanVien " +
+                // "INNER JOIN [CoSo] cs ON cs.MaNhanVien = nv.MaNhanVien " +
                  "WHERE nd.TenDangNhap = '" + Formdangnhap.TenTaiKhoanDangNhap + "'";
             //"INNER JOIN [CoSo] cs ON cs.MaNhanVien = nv.MaNhanVien " +
             //"INNER JOIN [PhanQuyen] pq ON pq.MaNhanVien = nv.MaNhanVien " +
