@@ -40,6 +40,11 @@
 			label2 = new Label();
 			label1 = new Label();
 			groupBox2 = new GroupBox();
+			cboDieuKienPhat = new ComboBox();
+			cboLoaiPhat = new ComboBox();
+			txtMoTaPhat = new TextBox();
+			txtTienPhat = new TextBox();
+			txtTenPhat = new TextBox();
 			chkTuDong = new CheckBox();
 			label10 = new Label();
 			label9 = new Label();
@@ -57,11 +62,6 @@
 			btnSua = new Button();
 			btnXoa = new Button();
 			btnLamMoi = new Button();
-			txtTenPhat = new TextBox();
-			txtTienPhat = new TextBox();
-			txtMoTaPhat = new TextBox();
-			cboLoaiPhat = new ComboBox();
-			cboDieuKienPhat = new ComboBox();
 			groupBox1.SuspendLayout();
 			groupBox2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dgvThuongPhat).BeginInit();
@@ -86,6 +86,7 @@
 			groupBox1.TabIndex = 0;
 			groupBox1.TabStop = false;
 			groupBox1.Text = "QUY TẮC THƯỞNG";
+			groupBox1.Enter += groupBox1_Enter;
 			// 
 			// cboDieuKienThuong
 			// 
@@ -191,6 +192,44 @@
 			groupBox2.TabIndex = 1;
 			groupBox2.TabStop = false;
 			groupBox2.Text = "QUY TẮC PHẠT";
+			// 
+			// cboDieuKienPhat
+			// 
+			cboDieuKienPhat.FormattingEnabled = true;
+			cboDieuKienPhat.Location = new Point(871, 40);
+			cboDieuKienPhat.Name = "cboDieuKienPhat";
+			cboDieuKienPhat.Size = new Size(328, 31);
+			cboDieuKienPhat.TabIndex = 15;
+			// 
+			// cboLoaiPhat
+			// 
+			cboLoaiPhat.FormattingEnabled = true;
+			cboLoaiPhat.Items.AddRange(new object[] { "Thưởng", "Phạt" });
+			cboLoaiPhat.Location = new Point(174, 93);
+			cboLoaiPhat.Name = "cboLoaiPhat";
+			cboLoaiPhat.Size = new Size(379, 31);
+			cboLoaiPhat.TabIndex = 14;
+			// 
+			// txtMoTaPhat
+			// 
+			txtMoTaPhat.Location = new Point(872, 85);
+			txtMoTaPhat.Name = "txtMoTaPhat";
+			txtMoTaPhat.Size = new Size(327, 30);
+			txtMoTaPhat.TabIndex = 13;
+			// 
+			// txtTienPhat
+			// 
+			txtTienPhat.Location = new Point(174, 136);
+			txtTienPhat.Name = "txtTienPhat";
+			txtTienPhat.Size = new Size(379, 30);
+			txtTienPhat.TabIndex = 12;
+			// 
+			// txtTenPhat
+			// 
+			txtTenPhat.Location = new Point(174, 40);
+			txtTenPhat.Name = "txtTenPhat";
+			txtTenPhat.Size = new Size(379, 30);
+			txtTenPhat.TabIndex = 11;
 			// 
 			// chkTuDong
 			// 
@@ -345,44 +384,6 @@
 			btnLamMoi.TabIndex = 21;
 			btnLamMoi.Text = "Làm mới";
 			btnLamMoi.UseVisualStyleBackColor = false;
-			// 
-			// txtTenPhat
-			// 
-			txtTenPhat.Location = new Point(174, 40);
-			txtTenPhat.Name = "txtTenPhat";
-			txtTenPhat.Size = new Size(379, 30);
-			txtTenPhat.TabIndex = 11;
-			// 
-			// txtTienPhat
-			// 
-			txtTienPhat.Location = new Point(174, 136);
-			txtTienPhat.Name = "txtTienPhat";
-			txtTienPhat.Size = new Size(379, 30);
-			txtTienPhat.TabIndex = 12;
-			// 
-			// txtMoTaPhat
-			// 
-			txtMoTaPhat.Location = new Point(872, 85);
-			txtMoTaPhat.Name = "txtMoTaPhat";
-			txtMoTaPhat.Size = new Size(327, 30);
-			txtMoTaPhat.TabIndex = 13;
-			// 
-			// cboLoaiPhat
-			// 
-			cboLoaiPhat.FormattingEnabled = true;
-			cboLoaiPhat.Items.AddRange(new object[] { "Thưởng", "Phạt" });
-			cboLoaiPhat.Location = new Point(174, 93);
-			cboLoaiPhat.Name = "cboLoaiPhat";
-			cboLoaiPhat.Size = new Size(379, 31);
-			cboLoaiPhat.TabIndex = 14;
-			// 
-			// cboDieuKienPhat
-			// 
-			cboDieuKienPhat.FormattingEnabled = true;
-			cboDieuKienPhat.Location = new Point(871, 40);
-			cboDieuKienPhat.Name = "cboDieuKienPhat";
-			cboDieuKienPhat.Size = new Size(328, 31);
-			cboDieuKienPhat.TabIndex = 15;
 			// 
 			// FormCauHinhThuongPhat
 			// 
