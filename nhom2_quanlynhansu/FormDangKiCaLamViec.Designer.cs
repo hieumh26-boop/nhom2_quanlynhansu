@@ -1,6 +1,6 @@
 ﻿namespace nhom2_quanlynhansu
 {
-    partial class FormDangKiCa
+    partial class FormDangKiCaLamViec
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             lblMaNV = new Label();
-            txtMaNV = new TextBox();
             lblHoTen = new Label();
             txtHoTen = new TextBox();
             lblNgayLam = new Label();
@@ -40,6 +40,7 @@
             btnDangKy = new Button();
             btnHuy = new Button();
             dgvCaLam = new DataGridView();
+            cboMaNV = new ComboBox();
             colMaNV = new DataGridViewTextBoxColumn();
             ColHoTen = new DataGridViewTextBoxColumn();
             ColNgayLam = new DataGridViewTextBoxColumn();
@@ -56,13 +57,6 @@
             lblMaNV.TabIndex = 0;
             lblMaNV.Text = "Mã nhân viên";
             // 
-            // txtMaNV
-            // 
-            txtMaNV.Location = new Point(330, 89);
-            txtMaNV.Name = "txtMaNV";
-            txtMaNV.Size = new Size(250, 27);
-            txtMaNV.TabIndex = 1;
-            // 
             // lblHoTen
             // 
             lblHoTen.AutoSize = true;
@@ -76,6 +70,7 @@
             // 
             txtHoTen.Location = new Point(330, 127);
             txtHoTen.Name = "txtHoTen";
+            txtHoTen.ReadOnly = true;
             txtHoTen.Size = new Size(250, 27);
             txtHoTen.TabIndex = 3;
             // 
@@ -99,7 +94,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
-            label1.ForeColor = Color.Crimson;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(207, 23);
             label1.Name = "label1";
             label1.Size = new Size(352, 41);
@@ -155,9 +150,18 @@
             dgvCaLam.Size = new Size(552, 188);
             dgvCaLam.TabIndex = 11;
             // 
+            // cboMaNV
+            // 
+            cboMaNV.FormattingEnabled = true;
+            cboMaNV.Location = new Point(330, 89);
+            cboMaNV.Name = "cboMaNV";
+            cboMaNV.Size = new Size(250, 28);
+            cboMaNV.TabIndex = 12;
+            cboMaNV.SelectedIndexChanged += cboMaNV_SelectedIndexChanged;
+            // 
             // colMaNV
             // 
-            colMaNV.DataPropertyName = "MaNV";
+            colMaNV.DataPropertyName = "MaNhanVien";
             colMaNV.HeaderText = "Mã NV";
             colMaNV.MinimumWidth = 6;
             colMaNV.Name = "colMaNV";
@@ -173,7 +177,9 @@
             // 
             // ColNgayLam
             // 
-            ColNgayLam.DataPropertyName = "NgayLam";
+            ColNgayLam.DataPropertyName = "ThoiGianDangKi";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy HH:mm";
+            ColNgayLam.DefaultCellStyle = dataGridViewCellStyle1;
             ColNgayLam.HeaderText = "Ngày làm";
             ColNgayLam.MinimumWidth = 6;
             ColNgayLam.Name = "ColNgayLam";
@@ -181,7 +187,7 @@
             // 
             // ColCaLam
             // 
-            ColCaLam.DataPropertyName = "Ca";
+            ColCaLam.DataPropertyName = "KhungGio";
             ColCaLam.HeaderText = "Ca Làm";
             ColCaLam.MinimumWidth = 6;
             ColCaLam.Name = "ColCaLam";
@@ -192,6 +198,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 577);
+            Controls.Add(cboMaNV);
             Controls.Add(dgvCaLam);
             Controls.Add(btnHuy);
             Controls.Add(btnDangKy);
@@ -202,7 +209,6 @@
             Controls.Add(lblNgayLam);
             Controls.Add(txtHoTen);
             Controls.Add(lblHoTen);
-            Controls.Add(txtMaNV);
             Controls.Add(lblMaNV);
             Name = "Form4";
             Text = "Form4";
@@ -215,7 +221,6 @@
         #endregion
 
         private Label lblMaNV;
-        private TextBox txtMaNV;
         private Label lblHoTen;
         private TextBox txtHoTen;
         private Label lblNgayLam;
@@ -226,6 +231,7 @@
         private Button btnDangKy;
         private Button btnHuy;
         private DataGridView dgvCaLam;
+        private ComboBox cboMaNV;
         private DataGridViewTextBoxColumn colMaNV;
         private DataGridViewTextBoxColumn ColHoTen;
         private DataGridViewTextBoxColumn ColNgayLam;

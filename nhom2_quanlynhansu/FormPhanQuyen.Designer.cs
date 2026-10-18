@@ -51,13 +51,15 @@
             tbgt = new TextBox();
             tbns = new TextBox();
             cbcv = new ComboBox();
-            tbmcs = new TextBox();
             tbhtlv = new TextBox();
             tbtcs = new TextBox();
             label8 = new Label();
             btxn = new Button();
+            cbmcs = new ComboBox();
+            panel1 = new Panel();
             guna2Panel1.SuspendLayout();
             guna2GradientPanel1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // guna2Panel1
@@ -77,9 +79,9 @@
             label1.Font = new Font("Segoe UI", 20F);
             label1.Location = new Point(112, 9);
             label1.Name = "label1";
-            label1.Size = new Size(540, 46);
+            label1.Size = new Size(562, 46);
             label1.TabIndex = 0;
-            label1.Text = "Phân quyền/chức vụ cho nhân viên";
+            label1.Text = "Phân quyền và cơ sở cho nhân viên";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // guna2GradientPanel1
@@ -229,19 +231,11 @@
             // cbcv
             // 
             cbcv.FormattingEnabled = true;
-            cbcv.Items.AddRange(new object[] { "001", "002", "003" });
+            cbcv.Items.AddRange(new object[] { "Nhân viên", "Cửa hàng trưởng", "Chủ chuỗi" });
             cbcv.Location = new Point(590, 144);
             cbcv.Name = "cbcv";
             cbcv.Size = new Size(184, 28);
             cbcv.TabIndex = 43;
-            // 
-            // tbmcs
-            // 
-            tbmcs.Location = new Point(590, 212);
-            tbmcs.Name = "tbmcs";
-            tbmcs.ReadOnly = true;
-            tbmcs.Size = new Size(74, 27);
-            tbmcs.TabIndex = 44;
             // 
             // tbhtlv
             // 
@@ -270,13 +264,52 @@
             // 
             // btxn
             // 
+            btxn.BackColor = Color.MediumAquamarine;
+            btxn.FlatStyle = FlatStyle.Popup;
+            btxn.ForeColor = Color.White;
             btxn.Location = new Point(527, 390);
             btxn.Name = "btxn";
             btxn.Size = new Size(167, 29);
             btxn.TabIndex = 48;
             btxn.Text = "xác nhận thay đổi";
-            btxn.UseVisualStyleBackColor = true;
+            btxn.UseVisualStyleBackColor = false;
             btxn.Click += btxn_Click;
+            // 
+            // cbmcs
+            // 
+            cbmcs.FormattingEnabled = true;
+            cbmcs.Items.AddRange(new object[] { "001", "002", "003" });
+            cbmcs.Location = new Point(590, 212);
+            cbmcs.Name = "cbmcs";
+            cbmcs.Size = new Size(46, 28);
+            cbmcs.TabIndex = 49;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top;
+            panel1.Controls.Add(cbmcs);
+            panel1.Controls.Add(btxn);
+            panel1.Controls.Add(tbtcs);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(tbhtlv);
+            panel1.Controls.Add(cbcv);
+            panel1.Controls.Add(tbns);
+            panel1.Controls.Add(tbgt);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(tbsdt);
+            panel1.Controls.Add(tbcccd);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(tbht);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(0, 62);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 388);
+            panel1.TabIndex = 50;
             // 
             // FormPhanQuyen
             // 
@@ -284,34 +317,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(btxn);
-            Controls.Add(tbtcs);
-            Controls.Add(label8);
-            Controls.Add(tbhtlv);
-            Controls.Add(tbmcs);
-            Controls.Add(cbcv);
-            Controls.Add(tbns);
-            Controls.Add(tbgt);
-            Controls.Add(label6);
-            Controls.Add(label7);
-            Controls.Add(label9);
-            Controls.Add(tbsdt);
-            Controls.Add(tbcccd);
-            Controls.Add(label4);
-            Controls.Add(label5);
-            Controls.Add(label10);
-            Controls.Add(label3);
-            Controls.Add(tbht);
-            Controls.Add(label2);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(guna2Panel1);
+            Controls.Add(panel1);
             Name = "FormPhanQuyen";
             Text = "FormPhanQuyen";
             WindowState = FormWindowState.Maximized;
+            Load += FormPhanQuyen_Load;
             guna2Panel1.ResumeLayout(false);
             guna2GradientPanel1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -335,10 +352,11 @@
         private TextBox tbgt;
         private TextBox tbns;
         private ComboBox cbcv;
-        private TextBox tbmcs;
         private TextBox tbhtlv;
         private TextBox tbtcs;
         private Label label8;
         private Button btxn;
+        private ComboBox cbmcs;
+        private Panel panel1;
     }
 }

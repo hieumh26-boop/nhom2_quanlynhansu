@@ -29,18 +29,20 @@ namespace nhom2_quanlynhansu
             // Các thông tin chỉ được xem, không được sửa
             txtMaNV.ReadOnly = true;
             tbvt.ReadOnly = true;
-            txtMaCoSo.ReadOnly = true;
+            tbcsdl.ReadOnly = true;
+            cbmcs.Enabled = false; // ComboBox khóa chỉnh sửa
         }
 
-        // Lấy thông tin nhân viên từ SQL
+        // Lấy thông tin nhân viên & tên cơ sở từ SQL bằng LEFT JOIN
         private void LoadNhanVien(string maNV)
         {
             string sql = @"
-                SELECT MaNhanVien, HoTen, SDT, CCCD, STK,
-                       HinhThucLamViec, MaCoSo, TenVaiTro,
-                       NgaySinh, GioiTinh
-                FROM dbo.NhanVien
-                WHERE MaNhanVien = @MaNV";
+                SELECT nv.MaNhanVien, nv.HoTen, nv.SDT, nv.CCCD, nv.STK,
+                       nv.HinhThucLamViec, nv.MaCoSo, nv.TenVaiTro,
+                       nv.NgaySinh, nv.GioiTinh, cs.TenCoSo
+                FROM dbo.NhanVien nv
+                LEFT JOIN dbo.CoSo cs ON nv.MaCoSo = cs.MaCoSo
+                WHERE nv.MaNhanVien = @MaNV";
 
             try
             {
@@ -60,8 +62,9 @@ namespace nhom2_quanlynhansu
                             txtSDT.Text = reader["SDT"] != DBNull.Value ? reader["SDT"].ToString() : "";
                             txtCCCD.Text = reader["CCCD"] != DBNull.Value ? reader["CCCD"].ToString() : "";
                             txtSoTaiKhoan.Text = reader["STK"] != DBNull.Value ? reader["STK"].ToString() : "";
-                            txtMaCoSo.Text = reader["MaCoSo"] != DBNull.Value ? reader["MaCoSo"].ToString() : "";
+                            cbmcs.Text = reader["MaCoSo"] != DBNull.Value ? reader["MaCoSo"].ToString() : "";
                             tbvt.Text = reader["TenVaiTro"] != DBNull.Value ? reader["TenVaiTro"].ToString() : "";
+                            tbcsdl.Text = reader["TenCoSo"] != DBNull.Value ? reader["TenCoSo"].ToString() : "";
 
                             if (reader["NgaySinh"] != DBNull.Value)
                             {
@@ -78,14 +81,14 @@ namespace nhom2_quanlynhansu
                         }
                         else
                         {
-                            MessageBox.Show("Không tìm thấy nhân viên có mã " + maNV);
+                            MessageBox.Show("Không tìm thấy nhân viên có mã " + maNV, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
-                    }
+                    } // Reader đóng hoàn toàn tại đây
                 }
 
-                // Nạp lương của nhân viên
-                LoadBangLuong(maNV);
+                // Gọi LoadBangLuong sau khi câu lệnh trên đã đóng hoàn toàn
+                
             }
             catch (Exception ex)
             {
@@ -94,61 +97,9 @@ namespace nhom2_quanlynhansu
         }
 
         // Lấy dữ liệu từ bảng BangLuong
-        private void LoadBangLuong(string maNV)
-        {
-            string sql = @"
-                SELECT MaPhieuLuong,
-                       [Luong/Thang],
-                       TienThuong,
-                       TongTienPhat
-                FROM dbo.BangLuong
-                WHERE MaNhanVien = @MaNV";
-
-            try
-            {
-                using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
-                using (SqlCommand cmd = new SqlCommand(sql, kn))
-                {
-                    cmd.Parameters.Add("@MaNV", SqlDbType.Int).Value = int.Parse(maNV);
-
-                    kn.Open();
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        dgvLichLamViec.Rows.Clear();
-
-                        while (reader.Read())
-                        {
-                            dgvLichLamViec.Rows.Add(
-                                reader["MaPhieuLuong"],
-                                reader["Luong/Thang"],
-                                reader["TienThuong"],
-                                reader["TongTienPhat"]);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi tải bảng lương: " + ex.Message);
-            }
-        }
-
+        
         // Cấu hình bảng bên phải để hiển thị lương
-        private void CauHinhBangLuong()
-        {
-            dgvLichLamViec.Columns.Clear();
-
-            dgvLichLamViec.Columns.Add("MaPhieuLuong", "Mã phiếu lương");
-            dgvLichLamViec.Columns.Add("LuongThang", "Lương/tháng");
-            dgvLichLamViec.Columns.Add("TienThuong", "Tiền thưởng");
-            dgvLichLamViec.Columns.Add("TongTienPhat", "Tổng tiền phạt");
-
-            dgvLichLamViec.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvLichLamViec.AllowUserToAddRows = false;
-            dgvLichLamViec.ReadOnly = true;
-            dgvLichLamViec.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        }
+        
 
         // Nút Toggle CheckBox Chỉnh sửa
         private void cbcs2_CheckedChanged(object sender, EventArgs e)
@@ -172,33 +123,33 @@ namespace nhom2_quanlynhansu
         {
             if (string.IsNullOrWhiteSpace(txtHoTen.Text))
             {
-                MessageBox.Show("Vui lòng nhập họ tên!");
+                MessageBox.Show("Vui lòng nhập họ tên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtHoTen.Focus();
                 return;
             }
 
             if (!int.TryParse(txtMaNV.Text, out int maNV))
             {
-                MessageBox.Show("Mã nhân viên phải là số nguyên!");
+                MessageBox.Show("Mã nhân viên không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (!int.TryParse(txtMaCoSo.Text, out int maCoSo))
+            if (!int.TryParse(cbmcs.Text, out int maCoSo))
             {
-                MessageBox.Show("Mã cơ sở phải là số nguyên!");
-                txtMaCoSo.Focus();
+                MessageBox.Show("Mã cơ sở phải là số nguyên hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbmcs.Focus();
                 return;
             }
 
             if (!rdoNam.Checked && !rdoNu.Checked)
             {
-                MessageBox.Show("Vui lòng chọn giới tính!");
+                MessageBox.Show("Vui lòng chọn giới tính!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!rdoFullTime.Checked && !rdoPartTime.Checked)
             {
-                MessageBox.Show("Vui lòng chọn hình thức làm việc!");
+                MessageBox.Show("Vui lòng chọn hình thức làm việc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -240,19 +191,19 @@ namespace nhom2_quanlynhansu
 
                     if (rows > 0)
                     {
-                        MessageBox.Show("Lưu thay đổi thành công!");
+                        MessageBox.Show("Lưu thay đổi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cbcs2.Checked = false; // Tắt nút chỉnh sửa -> tự động khóa lại
                         LoadNhanVien(maNV.ToString());
                     }
                     else
                     {
-                        MessageBox.Show("Không tìm thấy nhân viên để cập nhật!");
+                        MessageBox.Show("Không tìm thấy nhân viên để cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi lưu dữ liệu SQL: " + ex.Message);
+                MessageBox.Show("Lỗi lưu dữ liệu SQL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -261,35 +212,17 @@ namespace nhom2_quanlynhansu
         {
             if (string.IsNullOrWhiteSpace(txtMaNV.Text))
             {
-                MessageBox.Show("Chưa có mã nhân viên!");
+                MessageBox.Show("Chưa có mã nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            LoadBangLuong(txtMaNV.Text.Trim());
+           
         }
 
         // Nút Xem phiếu lương chi tiết
-        private void btnXemPhieuLuong_Click(object sender, EventArgs e)
-        {
-            if (dgvLichLamViec.CurrentRow == null || dgvLichLamViec.CurrentRow.IsNewRow)
-            {
-                MessageBox.Show("Vui lòng chọn một phiếu lương!");
-                return;
-            }
+        
 
-            DataGridViewRow row = dgvLichLamViec.CurrentRow;
-
-            MessageBox.Show(
-                "Mã nhân viên: " + txtMaNV.Text +
-                "\nHọ tên: " + txtHoTen.Text +
-                "\nMã phiếu lương: " + row.Cells["MaPhieuLuong"].Value +
-                "\nLương/tháng: " + row.Cells["LuongThang"].Value +
-                "\nTiền thưởng: " + row.Cells["TienThuong"].Value +
-                "\nTổng tiền phạt: " + row.Cells["TongTienPhat"].Value,
-                "Chi tiết phiếu lương");
-        }
-
-        private void formquanlyhoso_Load(object sender, EventArgs e)
+        private void FormQLHS_Load(object sender, EventArgs e)
         {
             try
             {
@@ -297,44 +230,18 @@ namespace nhom2_quanlynhansu
 
                 if (btnLuu != null) btnLuu.Visible = false;
 
-                CauHinhBangLuong();
+                
                 KhoaThongTin(true);
 
-                // Nạp đúng mã nhân viên đang đăng nhập
+                // Nạp dữ liệu mới nhất từ SQL theo mã nhân viên đang đăng nhập
                 if (PhienDangNhap.MaNhanVien > 0)
                 {
                     LoadNhanVien(PhienDangNhap.MaNhanVien.ToString());
                 }
-
-                // Gán an toàn dữ liệu từ phiên đăng nhập
-                txtMaNV.Text = PhienDangNhap.MaNhanVien > 0 ? PhienDangNhap.MaNhanVien.ToString() : "";
-                txtHoTen.Text = PhienDangNhap.HoTen ?? "";
-                tbvt.Text = PhienDangNhap.VaiTro ?? "";
-                txtCCCD.Text = PhienDangNhap.CCCD ?? "";
-                txtSDT.Text = PhienDangNhap.SDT ?? "";
-                txtSoTaiKhoan.Text = PhienDangNhap.STK ?? "";
-                txtMaCoSo.Text = PhienDangNhap.MaCoSo > 0 ? PhienDangNhap.MaCoSo.ToString() : "";
-
-                if (PhienDangNhap.NgaySinh != DateTime.MinValue)
-                {
-                    dtpNgaySinh.Value = PhienDangNhap.NgaySinh;
-                }
-
-                if (!string.IsNullOrEmpty(PhienDangNhap.GioiTinh))
-                {
-                    rdoNam.Checked = PhienDangNhap.GioiTinh.Trim().Equals("Nam", StringComparison.OrdinalIgnoreCase);
-                    rdoNu.Checked = !rdoNam.Checked;
-                }
-
-                if (!string.IsNullOrEmpty(PhienDangNhap.HinhThucLamViec))
-                {
-                    rdoFullTime.Checked = PhienDangNhap.HinhThucLamViec.Trim().Equals("Full-time", StringComparison.OrdinalIgnoreCase) || PhienDangNhap.HinhThucLamViec.Trim().Equals("fulltime", StringComparison.OrdinalIgnoreCase);
-                    rdoPartTime.Checked = !rdoFullTime.Checked;
-                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi hiển thị hồ sơ: " + ex.Message);
+                MessageBox.Show("Lỗi hiển thị hồ sơ: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -74,6 +74,15 @@ namespace nhom2_quanlynhansu
             MoForm(new Formtaonhanvien());
         }
 
+        private void btdkc_Click(object sender, EventArgs e)
+        {
+            MoForm(new FormDangKiCaLamViec());
+        }
+
+        private void btpq_Click(object sender, EventArgs e)
+        {
+            MoForm(new FormPhanQuyen());
+        }
     }
 }
 
