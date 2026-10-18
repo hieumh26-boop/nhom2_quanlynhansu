@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             lblMaNV = new Label();
             lblHoTen = new Label();
             txtHoTen = new TextBox();
@@ -39,11 +40,11 @@
             btnDangKy = new Button();
             btnHuy = new Button();
             dgvCaLam = new DataGridView();
+            cboMaNV = new ComboBox();
             colMaNV = new DataGridViewTextBoxColumn();
             ColHoTen = new DataGridViewTextBoxColumn();
             ColNgayLam = new DataGridViewTextBoxColumn();
             ColCaLam = new DataGridViewTextBoxColumn();
-            cboMaNV = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvCaLam).BeginInit();
             SuspendLayout();
             // 
@@ -149,9 +150,18 @@
             dgvCaLam.Size = new Size(552, 188);
             dgvCaLam.TabIndex = 11;
             // 
+            // cboMaNV
+            // 
+            cboMaNV.FormattingEnabled = true;
+            cboMaNV.Location = new Point(330, 89);
+            cboMaNV.Name = "cboMaNV";
+            cboMaNV.Size = new Size(250, 28);
+            cboMaNV.TabIndex = 12;
+            cboMaNV.SelectedIndexChanged += cboMaNV_SelectedIndexChanged;
+            // 
             // colMaNV
             // 
-            colMaNV.DataPropertyName = "MaNV";
+            colMaNV.DataPropertyName = "MaNhanVien";
             colMaNV.HeaderText = "Mã NV";
             colMaNV.MinimumWidth = 6;
             colMaNV.Name = "colMaNV";
@@ -167,7 +177,9 @@
             // 
             // ColNgayLam
             // 
-            ColNgayLam.DataPropertyName = "NgayLam";
+            ColNgayLam.DataPropertyName = "ThoiGianDangKi";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy HH:mm";
+            ColNgayLam.DefaultCellStyle = dataGridViewCellStyle1;
             ColNgayLam.HeaderText = "Ngày làm";
             ColNgayLam.MinimumWidth = 6;
             ColNgayLam.Name = "ColNgayLam";
@@ -175,19 +187,11 @@
             // 
             // ColCaLam
             // 
-            ColCaLam.DataPropertyName = "Ca";
+            ColCaLam.DataPropertyName = "KhungGio";
             ColCaLam.HeaderText = "Ca Làm";
             ColCaLam.MinimumWidth = 6;
             ColCaLam.Name = "ColCaLam";
             ColCaLam.Width = 125;
-            // 
-            // cboMaNV
-            // 
-            cboMaNV.FormattingEnabled = true;
-            cboMaNV.Location = new Point(330, 89);
-            cboMaNV.Name = "cboMaNV";
-            cboMaNV.Size = new Size(250, 28);
-            cboMaNV.TabIndex = 12;
             // 
             // Form4
             // 
@@ -227,10 +231,10 @@
         private Button btnDangKy;
         private Button btnHuy;
         private DataGridView dgvCaLam;
+        private ComboBox cboMaNV;
         private DataGridViewTextBoxColumn colMaNV;
         private DataGridViewTextBoxColumn ColHoTen;
         private DataGridViewTextBoxColumn ColNgayLam;
         private DataGridViewTextBoxColumn ColCaLam;
-        private ComboBox cboMaNV;
     }
 }
