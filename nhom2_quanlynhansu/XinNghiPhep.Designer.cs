@@ -63,7 +63,7 @@
             groupBox3 = new GroupBox();
             dgvXinNghiPhep = new DataGridView();
             MaDon = new DataGridViewTextBoxColumn();
-            LoaiPhep = new DataGridViewTextBoxColumn();
+            LoaiNghiPhep = new DataGridViewTextBoxColumn();
             LyDo = new DataGridViewTextBoxColumn();
             TrangThaiDuyet = new DataGridViewTextBoxColumn();
             tableLayoutPanel1.SuspendLayout();
@@ -475,7 +475,7 @@
             dgvXinNghiPhep.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvXinNghiPhep.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvXinNghiPhep.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvXinNghiPhep.Columns.AddRange(new DataGridViewColumn[] { MaDon, LoaiPhep, LyDo, TrangThaiDuyet });
+            dgvXinNghiPhep.Columns.AddRange(new DataGridViewColumn[] { MaDon, LoaiNghiPhep, LyDo, TrangThaiDuyet });
             dgvXinNghiPhep.Location = new Point(3, 47);
             dgvXinNghiPhep.Name = "dgvXinNghiPhep";
             dgvXinNghiPhep.ReadOnly = true;
@@ -492,13 +492,13 @@
             MaDon.Name = "MaDon";
             MaDon.ReadOnly = true;
             // 
-            // LoaiPhep
+            // LoaiNghiPhep
             // 
-            LoaiPhep.DataPropertyName = "LoaiNghiPhep";
-            LoaiPhep.HeaderText = "Loại Phép";
-            LoaiPhep.MinimumWidth = 8;
-            LoaiPhep.Name = "LoaiPhep";
-            LoaiPhep.ReadOnly = true;
+            LoaiNghiPhep.DataPropertyName = "LoaiNghiPhep";
+            LoaiNghiPhep.HeaderText = "Loại Phép";
+            LoaiNghiPhep.MinimumWidth = 8;
+            LoaiNghiPhep.Name = "LoaiNghiPhep";
+            LoaiNghiPhep.ReadOnly = true;
             // 
             // LyDo
             // 
@@ -578,7 +578,7 @@
         private DataGridView dgvXinNghiPhep;
         private Button button1;
         private DataGridViewTextBoxColumn MaDon;
-        private DataGridViewTextBoxColumn LoaiPhep;
+        private DataGridViewTextBoxColumn LoaiNghiPhep;
         private DataGridViewTextBoxColumn LyDo;
         private DataGridViewTextBoxColumn TrangThaiDuyet;
     }
