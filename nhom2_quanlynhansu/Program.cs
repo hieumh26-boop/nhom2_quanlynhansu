@@ -13,7 +13,7 @@ namespace nhom2_quanlynhansu
 
 
 
-             Application.Run(new FormCoSo());
+             Application.Run(new FormChinh());
             //Application.Run(new FormPhanQuyen());
 
 
