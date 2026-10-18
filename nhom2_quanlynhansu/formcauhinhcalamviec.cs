@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
 namespace nhom2_quanlynhansu
 {
-    public partial class formcauhinhcalamviec : Form
+    public partial class formcauhinhcalamviec : Form 
     {
+        private string connectionString = @"Data Source=.;Initial Catalog=QuanLyNhanSu;Integrated Security=True;";
         public formcauhinhcalamviec()
         {
             InitializeComponent();
@@ -17,8 +19,40 @@ namespace nhom2_quanlynhansu
 
         private void label4_Click(object sender, EventArgs e)
         {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT MaCa, TenCa, GioBatDau, GioKetThuc, ThoiLuongNghi, MoTa, TrangThai FROM CaLamViec";
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
+                    dgvCaLamViec.Rows.Clear();
+                    int stt = 1;
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        dgvCaLamViec.Rows.Add(
+                            stt++,
+                            row["MaCa"],
+                            row["TenCa"],
+                            row["GioBatDau"],
+                            row["GioKetThuc"],
+                            row["ThoiLuongNghi"],
+                            row["MoTa"],
+                            row["TrangThai"],
+                            "Sửa/Xóa"
+                        );
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi kết nối CSDL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
+            
 
         private void dgvCaLamViec_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
