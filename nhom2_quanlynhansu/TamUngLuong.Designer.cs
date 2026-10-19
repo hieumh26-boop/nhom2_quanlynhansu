@@ -217,6 +217,7 @@
             // 
             // btnGui
             // 
+            btnGui.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnGui.BackColor = SystemColors.HotTrack;
             btnGui.Font = new Font("Calibri", 14F, FontStyle.Bold);
             btnGui.ForeColor = SystemColors.ControlLightLight;
@@ -457,7 +458,7 @@
             label1.TabIndex = 10;
             label1.Text = "TẠM ỨNG LƯƠNG";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click_1;
+      
             // 
             // fTamUngLuong
             // 
