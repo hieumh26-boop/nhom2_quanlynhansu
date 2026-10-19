@@ -278,7 +278,7 @@
             // cbmcs
             // 
             cbmcs.FormattingEnabled = true;
-            cbmcs.Items.AddRange(new object[] { "001", "002", "003" });
+            cbmcs.Items.AddRange(new object[] { "1", "2", "3" });
             cbmcs.Location = new Point(590, 212);
             cbmcs.Name = "cbmcs";
             cbmcs.Size = new Size(46, 28);
@@ -308,7 +308,7 @@
             panel1.Controls.Add(label2);
             panel1.Location = new Point(0, 62);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 388);
+            panel1.Size = new Size(800, 459);
             panel1.TabIndex = 50;
             // 
             // FormPhanQuyen
@@ -316,7 +316,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 518);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(guna2Panel1);
             Controls.Add(panel1);

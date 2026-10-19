@@ -11,8 +11,6 @@ namespace nhom2_quanlynhansu
         {
             InitializeComponent();
         }
-
-        
         private void FormPhanQuyen_Load(object sender, EventArgs e)
         {
             string sqlDsMaNV = "SELECT MaNhanVien FROM dbo.NhanVien";
@@ -24,17 +22,12 @@ namespace nhom2_quanlynhansu
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-
-                    
-                    cbmnv.SelectedIndexChanged -= cbmnv_SelectedIndexChanged;
-
+                    cbmnv.SelectedIndexChanged -= cbmnv_SelectedIndexChanged;//thao su kien
                     cbmnv.DisplayMember = "MaNhanVien";
                     cbmnv.ValueMember = "MaNhanVien";
                     cbmnv.DataSource = dt;
-                    cbmnv.SelectedIndex = -1; 
-
-                    
-                    cbmnv.SelectedIndexChanged += cbmnv_SelectedIndexChanged;
+                    cbmnv.SelectedIndex = -1;
+                    cbmnv.SelectedIndexChanged += cbmnv_SelectedIndexChanged;//gan lai
                 }
             }
             catch (Exception ex)
@@ -42,21 +35,17 @@ namespace nhom2_quanlynhansu
                 MessageBox.Show("Lỗi nạp danh sách mã nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-       
         private void cbmnv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbmnv.SelectedValue == null || !int.TryParse(cbmnv.SelectedValue.ToString(), out int maNV))
-            {
-                return;
-            }
+            if (cbmnv.SelectedValue == null) return;
+            string strMaNV = cbmnv.SelectedValue is DataRowView drv ? drv["MaNhanVien"].ToString() : cbmnv.SelectedValue.ToString();
+            if (!int.TryParse(strMaNV, out int maNV)) return;
 
             string sqlNhanVien = @"
                 SELECT NV.HoTen, NV.GioiTinh, NV.NgaySinh, NV.SDT, NV.CCCD, 
-                       PQ.TenVaiTro, CS.MaCoSo, CS.TenCoSo, NV.HinhThucLamViec 
+                       NV.TenVaiTro, CS.MaCoSo, CS.TenCoSo, NV.HinhThucLamViec 
                 FROM dbo.NhanVien NV 
                 LEFT JOIN dbo.CoSo CS ON NV.MaCoSo = CS.MaCoSo 
-                LEFT JOIN dbo.PhanQuyen PQ ON NV.MaNhanVien = PQ.MaNhanVien 
                 WHERE NV.MaNhanVien = @mnv";
 
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
@@ -71,7 +60,6 @@ namespace nhom2_quanlynhansu
                     {
                         if (doc.Read())
                         {
-                            // ĐÃ SỬA: Đỏ dữ liệu đúng tên cột (không kèm tên bảng NV., PQ., CS.)
                             tbht.Text = doc["HoTen"] != DBNull.Value ? doc["HoTen"].ToString() : "";
                             tbgt.Text = doc["GioiTinh"] != DBNull.Value ? doc["GioiTinh"].ToString() : "";
                             tbns.Text = doc["NgaySinh"] != DBNull.Value ? Convert.ToDateTime(doc["NgaySinh"]).ToString("dd/MM/yyyy") : "";
@@ -90,48 +78,58 @@ namespace nhom2_quanlynhansu
                 }
             }
         }
-
-      
         private void btxn_Click(object sender, EventArgs e)
         {
-            if (cbmnv.SelectedValue == null || !int.TryParse(cbmnv.SelectedValue.ToString(), out int maNV))
+            if (cbmnv.SelectedValue == null)
             {
                 MessageBox.Show("Vui lòng chọn Mã nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string suacv = "UPDATE dbo.PhanQuyen SET TenVaiTro = @cv WHERE MaNhanVien = @mnv";
-            string suacs = "UPDATE dbo.NhanVien SET MaCoSo = @mcs WHERE MaNhanVien = @mnv"; // Cập nhật Mã cơ sở cho Nhân viên
+            string strMaNV = cbmnv.SelectedValue is DataRowView drv ? drv["MaNhanVien"].ToString() : cbmnv.SelectedValue.ToString();
+            if (!int.TryParse(strMaNV, out int maNV))
+            {
+                MessageBox.Show("Mã nhân viên không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string vaiTroMoi = cbcv.Text.Trim();
+            string sqlUpdateNhanVien = @"
+                UPDATE dbo.NhanVien 
+                SET MaCoSo = @mcs, 
+                    TenVaiTro = @cv 
+                WHERE MaNhanVien = @mnv";
 
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
             {
-                kn.Open();
-                SqlTransaction giaodich = kn.BeginTransaction();
-
                 try
                 {
-                    
-                    using (SqlCommand sua1 = new SqlCommand(suacv, kn, giaodich))
+                    kn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sqlUpdateNhanVien, kn))
                     {
-                        sua1.Parameters.Add("@cv", SqlDbType.NVarChar, 100).Value = cbcv.Text.Trim(); 
-                        sua1.Parameters.Add("@mnv", SqlDbType.Int).Value = maNV;
-                        sua1.ExecuteNonQuery();
-                    }
+                        if (int.TryParse(cbmcs.Text.Trim(), out int maCoSo))
+                            cmd.Parameters.Add("@mcs", SqlDbType.Int).Value = maCoSo;
+                        else
+                            cmd.Parameters.Add("@mcs", SqlDbType.Int).Value = DBNull.Value;
 
-                   
-                    using (SqlCommand sua2 = new SqlCommand(suacs, kn, giaodich))
-                    {
-                        sua2.Parameters.Add("@mcs", SqlDbType.Int).Value = Convert.ToInt32(cbmcs.Text); 
-                        sua2.Parameters.Add("@mnv", SqlDbType.Int).Value = maNV;
-                        sua2.ExecuteNonQuery();
-                    }
+                        cmd.Parameters.Add("@cv", SqlDbType.NVarChar, 100).Value = vaiTroMoi;
+                        cmd.Parameters.Add("@mnv", SqlDbType.Int).Value = maNV;
 
-                    giaodich.Commit();
-                    MessageBox.Show("Cập nhật phân quyền thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        int rows = cmd.ExecuteNonQuery();
+
+                        if (rows > 0)
+                        {
+                            MessageBox.Show("Cập nhật phân quyền thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);         
+                            cbmnv_SelectedIndexChanged(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy nhân viên để cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
-                    giaodich.Rollback();
                     MessageBox.Show("Lỗi cập nhật: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
