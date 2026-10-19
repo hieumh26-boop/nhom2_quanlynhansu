@@ -40,12 +40,14 @@
             btnDangKy = new Button();
             btnHuy = new Button();
             dgvCaLam = new DataGridView();
-            cboMaNV = new ComboBox();
             colMaNV = new DataGridViewTextBoxColumn();
             ColHoTen = new DataGridViewTextBoxColumn();
             ColNgayLam = new DataGridViewTextBoxColumn();
             ColCaLam = new DataGridViewTextBoxColumn();
+            cboMaNV = new ComboBox();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvCaLam).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblMaNV
@@ -120,12 +122,15 @@
             // 
             // btnDangKy
             // 
+            btnDangKy.BackColor = Color.MediumAquamarine;
+            btnDangKy.FlatStyle = FlatStyle.Popup;
+            btnDangKy.ForeColor = Color.White;
             btnDangKy.Location = new Point(229, 287);
             btnDangKy.Name = "btnDangKy";
             btnDangKy.Size = new Size(94, 29);
             btnDangKy.TabIndex = 9;
             btnDangKy.Text = "Đăng ký";
-            btnDangKy.UseVisualStyleBackColor = true;
+            btnDangKy.UseVisualStyleBackColor = false;
             btnDangKy.Click += btnDangKy_Click;
             // 
             // btnHuy
@@ -149,15 +154,6 @@
             dgvCaLam.RowHeadersWidth = 51;
             dgvCaLam.Size = new Size(552, 188);
             dgvCaLam.TabIndex = 11;
-            // 
-            // cboMaNV
-            // 
-            cboMaNV.FormattingEnabled = true;
-            cboMaNV.Location = new Point(330, 89);
-            cboMaNV.Name = "cboMaNV";
-            cboMaNV.Size = new Size(250, 28);
-            cboMaNV.TabIndex = 12;
-            cboMaNV.SelectedIndexChanged += cboMaNV_SelectedIndexChanged;
             // 
             // colMaNV
             // 
@@ -193,29 +189,50 @@
             ColCaLam.Name = "ColCaLam";
             ColCaLam.Width = 125;
             // 
-            // Form4
+            // cboMaNV
+            // 
+            cboMaNV.FormattingEnabled = true;
+            cboMaNV.Location = new Point(330, 89);
+            cboMaNV.Name = "cboMaNV";
+            cboMaNV.Size = new Size(250, 28);
+            cboMaNV.TabIndex = 12;
+            cboMaNV.SelectedIndexChanged += cboMaNV_SelectedIndexChanged;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top;
+            panel1.Controls.Add(cboMaNV);
+            panel1.Controls.Add(dgvCaLam);
+            panel1.Controls.Add(btnHuy);
+            panel1.Controls.Add(btnDangKy);
+            panel1.Controls.Add(cboCaLam);
+            panel1.Controls.Add(lblCaLam);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(dtpNgayLam);
+            panel1.Controls.Add(lblNgayLam);
+            panel1.Controls.Add(txtHoTen);
+            panel1.Controls.Add(lblHoTen);
+            panel1.Controls.Add(lblMaNV);
+            panel1.ImeMode = ImeMode.NoControl;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 577);
+            panel1.TabIndex = 13;
+            // 
+            // FormDangKiCaLamViec
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 577);
-            Controls.Add(cboMaNV);
-            Controls.Add(dgvCaLam);
-            Controls.Add(btnHuy);
-            Controls.Add(btnDangKy);
-            Controls.Add(cboCaLam);
-            Controls.Add(lblCaLam);
-            Controls.Add(label1);
-            Controls.Add(dtpNgayLam);
-            Controls.Add(lblNgayLam);
-            Controls.Add(txtHoTen);
-            Controls.Add(lblHoTen);
-            Controls.Add(lblMaNV);
-            Name = "Form4";
+            Controls.Add(panel1);
+            Name = "FormDangKiCaLamViec";
             Text = "Form4";
             Load += Form4_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCaLam).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -236,5 +253,6 @@
         private DataGridViewTextBoxColumn ColHoTen;
         private DataGridViewTextBoxColumn ColNgayLam;
         private DataGridViewTextBoxColumn ColCaLam;
+        private Panel panel1;
     }
 }

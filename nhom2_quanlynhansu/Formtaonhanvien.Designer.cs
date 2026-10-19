@@ -34,7 +34,7 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            groupBox1 = new GroupBox();
+            datens = new DateTimePicker();
             bttmnv = new Button();
             cbmcs = new ComboBox();
             cbcv = new ComboBox();
@@ -52,12 +52,15 @@
             label9 = new Label();
             label7 = new Label();
             tbcccd = new TextBox();
-            datens = new DateTimePicker();
-            groupBox1.SuspendLayout();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
+            label1.BackColor = Color.White;
             label1.Dock = DockStyle.Top;
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(0, 0);
@@ -112,47 +115,24 @@
             label6.TabIndex = 5;
             label6.Text = "Mã cơ sở:";
             // 
-            // groupBox1
+            // datens
             // 
-            groupBox1.Controls.Add(datens);
-            groupBox1.Controls.Add(bttmnv);
-            groupBox1.Controls.Add(cbmcs);
-            groupBox1.Controls.Add(cbcv);
-            groupBox1.Controls.Add(rbtnu);
-            groupBox1.Controls.Add(rbtnam);
-            groupBox1.Controls.Add(rbtfull);
-            groupBox1.Controls.Add(rbtpart);
-            groupBox1.Controls.Add(tbstk);
-            groupBox1.Controls.Add(label11);
-            groupBox1.Controls.Add(tbmnv);
-            groupBox1.Controls.Add(bttnv);
-            groupBox1.Controls.Add(tbht);
-            groupBox1.Controls.Add(tbsdt);
-            groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(tbcccd);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Dock = DockStyle.Fill;
-            groupBox1.Location = new Point(0, 88);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(800, 362);
-            groupBox1.TabIndex = 6;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Nhập thông tin nhân viên";
+            datens.Location = new Point(504, 107);
+            datens.Name = "datens";
+            datens.Size = new Size(250, 27);
+            datens.TabIndex = 30;
             // 
             // bttmnv
             // 
+            bttmnv.BackColor = Color.MediumAquamarine;
+            bttmnv.FlatStyle = FlatStyle.Popup;
+            bttmnv.ForeColor = Color.White;
             bttmnv.Location = new Point(385, 264);
             bttmnv.Name = "bttmnv";
             bttmnv.Size = new Size(145, 29);
             bttmnv.TabIndex = 29;
             bttmnv.Text = "tạo mã nhân viên:";
-            bttmnv.UseVisualStyleBackColor = true;
+            bttmnv.UseVisualStyleBackColor = false;
             bttmnv.Click += bttmnv_Click;
             // 
             // cbmcs
@@ -242,12 +222,15 @@
             // 
             // bttnv
             // 
+            bttnv.BackColor = Color.MediumAquamarine;
+            bttnv.FlatStyle = FlatStyle.Popup;
+            bttnv.ForeColor = Color.White;
             bttnv.Location = new Point(432, 308);
             bttnv.Name = "bttnv";
             bttnv.Size = new Size(264, 29);
             bttnv.TabIndex = 18;
             bttnv.Text = "Tạo nhân viên";
-            bttnv.UseVisualStyleBackColor = true;
+            bttnv.UseVisualStyleBackColor = false;
             bttnv.Click += bttnv_Click;
             // 
             // tbht
@@ -298,24 +281,59 @@
             tbcccd.Size = new Size(184, 27);
             tbcccd.TabIndex = 6;
             // 
-            // datens
+            // panel1
             // 
-            datens.Location = new Point(504, 107);
-            datens.Name = "datens";
-            datens.Size = new Size(250, 27);
-            datens.TabIndex = 30;
+            panel1.Anchor = AnchorStyles.Top;
+            panel1.Controls.Add(bttmnv);
+            panel1.Controls.Add(cbmcs);
+            panel1.Controls.Add(datens);
+            panel1.Controls.Add(cbcv);
+            panel1.Controls.Add(rbtpart);
+            panel1.Controls.Add(rbtfull);
+            panel1.Controls.Add(tbstk);
+            panel1.Controls.Add(label11);
+            panel1.Controls.Add(tbmnv);
+            panel1.Controls.Add(rbtnu);
+            panel1.Controls.Add(rbtnam);
+            panel1.Controls.Add(tbht);
+            panel1.Controls.Add(tbsdt);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(tbcccd);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(bttnv);
+            panel1.Location = new Point(0, 79);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 371);
+            panel1.TabIndex = 31;
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Top;
+            panel2.Controls.Add(label1);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(800, 82);
+            panel2.TabIndex = 31;
             // 
             // Formtaonhanvien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(groupBox1);
-            Controls.Add(label1);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Name = "Formtaonhanvien";
             Text = "Formtaonhanvien";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -327,7 +345,6 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private GroupBox groupBox1;
         private TextBox tbcccd;
         private Label label10;
         private Label label9;
@@ -346,5 +363,7 @@
         private RadioButton rbtnam;
         private Button bttmnv;
         private DateTimePicker datens;
+        private Panel panel1;
+        private Panel panel2;
     }
 }

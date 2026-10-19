@@ -48,6 +48,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
             label1.Size = new Size(150, 62);
@@ -58,6 +59,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(12, 71);
             label2.Name = "label2";
             label2.Size = new Size(237, 46);
@@ -68,7 +70,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Navy;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(297, 111);
             label3.Name = "label3";
             label3.Size = new Size(140, 28);
@@ -79,7 +81,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Navy;
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(344, 164);
             label4.Name = "label4";
             label4.Size = new Size(93, 28);
@@ -90,6 +92,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(263, 231);
             label5.Name = "label5";
             label5.Size = new Size(174, 28);
@@ -124,7 +127,7 @@
             // 
             // btxnttk
             // 
-            btxnttk.BackColor = Color.Navy;
+            btxnttk.BackColor = Color.MediumAquamarine;
             btxnttk.FlatStyle = FlatStyle.Popup;
             btxnttk.Font = new Font("Segoe UI", 10.2F);
             btxnttk.ForeColor = Color.White;
@@ -139,6 +142,7 @@
             // btt
             // 
             btt.FlatStyle = FlatStyle.Popup;
+            btt.ForeColor = Color.Black;
             btt.Location = new Point(609, 343);
             btt.Name = "btt";
             btt.Size = new Size(94, 29);
@@ -182,7 +186,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Navy;
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(222, 279);
             label6.Name = "label6";
             label6.Size = new Size(215, 28);
