@@ -115,7 +115,7 @@ namespace nhom2_quanlynhansu
         //nut thoat 
         private void Formtaotaikhoancs_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+
         }
     }
 }

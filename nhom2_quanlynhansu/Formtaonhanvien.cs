@@ -19,7 +19,7 @@ namespace nhom2_quanlynhansu
 
         private void bttnv_Click(object sender, EventArgs e)
         {
-            string them = "INSERT INTO NhanVien (MaNhanVien, HoTen, SDT, CCCD, STK, HinhThucLamViec, MaCoSo,TenVaiTro,NgaySinh,GioiTinh) VALUES (@mnv, @ht, @sdt, @cccd, @stk, @htlv, @mcs,@cv,@ns,@gt)";
+            string them = "INSERT INTO NhanVien (MaNhanVien, HoTen, SDT, CCCD, STK, HinhThucLamViec, MaCoSo,MaVaitro,NgaySinh,GioiTinh) VALUES (@mnv, @ht, @sdt, @cccd, @stk, @htlv, @mcs,@mvt,@ns,@gt)";
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
             {
                 kn.Open();
@@ -53,6 +53,20 @@ namespace nhom2_quanlynhansu
                     cmd.Parameters.AddWithValue("@gt", gt);
                     cmd.Parameters.AddWithValue("@htlv", htlv);
                     cmd.Parameters.AddWithValue("@mcs", mcs);
+                    
+                    if(cbcv.SelectedItem=="Chủ chuỗi")
+                    {
+                        
+                        cmd.Parameters.AddWithValue("@mvt", 1);
+                    }
+                    else if(cbcv.SelectedItem=="Cửa hàng trưởng")
+                    {
+                        cmd.Parameters.AddWithValue("@mvt", 2);
+                    }
+                    else if(cbcv.SelectedItem=="Nhân viên")
+                    {
+                        cmd.Parameters.AddWithValue("@mvt", 3);
+                    }
                     cmd.Parameters.AddWithValue("@cv", cv);
                     cmd.Parameters.AddWithValue("@mnv", tbmnv.Text);
                     int rowsAffected = cmd.ExecuteNonQuery();

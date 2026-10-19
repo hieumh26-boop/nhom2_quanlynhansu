@@ -35,6 +35,7 @@ namespace nhom2_quanlynhansu
                 MessageBox.Show("Lỗi nạp danh sách mã nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //hien thong tin
         private void cbmnv_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbmnv.SelectedValue == null) return;
@@ -43,9 +44,11 @@ namespace nhom2_quanlynhansu
 
             string sqlNhanVien = @"
                 SELECT NV.HoTen, NV.GioiTinh, NV.NgaySinh, NV.SDT, NV.CCCD, 
-                       NV.TenVaiTro, CS.MaCoSo, CS.TenCoSo, NV.HinhThucLamViec 
+                       pq.TenVaiTro, CS.MaCoSo, CS.TenCoSo, NV.HinhThucLamViec 
                 FROM dbo.NhanVien NV 
-                LEFT JOIN dbo.CoSo CS ON NV.MaCoSo = CS.MaCoSo 
+
+                INNER JOIN dbo.CoSo CS ON NV.MaCoSo = CS.MaCoSo 
+                INNER JOIN PhanQuyen pq ON NV.MaVaiTro = pq.MaVaiTro
                 WHERE NV.MaNhanVien = @mnv";
 
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
@@ -65,6 +68,7 @@ namespace nhom2_quanlynhansu
                             tbns.Text = doc["NgaySinh"] != DBNull.Value ? Convert.ToDateTime(doc["NgaySinh"]).ToString("dd/MM/yyyy") : "";
                             tbsdt.Text = doc["SDT"] != DBNull.Value ? doc["SDT"].ToString() : "";
                             tbcccd.Text = doc["CCCD"] != DBNull.Value ? doc["CCCD"].ToString() : "";
+                            
                             cbcv.Text = doc["TenVaiTro"] != DBNull.Value ? doc["TenVaiTro"].ToString() : "";
                             cbmcs.Text = doc["MaCoSo"] != DBNull.Value ? doc["MaCoSo"].ToString() : "";
                             tbtcs.Text = doc["TenCoSo"] != DBNull.Value ? doc["TenCoSo"].ToString() : "";
@@ -97,7 +101,7 @@ namespace nhom2_quanlynhansu
             string sqlUpdateNhanVien = @"
                 UPDATE dbo.NhanVien 
                 SET MaCoSo = @mcs, 
-                    TenVaiTro = @cv 
+                    MaVaiTro = @cv 
                 WHERE MaNhanVien = @mnv";
 
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
@@ -112,7 +116,19 @@ namespace nhom2_quanlynhansu
                         else
                             cmd.Parameters.Add("@mcs", SqlDbType.Int).Value = DBNull.Value;
 
-                        cmd.Parameters.Add("@cv", SqlDbType.NVarChar, 100).Value = vaiTroMoi;
+                       // cmd.Parameters.Add("@cv", SqlDbType.NVarChar, 100).Value = vaiTroMoi;
+                        if(cbcv.SelectedItem=="Chủ chuỗi")
+                        {
+                            cmd.Parameters.AddWithValue("@cv", 1);
+                        }
+                        else if(cbcv.SelectedItem=="Cửa hàng trưởng")
+                        {
+                            cmd.Parameters.AddWithValue("@cv", 2);
+                        }
+                        else if(cbcv.SelectedItem=="Nhân viên")
+                        {
+                            cmd.Parameters.AddWithValue("@cv", 3);
+                        }
                         cmd.Parameters.Add("@mnv", SqlDbType.Int).Value = maNV;
 
                         int rows = cmd.ExecuteNonQuery();

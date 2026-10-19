@@ -42,7 +42,7 @@ namespace nhom2_quanlynhansu
 
             string sqlNguoiDung = @"
                 SELECT nv.MaNhanVien, nv.HoTen, nv.SDT, nv.CCCD, nv.STK, 
-                       nv.HinhThucLamViec, nv.MaCoSo, nv.TenVaiTro, nv.NgaySinh, nv.GioiTinh 
+                       nv.HinhThucLamViec, nv.MaCoSo, nv.MaVaiTro, nv.NgaySinh, nv.GioiTinh 
                 FROM dbo.NhanVien nv 
                 INNER JOIN dbo.NguoiDung nd ON nv.MaNhanVien = nd.MaNhanVien 
                 WHERE nd.TenDangNhap = @tdn AND nd.MatKhau = @mk";
@@ -79,7 +79,7 @@ namespace nhom2_quanlynhansu
 
                                 
                                 PhienDangNhap.GioiTinh = doc["GioiTinh"] != DBNull.Value ? doc["GioiTinh"].ToString() : "";
-                                PhienDangNhap.VaiTro = doc["TenVaiTro"] != DBNull.Value ? doc["TenVaiTro"].ToString() : "";
+                                PhienDangNhap.VaiTro = doc["MaVaiTro"] != DBNull.Value ? doc["MaVaiTro"].ToString() : "";
 
                                 MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

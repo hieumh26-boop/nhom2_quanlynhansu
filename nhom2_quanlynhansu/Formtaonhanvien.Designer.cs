@@ -138,7 +138,7 @@
             // cbmcs
             // 
             cbmcs.FormattingEnabled = true;
-            cbmcs.Items.AddRange(new object[] { "001", "002", "003" });
+            cbmcs.Items.AddRange(new object[] { "1", "2", "3" });
             cbmcs.Location = new Point(154, 270);
             cbmcs.Name = "cbmcs";
             cbmcs.Size = new Size(184, 28);

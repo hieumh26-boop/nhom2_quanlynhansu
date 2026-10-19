@@ -14,7 +14,7 @@ namespace nhom2_quanlynhansu
 
         private void KhoaThongTin(bool khoa)
         {
-            // Các thông tin được phép chỉnh sửa
+            
             txtHoTen.ReadOnly = khoa;
             txtSDT.ReadOnly = khoa;
             txtCCCD.ReadOnly = khoa;
@@ -26,22 +26,23 @@ namespace nhom2_quanlynhansu
             rdoFullTime.Enabled = !khoa;
             rdoPartTime.Enabled = !khoa;
 
-            // Các thông tin chỉ được xem, không được sửa
+            
             txtMaNV.ReadOnly = true;
             tbvt.ReadOnly = true;
             tbcsdl.ReadOnly = true;
-            cbmcs.Enabled = false; // ComboBox khóa chỉnh sửa
+            cbmcs.Enabled = false; 
         }
 
-        // Lấy thông tin nhân viên & tên cơ sở từ SQL bằng LEFT JOIN
+       
         private void LoadNhanVien(string maNV)
         {
             string sql = @"
                 SELECT nv.MaNhanVien, nv.HoTen, nv.SDT, nv.CCCD, nv.STK,
-                       nv.HinhThucLamViec, nv.MaCoSo, nv.TenVaiTro,
+                       nv.HinhThucLamViec, nv.MaCoSo, nv.MaVaiTro, pq.TenVaiTro,
                        nv.NgaySinh, nv.GioiTinh, cs.TenCoSo
                 FROM dbo.NhanVien nv
-                LEFT JOIN dbo.CoSo cs ON nv.MaCoSo = cs.MaCoSo
+                INNER JOIN dbo.CoSo cs ON nv.MaCoSo = cs.MaCoSo
+                INNER JOIN PhanQuyen pq ON nv.MaVaiTro = pq.MaVaiTro
                 WHERE nv.MaNhanVien = @MaNV";
 
             try
@@ -164,7 +165,7 @@ namespace nhom2_quanlynhansu
                     STK = @STK,
                     HinhThucLamViec = @HinhThuc,
                     MaCoSo = @MaCoSo,
-                    TenVaiTro = @TenVaiTro,
+                    
                     NgaySinh = @NgaySinh,
                     GioiTinh = @GioiTinh
                 WHERE MaNhanVien = @MaNV";
