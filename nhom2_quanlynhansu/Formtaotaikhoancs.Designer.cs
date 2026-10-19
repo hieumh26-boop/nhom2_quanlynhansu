@@ -39,7 +39,6 @@
             btxnttk = new Button();
             btt = new Button();
             cbmkttk = new CheckBox();
-            ccmkttk2 = new CheckBox();
             tbmnv = new TextBox();
             label6 = new Label();
             SuspendLayout();
@@ -163,17 +162,6 @@
             cbmkttk.UseVisualStyleBackColor = true;
             cbmkttk.CheckedChanged += cbmkttk_CheckedChanged;
             // 
-            // ccmkttk2
-            // 
-            ccmkttk2.Appearance = Appearance.Button;
-            ccmkttk2.FlatStyle = FlatStyle.Popup;
-            ccmkttk2.Image = Properties.Resources.mătdong;
-            ccmkttk2.Location = new Point(709, 233);
-            ccmkttk2.Name = "ccmkttk2";
-            ccmkttk2.Size = new Size(40, 26);
-            ccmkttk2.TabIndex = 11;
-            ccmkttk2.UseVisualStyleBackColor = true;
-            // 
             // tbmnv
             // 
             tbmnv.BorderStyle = BorderStyle.FixedSingle;
@@ -200,7 +188,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tbmnv);
             Controls.Add(label6);
-            Controls.Add(ccmkttk2);
             Controls.Add(cbmkttk);
             Controls.Add(btt);
             Controls.Add(btxnttk);
@@ -233,7 +220,6 @@
         private Button btxnttk;
         private Button btt;
         private CheckBox cbmkttk;
-        private CheckBox ccmkttk2;
         private TextBox tbmnv;
         private Label label6;
     }

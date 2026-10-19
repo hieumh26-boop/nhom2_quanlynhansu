@@ -11,10 +11,10 @@ namespace nhom2_quanlynhansu
         {
             InitializeComponent();
         }
-
+        //nut xac nhan
         private void btxnttk_Click(object sender, EventArgs e)
         {
-            
+            //kt cach thua
             if (string.IsNullOrWhiteSpace(tbtdn2.Text) ||
                 string.IsNullOrWhiteSpace(tbmk2.Text) ||
                 string.IsNullOrWhiteSpace(tbxnmk.Text) ||
@@ -24,7 +24,7 @@ namespace nhom2_quanlynhansu
                 return;
             }
 
-            
+
             if (tbmk2.Text != tbxnmk.Text)
             {
                 MessageBox.Show("Mật khẩu xác nhận không trùng khớp!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -32,14 +32,14 @@ namespace nhom2_quanlynhansu
                 return;
             }
 
-            
+            //kt manv
             if (!int.TryParse(tbmnv.Text.Trim(), out int maNhanVien))
             {
                 MessageBox.Show("Mã nhân viên phải là số nguyên hợp lệ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tbmnv.Focus();
                 return;
             }
-
+            //kt coi co tendn giong ko
             string kiemtratontai = "SELECT COUNT(*) FROM NguoiDung WHERE TenDangNhap = @tdn";
             string them = "INSERT INTO NguoiDung (TenDangNhap, MatKhau, MaNhanVien) VALUES (@tdn, @mk, @mnv)";
 
@@ -49,7 +49,7 @@ namespace nhom2_quanlynhansu
                 {
                     kn.Open();
 
-                    
+
                     using (SqlCommand kt1 = new SqlCommand(kiemtratontai, kn))
                     {
                         kt1.Parameters.Add("@tdn", SqlDbType.VarChar, 50).Value = tbtdn2.Text.Trim();
@@ -75,7 +75,7 @@ namespace nhom2_quanlynhansu
                         {
                             MessageBox.Show("Tạo tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            // Xóa sạch ô nhập liệu sau khi tạo thành công
+                            // Xóa sạch 
                             tbtdn2.Clear();
                             tbmk2.Clear();
                             tbxnmk.Clear();
@@ -90,18 +90,18 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        
+        //nut thoat
         private void btt_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
         }
 
-        
+        //ma hoa mk
         private void cbmkttk_CheckedChanged(object sender, EventArgs e)
         {
             char passwordChar = cbmkttk.Checked ? '\0' : '*';
             tbmk2.PasswordChar = passwordChar;
-            tbxnmk.PasswordChar = passwordChar; 
+            tbxnmk.PasswordChar = passwordChar;
 
             if (cbmkttk.Checked)
             {
@@ -112,10 +112,10 @@ namespace nhom2_quanlynhansu
                 cbmkttk.Image = Properties.Resources.mătdong;
             }
         }
-
+        //nut thoat 
         private void Formtaotaikhoancs_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            Application.Exit();
         }
     }
 }
