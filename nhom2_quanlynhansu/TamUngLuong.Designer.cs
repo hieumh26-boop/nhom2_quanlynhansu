@@ -46,7 +46,7 @@
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            datetime = new DateTimePicker();
             label6 = new Label();
             groupBox1 = new GroupBox();
             tbxLtt = new TextBox();
@@ -152,7 +152,7 @@
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(dateTimePicker1);
+            groupBox2.Controls.Add(datetime);
             groupBox2.Controls.Add(label6);
             groupBox2.Dock = DockStyle.Fill;
             groupBox2.Font = new Font("Calibri", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -272,16 +272,17 @@
             label7.TabIndex = 18;
             label7.Text = "Số tiền (số)";
             // 
-            // dateTimePicker1
+            // datetime
             // 
-            dateTimePicker1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dateTimePicker1.CalendarFont = new Font("Calibri", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            dateTimePicker1.CustomFormat = "MM/yyyy";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(219, 55);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(234, 42);
-            dateTimePicker1.TabIndex = 17;
+            datetime.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            datetime.CalendarFont = new Font("Calibri", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            datetime.CustomFormat = "MM/yyyy";
+            datetime.Font = new Font("Calibri", 14F);
+            datetime.Format = DateTimePickerFormat.Custom;
+            datetime.Location = new Point(219, 55);
+            datetime.Name = "datetime";
+            datetime.Size = new Size(234, 42);
+            datetime.TabIndex = 17;
             // 
             // label6
             // 
@@ -458,7 +459,6 @@
             label1.TabIndex = 10;
             label1.Text = "TẠM ỨNG LƯƠNG";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-      
             // 
             // fTamUngLuong
             // 
@@ -504,7 +504,7 @@
         private Label label9;
         private Label label8;
         private Label label7;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker datetime;
         private Label label6;
         private GroupBox groupBox1;
         private TextBox tbxLtt;

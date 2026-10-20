@@ -43,8 +43,8 @@ namespace nhom2_quanlynhansu
                  "FROM [NhanVien] nv " +
                  "INNER JOIN [NguoiDung] nd ON nd.MaNhanVien = nv.MaNhanVien " +
                  "INNER JOIN [NghiPhep] np ON np.MaNhanVien = nv.MaNhanVien " +
-                    "INNER JOIN [PhanQuyen] pq ON pq.MaNhanVien = nv.MaNhanVien " +
-                "INNER JOIN [CoSo] cs ON cs.MaNhanVien = nv.MaNhanVien " +
+                    "INNER JOIN [PhanQuyen] pq ON pq.MaVaiTro = nv.MaVaiTro " +
+                "INNER JOIN [CoSo] cs ON cs.MaCoSo = nv.MaCoSo " +
                  "WHERE nd.TenDangNhap = '" + Formdangnhap.TenTaiKhoanDangNhap + "'";
             //"INNER JOIN [CoSo] cs ON cs.MaNhanVien = nv.MaNhanVien " +
             //"INNER JOIN [PhanQuyen] pq ON pq.MaNhanVien = nv.MaNhanVien " +
