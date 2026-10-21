@@ -32,7 +32,6 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
             label6 = new Label();
             datens = new DateTimePicker();
             bttmnv = new Button();
@@ -54,8 +53,10 @@
             tbcccd = new TextBox();
             panel1 = new Panel();
             panel2 = new Panel();
+            groupBox1 = new GroupBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -96,15 +97,6 @@
             label4.Size = new Size(50, 20);
             label4.TabIndex = 3;
             label4.Text = "CCCD:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(13, 213);
-            label5.Name = "label5";
-            label5.Size = new Size(135, 20);
-            label5.TabIndex = 4;
-            label5.Text = "Hình thức làm việc:";
             // 
             // label6
             // 
@@ -178,7 +170,7 @@
             // rbtfull
             // 
             rbtfull.AutoSize = true;
-            rbtfull.Location = new Point(255, 215);
+            rbtfull.Location = new Point(159, 26);
             rbtfull.Name = "rbtfull";
             rbtfull.Size = new Size(83, 24);
             rbtfull.TabIndex = 24;
@@ -189,7 +181,7 @@
             // rbtpart
             // 
             rbtpart.AutoSize = true;
-            rbtpart.Location = new Point(164, 215);
+            rbtpart.Location = new Point(32, 26);
             rbtpart.Name = "rbtpart";
             rbtpart.Size = new Size(85, 24);
             rbtpart.TabIndex = 23;
@@ -289,8 +281,6 @@
             panel1.Controls.Add(cbmcs);
             panel1.Controls.Add(datens);
             panel1.Controls.Add(cbcv);
-            panel1.Controls.Add(rbtpart);
-            panel1.Controls.Add(rbtfull);
             panel1.Controls.Add(tbstk);
             panel1.Controls.Add(label11);
             panel1.Controls.Add(tbmnv);
@@ -306,8 +296,8 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(label5);
             panel1.Controls.Add(bttnv);
+            panel1.Controls.Add(groupBox1);
             panel1.Location = new Point(0, 79);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 371);
@@ -322,6 +312,17 @@
             panel2.Size = new Size(800, 82);
             panel2.TabIndex = 31;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(rbtfull);
+            groupBox1.Controls.Add(rbtpart);
+            groupBox1.Location = new Point(13, 191);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(325, 73);
+            groupBox1.TabIndex = 31;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Hình thúc làm việc";
+            // 
             // Formtaonhanvien
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -335,6 +336,8 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -344,7 +347,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private Label label5;
         private Label label6;
         private TextBox tbcccd;
         private Label label10;
@@ -366,5 +368,6 @@
         private DateTimePicker datens;
         private Panel panel1;
         private Panel panel2;
+        private GroupBox groupBox1;
     }
 }

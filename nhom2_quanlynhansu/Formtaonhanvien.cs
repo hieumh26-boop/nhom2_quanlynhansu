@@ -19,9 +19,9 @@ namespace nhom2_quanlynhansu
         private void bttnv_Click(object sender, EventArgs e)
         {
             // 1. Kiểm tra dữ liệu đầu vào (Validation)
-            if (string.IsNullOrWhiteSpace(tbmnv.Text))
+            if (string.IsNullOrWhiteSpace(tbmnv.Text) || !int.TryParse(tbmnv.Text, out int mnv))
             {
-                MessageBox.Show("Vui lòng nhấn nút tạo Mã nhân viên!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhấn nút tạo Mã nhân viên hợp lệ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -32,16 +32,23 @@ namespace nhom2_quanlynhansu
                 return;
             }
 
-            if (!int.TryParse(tbmnv.Text, out int mnv))
+            // Kiểm tra Giới tính
+            if (!rbtnam.Checked && !rbtnu.Checked)
             {
-                MessageBox.Show("Mã nhân viên không hợp lệ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn Giới tính!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            string gt = rbtnam.Checked ? "Nam" : "Nữ";
 
-            // 2. Lấy dữ liệu từ RadioButton & ComboBox
-            string gt = rbtnam.Checked ? "Nam" : (rbtnu.Checked ? "Nữ" : "");
-            string htlv = rbtfull.Checked ? "Full-time" : (rbtpart.Checked ? "Part-time" : "");
+            // Kiểm tra Hình thức làm việc
+            if (!rbtfull.Checked && !rbtpart.Checked)
+            {
+                MessageBox.Show("Vui lòng chọn Hình thức làm việc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string htlv = rbtfull.Checked ? "Full-time" : "Part-time";
 
+            // Kiểm tra Vai trò / Chức vụ
             int mvt = 0;
             if (cbcv.SelectedItem != null)
             {
@@ -57,15 +64,15 @@ namespace nhom2_quanlynhansu
                 return;
             }
 
-            // Lấy MaCoSo (Xử lý an toàn nếu ComboBox lưu int hoặc string)
-            string mcs = cbmcs.SelectedItem?.ToString() ?? "";
+            // Kiểm tra Mã cơ sở
+            string mcs = cbmcs.SelectedValue?.ToString() ?? cbmcs.SelectedItem?.ToString() ?? "";
             if (string.IsNullOrEmpty(mcs))
             {
                 MessageBox.Show("Vui lòng chọn Cơ sở làm việc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 3. Chuẩn bị câu lệnh SQL INSERT (Đủ 10 tham số)
+            // 2. Chuẩn bị câu lệnh SQL INSERT (Gán cố định MaLuong = 1)
             string them = @"INSERT INTO dbo.NhanVien (MaNhanVien, HoTen, SDT, CCCD, STK, HinhThucLamViec, MaCoSo, MaVaitro, NgaySinh, GioiTinh, MaLuong) 
                            VALUES (@mnv, @ht, @sdt, @cccd, @stk, @htlv, @mcs, @mvt, @ns, @gt, @ml)";
 
@@ -86,7 +93,10 @@ namespace nhom2_quanlynhansu
                         cmd.Parameters.Add("@mvt", SqlDbType.Int).Value = mvt;
                         cmd.Parameters.Add("@ns", SqlDbType.Date).Value = datens.Value.Date;
                         cmd.Parameters.Add("@gt", SqlDbType.NVarChar, 10).Value = gt;
+
+                        // Cố định Mã lương mặc định = 1
                         cmd.Parameters.Add("@ml", SqlDbType.Int).Value = 1;
+
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
