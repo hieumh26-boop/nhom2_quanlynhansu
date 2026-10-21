@@ -13,7 +13,7 @@ namespace nhom2_quanlynhansu
         // thoat chuong trinh 
         private void fXinNghiPhep_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Environment.Exit(0);
+          //  Environment.Exit(0); thua r
         }
 
         private void fXinNghiPhep_Load(object sender, EventArgs e)

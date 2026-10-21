@@ -7,6 +7,7 @@ namespace nhom2_quanlynhansu
 {
     public partial class Formdangnhap : Form
     {
+        public static string TenTaiKhoanDangNhap = "";
         public Formdangnhap()
         {
             InitializeComponent();

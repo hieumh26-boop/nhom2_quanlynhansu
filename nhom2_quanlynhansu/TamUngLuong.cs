@@ -19,7 +19,7 @@ namespace nhom2_quanlynhansu
 
         private void fTamUngLuong_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Environment.Exit(0);
+           // Environment.Exit(0); thua r
         }
         private void LoadDuLieu()
         {
