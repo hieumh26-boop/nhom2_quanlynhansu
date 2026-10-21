@@ -10,6 +10,7 @@ namespace nhom2_quanlynhansu
         {
             
             ApplicationConfiguration.Initialize();
+            Formdangnhap fLogin = new Formdangnhap();
 
 
 
