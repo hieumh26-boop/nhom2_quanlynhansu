@@ -95,7 +95,7 @@ namespace nhom2_quanlynhansu
                         cmd.Parameters.Add("@gt", SqlDbType.NVarChar, 10).Value = gt;
 
                         // Cố định Mã lương mặc định = 1
-                        cmd.Parameters.Add("@ml", SqlDbType.Int).Value = 1;
+                        cmd.Parameters.Add("@ml", SqlDbType.Int).Value = mnv ;
 
                         int rowsAffected = cmd.ExecuteNonQuery();
 
