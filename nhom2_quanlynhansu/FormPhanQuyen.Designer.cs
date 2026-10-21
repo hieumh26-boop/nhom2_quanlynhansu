@@ -64,6 +64,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.BackColor = SystemColors.GradientActiveCaption;
             guna2Panel1.Controls.Add(label1);
             guna2Panel1.CustomizableEdges = customizableEdges1;
             guna2Panel1.Dock = DockStyle.Top;
@@ -86,6 +87,7 @@
             // 
             // guna2GradientPanel1
             // 
+            guna2GradientPanel1.BackColor = SystemColors.GradientActiveCaption;
             guna2GradientPanel1.Controls.Add(cbmnv);
             guna2GradientPanel1.Controls.Add(guna2HtmlLabel1);
             guna2GradientPanel1.CustomizableEdges = customizableEdges3;
@@ -264,7 +266,7 @@
             // 
             // btxn
             // 
-            btxn.BackColor = Color.MediumAquamarine;
+            btxn.BackColor = SystemColors.HotTrack;
             btxn.FlatStyle = FlatStyle.Popup;
             btxn.ForeColor = Color.White;
             btxn.Location = new Point(527, 390);
@@ -287,6 +289,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
+            panel1.BackColor = SystemColors.GradientActiveCaption;
             panel1.Controls.Add(cbmcs);
             panel1.Controls.Add(btxn);
             panel1.Controls.Add(tbtcs);
@@ -315,7 +318,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(800, 518);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(guna2Panel1);

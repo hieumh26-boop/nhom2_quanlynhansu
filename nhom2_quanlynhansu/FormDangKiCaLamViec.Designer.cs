@@ -204,6 +204,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
+            panel1.BackColor = SystemColors.GradientActiveCaption;
             panel1.Controls.Add(cboMaNV);
             panel1.Controls.Add(dgvCaLam);
             panel1.Controls.Add(btnHuy);
@@ -226,7 +227,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(800, 577);
             Controls.Add(panel1);
             Name = "FormDangKiCaLamViec";

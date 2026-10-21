@@ -79,7 +79,7 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.BackColor = Color.White;
+            guna2Panel1.BackColor = SystemColors.GradientActiveCaption;
             guna2Panel1.Controls.Add(btcs);
             guna2Panel1.Controls.Add(btpq);
             guna2Panel1.Controls.Add(bttnv);
@@ -133,7 +133,7 @@
             btpq.FillColor = SystemColors.HotTrack;
             btpq.Font = new Font("Segoe UI", 9F);
             btpq.ForeColor = Color.White;
-            btpq.HoverState.FillColor = Color.MediumAquamarine;
+            btpq.HoverState.FillColor = SystemColors.HotTrack;
             btpq.HoverState.ForeColor = Color.White;
             btpq.Location = new Point(8, 58);
             btpq.Name = "btpq";
@@ -286,7 +286,7 @@
             btqlns.FillColor = SystemColors.HotTrack;
             btqlns.Font = new Font("Segoe UI", 9F);
             btqlns.ForeColor = Color.White;
-            btqlns.HoverState.FillColor = Color.MediumAquamarine;
+            btqlns.HoverState.FillColor = SystemColors.HotTrack;
             btqlns.HoverState.ForeColor = Color.White;
             btqlns.Location = new Point(8, 109);
             btqlns.Name = "btqlns";
@@ -310,18 +310,19 @@
             // 
             guna2Panel2.AutoScroll = true;
             guna2Panel2.AutoScrollMinSize = new Size(1000, 1200);
-            guna2Panel2.BackColor = Color.White;
+            guna2Panel2.BackColor = SystemColors.GradientActiveCaption;
             guna2Panel2.BorderRadius = 60;
             guna2Panel2.Controls.Add(guna2CustomGradientPanel1);
             guna2Panel2.CustomizableEdges = customizableEdges26;
             guna2Panel2.Dock = DockStyle.Fill;
-            guna2Panel2.FillColor = Color.White;
+            guna2Panel2.FillColor = SystemColors.GradientActiveCaption;
             guna2Panel2.Location = new Point(137, 0);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.Padding = new Padding(15);
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges27;
             guna2Panel2.Size = new Size(1063, 568);
             guna2Panel2.TabIndex = 2;
+            guna2Panel2.Paint += guna2Panel2_Paint;
             // 
             // guna2CustomGradientPanel1
             // 

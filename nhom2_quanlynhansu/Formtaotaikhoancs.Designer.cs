@@ -126,7 +126,7 @@
             // 
             // btxnttk
             // 
-            btxnttk.BackColor = Color.MediumAquamarine;
+            btxnttk.BackColor = SystemColors.HotTrack;
             btxnttk.FlatStyle = FlatStyle.Popup;
             btxnttk.Font = new Font("Segoe UI", 10.2F);
             btxnttk.ForeColor = Color.White;
@@ -185,6 +185,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(tbmnv);
             Controls.Add(label6);

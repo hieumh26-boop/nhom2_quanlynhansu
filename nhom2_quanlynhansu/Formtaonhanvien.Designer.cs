@@ -60,7 +60,7 @@
             // 
             // label1
             // 
-            label1.BackColor = Color.White;
+            label1.BackColor = SystemColors.GradientActiveCaption;
             label1.Dock = DockStyle.Top;
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(0, 0);
@@ -124,7 +124,7 @@
             // 
             // bttmnv
             // 
-            bttmnv.BackColor = Color.MediumAquamarine;
+            bttmnv.BackColor = SystemColors.HotTrack;
             bttmnv.FlatStyle = FlatStyle.Popup;
             bttmnv.ForeColor = Color.White;
             bttmnv.Location = new Point(385, 264);
@@ -222,7 +222,7 @@
             // 
             // bttnv
             // 
-            bttnv.BackColor = Color.MediumAquamarine;
+            bttnv.BackColor = SystemColors.HotTrack;
             bttnv.FlatStyle = FlatStyle.Popup;
             bttnv.ForeColor = Color.White;
             bttnv.Location = new Point(432, 308);
@@ -284,6 +284,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
+            panel1.BackColor = SystemColors.GradientActiveCaption;
             panel1.Controls.Add(bttmnv);
             panel1.Controls.Add(cbmcs);
             panel1.Controls.Add(datens);
@@ -325,7 +326,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(panel2);
             Controls.Add(panel1);

@@ -83,6 +83,11 @@ namespace nhom2_quanlynhansu
         {
             MoForm(new FormPhanQuyen());
         }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

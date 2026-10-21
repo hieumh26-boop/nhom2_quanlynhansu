@@ -69,7 +69,7 @@
             // 
             label9.Anchor = AnchorStyles.Top;
             label9.AutoSize = true;
-            label9.BackColor = Color.White;
+            label9.BackColor = SystemColors.GradientActiveCaption;
             label9.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label9.Location = new Point(343, 9);
             label9.Name = "label9";
@@ -80,7 +80,7 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top;
-            groupBox1.BackColor = Color.White;
+            groupBox1.BackColor = SystemColors.GradientActiveCaption;
             groupBox1.Controls.Add(cbmcs);
             groupBox1.Controls.Add(tbcsdl);
             groupBox1.Controls.Add(cbcs2);
@@ -252,7 +252,7 @@
             // 
             // btnLuu
             // 
-            btnLuu.BackColor = Color.MediumAquamarine;
+            btnLuu.BackColor = SystemColors.HotTrack;
             btnLuu.Cursor = Cursors.VSplit;
             btnLuu.FlatStyle = FlatStyle.Popup;
             btnLuu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
@@ -412,7 +412,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.White;
+            panel2.BackColor = SystemColors.GradientActiveCaption;
             panel2.Controls.Add(label9);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
@@ -434,7 +434,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(1175, 909);
             Controls.Add(panel1);
             Controls.Add(panel2);
