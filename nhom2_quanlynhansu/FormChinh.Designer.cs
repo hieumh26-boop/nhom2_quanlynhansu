@@ -31,10 +31,12 @@
             components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -47,8 +49,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -58,15 +58,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            btcs = new Guna.UI2.WinForms.Guna2Button();
+            btqlns = new Guna.UI2.WinForms.Guna2Button();
             btpq = new Guna.UI2.WinForms.Guna2Button();
+            btcs = new Guna.UI2.WinForms.Guna2Button();
             bttnv = new Guna.UI2.WinForms.Guna2Button();
             btqld = new Guna.UI2.WinForms.Guna2Button();
             btcht = new Guna.UI2.WinForms.Guna2Button();
             btdkc = new Guna.UI2.WinForms.Guna2Button();
             btchc = new Guna.UI2.WinForms.Guna2Button();
             btqlhs = new Guna.UI2.WinForms.Guna2Button();
-            btqlns = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -98,26 +98,28 @@
             guna2Panel1.Size = new Size(137, 568);
             guna2Panel1.TabIndex = 1;
             // 
-            // btcs
+            // btqlns
             // 
-            btcs.BorderRadius = 15;
-            btcs.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btcs.CheckedState.FillColor = Color.White;
-            btcs.CheckedState.ForeColor = Color.Black;
-            btcs.CustomizableEdges = customizableEdges5;
-            btcs.DisabledState.BorderColor = Color.DarkGray;
-            btcs.DisabledState.CustomBorderColor = Color.DarkGray;
-            btcs.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btcs.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btcs.FillColor = SystemColors.HotTrack;
-            btcs.Font = new Font("Segoe UI", 9F);
-            btcs.ForeColor = Color.White;
-            btcs.Location = new Point(11, 456);
-            btcs.Name = "btcs";
-            btcs.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btcs.Size = new Size(123, 45);
-            btcs.TabIndex = 3;
-            btcs.Text = "QL cơ sở";
+            btqlns.BorderRadius = 15;
+            btqlns.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            btqlns.CheckedState.FillColor = Color.White;
+            btqlns.CheckedState.ForeColor = Color.Black;
+            btqlns.CustomizableEdges = customizableEdges1;
+            btqlns.DisabledState.BorderColor = Color.DarkGray;
+            btqlns.DisabledState.CustomBorderColor = Color.DarkGray;
+            btqlns.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btqlns.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btqlns.FillColor = SystemColors.HotTrack;
+            btqlns.Font = new Font("Segoe UI", 9F);
+            btqlns.ForeColor = Color.White;
+            btqlns.HoverState.FillColor = SystemColors.HotTrack;
+            btqlns.HoverState.ForeColor = Color.White;
+            btqlns.Location = new Point(12, 354);
+            btqlns.Name = "btqlns";
+            btqlns.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btqlns.Size = new Size(123, 45);
+            btqlns.TabIndex = 0;
+            btqlns.Text = "QL nhân sự";
             // 
             // btpq
             // 
@@ -142,6 +144,27 @@
             btpq.TabIndex = 2;
             btpq.Text = "Phân quyền";
             btpq.Click += btpq_Click;
+            // 
+            // btcs
+            // 
+            btcs.BorderRadius = 15;
+            btcs.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            btcs.CheckedState.FillColor = Color.White;
+            btcs.CheckedState.ForeColor = Color.Black;
+            btcs.CustomizableEdges = customizableEdges5;
+            btcs.DisabledState.BorderColor = Color.DarkGray;
+            btcs.DisabledState.CustomBorderColor = Color.DarkGray;
+            btcs.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btcs.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btcs.FillColor = SystemColors.HotTrack;
+            btcs.Font = new Font("Segoe UI", 9F);
+            btcs.ForeColor = Color.White;
+            btcs.Location = new Point(11, 456);
+            btcs.Name = "btcs";
+            btcs.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btcs.Size = new Size(123, 45);
+            btcs.TabIndex = 3;
+            btcs.Text = "QL cơ sở";
             // 
             // bttnv
             // 
@@ -249,6 +272,7 @@
             btchc.Size = new Size(123, 45);
             btchc.TabIndex = 0;
             btchc.Text = "cấu hình ca ";
+            btchc.Click += btchc_Click;
             // 
             // btqlhs
             // 
@@ -271,29 +295,6 @@
             btqlhs.TabIndex = 0;
             btqlhs.Text = "QL hồ sơ";
             btqlhs.Click += btqlhs_Click;
-            // 
-            // btqlns
-            // 
-            btqlns.BorderRadius = 15;
-            btqlns.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btqlns.CheckedState.FillColor = Color.White;
-            btqlns.CheckedState.ForeColor = Color.Black;
-            btqlns.CustomizableEdges = customizableEdges1;
-            btqlns.DisabledState.BorderColor = Color.DarkGray;
-            btqlns.DisabledState.CustomBorderColor = Color.DarkGray;
-            btqlns.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btqlns.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btqlns.FillColor = SystemColors.HotTrack;
-            btqlns.Font = new Font("Segoe UI", 9F);
-            btqlns.ForeColor = Color.White;
-            btqlns.HoverState.FillColor = SystemColors.HotTrack;
-            btqlns.HoverState.ForeColor = Color.White;
-            btqlns.Location = new Point(12, 354);
-            btqlns.Name = "btqlns";
-            btqlns.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btqlns.Size = new Size(123, 45);
-            btqlns.TabIndex = 0;
-            btqlns.Text = "QL nhân sự";
             // 
             // guna2HtmlLabel1
             // 

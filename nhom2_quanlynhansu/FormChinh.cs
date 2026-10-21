@@ -88,6 +88,11 @@ namespace nhom2_quanlynhansu
         {
 
         }
+
+        private void btchc_Click(object sender, EventArgs e)
+        {
+            MoForm(new formcauhinhcalamviec());
+        }
     }
 }
 
