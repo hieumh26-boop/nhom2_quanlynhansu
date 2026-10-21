@@ -46,6 +46,10 @@
             ColCaLam = new DataGridViewTextBoxColumn();
             cboMaNV = new ComboBox();
             panel1 = new Panel();
+            tbkt = new TextBox();
+            label3 = new Label();
+            tbbd = new TextBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvCaLam).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -115,17 +119,19 @@
             // cboCaLam
             // 
             cboCaLam.FormattingEnabled = true;
+            cboCaLam.Items.AddRange(new object[] { "1", "2", "3" });
             cboCaLam.Location = new Point(346, 209);
             cboCaLam.Name = "cboCaLam";
             cboCaLam.Size = new Size(151, 28);
             cboCaLam.TabIndex = 8;
+            cboCaLam.SelectedIndexChanged += cboCaLam_SelectedIndexChanged;
             // 
             // btnDangKy
             // 
             btnDangKy.BackColor = SystemColors.HotTrack;
             btnDangKy.FlatStyle = FlatStyle.Popup;
             btnDangKy.ForeColor = Color.White;
-            btnDangKy.Location = new Point(229, 287);
+            btnDangKy.Location = new Point(199, 353);
             btnDangKy.Name = "btnDangKy";
             btnDangKy.Size = new Size(94, 29);
             btnDangKy.TabIndex = 9;
@@ -138,7 +144,7 @@
             btnHuy.BackColor = SystemColors.HotTrack;
             btnHuy.FlatStyle = FlatStyle.Popup;
             btnHuy.ForeColor = Color.White;
-            btnHuy.Location = new Point(403, 287);
+            btnHuy.Location = new Point(525, 353);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(94, 29);
             btnHuy.TabIndex = 10;
@@ -152,7 +158,7 @@
             dgvCaLam.AllowUserToResizeColumns = false;
             dgvCaLam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCaLam.Columns.AddRange(new DataGridViewColumn[] { colMaNV, ColHoTen, ColNgayLam, ColCaLam });
-            dgvCaLam.Location = new Point(116, 359);
+            dgvCaLam.Location = new Point(117, 430);
             dgvCaLam.Name = "dgvCaLam";
             dgvCaLam.RowHeadersWidth = 51;
             dgvCaLam.Size = new Size(552, 188);
@@ -205,6 +211,10 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(tbkt);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(tbbd);
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(cboMaNV);
             panel1.Controls.Add(dgvCaLam);
             panel1.Controls.Add(btnHuy);
@@ -220,15 +230,47 @@
             panel1.ImeMode = ImeMode.NoControl;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 577);
+            panel1.Size = new Size(800, 651);
             panel1.TabIndex = 13;
+            // 
+            // tbkt
+            // 
+            tbkt.Location = new Point(346, 299);
+            tbkt.Name = "tbkt";
+            tbkt.Size = new Size(125, 27);
+            tbkt.TabIndex = 16;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(207, 302);
+            label3.Name = "label3";
+            label3.Size = new Size(87, 20);
+            label3.TabIndex = 15;
+            label3.Text = "giờ kết thúc";
+            // 
+            // tbbd
+            // 
+            tbbd.Location = new Point(346, 256);
+            tbbd.Name = "tbbd";
+            tbbd.Size = new Size(125, 27);
+            tbbd.TabIndex = 14;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(207, 259);
+            label2.Name = "label2";
+            label2.Size = new Size(86, 20);
+            label2.TabIndex = 13;
+            label2.Text = "giờ bắt đầu";
             // 
             // FormDangKiCaLamViec
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(800, 577);
+            ClientSize = new Size(800, 644);
             Controls.Add(panel1);
             Name = "FormDangKiCaLamViec";
             Text = "Form4";
@@ -258,5 +300,9 @@
         private DataGridViewTextBoxColumn ColNgayLam;
         private DataGridViewTextBoxColumn ColCaLam;
         private Panel panel1;
+        private TextBox tbkt;
+        private Label label3;
+        private TextBox tbbd;
+        private Label label2;
     }
 }

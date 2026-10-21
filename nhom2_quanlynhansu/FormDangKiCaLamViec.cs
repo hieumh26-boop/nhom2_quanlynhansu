@@ -16,15 +16,12 @@ namespace nhom2_quanlynhansu
         {
             dtpNgayLam.Value = DateTime.Now;
 
-            cboCaLam.Items.Clear();
-            cboCaLam.Items.AddRange(new object[] { "Ca Sáng (6h - 12h)", "Ca Chiều (12h - 18h)", "Ca Tối (18h - 22h)" });
-            cboCaLam.SelectedIndex = 0;
-
             LoadDanhSachNhanVien();
-            LoadDanhSachCaLam();
+            LoadDanhSachCaLamViecCombox(); // Load ca làm việc từ CSDL vào ComboBox
+            LoadDanhSachCaLam();           // Load danh sách đã đăng ký lên DataGridView
         }
 
-      
+        // 1. Tải danh sách Nhân viên vào ComboBox
         private void LoadDanhSachNhanVien()
         {
             string query = "SELECT MaNhanVien, HoTen FROM dbo.NhanVien";
@@ -38,7 +35,6 @@ namespace nhom2_quanlynhansu
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
-                    
                     cboMaNV.SelectedIndexChanged -= cboMaNV_SelectedIndexChanged;
 
                     cboMaNV.DataSource = dt;
@@ -56,7 +52,40 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        
+        // 2. Tải danh sách Ca làm việc từ bảng CaLamViec vào ComboBox cboCaLam
+        private void LoadDanhSachCaLamViecCombox()
+        {
+            string query = "SELECT MaCa, (N'Ca ' + CAST(MaCa AS NVARCHAR(10)) + ' (' + GioBatDau + ' - ' + GioKetThuc + ')') AS TenCa FROM dbo.CaLamViec";
+
+            using (SqlConnection conn = new SqlConnection(classchung.ketnoi))
+            {
+                try
+                {
+                    conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    cboCaLam.SelectedIndexChanged -= cboCaLam_SelectedIndexChanged;
+
+                    cboCaLam.DataSource = dt;
+                    cboCaLam.DisplayMember = "TenCa";
+                    cboCaLam.ValueMember = "MaCa";
+                    cboCaLam.SelectedIndex = -1;
+
+                    tbbd.Clear();
+                    tbkt.Clear();
+
+                    cboCaLam.SelectedIndexChanged += cboCaLam_SelectedIndexChanged;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi tải danh sách ca làm việc: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        // Hiển thị Họ tên khi chọn Mã NV
         private void cboMaNV_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboMaNV.SelectedIndex != -1 && cboMaNV.SelectedItem != null)
@@ -73,22 +102,55 @@ namespace nhom2_quanlynhansu
             }
         }
 
-       
+        // Hiển thị Giờ bắt đầu & Giờ kết thúc khi chọn Ca Làm
+        private void cboCaLam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCaLam.SelectedIndex != -1 && cboCaLam.SelectedValue != null)
+            {
+                string maCa = cboCaLam.SelectedValue.ToString();
+                string query = "SELECT GioBatDau, GioKetThuc FROM dbo.CaLamViec WHERE MaCa = @mc";
+
+                using (SqlConnection conn = new SqlConnection(classchung.ketnoi))
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@mc", maCa);
+                    try
+                    {
+                        conn.Open();
+                        using (SqlDataReader doc = cmd.ExecuteReader())
+                        {
+                            if (doc.Read())
+                            {
+                                tbbd.Text = doc["GioBatDau"] != DBNull.Value ? doc["GioBatDau"].ToString() : "";
+                                tbkt.Text = doc["GioKetThuc"] != DBNull.Value ? doc["GioKetThuc"].ToString() : "";
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi lấy thông tin ca làm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                tbbd.Clear();
+                tbkt.Clear();
+            }
+        }
+
+        // 3. Tải danh sách Đăng ký ca lên DataGridView (Kết nối 3 bảng DangKiCaLamViec, NhanVien, CaLamViec)
         private void LoadDanhSachCaLam()
         {
             string query = @"SELECT dk.MaDangKi, 
                                     dk.MaNhanVien, 
                                     nv.HoTen, 
-                                    CONVERT(VARCHAR(10), dk.ThoiGianDangKi, 103) AS NgayLam,
-                                    CASE 
-                                        WHEN dk.KhungGio = '06:00:00' THEN N'Ca Sáng (6h - 12h)'
-                                        WHEN dk.KhungGio = '12:00:00' THEN N'Ca Chiều (12h - 18h)'
-                                        WHEN dk.KhungGio = '18:00:00' THEN N'Ca Tối (18h - 22h)'
-                                        ELSE CAST(dk.KhungGio AS VARCHAR(8))
-                                    END AS TenCaLam,
+                                    dk.MaCa,
+                                    (cl.GioBatDau + ' - ' + cl.GioKetThuc) AS KhungGio,
                                     dk.TrangThaiDangKi 
                              FROM dbo.DangKiCaLamViec dk 
-                             INNER JOIN dbo.NhanVien nv ON dk.MaNhanVien = nv.MaNhanVien";
+                             INNER JOIN dbo.NhanVien nv ON dk.MaNhanVien = nv.MaNhanVien
+                             INNER JOIN dbo.CaLamViec cl ON dk.MaCa = cl.MaCa";
 
             using (SqlConnection conn = new SqlConnection(classchung.ketnoi))
             {
@@ -99,55 +161,55 @@ namespace nhom2_quanlynhansu
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
-                    dgvCaLam.AutoGenerateColumns = true; 
+                    dgvCaLam.AutoGenerateColumns = true;
                     dgvCaLam.DataSource = dt;
 
-                    
                     if (dgvCaLam.Columns["MaDangKi"] != null) dgvCaLam.Columns["MaDangKi"].HeaderText = "Mã ĐK";
                     if (dgvCaLam.Columns["MaNhanVien"] != null) dgvCaLam.Columns["MaNhanVien"].HeaderText = "Mã NV";
                     if (dgvCaLam.Columns["HoTen"] != null) dgvCaLam.Columns["HoTen"].HeaderText = "Họ tên";
-                    if (dgvCaLam.Columns["NgayLam"] != null) dgvCaLam.Columns["NgayLam"].HeaderText = "Ngày làm";
-                    if (dgvCaLam.Columns["TenCaLam"] != null) dgvCaLam.Columns["TenCaLam"].HeaderText = "Ca làm việc";
+                    if (dgvCaLam.Columns["MaCa"] != null) dgvCaLam.Columns["MaCa"].HeaderText = "Mã Ca";
+                    if (dgvCaLam.Columns["KhungGio"] != null) dgvCaLam.Columns["KhungGio"].HeaderText = "Khung giờ làm";
                     if (dgvCaLam.Columns["TrangThaiDangKi"] != null) dgvCaLam.Columns["TrangThaiDangKi"].HeaderText = "Trạng thái";
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi tải danh sách ca làm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi tải danh sách đăng ký ca: " + ex.Message, "Lỗi SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-      
+        // 4. Xử lý Đăng ký ca làm
         private void btnDangKy_Click(object sender, EventArgs e)
         {
+            // Kiểm tra chọn Nhân viên
             if (cboMaNV.SelectedIndex == -1 || cboMaNV.SelectedValue == null)
             {
                 MessageBox.Show("Vui lòng chọn nhân viên!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string strMaNV = cboMaNV.SelectedValue is DataRowView drv ? drv["MaNhanVien"].ToString() : cboMaNV.SelectedValue.ToString();
-            if (!int.TryParse(strMaNV, out int maNV))
+            // Kiểm tra chọn Ca làm
+            if (cboCaLam.SelectedIndex == -1 || cboCaLam.SelectedValue == null)
             {
-                MessageBox.Show("Mã nhân viên không hợp lệ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn ca làm việc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            DateTime thoiGianDangKi = dtpNgayLam.Value.Date; 
+            // Lấy MaNhanVien và MaCa
+            string strMaNV = cboMaNV.SelectedValue is DataRowView drvNV ? drvNV["MaNhanVien"].ToString() : cboMaNV.SelectedValue.ToString();
+            string strMaCa = cboCaLam.SelectedValue is DataRowView drvCa ? drvCa["MaCa"].ToString() : cboCaLam.SelectedValue.ToString();
+
+            if (!int.TryParse(strMaNV, out int maNV) || !int.TryParse(strMaCa, out int maCa))
+            {
+                MessageBox.Show("Dữ liệu nhân viên hoặc ca làm không hợp lệ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string trangThai = "Chờ duyệt";
 
-            TimeSpan khungGio;
-            string caChon = cboCaLam.SelectedItem != null ? cboCaLam.SelectedItem.ToString() : "";
-
-            if (caChon.Contains("Sáng"))
-                khungGio = new TimeSpan(6, 0, 0);
-            else if (caChon.Contains("Chiều"))
-                khungGio = new TimeSpan(12, 0, 0);
-            else
-                khungGio = new TimeSpan(18, 0, 0);
-
-            string query = @"INSERT INTO dbo.DangKiCaLamViec (MaNhanVien, KhungGio, ThoiGianDangKi, TrangThaiDangKi) 
-                             VALUES (@MaNhanVien, @KhungGio, @ThoiGianDangKi, @TrangThaiDangKi)";
+            // Lệnh INSERT lưu MaNhanVien, MaCa, TrangThaiDangKi vào bảng DangKiCaLamViec
+            string query = @"INSERT INTO dbo.DangKiCaLamViec (MaNhanVien, MaCa, TrangThaiDangKi) 
+                             VALUES (@MaNhanVien, @MaCa, @TrangThaiDangKi)";
 
             using (SqlConnection conn = new SqlConnection(classchung.ketnoi))
             {
@@ -157,8 +219,7 @@ namespace nhom2_quanlynhansu
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.Add("@MaNhanVien", SqlDbType.Int).Value = maNV;
-                        cmd.Parameters.Add("@KhungGio", SqlDbType.Time).Value = khungGio;
-                        cmd.Parameters.Add("@ThoiGianDangKi", SqlDbType.Date).Value = thoiGianDangKi;
+                        cmd.Parameters.Add("@MaCa", SqlDbType.Int).Value = maCa;
                         cmd.Parameters.Add("@TrangThaiDangKi", SqlDbType.NVarChar, 50).Value = trangThai;
 
                         int rowsAffected = cmd.ExecuteNonQuery();
@@ -167,13 +228,14 @@ namespace nhom2_quanlynhansu
                         {
                             MessageBox.Show("Đăng ký ca làm việc thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            
+                            // Clear dữ liệu nhập
                             cboMaNV.SelectedIndex = -1;
+                            cboCaLam.SelectedIndex = -1;
                             txtHoTen.Clear();
-                            dtpNgayLam.Value = DateTime.Now;
-                            cboCaLam.SelectedIndex = 0;
+                            tbbd.Clear();
+                            tbkt.Clear();
 
-                           
+                            // Reload danh sách lên DataGridView
                             LoadDanhSachCaLam();
                         }
                     }
@@ -185,7 +247,6 @@ namespace nhom2_quanlynhansu
             }
         }
 
-      
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Close();
