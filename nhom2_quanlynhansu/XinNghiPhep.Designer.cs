@@ -486,7 +486,7 @@
             // 
             // MaDon
             // 
-            MaDon.DataPropertyName = "MaDon";
+            MaDon.DataPropertyName = "MaDonNP";
             MaDon.HeaderText = "Mã Đơn";
             MaDon.MinimumWidth = 8;
             MaDon.Name = "MaDon";

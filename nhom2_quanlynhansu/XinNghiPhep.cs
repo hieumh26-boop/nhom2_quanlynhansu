@@ -42,12 +42,11 @@ namespace nhom2_quanlynhansu
             string sql = "SELECT nd.MaNhanVien, nv.HoTen, np.SoNgayNghiToiDa, np.SoNgayNghiConLai,cs.TenCoSo,pq.TenVaiTro " +
                  "FROM [NhanVien] nv " +
                  "INNER JOIN [NguoiDung] nd ON nd.MaNhanVien = nv.MaNhanVien " +
-                 "INNER JOIN [NghiPhep] np ON np.MaNhanVien = nv.MaNhanVien " +
+                 "INNER JOIN [NghiPhep] np ON np.MaDonNP = nv.MaDonNP " +
                     "INNER JOIN [PhanQuyen] pq ON pq.MaVaiTro = nv.MaVaiTro " +
                 "INNER JOIN [CoSo] cs ON cs.MaCoSo = nv.MaCoSo " +
                  "WHERE nd.TenDangNhap = '" + Formdangnhap.TenTaiKhoanDangNhap + "'";
-            //"INNER JOIN [CoSo] cs ON cs.MaNhanVien = nv.MaNhanVien " +
-            //"INNER JOIN [PhanQuyen] pq ON pq.MaNhanVien = nv.MaNhanVien " +
+         
 
             DataTable dt = db.ReadData(sql);
             if (dt != null && dt.Rows.Count > 0)

@@ -30,25 +30,28 @@
         {
             groupBox3 = new GroupBox();
             dgvLichSu = new DataGridView();
-            Don = new DataGridViewTextBoxColumn();
+            MaUngLuong = new DataGridViewTextBoxColumn();
+            MaLuong = new DataGridViewTextBoxColumn();
             ThoiGian = new DataGridViewTextBoxColumn();
-            SoTien = new DataGridViewTextBoxColumn();
-            TrangThai = new DataGridViewTextBoxColumn();
+            SoTienUng = new DataGridViewTextBoxColumn();
+            LyDo = new DataGridViewTextBoxColumn();
             tableLayoutPanel4 = new TableLayoutPanel();
             groupBox2 = new GroupBox();
             tbxLyDo = new TextBox();
-            tbxConlai = new TextBox();
             tbxStchu = new TextBox();
             tbxStso = new TextBox();
             btnHuy = new Button();
             btnGui = new Button();
             label10 = new Label();
-            label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             datetime = new DateTimePicker();
             label6 = new Label();
             groupBox1 = new GroupBox();
+            tbxConlai = new TextBox();
+            label9 = new Label();
+            tbxLcb = new TextBox();
+            label11 = new Label();
             tbxLtt = new TextBox();
             label5 = new Label();
             tbxDu = new TextBox();
@@ -75,9 +78,9 @@
             groupBox3.BackColor = SystemColors.GradientActiveCaption;
             groupBox3.Controls.Add(dgvLichSu);
             groupBox3.Font = new Font("Calibri", 18F, FontStyle.Bold | FontStyle.Italic);
-            groupBox3.Location = new Point(2, 524);
+            groupBox3.Location = new Point(2, 577);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(1000, 331);
+            groupBox3.Size = new Size(1000, 278);
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "Lịch sử tạo đơn";
@@ -86,42 +89,54 @@
             // 
             dgvLichSu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvLichSu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLichSu.Columns.AddRange(new DataGridViewColumn[] { Don, ThoiGian, SoTien, TrangThai });
+            dgvLichSu.Columns.AddRange(new DataGridViewColumn[] { MaUngLuong, MaLuong, ThoiGian, SoTienUng, LyDo });
             dgvLichSu.Dock = DockStyle.Fill;
             dgvLichSu.Location = new Point(3, 47);
             dgvLichSu.Margin = new Padding(5);
             dgvLichSu.Name = "dgvLichSu";
             dgvLichSu.RowHeadersWidth = 62;
-            dgvLichSu.Size = new Size(994, 281);
+            dgvLichSu.Size = new Size(994, 228);
             dgvLichSu.TabIndex = 1;
             // 
-            // Don
+            // MaUngLuong
             // 
-            Don.HeaderText = "Đơn";
-            Don.MinimumWidth = 8;
-            Don.Name = "Don";
-            Don.ReadOnly = true;
+            MaUngLuong.DataPropertyName = "MaUngLuong";
+            MaUngLuong.HeaderText = "Mã ứng";
+            MaUngLuong.MinimumWidth = 8;
+            MaUngLuong.Name = "MaUngLuong";
+            MaUngLuong.ReadOnly = true;
+            // 
+            // MaLuong
+            // 
+            MaLuong.DataPropertyName = "MaLuong";
+            MaLuong.HeaderText = "Mã Lương";
+            MaLuong.MinimumWidth = 8;
+            MaLuong.Name = "MaLuong";
+            MaLuong.ReadOnly = true;
             // 
             // ThoiGian
             // 
+            ThoiGian.DataPropertyName = "ThoiGian";
             ThoiGian.HeaderText = "Thời gian";
             ThoiGian.MinimumWidth = 8;
             ThoiGian.Name = "ThoiGian";
             ThoiGian.ReadOnly = true;
             // 
-            // SoTien
+            // SoTienUng
             // 
-            SoTien.HeaderText = "Số Tiền";
-            SoTien.MinimumWidth = 8;
-            SoTien.Name = "SoTien";
-            SoTien.ReadOnly = true;
+            SoTienUng.DataPropertyName = "SoTienUng";
+            SoTienUng.HeaderText = "Số Tiền Ứng";
+            SoTienUng.MinimumWidth = 8;
+            SoTienUng.Name = "SoTienUng";
+            SoTienUng.ReadOnly = true;
             // 
-            // TrangThai
+            // LyDo
             // 
-            TrangThai.HeaderText = "Trạng Thái";
-            TrangThai.MinimumWidth = 8;
-            TrangThai.Name = "TrangThai";
-            TrangThai.ReadOnly = true;
+            LyDo.DataPropertyName = "LyDo";
+            LyDo.HeaderText = "Lý do";
+            LyDo.MinimumWidth = 8;
+            LyDo.Name = "LyDo";
+            LyDo.ReadOnly = true;
             // 
             // tableLayoutPanel4
             // 
@@ -136,20 +151,18 @@
             tableLayoutPanel4.RowCount = 1;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel4.Size = new Size(1001, 456);
+            tableLayoutPanel4.Size = new Size(1001, 517);
             tableLayoutPanel4.TabIndex = 9;
             // 
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.GradientActiveCaption;
             groupBox2.Controls.Add(tbxLyDo);
-            groupBox2.Controls.Add(tbxConlai);
             groupBox2.Controls.Add(tbxStchu);
             groupBox2.Controls.Add(tbxStso);
             groupBox2.Controls.Add(btnHuy);
             groupBox2.Controls.Add(btnGui);
             groupBox2.Controls.Add(label10);
-            groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(datetime);
@@ -158,7 +171,7 @@
             groupBox2.Font = new Font("Calibri", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox2.Location = new Point(503, 3);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(495, 450);
+            groupBox2.Size = new Size(495, 511);
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
             groupBox2.Text = "Đơn ứng lương";
@@ -167,21 +180,10 @@
             // 
             tbxLyDo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxLyDo.Font = new Font("Calibri", 14F);
-            tbxLyDo.Location = new Point(219, 291);
+            tbxLyDo.Location = new Point(219, 232);
             tbxLyDo.Name = "tbxLyDo";
-            tbxLyDo.ReadOnly = true;
             tbxLyDo.Size = new Size(981, 42);
             tbxLyDo.TabIndex = 27;
-            // 
-            // tbxConlai
-            // 
-            tbxConlai.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tbxConlai.Font = new Font("Calibri", 14F);
-            tbxConlai.Location = new Point(219, 232);
-            tbxConlai.Name = "tbxConlai";
-            tbxConlai.ReadOnly = true;
-            tbxConlai.Size = new Size(981, 42);
-            tbxConlai.TabIndex = 26;
             // 
             // tbxStchu
             // 
@@ -189,7 +191,6 @@
             tbxStchu.Font = new Font("Calibri", 14F);
             tbxStchu.Location = new Point(219, 173);
             tbxStchu.Name = "tbxStchu";
-            tbxStchu.ReadOnly = true;
             tbxStchu.Size = new Size(981, 42);
             tbxStchu.TabIndex = 25;
             // 
@@ -199,7 +200,6 @@
             tbxStso.Font = new Font("Calibri", 14F);
             tbxStso.Location = new Point(219, 114);
             tbxStso.Name = "tbxStso";
-            tbxStso.ReadOnly = true;
             tbxStso.Size = new Size(981, 42);
             tbxStso.TabIndex = 24;
             // 
@@ -214,6 +214,7 @@
             btnHuy.TabIndex = 23;
             btnHuy.Text = "Hủy đơn";
             btnHuy.UseVisualStyleBackColor = false;
+            btnHuy.Click += btnHuy_Click;
             // 
             // btnGui
             // 
@@ -227,50 +228,40 @@
             btnGui.TabIndex = 22;
             btnGui.Text = "Gửi đơn";
             btnGui.UseVisualStyleBackColor = false;
+            btnGui.Click += btnGui_Click;
             // 
             // label10
             // 
             label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label10.AutoSize = true;
             label10.Font = new Font("Calibri", 14F);
-            label10.Location = new Point(17, 292);
+            label10.Location = new Point(10, 233);
             label10.Name = "label10";
             label10.Size = new Size(75, 35);
             label10.TabIndex = 21;
             label10.Text = "Lý do";
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label9.AutoSize = true;
-            label9.Font = new Font("Calibri", 14F);
-            label9.Location = new Point(17, 234);
-            label9.Name = "label9";
-            label9.Size = new Size(151, 35);
-            label9.TabIndex = 20;
-            label9.Text = "Tiền còn lại:";
             // 
             // label8
             // 
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label8.AutoSize = true;
             label8.Font = new Font("Calibri", 14F);
-            label8.Location = new Point(17, 176);
+            label8.Location = new Point(10, 176);
             label8.Name = "label8";
-            label8.Size = new Size(160, 35);
+            label8.Size = new Size(211, 35);
             label8.TabIndex = 19;
-            label8.Text = "Số tiền (chữ)";
+            label8.Text = "Số tiền ứng (chữ)";
             // 
             // label7
             // 
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label7.AutoSize = true;
             label7.Font = new Font("Calibri", 14F);
-            label7.Location = new Point(17, 118);
+            label7.Location = new Point(10, 118);
             label7.Name = "label7";
-            label7.Size = new Size(142, 35);
+            label7.Size = new Size(193, 35);
             label7.TabIndex = 18;
-            label7.Text = "Số tiền (số)";
+            label7.Text = "Số tiền ứng (số)";
             // 
             // datetime
             // 
@@ -289,7 +280,7 @@
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label6.AutoSize = true;
             label6.Font = new Font("Calibri", 14F);
-            label6.Location = new Point(17, 60);
+            label6.Location = new Point(10, 60);
             label6.Name = "label6";
             label6.Size = new Size(136, 35);
             label6.TabIndex = 16;
@@ -298,6 +289,10 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.GradientActiveCaption;
+            groupBox1.Controls.Add(tbxConlai);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Controls.Add(tbxLcb);
+            groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(tbxLtt);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(tbxDu);
@@ -314,16 +309,57 @@
             groupBox1.Font = new Font("Calibri", 18F, FontStyle.Bold | FontStyle.Italic);
             groupBox1.Location = new Point(3, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(494, 450);
+            groupBox1.Size = new Size(494, 511);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Xác nhận thông tin";
+            // 
+            // tbxConlai
+            // 
+            tbxConlai.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbxConlai.Font = new Font("Calibri", 14F);
+            tbxConlai.Location = new Point(267, 459);
+            tbxConlai.Name = "tbxConlai";
+            tbxConlai.Size = new Size(981, 42);
+            tbxConlai.TabIndex = 34;
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label9.AutoSize = true;
+            label9.Font = new Font("Calibri", 14F);
+            label9.Location = new Point(21, 460);
+            label9.Name = "label9";
+            label9.Size = new Size(208, 35);
+            label9.TabIndex = 33;
+            label9.Text = "Tiền còn sau ứng";
+            // 
+            // tbxLcb
+            // 
+            tbxLcb.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbxLcb.Font = new Font("Calibri", 14F);
+            tbxLcb.Location = new Point(264, 289);
+            tbxLcb.Name = "tbxLcb";
+            tbxLcb.ReadOnly = true;
+            tbxLcb.Size = new Size(918, 42);
+            tbxLcb.TabIndex = 32;
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label11.AutoSize = true;
+            label11.Font = new Font("Calibri", 14F);
+            label11.Location = new Point(15, 293);
+            label11.Name = "label11";
+            label11.Size = new Size(245, 35);
+            label11.TabIndex = 31;
+            label11.Text = "Lương cơ bản (ngày)\r\n";
             // 
             // tbxLtt
             // 
             tbxLtt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxLtt.Font = new Font("Calibri", 14F);
-            tbxLtt.Location = new Point(264, 347);
+            tbxLtt.Location = new Point(264, 397);
             tbxLtt.Name = "tbxLtt";
             tbxLtt.ReadOnly = true;
             tbxLtt.Size = new Size(918, 42);
@@ -334,7 +370,7 @@
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Font = new Font("Calibri", 14F);
-            label5.Location = new Point(16, 348);
+            label5.Location = new Point(16, 398);
             label5.Name = "label5";
             label5.Size = new Size(190, 35);
             label5.TabIndex = 29;
@@ -344,7 +380,7 @@
             // 
             tbxDu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxDu.Font = new Font("Calibri", 14F);
-            tbxDu.Location = new Point(264, 289);
+            tbxDu.Location = new Point(264, 343);
             tbxDu.Name = "tbxDu";
             tbxDu.ReadOnly = true;
             tbxDu.Size = new Size(918, 42);
@@ -355,7 +391,7 @@
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Calibri", 14F);
-            label4.Location = new Point(16, 290);
+            label4.Location = new Point(16, 344);
             label4.Name = "label4";
             label4.Size = new Size(96, 35);
             label4.TabIndex = 27;
@@ -475,6 +511,7 @@
             Text = "Tạm Ứng Lương";
             WindowState = FormWindowState.Maximized;
             FormClosed += fTamUngLuong_FormClosed;
+            Load += fTamUngLuong_Load;
             groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvLichSu).EndInit();
             tableLayoutPanel4.ResumeLayout(false);
@@ -488,20 +525,14 @@
         #endregion
         private GroupBox groupBox3;
         private DataGridView dgvLichSu;
-        private DataGridViewTextBoxColumn Don;
-        private DataGridViewTextBoxColumn ThoiGian;
-        private DataGridViewTextBoxColumn SoTien;
-        private DataGridViewTextBoxColumn TrangThai;
         private TableLayoutPanel tableLayoutPanel4;
         private GroupBox groupBox2;
         private TextBox tbxLyDo;
-        private TextBox tbxConlai;
         private TextBox tbxStchu;
         private TextBox tbxStso;
         private Button btnHuy;
         private Button btnGui;
         private Label label10;
-        private Label label9;
         private Label label8;
         private Label label7;
         private DateTimePicker datetime;
@@ -520,5 +551,14 @@
         private TextBox tbxMnv;
         private Label label2;
         private Label label1;
+        private TextBox tbxLcb;
+        private Label label11;
+        private TextBox tbxConlai;
+        private Label label9;
+        private DataGridViewTextBoxColumn MaUngLuong;
+        private DataGridViewTextBoxColumn MaLuong;
+        private DataGridViewTextBoxColumn ThoiGian;
+        private DataGridViewTextBoxColumn SoTienUng;
+        private DataGridViewTextBoxColumn LyDo;
     }
 }
