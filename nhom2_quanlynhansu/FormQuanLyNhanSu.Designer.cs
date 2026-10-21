@@ -31,15 +31,15 @@
             lblTieuDe = new Label();
             cboCoSo = new ComboBox();
             btnLoc = new Button();
-            dgvDanhSachNhanVien = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dgvDanhSachNhanVien).BeginInit();
+            dgvDanhSach = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvDanhSach).BeginInit();
             SuspendLayout();
             // 
             // lblTieuDe
             // 
             lblTieuDe.AutoSize = true;
             lblTieuDe.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            lblTieuDe.Location = new Point(225, 35);
+            lblTieuDe.Location = new Point(267, 26);
             lblTieuDe.Name = "lblTieuDe";
             lblTieuDe.Size = new Size(277, 38);
             lblTieuDe.TabIndex = 0;
@@ -48,41 +48,43 @@
             // cboCoSo
             // 
             cboCoSo.FormattingEnabled = true;
-            cboCoSo.Location = new Point(192, 93);
+            cboCoSo.Location = new Point(225, 93);
             cboCoSo.Name = "cboCoSo";
             cboCoSo.Size = new Size(173, 28);
             cboCoSo.TabIndex = 1;
             // 
             // btnLoc
             // 
-            btnLoc.Location = new Point(394, 93);
+            btnLoc.Location = new Point(404, 93);
             btnLoc.Name = "btnLoc";
             btnLoc.Size = new Size(94, 29);
             btnLoc.TabIndex = 2;
             btnLoc.Text = "Lọc";
             btnLoc.UseVisualStyleBackColor = true;
+            btnLoc.Click += btnLoc_Click;
             // 
-            // dgvDanhSachNhanVien
+            // dgvDanhSach
             // 
-            dgvDanhSachNhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDanhSachNhanVien.Location = new Point(146, 154);
-            dgvDanhSachNhanVien.Name = "dgvDanhSachNhanVien";
-            dgvDanhSachNhanVien.RowHeadersWidth = 51;
-            dgvDanhSachNhanVien.Size = new Size(483, 236);
-            dgvDanhSachNhanVien.TabIndex = 3;
+            dgvDanhSach.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDanhSach.Location = new Point(146, 154);
+            dgvDanhSach.Name = "dgvDanhSach";
+            dgvDanhSach.RowHeadersWidth = 51;
+            dgvDanhSach.Size = new Size(483, 236);
+            dgvDanhSach.TabIndex = 3;
             // 
             // FormQuanLyNhanSu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(846, 450);
-            Controls.Add(dgvDanhSachNhanVien);
+            Controls.Add(dgvDanhSach);
             Controls.Add(btnLoc);
             Controls.Add(cboCoSo);
             Controls.Add(lblTieuDe);
             Name = "FormQuanLyNhanSu";
             Text = "FormQuanLyNhanSu";
-            ((System.ComponentModel.ISupportInitialize)dgvDanhSachNhanVien).EndInit();
+            Load += FormQuanLyNhanSu_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvDanhSach).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -92,6 +94,6 @@
         private Label lblTieuDe;
         private ComboBox cboCoSo;
         private Button btnLoc;
-        private DataGridView dgvDanhSachNhanVien;
+        private DataGridView dgvDanhSach;
     }
 }

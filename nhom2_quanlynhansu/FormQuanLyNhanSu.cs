@@ -1,41 +1,33 @@
-﻿using Microsoft.Data.SqlClient;
-using System;
+﻿using System;
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace nhom2_quanlynhansu
 {
     public partial class FormQuanLyNhanSu : Form
     {
-        // 1. Chuỗi kết nối (Giữ nguyên như bạn đã làm thành công)
-        string connectionString = @"Data Source=LAPTOP-QHBQP008\SQLEXPRESS;Initial Catalog=QuanLyNhanSu;Integrated Security=True;TrustServerCertificate=True";
+        // string connectionString = @"Data Source=100.125.54.43,1433;Initial Catalog=qlhs;User ID=sa;Password=123456;TrustServerCertificate=True;Connect Timeout=30";
 
         public FormQuanLyNhanSu()
         {
             InitializeComponent();
         }
-
-        // Sự kiện khi Form bắt đầu chạy
         private void FormQuanLyNhanSu_Load(object sender, EventArgs e)
         {
-            // Tải dữ liệu lên lưới
-            LoadData();
+            LoadData(); 
 
-            // Đổ dữ liệu vào ComboBox Cơ sở
+            cboCoSo.Items.Clear();
             cboCoSo.Items.Add("Tất cả");
             cboCoSo.Items.Add("Cơ sở 1");
             cboCoSo.Items.Add("Cơ sở 2");
-            cboCoSo.SelectedIndex = 0; // Mặc định chọn "Tất cả"
+            cboCoSo.SelectedIndex = 0; 
         }
-
-        // Hàm tải toàn bộ danh sách
         private void LoadData()
         {
-            // Sửa lại tên cột (MaNV, HoTen, ChucVu, CoSo) cho khớp với bảng trong SQL của bạn
-            string query = "SELECT MaNV, HoTen, ChucVu, CoSo FROM NhanVien";
+            string query = "SELECT * FROM NhanVien";
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(classchung.ketnoi))
             {
                 try
                 {
@@ -44,42 +36,40 @@ namespace nhom2_quanlynhansu
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
-                    dgvDanhSachNhanVien.DataSource = dt; // Đổ dữ liệu vào DataGridView
+                    dgvDanhSach.DataSource = dt;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi hệ thống");
+                    MessageBox.Show("Lỗi truy vấn dữ liệu: " + ex.Message, "Lỗi hệ thống");
                 }
             }
-        }
-
-        // Sự kiện khi bấm nút "Lọc"
+        }  
         private void btnLoc_Click(object sender, EventArgs e)
         {
+            if (cboCoSo.SelectedItem == null) return;
             string coSoDuocChon = cboCoSo.SelectedItem.ToString();
-
-            // Nếu chọn "Tất cả" thì load lại toàn bộ
             if (coSoDuocChon == "Tất cả")
             {
                 LoadData();
                 return;
             }
 
-            // Ngược lại thì lọc theo cơ sở
-            string query = "SELECT MaNV, HoTen, ChucVu, CoSo FROM NhanVien WHERE CoSo = @CoSo";
+            int maCoSo = 0;
+            if (coSoDuocChon == "Cơ sở 1") maCoSo = 1;
+            else if (coSoDuocChon == "Cơ sở 2") maCoSo = 2;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            string query = "SELECT * FROM NhanVien WHERE MaCoSo = @MaCoSo";
+            using (SqlConnection conn = new SqlConnection(classchung.ketnoi))
             {
                 try
                 {
                     conn.Open();
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                    // Dùng Parameter để tránh lỗi SQL Injection
-                    adapter.SelectCommand.Parameters.AddWithValue("@CoSo", coSoDuocChon);
+                    adapter.SelectCommand.Parameters.AddWithValue("@MaCoSo", maCoSo);
 
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-                    dgvDanhSachNhanVien.DataSource = dt;
+                    dgvDanhSach.DataSource = dt; 
                 }
                 catch (Exception ex)
                 {
