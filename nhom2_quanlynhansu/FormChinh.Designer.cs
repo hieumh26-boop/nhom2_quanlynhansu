@@ -79,6 +79,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.BackColor = SystemColors.GradientActiveCaption;
             guna2Panel1.Controls.Add(btcs);
             guna2Panel1.Controls.Add(btpq);
             guna2Panel1.Controls.Add(bttnv);
@@ -108,7 +109,7 @@
             btcs.DisabledState.CustomBorderColor = Color.DarkGray;
             btcs.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btcs.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btcs.FillColor = Color.MediumAquamarine;
+            btcs.FillColor = SystemColors.HotTrack;
             btcs.Font = new Font("Segoe UI", 9F);
             btcs.ForeColor = Color.White;
             btcs.Location = new Point(8, 466);
@@ -129,7 +130,7 @@
             btpq.DisabledState.CustomBorderColor = Color.DarkGray;
             btpq.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btpq.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btpq.FillColor = Color.MediumAquamarine;
+            btpq.FillColor = SystemColors.HotTrack;
             btpq.Font = new Font("Segoe UI", 9F);
             btpq.ForeColor = Color.White;
             btpq.HoverState.FillColor = Color.MediumAquamarine;
@@ -153,7 +154,7 @@
             bttnv.DisabledState.CustomBorderColor = Color.DarkGray;
             bttnv.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             bttnv.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            bttnv.FillColor = Color.MediumAquamarine;
+            bttnv.FillColor = SystemColors.HotTrack;
             bttnv.Font = new Font("Segoe UI", 9F);
             bttnv.ForeColor = Color.White;
             bttnv.Location = new Point(8, 415);
@@ -175,7 +176,7 @@
             btqld.DisabledState.CustomBorderColor = Color.DarkGray;
             btqld.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btqld.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btqld.FillColor = Color.MediumAquamarine;
+            btqld.FillColor = SystemColors.HotTrack;
             btqld.Font = new Font("Segoe UI", 9F);
             btqld.ForeColor = Color.White;
             btqld.Location = new Point(8, 364);
@@ -196,7 +197,7 @@
             btcht.DisabledState.CustomBorderColor = Color.DarkGray;
             btcht.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btcht.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btcht.FillColor = Color.MediumAquamarine;
+            btcht.FillColor = SystemColors.HotTrack;
             btcht.Font = new Font("Segoe UI", 9F);
             btcht.ForeColor = Color.White;
             btcht.Location = new Point(8, 313);
@@ -217,7 +218,7 @@
             btdkc.DisabledState.CustomBorderColor = Color.DarkGray;
             btdkc.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btdkc.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btdkc.FillColor = Color.MediumAquamarine;
+            btdkc.FillColor = SystemColors.HotTrack;
             btdkc.Font = new Font("Segoe UI", 9F);
             btdkc.ForeColor = Color.White;
             btdkc.Location = new Point(8, 262);
@@ -239,7 +240,7 @@
             btchc.DisabledState.CustomBorderColor = Color.DarkGray;
             btchc.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btchc.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btchc.FillColor = Color.MediumAquamarine;
+            btchc.FillColor = SystemColors.HotTrack;
             btchc.Font = new Font("Segoe UI", 9F);
             btchc.ForeColor = Color.White;
             btchc.Location = new Point(8, 211);
@@ -260,7 +261,7 @@
             btqlhs.DisabledState.CustomBorderColor = Color.DarkGray;
             btqlhs.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btqlhs.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btqlhs.FillColor = Color.MediumAquamarine;
+            btqlhs.FillColor = SystemColors.HotTrack;
             btqlhs.Font = new Font("Segoe UI", 9F);
             btqlhs.ForeColor = Color.White;
             btqlhs.Location = new Point(8, 160);
@@ -282,7 +283,7 @@
             btqlns.DisabledState.CustomBorderColor = Color.DarkGray;
             btqlns.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btqlns.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btqlns.FillColor = Color.MediumAquamarine;
+            btqlns.FillColor = SystemColors.HotTrack;
             btqlns.Font = new Font("Segoe UI", 9F);
             btqlns.ForeColor = Color.White;
             btqlns.HoverState.FillColor = Color.MediumAquamarine;
