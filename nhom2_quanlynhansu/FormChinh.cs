@@ -98,6 +98,16 @@ namespace nhom2_quanlynhansu
         {
             MoForm(new FormQuanLyNhanSu());
         }
+
+        private void bttul_Click(object sender, EventArgs e)
+        {
+            MoForm(new fTamUngLuong());
+        }
+
+        private void btxnp_Click(object sender, EventArgs e)
+        {
+            MoForm(new fXinNghiPhep());
+        }
     }
 }
 
