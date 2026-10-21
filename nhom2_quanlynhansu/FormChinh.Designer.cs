@@ -79,7 +79,7 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.BackColor = SystemColors.GradientActiveCaption;
+            guna2Panel1.BackColor = Color.White;
             guna2Panel1.Controls.Add(btcs);
             guna2Panel1.Controls.Add(btpq);
             guna2Panel1.Controls.Add(bttnv);
@@ -299,7 +299,7 @@
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.ForeColor = Color.White;
+            guna2HtmlLabel1.ForeColor = Color.Black;
             guna2HtmlLabel1.Location = new Point(24, 3);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(73, 39);
@@ -310,12 +310,12 @@
             // 
             guna2Panel2.AutoScroll = true;
             guna2Panel2.AutoScrollMinSize = new Size(1000, 1200);
-            guna2Panel2.BackColor = Color.MediumAquamarine;
+            guna2Panel2.BackColor = Color.White;
             guna2Panel2.BorderRadius = 60;
             guna2Panel2.Controls.Add(guna2CustomGradientPanel1);
             guna2Panel2.CustomizableEdges = customizableEdges26;
             guna2Panel2.Dock = DockStyle.Fill;
-            guna2Panel2.FillColor = Color.MediumAquamarine;
+            guna2Panel2.FillColor = Color.White;
             guna2Panel2.Location = new Point(137, 0);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.Padding = new Padding(15);
@@ -330,6 +330,10 @@
             guna2CustomGradientPanel1.Controls.Add(btlg);
             guna2CustomGradientPanel1.CustomizableEdges = customizableEdges24;
             guna2CustomGradientPanel1.Dock = DockStyle.Fill;
+            guna2CustomGradientPanel1.FillColor = SystemColors.GradientActiveCaption;
+            guna2CustomGradientPanel1.FillColor2 = SystemColors.GradientActiveCaption;
+            guna2CustomGradientPanel1.FillColor3 = SystemColors.GradientActiveCaption;
+            guna2CustomGradientPanel1.FillColor4 = SystemColors.GradientActiveCaption;
             guna2CustomGradientPanel1.Location = new Point(15, 15);
             guna2CustomGradientPanel1.Margin = new Padding(0);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
@@ -340,7 +344,7 @@
             // 
             // png
             // 
-            png.BackColor = Color.White;
+            png.BackColor = SystemColors.GradientActiveCaption;
             png.CustomizableEdges = customizableEdges21;
             png.Dock = DockStyle.Fill;
             png.Location = new Point(0, 50);
@@ -369,7 +373,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MediumAquamarine;
+            BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(1200, 568);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);

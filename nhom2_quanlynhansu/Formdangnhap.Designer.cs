@@ -44,6 +44,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = SystemColors.GradientActiveCaption;
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label1);
@@ -62,6 +63,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(12, 71);
             label3.Name = "label3";
             label3.Size = new Size(194, 46);
@@ -106,7 +108,7 @@
             // 
             // btdn
             // 
-            btdn.BackColor = Color.MediumAquamarine;
+            btdn.BackColor = SystemColors.HotTrack;
             btdn.FlatStyle = FlatStyle.Popup;
             btdn.Font = new Font("Segoe UI", 10F);
             btdn.ForeColor = Color.White;

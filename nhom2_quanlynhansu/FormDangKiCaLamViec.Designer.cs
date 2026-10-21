@@ -122,7 +122,7 @@
             // 
             // btnDangKy
             // 
-            btnDangKy.BackColor = Color.MediumAquamarine;
+            btnDangKy.BackColor = SystemColors.HotTrack;
             btnDangKy.FlatStyle = FlatStyle.Popup;
             btnDangKy.ForeColor = Color.White;
             btnDangKy.Location = new Point(229, 287);
@@ -135,12 +135,15 @@
             // 
             // btnHuy
             // 
+            btnHuy.BackColor = SystemColors.HotTrack;
+            btnHuy.FlatStyle = FlatStyle.Popup;
+            btnHuy.ForeColor = Color.White;
             btnHuy.Location = new Point(403, 287);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(94, 29);
             btnHuy.TabIndex = 10;
             btnHuy.Text = "Hủy";
-            btnHuy.UseVisualStyleBackColor = true;
+            btnHuy.UseVisualStyleBackColor = false;
             btnHuy.Click += btnHuy_Click;
             // 
             // dgvCaLam
