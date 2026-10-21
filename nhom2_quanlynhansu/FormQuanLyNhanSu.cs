@@ -21,6 +21,7 @@ namespace nhom2_quanlynhansu
             cboCoSo.Items.Add("Tất cả");
             cboCoSo.Items.Add("Cơ sở 1");
             cboCoSo.Items.Add("Cơ sở 2");
+            cboCoSo.Items.Add("Cơ sở 3");
             cboCoSo.SelectedIndex = 0; 
         }
         private void LoadData()
