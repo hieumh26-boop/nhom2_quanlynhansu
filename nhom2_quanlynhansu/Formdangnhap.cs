@@ -13,7 +13,7 @@ namespace nhom2_quanlynhansu
             InitializeComponent();
         }
 
-        
+
         private void cbmk_CheckedChanged(object sender, EventArgs e)
         {
             if (cbmk.Checked)
@@ -28,12 +28,12 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        
+
         private void btdn_Click(object sender, EventArgs e)
         {
             string tdn = txtdn.Text.Trim();
             string mk = txtmk.Text.Trim();
-            
+
 
             if (string.IsNullOrWhiteSpace(tdn) || string.IsNullOrWhiteSpace(mk))
             {
@@ -47,7 +47,7 @@ namespace nhom2_quanlynhansu
                 FROM dbo.NhanVien nv 
                 INNER JOIN dbo.NguoiDung nd ON nv.MaNhanVien = nd.MaNhanVien 
                 WHERE nd.TenDangNhap = @tdn AND nd.MatKhau = @mk";
-            
+
 
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
             {
@@ -55,16 +55,16 @@ namespace nhom2_quanlynhansu
                 {
                     kn.Open();
                     using (SqlCommand lenh = new SqlCommand(sqlNguoiDung, kn))
-                     
+
                     {
                         lenh.Parameters.Add("@tdn", SqlDbType.VarChar, 50).Value = tdn;
                         lenh.Parameters.Add("@mk", SqlDbType.NVarChar, 100).Value = mk;
-                        
+
                         using (SqlDataReader doc = lenh.ExecuteReader())
                         {
                             if (doc.Read())
                             {
-                                
+
                                 PhienDangNhap.MaNhanVien = doc["MaNhanVien"] != DBNull.Value ? Convert.ToInt32(doc["MaNhanVien"]) : 0;
                                 PhienDangNhap.HoTen = doc["HoTen"] != DBNull.Value ? doc["HoTen"].ToString() : "";
                                 PhienDangNhap.SDT = doc["SDT"] != DBNull.Value ? doc["SDT"].ToString() : "";
@@ -78,7 +78,7 @@ namespace nhom2_quanlynhansu
                                     PhienDangNhap.NgaySinh = Convert.ToDateTime(doc["NgaySinh"]);
                                 }
 
-                                
+
                                 PhienDangNhap.GioiTinh = doc["GioiTinh"] != DBNull.Value ? doc["GioiTinh"].ToString() : "";
                                 PhienDangNhap.VaiTro = doc["MaVaiTro"] != DBNull.Value ? doc["MaVaiTro"].ToString() : "";
 
@@ -101,17 +101,22 @@ namespace nhom2_quanlynhansu
             }
         }
 
-       
+
         private void btttk_Click(object sender, EventArgs e)
         {
             Formtaotaikhoancs formttk = new Formtaotaikhoancs();
-            this.Hide();            
-            formttk.ShowDialog();  
-            this.Show();           
+            this.Hide();
+            formttk.ShowDialog();
+            this.Show();
         }
 
         private void Formdangnhap_FormClosing(object sender, FormClosingEventArgs e)
         {
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
