@@ -57,9 +57,11 @@ namespace nhom2_quanlynhansu
             FormCon.TopLevel = false;// bỏ cơ chế của sổ
             FormCon.FormBorderStyle = FormBorderStyle.None;// bỏ viền của form
             FormCon.Dock = DockStyle.Fill;// cho form con full panel
+            FormCon.AutoScroll = false;
             png.Controls.Clear();
             png.Controls.Add(FormCon);
             png.Tag = FormCon;
+
             FormCon.BringToFront();// đưa form con lên trên cùng
             FormCon.Show();
         }

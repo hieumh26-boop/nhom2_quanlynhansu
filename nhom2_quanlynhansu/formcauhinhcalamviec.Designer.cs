@@ -65,8 +65,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Anchor = AnchorStyles.Top;
             pictureBox1.BackColor = SystemColors.GradientActiveCaption;
+            pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1182, 103);

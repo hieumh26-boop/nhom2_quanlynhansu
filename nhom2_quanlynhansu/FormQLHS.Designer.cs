@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label9 = new Label();
             groupBox1 = new GroupBox();
             cbmcs = new ComboBox();
             tbcsdl = new TextBox();
@@ -56,30 +55,16 @@
             txtSoTK = new Label();
             label2 = new Label();
             label1 = new Label();
-            panel2 = new Panel();
-            panel1 = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            label3 = new Label();
             groupBox1.SuspendLayout();
             grpHinhThuc.SuspendLayout();
             grpGioiTinh.SuspendLayout();
-            panel2.SuspendLayout();
-            panel1.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.Top;
-            label9.AutoSize = true;
-            label9.BackColor = SystemColors.GradientActiveCaption;
-            label9.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            label9.Location = new Point(343, 9);
-            label9.Name = "label9";
-            label9.Size = new Size(348, 31);
-            label9.TabIndex = 2;
-            label9.Text = "QUẢN LÝ HỒ SƠ NGƯỜI DÙNG";
             // 
             // groupBox1
             // 
-            groupBox1.Anchor = AnchorStyles.Top;
             groupBox1.BackColor = SystemColors.GradientActiveCaption;
             groupBox1.Controls.Add(cbmcs);
             groupBox1.Controls.Add(tbcsdl);
@@ -103,11 +88,12 @@
             groupBox1.Controls.Add(txtSoTK);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
+            groupBox1.Dock = DockStyle.Fill;
             groupBox1.FlatStyle = FlatStyle.Popup;
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            groupBox1.Location = new Point(0, 0);
+            groupBox1.Location = new Point(3, 97);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1175, 851);
+            groupBox1.Size = new Size(1169, 809);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin cá nhân";
@@ -117,7 +103,7 @@
             cbmcs.Anchor = AnchorStyles.Top;
             cbmcs.FormattingEnabled = true;
             cbmcs.Items.AddRange(new object[] { "1", "2", "3" });
-            cbmcs.Location = new Point(508, 314);
+            cbmcs.Location = new Point(505, 314);
             cbmcs.Name = "cbmcs";
             cbmcs.Size = new Size(151, 36);
             cbmcs.TabIndex = 28;
@@ -125,7 +111,7 @@
             // tbcsdl
             // 
             tbcsdl.Anchor = AnchorStyles.Top;
-            tbcsdl.Location = new Point(508, 361);
+            tbcsdl.Location = new Point(505, 361);
             tbcsdl.Multiline = true;
             tbcsdl.Name = "tbcsdl";
             tbcsdl.Size = new Size(194, 34);
@@ -139,7 +125,7 @@
             cbcs2.FlatStyle = FlatStyle.Popup;
             cbcs2.Font = new Font("Segoe UI", 12F);
             cbcs2.ForeColor = Color.Black;
-            cbcs2.Location = new Point(324, 687);
+            cbcs2.Location = new Point(321, 687);
             cbcs2.Name = "cbcs2";
             cbcs2.Size = new Size(121, 51);
             cbcs2.TabIndex = 20;
@@ -151,7 +137,7 @@
             // tbvt
             // 
             tbvt.Anchor = AnchorStyles.Top;
-            tbvt.Location = new Point(508, 132);
+            tbvt.Location = new Point(505, 132);
             tbvt.Multiline = true;
             tbvt.Name = "tbvt";
             tbvt.Size = new Size(194, 34);
@@ -162,8 +148,8 @@
             grpHinhThuc.Anchor = AnchorStyles.Top;
             grpHinhThuc.Controls.Add(rdoFullTime);
             grpHinhThuc.Controls.Add(rdoPartTime);
-            grpHinhThuc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            grpHinhThuc.Location = new Point(329, 548);
+            grpHinhThuc.Font = new Font("Microsoft Sans Serif", 13.8F);
+            grpHinhThuc.Location = new Point(326, 548);
             grpHinhThuc.Name = "grpHinhThuc";
             grpHinhThuc.Size = new Size(430, 101);
             grpHinhThuc.TabIndex = 4;
@@ -173,10 +159,10 @@
             // rdoFullTime
             // 
             rdoFullTime.AutoSize = true;
-            rdoFullTime.Font = new Font("Segoe UI", 12F);
-            rdoFullTime.Location = new Point(166, 62);
+            rdoFullTime.Font = new Font("Segoe UI", 14F);
+            rdoFullTime.Location = new Point(51, 59);
             rdoFullTime.Name = "rdoFullTime";
-            rdoFullTime.Size = new Size(106, 32);
+            rdoFullTime.Size = new Size(126, 36);
             rdoFullTime.TabIndex = 16;
             rdoFullTime.TabStop = true;
             rdoFullTime.Text = "FullTime";
@@ -185,10 +171,10 @@
             // rdoPartTime
             // 
             rdoPartTime.AutoSize = true;
-            rdoPartTime.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            rdoPartTime.Location = new Point(304, 62);
+            rdoPartTime.Font = new Font("Segoe UI", 14F);
+            rdoPartTime.Location = new Point(242, 59);
             rdoPartTime.Name = "rdoPartTime";
-            rdoPartTime.Size = new Size(109, 32);
+            rdoPartTime.Size = new Size(128, 36);
             rdoPartTime.TabIndex = 18;
             rdoPartTime.TabStop = true;
             rdoPartTime.Text = "PartTime";
@@ -199,8 +185,8 @@
             grpGioiTinh.Anchor = AnchorStyles.Top;
             grpGioiTinh.Controls.Add(rdoNam);
             grpGioiTinh.Controls.Add(rdoNu);
-            grpGioiTinh.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            grpGioiTinh.Location = new Point(329, 445);
+            grpGioiTinh.Font = new Font("Microsoft Sans Serif", 13.8F);
+            grpGioiTinh.Location = new Point(326, 445);
             grpGioiTinh.Name = "grpGioiTinh";
             grpGioiTinh.Size = new Size(429, 88);
             grpGioiTinh.TabIndex = 3;
@@ -210,11 +196,11 @@
             // rdoNam
             // 
             rdoNam.AutoSize = true;
-            rdoNam.Font = new Font("Times New Roman", 12F);
+            rdoNam.Font = new Font("Times New Roman", 14F);
             rdoNam.ForeColor = Color.Black;
-            rdoNam.Location = new Point(165, 56);
+            rdoNam.Location = new Point(62, 57);
             rdoNam.Name = "rdoNam";
-            rdoNam.Size = new Size(73, 26);
+            rdoNam.Size = new Size(85, 31);
             rdoNam.TabIndex = 14;
             rdoNam.TabStop = true;
             rdoNam.Text = "Nam ";
@@ -223,10 +209,10 @@
             // rdoNu
             // 
             rdoNu.AutoSize = true;
-            rdoNu.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            rdoNu.Location = new Point(303, 50);
+            rdoNu.Font = new Font("Segoe UI", 14F);
+            rdoNu.Location = new Point(242, 46);
             rdoNu.Name = "rdoNu";
-            rdoNu.Size = new Size(60, 32);
+            rdoNu.Size = new Size(67, 36);
             rdoNu.TabIndex = 22;
             rdoNu.TabStop = true;
             rdoNu.Text = "Nữ";
@@ -235,7 +221,7 @@
             // txtSoTaiKhoan
             // 
             txtSoTaiKhoan.Anchor = AnchorStyles.Top;
-            txtSoTaiKhoan.Location = new Point(508, 272);
+            txtSoTaiKhoan.Location = new Point(505, 272);
             txtSoTaiKhoan.Multiline = true;
             txtSoTaiKhoan.Name = "txtSoTaiKhoan";
             txtSoTaiKhoan.Size = new Size(194, 34);
@@ -245,7 +231,7 @@
             // 
             dtpNgaySinh.Anchor = AnchorStyles.Top;
             dtpNgaySinh.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            dtpNgaySinh.Location = new Point(508, 405);
+            dtpNgaySinh.Location = new Point(505, 405);
             dtpNgaySinh.Name = "dtpNgaySinh";
             dtpNgaySinh.Size = new Size(250, 34);
             dtpNgaySinh.TabIndex = 23;
@@ -269,7 +255,7 @@
             // txtMaNV
             // 
             txtMaNV.Anchor = AnchorStyles.Top;
-            txtMaNV.Location = new Point(508, 43);
+            txtMaNV.Location = new Point(505, 43);
             txtMaNV.Multiline = true;
             txtMaNV.Name = "txtMaNV";
             txtMaNV.Size = new Size(194, 34);
@@ -279,18 +265,18 @@
             // 
             label12.Anchor = AnchorStyles.Top;
             label12.AutoSize = true;
-            label12.Font = new Font("Times New Roman", 12F);
+            label12.Font = new Font("Microsoft Sans Serif", 13.8F);
             label12.ForeColor = Color.Black;
-            label12.Location = new Point(328, 314);
+            label12.Location = new Point(325, 314);
             label12.Name = "label12";
-            label12.Size = new Size(91, 22);
+            label12.Size = new Size(116, 29);
             label12.TabIndex = 6;
             label12.Text = "Mã cơ sở:";
             // 
             // txtCCCD
             // 
             txtCCCD.Anchor = AnchorStyles.Top;
-            txtCCCD.Location = new Point(508, 222);
+            txtCCCD.Location = new Point(505, 222);
             txtCCCD.Multiline = true;
             txtCCCD.Name = "txtCCCD";
             txtCCCD.Size = new Size(194, 34);
@@ -299,7 +285,7 @@
             // txtSDT
             // 
             txtSDT.Anchor = AnchorStyles.Top;
-            txtSDT.Location = new Point(508, 173);
+            txtSDT.Location = new Point(505, 173);
             txtSDT.Multiline = true;
             txtSDT.Name = "txtSDT";
             txtSDT.Size = new Size(194, 34);
@@ -309,11 +295,11 @@
             // 
             label11.Anchor = AnchorStyles.Top;
             label11.AutoSize = true;
-            label11.Font = new Font("Times New Roman", 12F);
+            label11.Font = new Font("Microsoft Sans Serif", 13.8F);
             label11.ForeColor = Color.Black;
-            label11.Location = new Point(325, 231);
+            label11.Location = new Point(322, 231);
             label11.Name = "label11";
-            label11.Size = new Size(69, 22);
+            label11.Size = new Size(87, 29);
             label11.TabIndex = 5;
             label11.Text = "CCCD:";
             // 
@@ -321,11 +307,11 @@
             // 
             label10.Anchor = AnchorStyles.Top;
             label10.AutoSize = true;
-            label10.Font = new Font("Times New Roman", 12F);
+            label10.Font = new Font("Microsoft Sans Serif", 13.8F);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(325, 182);
+            label10.Location = new Point(322, 182);
             label10.Name = "label10";
-            label10.Size = new Size(120, 22);
+            label10.Size = new Size(160, 29);
             label10.TabIndex = 4;
             label10.Text = "Số điện thoại:";
             // 
@@ -333,11 +319,11 @@
             // 
             label6.Anchor = AnchorStyles.Top;
             label6.AutoSize = true;
-            label6.Font = new Font("Times New Roman", 12F);
+            label6.Font = new Font("Microsoft Sans Serif", 13.8F);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(325, 43);
+            label6.Location = new Point(322, 43);
             label6.Name = "label6";
-            label6.Size = new Size(122, 22);
+            label6.Size = new Size(160, 29);
             label6.TabIndex = 3;
             label6.Text = "Mã nhân viên:";
             // 
@@ -345,18 +331,18 @@
             // 
             label5.Anchor = AnchorStyles.Top;
             label5.AutoSize = true;
-            label5.Font = new Font("Times New Roman", 12F);
+            label5.Font = new Font("Microsoft Sans Serif", 13.8F);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(329, 405);
+            label5.Location = new Point(326, 405);
             label5.Name = "label5";
-            label5.Size = new Size(94, 22);
+            label5.Size = new Size(125, 29);
             label5.TabIndex = 10;
             label5.Text = "Ngày sinh:";
             // 
             // txtHoTen
             // 
             txtHoTen.Anchor = AnchorStyles.Top;
-            txtHoTen.Location = new Point(508, 84);
+            txtHoTen.Location = new Point(505, 84);
             txtHoTen.Multiline = true;
             txtHoTen.Name = "txtHoTen";
             txtHoTen.Size = new Size(194, 34);
@@ -366,11 +352,11 @@
             // 
             label4.Anchor = AnchorStyles.Top;
             label4.AutoSize = true;
-            label4.Font = new Font("Times New Roman", 12F);
+            label4.Font = new Font("Microsoft Sans Serif", 13.8F);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(329, 361);
+            label4.Location = new Point(326, 361);
             label4.Name = "label4";
-            label4.Size = new Size(140, 22);
+            label4.Size = new Size(187, 29);
             label4.TabIndex = 3;
             label4.Text = "Cơ sở đang làm:";
             // 
@@ -378,11 +364,11 @@
             // 
             txtSoTK.Anchor = AnchorStyles.Top;
             txtSoTK.AutoSize = true;
-            txtSoTK.Font = new Font("Times New Roman", 12F);
+            txtSoTK.Font = new Font("Microsoft Sans Serif", 13.8F);
             txtSoTK.ForeColor = Color.Black;
-            txtSoTK.Location = new Point(325, 274);
+            txtSoTK.Location = new Point(322, 274);
             txtSoTK.Name = "txtSoTK";
-            txtSoTK.Size = new Size(113, 22);
+            txtSoTK.Size = new Size(151, 29);
             txtSoTK.TabIndex = 2;
             txtSoTK.Text = "Số tài khoản:";
             // 
@@ -390,11 +376,11 @@
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
-            label2.Font = new Font("Times New Roman", 12F);
+            label2.Font = new Font("Microsoft Sans Serif", 13.8F);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(325, 141);
+            label2.Location = new Point(322, 141);
             label2.Name = "label2";
-            label2.Size = new Size(69, 22);
+            label2.Size = new Size(87, 29);
             label2.TabIndex = 1;
             label2.Text = "Vai trò:";
             // 
@@ -402,33 +388,39 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 12F);
+            label1.Font = new Font("Microsoft Sans Serif", 13.8F);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(325, 93);
+            label1.Location = new Point(322, 93);
             label1.Name = "label1";
-            label1.Size = new Size(68, 22);
+            label1.Size = new Size(89, 29);
             label1.TabIndex = 0;
             label1.Text = "Họ tên:";
             // 
-            // panel2
+            // tableLayoutPanel1
             // 
-            panel2.BackColor = SystemColors.GradientActiveCaption;
-            panel2.Controls.Add(label9);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1175, 58);
-            panel2.TabIndex = 0;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(groupBox1, 1, 1);
+            tableLayoutPanel1.Controls.Add(label3, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.3410339F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 89.6589661F));
+            tableLayoutPanel1.Size = new Size(1175, 909);
+            tableLayoutPanel1.TabIndex = 29;
             // 
-            // panel1
+            // label3
             // 
-            panel1.Anchor = AnchorStyles.Top;
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(0, 58);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1175, 851);
-            panel1.TabIndex = 29;
+            label3.Anchor = AnchorStyles.None;
+            label3.Font = new Font("Times New Roman", 30F);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(398, 14);
+            label3.Name = "label3";
+            label3.Size = new Size(378, 65);
+            label3.TabIndex = 29;
+            label3.Text = "Quản lý thông tin";
             // 
             // FormQLHS
             // 
@@ -436,8 +428,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(1175, 909);
-            Controls.Add(panel1);
-            Controls.Add(panel2);
+            Controls.Add(tableLayoutPanel1);
             Name = "FormQLHS";
             Text = "form2";
             WindowState = FormWindowState.Maximized;
@@ -448,16 +439,13 @@
             grpHinhThuc.PerformLayout();
             grpGioiTinh.ResumeLayout(false);
             grpGioiTinh.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel1.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
         private DateTimePicker dateTimePicker2;
 		private RadioButton radioButton4;
-        private Label label9;
         private RadioButton radioButton2;
         private DateTimePicker dtpNamSinh;
         private TextBox btnSoTaiKhoan;
@@ -488,7 +476,7 @@
         private Label txtSoTK;
         private Label label2;
         private Label label1;
-        private Panel panel2;
-        private Panel panel1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label label3;
     }
 }

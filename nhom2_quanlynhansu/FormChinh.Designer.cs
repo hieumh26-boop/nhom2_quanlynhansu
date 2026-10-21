@@ -91,7 +91,7 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2Panel1.Size = new Size(137, 568);
+            guna2Panel1.Size = new Size(137, 467);
             guna2Panel1.TabIndex = 1;
             // 
             // btqlns
@@ -287,7 +287,6 @@
             // 
             // guna2Panel2
             // 
-            guna2Panel2.AutoScroll = true;
             guna2Panel2.AutoScrollMinSize = new Size(1000, 1200);
             guna2Panel2.BackColor = SystemColors.GradientActiveCaption;
             guna2Panel2.BorderRadius = 60;
@@ -299,7 +298,7 @@
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.Padding = new Padding(15);
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges25;
-            guna2Panel2.Size = new Size(1063, 568);
+            guna2Panel2.Size = new Size(1063, 467);
             guna2Panel2.TabIndex = 2;
             guna2Panel2.Paint += guna2Panel2_Paint;
             // 
@@ -319,7 +318,7 @@
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.Padding = new Padding(0, 50, 0, 0);
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges23;
-            guna2CustomGradientPanel1.Size = new Size(1012, 1200);
+            guna2CustomGradientPanel1.Size = new Size(1033, 1200);
             guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // png
@@ -330,7 +329,7 @@
             png.Location = new Point(0, 50);
             png.Name = "png";
             png.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            png.Size = new Size(1012, 1150);
+            png.Size = new Size(1033, 1150);
             png.TabIndex = 1;
             // 
             // btlg
@@ -341,7 +340,7 @@
             btlg.Image = Properties.Resources.logout2;
             btlg.ImageOffset = new Point(0, 0);
             btlg.ImageRotate = 0F;
-            btlg.Location = new Point(916, 4);
+            btlg.Location = new Point(937, 4);
             btlg.Name = "btlg";
             btlg.PressedState.ImageSize = new Size(64, 64);
             btlg.ShadowDecoration.CustomizableEdges = customizableEdges21;
@@ -354,7 +353,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(1200, 568);
+            ClientSize = new Size(1200, 467);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
             Name = "FormChinh";

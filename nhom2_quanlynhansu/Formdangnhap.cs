@@ -83,7 +83,7 @@ namespace nhom2_quanlynhansu
                                 PhienDangNhap.VaiTro = doc["MaVaiTro"] != DBNull.Value ? doc["MaVaiTro"].ToString() : "";
 
                                 MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                                TenTaiKhoanDangNhap = txtdn.Text;
                                 this.DialogResult = DialogResult.OK;
                                 this.Close();
                             }
