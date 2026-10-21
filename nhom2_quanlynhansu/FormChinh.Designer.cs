@@ -120,6 +120,7 @@
             btqlns.Size = new Size(123, 45);
             btqlns.TabIndex = 0;
             btqlns.Text = "QL nhân sự";
+            btqlns.Click += btqlns_Click;
             // 
             // btpq
             // 

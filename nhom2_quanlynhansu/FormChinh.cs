@@ -93,6 +93,11 @@ namespace nhom2_quanlynhansu
         {
             MoForm(new formcauhinhcalamviec());
         }
+
+        private void btqlns_Click(object sender, EventArgs e)
+        {
+            MoForm(new FormQuanLyNhanSu());
+        }
     }
 }
 
