@@ -23,77 +23,171 @@ namespace nhom2_quanlynhansu
                 if (fdn.ShowDialog() == DialogResult.OK)
                 {
                     this.Show();
-                    kiemtraquyen(); // Gọi kiểm tra quyền khi bắt đầu
+                    kiemtraquyen(); 
                 }
                 else
                 {
-                    Application.Exit(); // Đóng hoàn toàn tiến trình ứng dụng nếu tắt Form đăng nhập
+                    Application.Exit(); 
                 }
             }
         }
 
-        // Hàm phân quyền: Hiển thị đầy đủ tất cả các nút bấm
+    
         private void kiemtraquyen()
         {
-            bttnv.Visible = true;  // Tạo nhân viên
-            btchc.Visible = true;  // Cấu hình ca làm việc
-            btqlns.Visible = true; // Quản lý nhân sự
-            btpq.Visible = true;   // Phân quyền
-            btdkc.Visible = true;  // Đăng ký ca
-            bttul.Visible = true;  // Tạm ứng lương
-            btxnp.Visible = true;  // Xin nghỉ phép
+            bttnv.Visible = true;  
+            btchc.Visible = true;  
+            btqlns.Visible = true; 
+            btpq.Visible = true;   
+            btdkc.Visible = true;  
+            bttul.Visible = true;  
+            btxnp.Visible = true;  
 
-            // Mặc định mở Form Hồ sơ cá nhân khi đăng nhập thành công
+            
             MoForm(new FormQLHS(), "0");
         }
 
         private Form HienForm = null;
 
-        /// <summary>
-        /// Hàm nhúng Form con vào Panel chứa logic kiểm tra quyền
-        /// </summary>
-        /// <param name="FormCon">Form cần hiển thị</param>
-        /// <param name="quyenPhep">
-        /// "0": Dành cho tất cả mọi người
-        /// "12": Dành cho Chủ chuỗi (1) hoặc Cửa hàng trưởng (2)
-        /// "1": Chỉ dành cho Chủ chuỗi (1)
-        /// </param>
         private void MoForm(Form FormCon, string quyenPhep = "0")
         {
             bool coQuyen = false;
 
-            // Kiểm tra điều kiện quyền truy cập
+           
             if (quyenPhep == "0")
             {
-                coQuyen = true; // Chức năng chung
+                coQuyen = true; 
             }
             else if (quyenPhep == "12" && (PhienDangNhap.VaiTro == "1" || PhienDangNhap.VaiTro == "2"))
             {
-                coQuyen = true; // Quản lý
+                coQuyen = true; 
             }
             else if (quyenPhep == "1" && PhienDangNhap.VaiTro == "1")
             {
-                coQuyen = true; // Chỉ Chủ chuỗi
+                coQuyen = true; 
             }
 
-            // Nếu không đủ quyền -> Bật thông báo cảnh báo và dừng thực thi
+            
             if (!coQuyen)
             {
                 MessageBox.Show("Bạn không có quyền hạn truy cập chức năng này!", "Cảnh báo phân quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Nếu đủ quyền -> Đóng Form cũ và nạp Form mới vào Panel
+            
             if (HienForm != null)
             {
                 HienForm.Close();
             }
 
             HienForm = FormCon;
-            FormCon.TopLevel = false; // Bỏ cơ chế cửa sổ độc lập
-            FormCon.FormBorderStyle = FormBorderStyle.None; // Bỏ viền Form
-            FormCon.Dock = DockStyle.Fill; // Lấp đầy Panel
-            FormCon.AutoScroll = false; // Tắt thanh cuộn
+            FormCon.TopLevel = false; 
+            FormCon.FormBorderStyle = FormBorderStyle.None; 
+            FormCon.Dock = DockStyle.Fill; 
+            FormCon.AutoScroll = false; 
 
             png.Controls.Clear();
-            png.
+            png.Controls.Add(FormCon);
+            png.Tag = FormCon;
+
+            FormCon.BringToFront(); 
+            FormCon.Show();
+        }
+
+       
+
+        private void btqlhs_Click(object sender, EventArgs e)
+        {
+            MoForm(new FormQLHS(), "0");
+        }
+
+        private void btdkc_Click(object sender, EventArgs e)
+        {
+            MoForm(new FormDangKiCaLamViec(), "0");
+        }
+
+        private void bttul_Click(object sender, EventArgs e)
+        {
+            MoForm(new fTamUngLuong(), "0");
+        }
+
+        private void btxnp_Click(object sender, EventArgs e)
+        {
+            MoForm(new fXinNghiPhep(), "0");
+        }
+
+      
+
+        private void bttnv_Click(object sender, EventArgs e)
+        {
+            MoForm(new Formtaonhanvien(), "12");
+        }
+
+        private void btchc_Click(object sender, EventArgs e)
+        {
+            MoForm(new formcauhinhcalamviec(), "12");
+        }
+
+        private void btqlns_Click(object sender, EventArgs e)
+        {
+            MoForm(new FormQuanLyNhanSu(), "12");
+        }
+
+        
+
+        private void btpq_Click(object sender, EventArgs e)
+        {
+            MoForm(new FormPhanQuyen(), "1");
+        }
+
+
+        private void btlg_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                this.Hide();
+                using (Formdangnhap fdn = new Formdangnhap())
+                {
+                    if (fdn.ShowDialog() == DialogResult.OK)
+                    {
+                        this.Show();
+                        kiemtraquyen();
+                    }
+                    else
+                    {
+                        Application.Exit();
+                    }
+                }
+            }
+        }
+
+        private void FormChinh_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; 
+            }
+            else
+            {
+                Application.ExitThread(); 
+            }
+        }
+
+        private void btt_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+        private void png_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+    }
+}
