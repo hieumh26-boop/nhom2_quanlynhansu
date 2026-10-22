@@ -52,11 +52,11 @@
             label7 = new Label();
             tbcccd = new TextBox();
             panel1 = new Panel();
-            panel2 = new Panel();
             groupBox1 = new GroupBox();
+            panel2 = new Panel();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             groupBox1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -68,7 +68,7 @@
             label1.Name = "label1";
             label1.Size = new Size(800, 88);
             label1.TabIndex = 0;
-            label1.Text = "tạo tài khoản cho nhân viên";
+            label1.Text = "Tạo tài khoản cho nhân viên";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -123,7 +123,7 @@
             bttmnv.Name = "bttmnv";
             bttmnv.Size = new Size(145, 29);
             bttmnv.TabIndex = 29;
-            bttmnv.Text = "tạo mã nhân viên:";
+            bttmnv.Text = "Tạo mã nhân viên:";
             bttmnv.UseVisualStyleBackColor = false;
             bttmnv.Click += bttmnv_Click;
             // 
@@ -303,15 +303,6 @@
             panel1.Size = new Size(800, 371);
             panel1.TabIndex = 31;
             // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.Top;
-            panel2.Controls.Add(label1);
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(800, 82);
-            panel2.TabIndex = 31;
-            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(rbtfull);
@@ -322,6 +313,15 @@
             groupBox1.TabIndex = 31;
             groupBox1.TabStop = false;
             groupBox1.Text = "Hình thúc làm việc";
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.Top;
+            panel2.Controls.Add(label1);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(800, 82);
+            panel2.TabIndex = 31;
             // 
             // Formtaonhanvien
             // 
@@ -335,9 +335,9 @@
             Text = "Formtaonhanvien";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 

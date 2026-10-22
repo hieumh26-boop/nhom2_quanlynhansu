@@ -101,7 +101,7 @@
             btttk.Font = new Font("Segoe UI", 10F);
             btttk.ForeColor = Color.Black;
             btttk.Location = new Point(593, 271);
-            btttk.Margin = new Padding(2, 2, 2, 2);
+            btttk.Margin = new Padding(2);
             btttk.Name = "btttk";
             btttk.Size = new Size(132, 29);
             btttk.TabIndex = 13;
@@ -162,9 +162,9 @@
             label2.Location = new Point(345, 203);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(93, 28);
+            label2.Size = new Size(94, 28);
             label2.TabIndex = 5;
-            label2.Text = "mật khẩu";
+            label2.Text = "Mật khẩu";
             label2.Click += label2_Click;
             // 
             // Formdangnhap

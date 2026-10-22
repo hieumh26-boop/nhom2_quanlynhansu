@@ -183,7 +183,7 @@
             bttnv.ShadowDecoration.CustomizableEdges = customizableEdges8;
             bttnv.Size = new Size(123, 45);
             bttnv.TabIndex = 0;
-            bttnv.Text = "tạo nhân viên";
+            bttnv.Text = "Tạo nhân viên";
             bttnv.Click += bttnv_Click;
             // 
             // bttul
@@ -227,7 +227,7 @@
             btdkc.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btdkc.Size = new Size(123, 45);
             btdkc.TabIndex = 0;
-            btdkc.Text = "đăng kí ca";
+            btdkc.Text = "Đăng kí ca";
             btdkc.Click += btdkc_Click;
             // 
             // btchc
@@ -249,7 +249,7 @@
             btchc.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btchc.Size = new Size(123, 45);
             btchc.TabIndex = 0;
-            btchc.Text = "cấu hình ca ";
+            btchc.Text = "Cấu hình ca ";
             btchc.Click += btchc_Click;
             // 
             // btqlhs
@@ -287,6 +287,7 @@
             // 
             // guna2Panel2
             // 
+            guna2Panel2.AutoScroll = true;
             guna2Panel2.AutoScrollMinSize = new Size(1000, 1200);
             guna2Panel2.BackColor = SystemColors.GradientActiveCaption;
             guna2Panel2.BorderRadius = 60;
@@ -318,7 +319,7 @@
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.Padding = new Padding(0, 50, 0, 0);
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges23;
-            guna2CustomGradientPanel1.Size = new Size(1033, 1200);
+            guna2CustomGradientPanel1.Size = new Size(1012, 1200);
             guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // png
@@ -329,7 +330,7 @@
             png.Location = new Point(0, 50);
             png.Name = "png";
             png.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            png.Size = new Size(1033, 1150);
+            png.Size = new Size(1012, 1150);
             png.TabIndex = 1;
             // 
             // btlg
@@ -340,7 +341,7 @@
             btlg.Image = Properties.Resources.logout2;
             btlg.ImageOffset = new Point(0, 0);
             btlg.ImageRotate = 0F;
-            btlg.Location = new Point(937, 4);
+            btlg.Location = new Point(916, 4);
             btlg.Name = "btlg";
             btlg.PressedState.ImageSize = new Size(64, 64);
             btlg.ShadowDecoration.CustomizableEdges = customizableEdges21;

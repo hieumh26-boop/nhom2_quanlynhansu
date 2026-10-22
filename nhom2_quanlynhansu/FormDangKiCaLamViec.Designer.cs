@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             lblMaNV = new Label();
             lblHoTen = new Label();
             txtHoTen = new TextBox();
@@ -103,11 +103,11 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label1.ForeColor = Color.Black;
             label1.Location = new Point(207, 23);
             label1.Name = "label1";
-            label1.Size = new Size(500, 54);
+            label1.Size = new Size(538, 62);
             label1.TabIndex = 6;
             label1.Text = "Nơi đăng kí ca làm việc";
             // 
@@ -137,9 +137,9 @@
             btnDangKy.FlatStyle = FlatStyle.Popup;
             btnDangKy.Font = new Font("Microsoft Sans Serif", 13.8F);
             btnDangKy.ForeColor = Color.White;
-            btnDangKy.Location = new Point(199, 353);
+            btnDangKy.Location = new Point(218, 353);
             btnDangKy.Name = "btnDangKy";
-            btnDangKy.Size = new Size(94, 39);
+            btnDangKy.Size = new Size(125, 39);
             btnDangKy.TabIndex = 9;
             btnDangKy.Text = "Đăng ký";
             btnDangKy.UseVisualStyleBackColor = false;
@@ -191,8 +191,8 @@
             // ColNgayLam
             // 
             ColNgayLam.DataPropertyName = "ThoiGianDangKi";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy HH:mm";
-            ColNgayLam.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy HH:mm";
+            ColNgayLam.DefaultCellStyle = dataGridViewCellStyle2;
             ColNgayLam.HeaderText = "Ngày làm";
             ColNgayLam.MinimumWidth = 6;
             ColNgayLam.Name = "ColNgayLam";
@@ -254,9 +254,9 @@
             label3.Font = new Font("Microsoft Sans Serif", 13.8F);
             label3.Location = new Point(207, 302);
             label3.Name = "label3";
-            label3.Size = new Size(135, 29);
+            label3.Size = new Size(139, 29);
             label3.TabIndex = 15;
-            label3.Text = "giờ kết thúc";
+            label3.Text = "Giờ kết thúc";
             // 
             // tbbd
             // 
@@ -271,9 +271,9 @@
             label2.Font = new Font("Microsoft Sans Serif", 13.8F);
             label2.Location = new Point(207, 259);
             label2.Name = "label2";
-            label2.Size = new Size(132, 29);
+            label2.Size = new Size(136, 29);
             label2.TabIndex = 13;
-            label2.Text = "giờ bắt đầu";
+            label2.Text = "Giờ bắt đầu";
             // 
             // FormDangKiCaLamViec
             // 

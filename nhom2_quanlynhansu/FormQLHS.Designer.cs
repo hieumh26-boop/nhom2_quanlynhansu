@@ -129,7 +129,7 @@
             cbcs2.Name = "cbcs2";
             cbcs2.Size = new Size(121, 51);
             cbcs2.TabIndex = 20;
-            cbcs2.Text = "chỉnh sửa";
+            cbcs2.Text = "Chỉnh sửa";
             cbcs2.TextAlign = ContentAlignment.MiddleCenter;
             cbcs2.UseVisualStyleBackColor = false;
             cbcs2.CheckedChanged += cbcs2_CheckedChanged;
@@ -414,11 +414,11 @@
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
-            label3.Font = new Font("Times New Roman", 30F);
+            label3.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(398, 14);
+            label3.Location = new Point(363, 14);
             label3.Name = "label3";
-            label3.Size = new Size(378, 65);
+            label3.Size = new Size(449, 65);
             label3.TabIndex = 29;
             label3.Text = "Quản lý thông tin";
             // 

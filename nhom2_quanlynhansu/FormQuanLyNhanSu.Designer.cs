@@ -39,10 +39,10 @@
             // 
             lblTieuDe.Anchor = AnchorStyles.Top;
             lblTieuDe.AutoSize = true;
-            lblTieuDe.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            lblTieuDe.Location = new Point(267, 26);
+            lblTieuDe.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            lblTieuDe.Location = new Point(225, 24);
             lblTieuDe.Name = "lblTieuDe";
-            lblTieuDe.Size = new Size(277, 38);
+            lblTieuDe.Size = new Size(335, 46);
             lblTieuDe.TabIndex = 0;
             lblTieuDe.Text = "QUẢN LÝ NHÂN SỰ";
             // 

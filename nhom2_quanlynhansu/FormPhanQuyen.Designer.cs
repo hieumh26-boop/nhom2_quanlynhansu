@@ -77,10 +77,10 @@
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.Font = new Font("Segoe UI", 20F);
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label1.Location = new Point(112, 9);
             label1.Name = "label1";
-            label1.Size = new Size(562, 46);
+            label1.Size = new Size(604, 46);
             label1.TabIndex = 0;
             label1.Text = "Phân quyền và cơ sở cho nhân viên";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -273,7 +273,7 @@
             btxn.Name = "btxn";
             btxn.Size = new Size(167, 29);
             btxn.TabIndex = 48;
-            btxn.Text = "xác nhận thay đổi";
+            btxn.Text = "Xác nhận thay đổi";
             btxn.UseVisualStyleBackColor = false;
             btxn.Click += btxn_Click;
             // 

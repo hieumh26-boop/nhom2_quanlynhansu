@@ -79,10 +79,10 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.BackColor = SystemColors.GradientActiveCaption;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 163);
             label1.Location = new Point(388, 33);
             label1.Name = "label1";
-            label1.Size = new Size(362, 41);
+            label1.Size = new Size(408, 46);
             label1.TabIndex = 1;
             label1.Text = "CẤU HÌNH CA LÀM VIỆC";
             // 

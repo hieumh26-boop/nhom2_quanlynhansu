@@ -83,9 +83,9 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(344, 164);
             label4.Name = "label4";
-            label4.Size = new Size(93, 28);
+            label4.Size = new Size(94, 28);
             label4.TabIndex = 3;
-            label4.Text = "mật khẩu";
+            label4.Text = "Mật khẩu";
             // 
             // label5
             // 
@@ -94,9 +94,9 @@
             label5.ForeColor = Color.Black;
             label5.Location = new Point(263, 231);
             label5.Name = "label5";
-            label5.Size = new Size(174, 28);
+            label5.Size = new Size(177, 28);
             label5.TabIndex = 4;
-            label5.Text = "xác nhận mật khẩu";
+            label5.Text = "Xác nhận mật khẩu";
             // 
             // tbtdn2
             // 
