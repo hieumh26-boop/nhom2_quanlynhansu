@@ -42,6 +42,7 @@ namespace nhom2_quanlynhansu
                 bttnv.Visible = true;  // Tạo nhân viên
                 btchc.Visible = true;  // Cấu hình ca làm việc
                 btqlns.Visible = true; // Quản lý nhân sự
+                
 
                 // Chỉ riêng Chủ chuỗi mới mở được nút Phân quyền
                 if (PhienDangNhap.VaiTro == "Chủ chuỗi")
