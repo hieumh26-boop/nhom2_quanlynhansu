@@ -119,7 +119,7 @@
             // 
             // cbcs2
             // 
-            cbcs2.Anchor = AnchorStyles.Top;
+            cbcs2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cbcs2.Appearance = Appearance.Button;
             cbcs2.BackColor = Color.White;
             cbcs2.FlatStyle = FlatStyle.Popup;
