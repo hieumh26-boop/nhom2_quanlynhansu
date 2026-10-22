@@ -68,7 +68,7 @@ namespace nhom2_quanlynhansu
                             tbns.Text = doc["NgaySinh"] != DBNull.Value ? Convert.ToDateTime(doc["NgaySinh"]).ToString("dd/MM/yyyy") : "";
                             tbsdt.Text = doc["SDT"] != DBNull.Value ? doc["SDT"].ToString() : "";
                             tbcccd.Text = doc["CCCD"] != DBNull.Value ? doc["CCCD"].ToString() : "";
-                            
+
                             cbcv.Text = doc["TenVaiTro"] != DBNull.Value ? doc["TenVaiTro"].ToString() : "";
                             cbmcs.Text = doc["MaCoSo"] != DBNull.Value ? doc["MaCoSo"].ToString() : "";
                             tbtcs.Text = doc["TenCoSo"] != DBNull.Value ? doc["TenCoSo"].ToString() : "";
@@ -116,16 +116,16 @@ namespace nhom2_quanlynhansu
                         else
                             cmd.Parameters.Add("@mcs", SqlDbType.Int).Value = DBNull.Value;
 
-                       // cmd.Parameters.Add("@cv", SqlDbType.NVarChar, 100).Value = vaiTroMoi;
-                        if(cbcv.SelectedItem=="Chủ chuỗi")
+                        // cmd.Parameters.Add("@cv", SqlDbType.NVarChar, 100).Value = vaiTroMoi;
+                        if (cbcv.SelectedItem == "Chủ chuỗi")
                         {
                             cmd.Parameters.AddWithValue("@cv", 1);
                         }
-                        else if(cbcv.SelectedItem=="Cửa hàng trưởng")
+                        else if (cbcv.SelectedItem == "Cửa hàng trưởng")
                         {
                             cmd.Parameters.AddWithValue("@cv", 2);
                         }
-                        else if(cbcv.SelectedItem=="Nhân viên")
+                        else if (cbcv.SelectedItem == "Nhân viên")
                         {
                             cmd.Parameters.AddWithValue("@cv", 3);
                         }
@@ -135,7 +135,7 @@ namespace nhom2_quanlynhansu
 
                         if (rows > 0)
                         {
-                            MessageBox.Show("Cập nhật phân quyền thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);         
+                            MessageBox.Show("Cập nhật phân quyền thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             cbmnv_SelectedIndexChanged(sender, e);
                         }
                         else
@@ -149,6 +149,16 @@ namespace nhom2_quanlynhansu
                     MessageBox.Show("Lỗi cập nhật: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

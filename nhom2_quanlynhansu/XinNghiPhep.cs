@@ -13,7 +13,7 @@ namespace nhom2_quanlynhansu
         // thoat chuong trinh 
         private void fXinNghiPhep_FormClosed(object sender, FormClosedEventArgs e)
         {
-          //  Environment.Exit(0); thua r
+            //  Environment.Exit(0); thua r
         }
 
         private void fXinNghiPhep_Load(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace nhom2_quanlynhansu
                     "INNER JOIN [PhanQuyen] pq ON pq.MaVaiTro = nv.MaVaiTro " +
                 "INNER JOIN [CoSo] cs ON cs.MaCoSo = nv.MaCoSo " +
                  "WHERE nd.TenDangNhap = '" + Formdangnhap.TenTaiKhoanDangNhap + "'";
-         
+
 
             DataTable dt = db.ReadData(sql);
             if (dt != null && dt.Rows.Count > 0)
@@ -112,7 +112,7 @@ namespace nhom2_quanlynhansu
         }
 
         private void button1_Click(object sender, EventArgs e)
-        { 
+        {
             if (dgvXinNghiPhep.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vui lòng click chọn một dòng đơn dưới bảng Lịch sử trước khi bấm Hủy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -141,7 +141,7 @@ namespace nhom2_quanlynhansu
             classchung db = new classchung();
             if (db.WriteData(sqlDeleteDon))
             {
-                db.WriteData(sqlUpdateHanMuc); 
+                db.WriteData(sqlUpdateHanMuc);
 
                 MessageBox.Show("Hủy đơn xin nghỉ phép số " + maDonDuocChon + " thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tbxCon.Text = soBuoiConLaiMoi.ToString();
@@ -152,6 +152,11 @@ namespace nhom2_quanlynhansu
             {
                 MessageBox.Show("Có lỗi xảy ra trong quá trình hủy đơn, vui lòng kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
 
         }
     }

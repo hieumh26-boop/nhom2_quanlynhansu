@@ -230,5 +230,15 @@ namespace nhom2_quanlynhansu
 
         // Xóa hàm trống không sử dụng
         private void dgvCaLamViec_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

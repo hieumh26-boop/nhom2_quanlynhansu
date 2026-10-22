@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             lblMaNV = new Label();
             lblHoTen = new Label();
             txtHoTen = new TextBox();
@@ -57,20 +57,20 @@
             // lblMaNV
             // 
             lblMaNV.AutoSize = true;
-            lblMaNV.Font = new Font("Microsoft Sans Serif", 13.8F);
+            lblMaNV.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             lblMaNV.Location = new Point(207, 92);
             lblMaNV.Name = "lblMaNV";
-            lblMaNV.Size = new Size(154, 29);
+            lblMaNV.Size = new Size(149, 31);
             lblMaNV.TabIndex = 0;
             lblMaNV.Text = "Mã nhân viên";
             // 
             // lblHoTen
             // 
             lblHoTen.AutoSize = true;
-            lblHoTen.Font = new Font("Microsoft Sans Serif", 13.8F);
+            lblHoTen.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             lblHoTen.Location = new Point(207, 127);
             lblHoTen.Name = "lblHoTen";
-            lblHoTen.Size = new Size(83, 29);
+            lblHoTen.Size = new Size(79, 31);
             lblHoTen.TabIndex = 2;
             lblHoTen.Text = "Họ tên";
             // 
@@ -85,10 +85,10 @@
             // lblNgayLam
             // 
             lblNgayLam.AutoSize = true;
-            lblNgayLam.Font = new Font("Microsoft Sans Serif", 13.8F);
+            lblNgayLam.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             lblNgayLam.Location = new Point(207, 172);
             lblNgayLam.Name = "lblNgayLam";
-            lblNgayLam.Size = new Size(163, 29);
+            lblNgayLam.Size = new Size(154, 31);
             lblNgayLam.TabIndex = 4;
             lblNgayLam.Text = "Ngày làm việc";
             // 
@@ -103,21 +103,21 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(207, 23);
+            label1.Location = new Point(207, 9);
             label1.Name = "label1";
-            label1.Size = new Size(500, 54);
+            label1.Size = new Size(433, 50);
             label1.TabIndex = 6;
             label1.Text = "Nơi đăng kí ca làm việc";
             // 
             // lblCaLam
             // 
             lblCaLam.AutoSize = true;
-            lblCaLam.Font = new Font("Microsoft Sans Serif", 13.8F);
+            lblCaLam.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             lblCaLam.Location = new Point(207, 217);
             lblCaLam.Name = "lblCaLam";
-            lblCaLam.Size = new Size(146, 29);
+            lblCaLam.Size = new Size(139, 31);
             lblCaLam.TabIndex = 7;
             lblCaLam.Text = "Chọn ca làm";
             // 
@@ -137,9 +137,9 @@
             btnDangKy.FlatStyle = FlatStyle.Popup;
             btnDangKy.Font = new Font("Microsoft Sans Serif", 13.8F);
             btnDangKy.ForeColor = Color.White;
-            btnDangKy.Location = new Point(199, 353);
+            btnDangKy.Location = new Point(218, 353);
             btnDangKy.Name = "btnDangKy";
-            btnDangKy.Size = new Size(94, 39);
+            btnDangKy.Size = new Size(125, 39);
             btnDangKy.TabIndex = 9;
             btnDangKy.Text = "Đăng ký";
             btnDangKy.UseVisualStyleBackColor = false;
@@ -147,7 +147,7 @@
             // 
             // btnHuy
             // 
-            btnHuy.BackColor = SystemColors.HotTrack;
+            btnHuy.BackColor = SystemColors.AppWorkspace;
             btnHuy.FlatStyle = FlatStyle.Popup;
             btnHuy.Font = new Font("Microsoft Sans Serif", 13.8F);
             btnHuy.ForeColor = Color.White;
@@ -191,8 +191,8 @@
             // ColNgayLam
             // 
             ColNgayLam.DataPropertyName = "ThoiGianDangKi";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy HH:mm";
-            ColNgayLam.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy HH:mm";
+            ColNgayLam.DefaultCellStyle = dataGridViewCellStyle5;
             ColNgayLam.HeaderText = "Ngày làm";
             ColNgayLam.MinimumWidth = 6;
             ColNgayLam.Name = "ColNgayLam";
@@ -251,12 +251,12 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 13.8F);
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label3.Location = new Point(207, 302);
             label3.Name = "label3";
-            label3.Size = new Size(135, 29);
+            label3.Size = new Size(133, 31);
             label3.TabIndex = 15;
-            label3.Text = "giờ kết thúc";
+            label3.Text = "Giờ kết thúc";
             // 
             // tbbd
             // 
@@ -268,12 +268,12 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 13.8F);
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.Location = new Point(207, 259);
             label2.Name = "label2";
-            label2.Size = new Size(132, 29);
+            label2.Size = new Size(129, 31);
             label2.TabIndex = 13;
-            label2.Text = "giờ bắt đầu";
+            label2.Text = "Giờ bắt đầu";
             // 
             // FormDangKiCaLamViec
             // 

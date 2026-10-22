@@ -190,5 +190,10 @@ namespace nhom2_quanlynhansu
                 MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void rbtnam_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

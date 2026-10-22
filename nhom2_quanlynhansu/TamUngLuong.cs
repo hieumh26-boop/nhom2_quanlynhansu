@@ -19,7 +19,7 @@ namespace nhom2_quanlynhansu
 
         private void fTamUngLuong_FormClosed(object sender, FormClosedEventArgs e)
         {
-           // Environment.Exit(0); thua r
+            // Environment.Exit(0); thua r
         }
         private void LoadDuLieu()
         {
@@ -83,8 +83,8 @@ namespace nhom2_quanlynhansu
             double daUngLuongCu = Convert.ToDouble(tbxDu.Text);
             double Sotienungthem = Convert.ToDouble(tbxStso.Text);
             double daUngMoi = daUngLuongCu + Sotienungthem;
-            double Sotienconlai = LuongTamTinh - daUngMoi ;
-            
+            double Sotienconlai = LuongTamTinh - daUngMoi;
+
             // thôngg báo nếu ứng quá 3 trăm 
             if (Sotienconlai <= 300000)
             {
@@ -95,7 +95,7 @@ namespace nhom2_quanlynhansu
             tbxConlai.Text = Sotienconlai.ToString("#,##0");
 
             // load lên dgv
-        
+
             int soThuTuTuDong = dgvLichSu.Rows.Count + 1;
             string maUng = soThuTuTuDong.ToString();
             string maLuong = currentMaLuong;
@@ -138,14 +138,14 @@ namespace nhom2_quanlynhansu
             string sqlDeleteDon = "DELETE FROM [UngLuong] WHERE MaUngLuong = " + maDonDuocChon;
             classchung db = new classchung();
             bool resuil = db.WriteData(sqlDeleteDon);
-            if ( resuil)
+            if (resuil)
             {
                 MessageBox.Show("Hủy đơn ứng số" + maDonDuocChon + " thành công");
-                double conLaiCu= Convert.ToDouble(tbxConlai.Text);
+                double conLaiCu = Convert.ToDouble(tbxConlai.Text);
                 double daUngCu = Convert.ToDouble(tbxDu.Text);
 
                 double daUngMoi = daUngCu - soTienHuyDon;
-                double tienConLaiMoi = conLaiCu  + soTienHuyDon;
+                double tienConLaiMoi = conLaiCu + soTienHuyDon;
                 tbxDu.Text = daUngMoi.ToString("#,##0");
                 tbxConlai.Text = tienConLaiMoi.ToString("#,##0");
                 LoadDuLieu();
@@ -155,7 +155,12 @@ namespace nhom2_quanlynhansu
                 MessageBox.Show("Loi Huy Don");
             }
 
-           
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
