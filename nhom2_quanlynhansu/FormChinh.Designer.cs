@@ -76,7 +76,7 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.BackColor = SystemColors.GradientActiveCaption;
+            guna2Panel1.BackColor = Color.White;
             guna2Panel1.Controls.Add(btqlns);
             guna2Panel1.Controls.Add(btpq);
             guna2Panel1.Controls.Add(btxnp);
@@ -289,12 +289,12 @@
             // 
             guna2Panel2.AutoScroll = true;
             guna2Panel2.AutoScrollMinSize = new Size(1000, 1200);
-            guna2Panel2.BackColor = SystemColors.GradientActiveCaption;
+            guna2Panel2.BackColor = Color.White;
             guna2Panel2.BorderRadius = 60;
             guna2Panel2.Controls.Add(guna2CustomGradientPanel1);
             guna2Panel2.CustomizableEdges = customizableEdges24;
             guna2Panel2.Dock = DockStyle.Fill;
-            guna2Panel2.FillColor = SystemColors.GradientActiveCaption;
+            guna2Panel2.FillColor = Color.White;
             guna2Panel2.Location = new Point(137, 0);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.Padding = new Padding(15);
@@ -336,6 +336,7 @@
             // btlg
             // 
             btlg.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btlg.BackColor = SystemColors.GradientActiveCaption;
             btlg.CheckedState.ImageSize = new Size(64, 64);
             btlg.HoverState.ImageSize = new Size(64, 64);
             btlg.Image = Properties.Resources.logout2;
