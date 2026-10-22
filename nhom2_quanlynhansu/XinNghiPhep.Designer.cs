@@ -287,12 +287,12 @@
             // 
             // tbxLydo
             // 
-            tbxLydo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbxLydo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tbxLydo.Font = new Font("Calibri", 14F);
-            tbxLydo.Location = new Point(227, 113);
+            tbxLydo.Location = new Point(227, 102);
             tbxLydo.Multiline = true;
             tbxLydo.Name = "tbxLydo";
-            tbxLydo.Size = new Size(220, 51);
+            tbxLydo.Size = new Size(225, 51);
             tbxLydo.TabIndex = 22;
             // 
             // label19
@@ -491,7 +491,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Calibri", 14F);
-            label1.Location = new Point(3, 60);
+            label1.Location = new Point(9, 60);
             label1.Name = "label1";
             label1.Size = new Size(155, 29);
             label1.TabIndex = 0;

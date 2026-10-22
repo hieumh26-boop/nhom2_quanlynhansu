@@ -72,16 +72,25 @@ namespace nhom2_quanlynhansu
                 return;
             }
 
-            // 2. Chuẩn bị câu lệnh SQL INSERT (Gán cố định MaLuong = 1)
-            string them = @"INSERT INTO dbo.NhanVien (MaNhanVien, HoTen, SDT, CCCD, STK, HinhThucLamViec, MaCoSo, MaVaitro, NgaySinh, GioiTinh, MaLuong) 
-                           VALUES (@mnv, @ht, @sdt, @cccd, @stk, @htlv, @mcs, @mvt, @ns, @gt, @ml)";
+            // 2. Lệnh SQL tự động khởi tạo MaLuong mới với SoNgayCong = 1 trước khi INSERT NhanVien
+            string sqlFull = @"
+                -- 1. Chèn bản ghi mới vào bảng Luong với SoNgayCong = 1
+                INSERT INTO dbo.Luong (SoNgayCong, HeSoLuong, LuongCoBan)
+                VALUES (1, 0.5, 200000);
+
+                -- Lấy MaLuong tự tăng vừa được sinh ra
+                DECLARE @NewMaLuong INT = SCOPE_IDENTITY();
+
+                -- 2. Chèn Nhân viên mới dùng @NewMaLuong vừa lấy
+                INSERT INTO dbo.NhanVien (MaNhanVien, HoTen, SDT, CCCD, STK, HinhThucLamViec, MaCoSo, MaVaitro, NgaySinh, GioiTinh, MaLuong) 
+                VALUES (@mnv, @ht, @sdt, @cccd, @stk, @htlv, @mcs, @mvt, @ns, @gt, @NewMaLuong);";
 
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
             {
                 try
                 {
                     kn.Open();
-                    using (SqlCommand cmd = new SqlCommand(them, kn))
+                    using (SqlCommand cmd = new SqlCommand(sqlFull, kn))
                     {
                         cmd.Parameters.Add("@mnv", SqlDbType.Int).Value = mnv;
                         cmd.Parameters.Add("@ht", SqlDbType.NVarChar, 100).Value = tbht.Text.Trim();
@@ -94,14 +103,11 @@ namespace nhom2_quanlynhansu
                         cmd.Parameters.Add("@ns", SqlDbType.Date).Value = datens.Value.Date;
                         cmd.Parameters.Add("@gt", SqlDbType.NVarChar, 10).Value = gt;
 
-                        // Cố định Mã lương mặc định = 1
-                        cmd.Parameters.Add("@ml", SqlDbType.Int).Value = mnv ;
-
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Thêm nhân viên và khởi tạo bảng lương thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             xoaform();
                         }
                         else
