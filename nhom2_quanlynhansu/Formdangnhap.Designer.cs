@@ -38,6 +38,7 @@
             cbmk = new CheckBox();
             txtmk = new TextBox();
             label2 = new Label();
+            label5 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label1);
@@ -62,36 +64,37 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(12, 71);
+            label3.Location = new Point(256, 90);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(194, 46);
+            label3.Size = new Size(287, 38);
             label3.TabIndex = 11;
-            label3.Text = "Đăng nhập";
+            label3.Text = "Đăng nhập tài khoản";
             label3.Click += cbmk_CheckedChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(12, 9);
+            label4.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            label4.Location = new Point(192, 28);
             label4.Name = "label4";
-            label4.Size = new Size(150, 62);
+            label4.Size = new Size(407, 62);
             label4.TabIndex = 12;
-            label4.Text = "QLNS";
+            label4.Text = "NHÂN SỰ MIXUE";
+            label4.Click += label4_Click;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(298, 149);
+            label1.Location = new Point(112, 149);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(140, 28);
+            label1.Size = new Size(144, 28);
             label1.TabIndex = 4;
             label1.Text = "Tên đăng nhập";
             // 
@@ -100,7 +103,7 @@
             btttk.FlatStyle = FlatStyle.Popup;
             btttk.Font = new Font("Segoe UI", 10F);
             btttk.ForeColor = Color.Black;
-            btttk.Location = new Point(593, 271);
+            btttk.Location = new Point(534, 271);
             btttk.Margin = new Padding(2);
             btttk.Name = "btttk";
             btttk.Size = new Size(132, 29);
@@ -115,7 +118,7 @@
             btdn.FlatStyle = FlatStyle.Popup;
             btdn.Font = new Font("Segoe UI", 10F);
             btdn.ForeColor = Color.White;
-            btdn.Location = new Point(443, 271);
+            btdn.Location = new Point(368, 271);
             btdn.Name = "btdn";
             btdn.Size = new Size(124, 29);
             btdn.TabIndex = 12;
@@ -127,7 +130,7 @@
             // 
             txtdn.BorderStyle = BorderStyle.FixedSingle;
             txtdn.ForeColor = Color.Black;
-            txtdn.Location = new Point(443, 149);
+            txtdn.Location = new Point(288, 149);
             txtdn.Name = "txtdn";
             txtdn.Size = new Size(262, 27);
             txtdn.TabIndex = 2;
@@ -137,7 +140,7 @@
             cbmk.Appearance = Appearance.Button;
             cbmk.FlatStyle = FlatStyle.Flat;
             cbmk.Image = Properties.Resources.mătdong;
-            cbmk.Location = new Point(726, 203);
+            cbmk.Location = new Point(593, 202);
             cbmk.Name = "cbmk";
             cbmk.Size = new Size(50, 27);
             cbmk.TabIndex = 11;
@@ -148,7 +151,7 @@
             // 
             txtmk.BorderStyle = BorderStyle.FixedSingle;
             txtmk.ForeColor = Color.Black;
-            txtmk.Location = new Point(443, 203);
+            txtmk.Location = new Point(288, 203);
             txtmk.Name = "txtmk";
             txtmk.PasswordChar = '*';
             txtmk.Size = new Size(262, 27);
@@ -157,15 +160,26 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(345, 203);
+            label2.Location = new Point(112, 198);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(94, 28);
             label2.TabIndex = 5;
             label2.Text = "Mật khẩu";
             label2.Click += label2_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            label5.ForeColor = SystemColors.HotTrack;
+            label5.Location = new Point(256, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(258, 28);
+            label5.TabIndex = 14;
+            label5.Text = "Hệ thống quản lý nhân sự";
             // 
             // Formdangnhap
             // 
@@ -193,6 +207,6 @@
         private Label label2;
         private Label label4;
         private Label label3;
-      
+        private Label label5;
     }
 }

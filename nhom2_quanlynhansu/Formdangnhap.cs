@@ -118,5 +118,10 @@ namespace nhom2_quanlynhansu
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

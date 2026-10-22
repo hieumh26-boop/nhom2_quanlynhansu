@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -54,10 +56,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            btt = new Guna.UI2.WinForms.Guna2Button();
             btqlns = new Guna.UI2.WinForms.Guna2Button();
             btpq = new Guna.UI2.WinForms.Guna2Button();
             btxnp = new Guna.UI2.WinForms.Guna2Button();
@@ -71,7 +72,6 @@
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             png = new Guna.UI2.WinForms.Guna2Panel();
             btlg = new Guna.UI2.WinForms.Guna2ImageButton();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             guna2Panel2.SuspendLayout();
             guna2CustomGradientPanel1.SuspendLayout();
@@ -80,7 +80,7 @@
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.White;
-            guna2Panel1.Controls.Add(guna2Button1);
+            guna2Panel1.Controls.Add(btt);
             guna2Panel1.Controls.Add(btqlns);
             guna2Panel1.Controls.Add(btpq);
             guna2Panel1.Controls.Add(btxnp);
@@ -95,8 +95,30 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2Panel1.Size = new Size(137, 571);
+            guna2Panel1.Size = new Size(148, 571);
             guna2Panel1.TabIndex = 1;
+            // 
+            // btt
+            // 
+            btt.BorderRadius = 15;
+            btt.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            btt.CheckedState.FillColor = Color.White;
+            btt.CheckedState.ForeColor = Color.Black;
+            btt.CustomizableEdges = customizableEdges1;
+            btt.DisabledState.BorderColor = Color.DarkGray;
+            btt.DisabledState.CustomBorderColor = Color.DarkGray;
+            btt.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btt.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btt.FillColor = SystemColors.InactiveCaption;
+            btt.Font = new Font("Segoe UI", 9F);
+            btt.ForeColor = Color.White;
+            btt.Location = new Point(8, 514);
+            btt.Name = "btt";
+            btt.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btt.Size = new Size(123, 45);
+            btt.TabIndex = 4;
+            btt.Text = "Thoát";
+            btt.Click += btt_Click;
             // 
             // btqlns
             // 
@@ -110,7 +132,7 @@
             btqlns.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btqlns.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btqlns.FillColor = SystemColors.HotTrack;
-            btqlns.Font = new Font("Segoe UI", 9F);
+            btqlns.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
             btqlns.ForeColor = Color.White;
             btqlns.HoverState.FillColor = SystemColors.HotTrack;
             btqlns.HoverState.ForeColor = Color.White;
@@ -134,7 +156,7 @@
             btpq.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btpq.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btpq.FillColor = SystemColors.HotTrack;
-            btpq.Font = new Font("Segoe UI", 9F);
+            btpq.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
             btpq.ForeColor = Color.White;
             btpq.HoverState.FillColor = SystemColors.HotTrack;
             btpq.HoverState.ForeColor = Color.White;
@@ -158,7 +180,7 @@
             btxnp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btxnp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btxnp.FillColor = SystemColors.HotTrack;
-            btxnp.Font = new Font("Segoe UI", 9F);
+            btxnp.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
             btxnp.ForeColor = Color.White;
             btxnp.Location = new Point(10, 201);
             btxnp.Name = "btxnp";
@@ -180,7 +202,7 @@
             bttnv.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             bttnv.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             bttnv.FillColor = SystemColors.HotTrack;
-            bttnv.Font = new Font("Segoe UI", 9F);
+            bttnv.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
             bttnv.ForeColor = Color.White;
             bttnv.Location = new Point(8, 403);
             bttnv.Name = "bttnv";
@@ -202,7 +224,7 @@
             bttul.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             bttul.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             bttul.FillColor = SystemColors.HotTrack;
-            bttul.Font = new Font("Segoe UI", 9F);
+            bttul.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
             bttul.ForeColor = Color.White;
             bttul.Location = new Point(11, 150);
             bttul.Name = "bttul";
@@ -224,7 +246,7 @@
             btdkc.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btdkc.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btdkc.FillColor = SystemColors.HotTrack;
-            btdkc.Font = new Font("Segoe UI", 9F);
+            btdkc.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
             btdkc.ForeColor = Color.White;
             btdkc.Location = new Point(11, 99);
             btdkc.Name = "btdkc";
@@ -246,7 +268,7 @@
             btchc.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btchc.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btchc.FillColor = SystemColors.HotTrack;
-            btchc.Font = new Font("Segoe UI", 9F);
+            btchc.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
             btchc.ForeColor = Color.White;
             btchc.Location = new Point(11, 250);
             btchc.Name = "btchc";
@@ -268,7 +290,7 @@
             btqlhs.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btqlhs.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btqlhs.FillColor = SystemColors.HotTrack;
-            btqlhs.Font = new Font("Segoe UI", 9F);
+            btqlhs.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
             btqlhs.ForeColor = Color.White;
             btqlhs.Location = new Point(11, 48);
             btqlhs.Name = "btqlhs";
@@ -285,9 +307,9 @@
             guna2HtmlLabel1.ForeColor = Color.Black;
             guna2HtmlLabel1.Location = new Point(24, 3);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(73, 39);
+            guna2HtmlLabel1.Size = new Size(76, 39);
             guna2HtmlLabel1.TabIndex = 1;
-            guna2HtmlLabel1.Text = "QLNS";
+            guna2HtmlLabel1.Text = "Menu";
             // 
             // guna2Panel2
             // 
@@ -299,11 +321,11 @@
             guna2Panel2.CustomizableEdges = customizableEdges26;
             guna2Panel2.Dock = DockStyle.Fill;
             guna2Panel2.FillColor = Color.White;
-            guna2Panel2.Location = new Point(137, 0);
+            guna2Panel2.Location = new Point(148, 0);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.Padding = new Padding(15);
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges27;
-            guna2Panel2.Size = new Size(1063, 571);
+            guna2Panel2.Size = new Size(1052, 571);
             guna2Panel2.TabIndex = 2;
             guna2Panel2.Paint += guna2Panel2_Paint;
             // 
@@ -323,19 +345,20 @@
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.Padding = new Padding(0, 50, 0, 0);
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges25;
-            guna2CustomGradientPanel1.Size = new Size(1012, 1200);
+            guna2CustomGradientPanel1.Size = new Size(1001, 1200);
             guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // png
             // 
-            png.BackColor = SystemColors.GradientActiveCaption;
+            png.BackColor = SystemColors.GradientInactiveCaption;
             png.CustomizableEdges = customizableEdges21;
             png.Dock = DockStyle.Fill;
             png.Location = new Point(0, 50);
             png.Name = "png";
             png.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            png.Size = new Size(1012, 1150);
+            png.Size = new Size(1001, 1150);
             png.TabIndex = 1;
+            png.Paint += png_Paint;
             // 
             // btlg
             // 
@@ -346,34 +369,13 @@
             btlg.Image = Properties.Resources.logout2;
             btlg.ImageOffset = new Point(0, 0);
             btlg.ImageRotate = 0F;
-            btlg.Location = new Point(916, 4);
+            btlg.Location = new Point(859, 3);
             btlg.Name = "btlg";
             btlg.PressedState.ImageSize = new Size(64, 64);
             btlg.ShadowDecoration.CustomizableEdges = customizableEdges23;
             btlg.Size = new Size(63, 40);
             btlg.TabIndex = 0;
             btlg.Click += btlg_Click;
-            // 
-            // guna2Button1
-            // 
-            guna2Button1.BorderRadius = 15;
-            guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            guna2Button1.CheckedState.FillColor = Color.White;
-            guna2Button1.CheckedState.ForeColor = Color.Black;
-            guna2Button1.CustomizableEdges = customizableEdges1;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = SystemColors.HotTrack;
-            guna2Button1.Font = new Font("Segoe UI", 9F);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(10, 454);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button1.Size = new Size(123, 45);
-            guna2Button1.TabIndex = 4;
-            guna2Button1.Text = "Tạo nhân viên";
             // 
             // FormChinh
             // 
@@ -409,9 +411,9 @@
         private Guna.UI2.WinForms.Guna2Button bttnv;
         private Guna.UI2.WinForms.Guna2Button btpq;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
-        private Guna.UI2.WinForms.Guna2ImageButton btlg;
         private Guna.UI2.WinForms.Guna2Panel png;
         private Guna.UI2.WinForms.Guna2Button btxnp;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btt;
+        private Guna.UI2.WinForms.Guna2ImageButton btlg;
     }
 }

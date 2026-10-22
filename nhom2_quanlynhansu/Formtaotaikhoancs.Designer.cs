@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -43,45 +42,34 @@
             label6 = new Label();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(150, 62);
-            label1.TabIndex = 0;
-            label1.Text = "QLNS";
-            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(12, 71);
+            label2.Location = new Point(196, 25);
             label2.Name = "label2";
-            label2.Size = new Size(237, 46);
+            label2.Size = new Size(410, 50);
             label2.TabIndex = 1;
-            label2.Text = "Tạo tài khoản";
+            label2.Text = "Tạo tài khoản nhân sự";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(297, 111);
+            label3.Location = new Point(142, 110);
             label3.Name = "label3";
-            label3.Size = new Size(140, 28);
+            label3.Size = new Size(144, 28);
             label3.TabIndex = 2;
             label3.Text = "Tên đăng nhập";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(344, 164);
+            label4.Location = new Point(192, 166);
             label4.Name = "label4";
             label4.Size = new Size(94, 28);
             label4.TabIndex = 3;
@@ -90,18 +78,18 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(263, 231);
+            label5.Location = new Point(103, 226);
             label5.Name = "label5";
-            label5.Size = new Size(177, 28);
+            label5.Size = new Size(183, 28);
             label5.TabIndex = 4;
             label5.Text = "Xác nhận mật khẩu";
             // 
             // tbtdn2
             // 
             tbtdn2.BorderStyle = BorderStyle.FixedSingle;
-            tbtdn2.Location = new Point(443, 115);
+            tbtdn2.Location = new Point(321, 115);
             tbtdn2.Name = "tbtdn2";
             tbtdn2.Size = new Size(260, 27);
             tbtdn2.TabIndex = 5;
@@ -109,7 +97,7 @@
             // tbmk2
             // 
             tbmk2.BorderStyle = BorderStyle.FixedSingle;
-            tbmk2.Location = new Point(443, 171);
+            tbmk2.Location = new Point(321, 167);
             tbmk2.Name = "tbmk2";
             tbmk2.PasswordChar = '*';
             tbmk2.Size = new Size(260, 27);
@@ -118,7 +106,7 @@
             // tbxnmk
             // 
             tbxnmk.BorderStyle = BorderStyle.FixedSingle;
-            tbxnmk.Location = new Point(443, 231);
+            tbxnmk.Location = new Point(321, 227);
             tbxnmk.Name = "tbxnmk";
             tbxnmk.PasswordChar = '*';
             tbxnmk.Size = new Size(260, 27);
@@ -130,7 +118,7 @@
             btxnttk.FlatStyle = FlatStyle.Popup;
             btxnttk.Font = new Font("Segoe UI", 10.2F);
             btxnttk.ForeColor = Color.White;
-            btxnttk.Location = new Point(443, 343);
+            btxnttk.Location = new Point(321, 343);
             btxnttk.Name = "btxnttk";
             btxnttk.Size = new Size(94, 29);
             btxnttk.TabIndex = 8;
@@ -140,14 +128,15 @@
             // 
             // btt
             // 
+            btt.BackColor = SystemColors.AppWorkspace;
             btt.FlatStyle = FlatStyle.Popup;
             btt.ForeColor = Color.Black;
-            btt.Location = new Point(609, 343);
+            btt.Location = new Point(497, 343);
             btt.Name = "btt";
             btt.Size = new Size(94, 29);
             btt.TabIndex = 9;
             btt.Text = "Thoát";
-            btt.UseVisualStyleBackColor = true;
+            btt.UseVisualStyleBackColor = false;
             btt.Click += btt_Click;
             // 
             // cbmkttk
@@ -155,7 +144,7 @@
             cbmkttk.Appearance = Appearance.Button;
             cbmkttk.FlatStyle = FlatStyle.Popup;
             cbmkttk.Image = Properties.Resources.mătdong;
-            cbmkttk.Location = new Point(709, 171);
+            cbmkttk.Location = new Point(609, 170);
             cbmkttk.Name = "cbmkttk";
             cbmkttk.Size = new Size(42, 27);
             cbmkttk.TabIndex = 10;
@@ -165,7 +154,7 @@
             // tbmnv
             // 
             tbmnv.BorderStyle = BorderStyle.FixedSingle;
-            tbmnv.Location = new Point(443, 284);
+            tbmnv.Location = new Point(321, 289);
             tbmnv.Name = "tbmnv";
             tbmnv.Size = new Size(260, 27);
             tbmnv.TabIndex = 13;
@@ -173,11 +162,11 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(222, 279);
+            label6.Location = new Point(70, 284);
             label6.Name = "label6";
-            label6.Size = new Size(215, 28);
+            label6.Size = new Size(216, 28);
             label6.TabIndex = 12;
             label6.Text = "Mã nhân viên được cấp";
             // 
@@ -199,7 +188,6 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
             ForeColor = Color.Navy;
             Name = "Formtaotaikhoancs";
             Text = "Formtaotaikhoancs";
@@ -209,8 +197,6 @@
         }
 
         #endregion
-
-        private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;

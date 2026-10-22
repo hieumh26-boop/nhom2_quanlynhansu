@@ -90,7 +90,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Dock = DockStyle.Fill;
             groupBox1.FlatStyle = FlatStyle.Popup;
-            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            groupBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             groupBox1.Location = new Point(3, 97);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(1169, 809);
@@ -105,7 +105,7 @@
             cbmcs.Items.AddRange(new object[] { "1", "2", "3" });
             cbmcs.Location = new Point(505, 314);
             cbmcs.Name = "cbmcs";
-            cbmcs.Size = new Size(151, 36);
+            cbmcs.Size = new Size(151, 39);
             cbmcs.TabIndex = 28;
             // 
             // tbcsdl
@@ -121,7 +121,7 @@
             // 
             cbcs2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cbcs2.Appearance = Appearance.Button;
-            cbcs2.BackColor = Color.White;
+            cbcs2.BackColor = SystemColors.AppWorkspace;
             cbcs2.FlatStyle = FlatStyle.Popup;
             cbcs2.Font = new Font("Segoe UI", 12F);
             cbcs2.ForeColor = Color.Black;
@@ -148,7 +148,7 @@
             grpHinhThuc.Anchor = AnchorStyles.Top;
             grpHinhThuc.Controls.Add(rdoFullTime);
             grpHinhThuc.Controls.Add(rdoPartTime);
-            grpHinhThuc.Font = new Font("Microsoft Sans Serif", 13.8F);
+            grpHinhThuc.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             grpHinhThuc.Location = new Point(326, 548);
             grpHinhThuc.Name = "grpHinhThuc";
             grpHinhThuc.Size = new Size(430, 101);
@@ -159,10 +159,10 @@
             // rdoFullTime
             // 
             rdoFullTime.AutoSize = true;
-            rdoFullTime.Font = new Font("Segoe UI", 14F);
+            rdoFullTime.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             rdoFullTime.Location = new Point(51, 59);
             rdoFullTime.Name = "rdoFullTime";
-            rdoFullTime.Size = new Size(126, 36);
+            rdoFullTime.Size = new Size(120, 35);
             rdoFullTime.TabIndex = 16;
             rdoFullTime.TabStop = true;
             rdoFullTime.Text = "FullTime";
@@ -171,10 +171,10 @@
             // rdoPartTime
             // 
             rdoPartTime.AutoSize = true;
-            rdoPartTime.Font = new Font("Segoe UI", 14F);
+            rdoPartTime.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             rdoPartTime.Location = new Point(242, 59);
             rdoPartTime.Name = "rdoPartTime";
-            rdoPartTime.Size = new Size(128, 36);
+            rdoPartTime.Size = new Size(124, 35);
             rdoPartTime.TabIndex = 18;
             rdoPartTime.TabStop = true;
             rdoPartTime.Text = "PartTime";
@@ -185,7 +185,7 @@
             grpGioiTinh.Anchor = AnchorStyles.Top;
             grpGioiTinh.Controls.Add(rdoNam);
             grpGioiTinh.Controls.Add(rdoNu);
-            grpGioiTinh.Font = new Font("Microsoft Sans Serif", 13.8F);
+            grpGioiTinh.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             grpGioiTinh.Location = new Point(326, 445);
             grpGioiTinh.Name = "grpGioiTinh";
             grpGioiTinh.Size = new Size(429, 88);
@@ -196,23 +196,24 @@
             // rdoNam
             // 
             rdoNam.AutoSize = true;
-            rdoNam.Font = new Font("Times New Roman", 14F);
+            rdoNam.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             rdoNam.ForeColor = Color.Black;
-            rdoNam.Location = new Point(62, 57);
+            rdoNam.Location = new Point(62, 46);
             rdoNam.Name = "rdoNam";
-            rdoNam.Size = new Size(85, 31);
+            rdoNam.Size = new Size(90, 35);
             rdoNam.TabIndex = 14;
             rdoNam.TabStop = true;
             rdoNam.Text = "Nam ";
             rdoNam.UseVisualStyleBackColor = true;
+            rdoNam.CheckedChanged += rdoNam_CheckedChanged;
             // 
             // rdoNu
             // 
             rdoNu.AutoSize = true;
-            rdoNu.Font = new Font("Segoe UI", 14F);
+            rdoNu.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             rdoNu.Location = new Point(242, 46);
             rdoNu.Name = "rdoNu";
-            rdoNu.Size = new Size(67, 36);
+            rdoNu.Size = new Size(65, 35);
             rdoNu.TabIndex = 22;
             rdoNu.TabStop = true;
             rdoNu.Text = "Nữ";
@@ -265,11 +266,11 @@
             // 
             label12.Anchor = AnchorStyles.Top;
             label12.AutoSize = true;
-            label12.Font = new Font("Microsoft Sans Serif", 13.8F);
+            label12.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label12.ForeColor = Color.Black;
-            label12.Location = new Point(325, 314);
+            label12.Location = new Point(328, 322);
             label12.Name = "label12";
-            label12.Size = new Size(116, 29);
+            label12.Size = new Size(107, 31);
             label12.TabIndex = 6;
             label12.Text = "Mã cơ sở:";
             // 
@@ -295,23 +296,24 @@
             // 
             label11.Anchor = AnchorStyles.Top;
             label11.AutoSize = true;
-            label11.Font = new Font("Microsoft Sans Serif", 13.8F);
+            label11.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label11.ForeColor = Color.Black;
-            label11.Location = new Point(322, 231);
+            label11.Location = new Point(324, 225);
             label11.Name = "label11";
-            label11.Size = new Size(87, 29);
+            label11.Size = new Size(80, 31);
             label11.TabIndex = 5;
             label11.Text = "CCCD:";
+            label11.Click += label11_Click;
             // 
             // label10
             // 
             label10.Anchor = AnchorStyles.Top;
             label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 13.8F);
+            label10.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(322, 182);
+            label10.Location = new Point(325, 176);
             label10.Name = "label10";
-            label10.Size = new Size(160, 29);
+            label10.Size = new Size(146, 31);
             label10.TabIndex = 4;
             label10.Text = "Số điện thoại:";
             // 
@@ -319,11 +321,11 @@
             // 
             label6.Anchor = AnchorStyles.Top;
             label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 13.8F);
+            label6.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(322, 43);
+            label6.Location = new Point(326, 43);
             label6.Name = "label6";
-            label6.Size = new Size(160, 29);
+            label6.Size = new Size(154, 31);
             label6.TabIndex = 3;
             label6.Text = "Mã nhân viên:";
             // 
@@ -331,17 +333,18 @@
             // 
             label5.Anchor = AnchorStyles.Top;
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 13.8F);
+            label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label5.ForeColor = Color.Black;
             label5.Location = new Point(326, 405);
             label5.Name = "label5";
-            label5.Size = new Size(125, 29);
+            label5.Size = new Size(118, 31);
             label5.TabIndex = 10;
             label5.Text = "Ngày sinh:";
             // 
             // txtHoTen
             // 
             txtHoTen.Anchor = AnchorStyles.Top;
+            txtHoTen.ForeColor = Color.YellowGreen;
             txtHoTen.Location = new Point(505, 84);
             txtHoTen.Multiline = true;
             txtHoTen.Name = "txtHoTen";
@@ -352,11 +355,11 @@
             // 
             label4.Anchor = AnchorStyles.Top;
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 13.8F);
+            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label4.ForeColor = Color.Black;
             label4.Location = new Point(326, 361);
             label4.Name = "label4";
-            label4.Size = new Size(187, 29);
+            label4.Size = new Size(174, 31);
             label4.TabIndex = 3;
             label4.Text = "Cơ sở đang làm:";
             // 
@@ -364,11 +367,11 @@
             // 
             txtSoTK.Anchor = AnchorStyles.Top;
             txtSoTK.AutoSize = true;
-            txtSoTK.Font = new Font("Microsoft Sans Serif", 13.8F);
+            txtSoTK.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             txtSoTK.ForeColor = Color.Black;
             txtSoTK.Location = new Point(322, 274);
             txtSoTK.Name = "txtSoTK";
-            txtSoTK.Size = new Size(151, 29);
+            txtSoTK.Size = new Size(140, 31);
             txtSoTK.TabIndex = 2;
             txtSoTK.Text = "Số tài khoản:";
             // 
@@ -376,11 +379,11 @@
             // 
             label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 13.8F);
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(322, 141);
+            label2.Location = new Point(322, 135);
             label2.Name = "label2";
-            label2.Size = new Size(87, 29);
+            label2.Size = new Size(84, 31);
             label2.TabIndex = 1;
             label2.Text = "Vai trò:";
             // 
@@ -388,11 +391,11 @@
             // 
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 13.8F);
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(322, 93);
+            label1.Location = new Point(324, 87);
             label1.Name = "label1";
-            label1.Size = new Size(89, 29);
+            label1.Size = new Size(84, 31);
             label1.TabIndex = 0;
             label1.Text = "Họ tên:";
             // 
@@ -414,13 +417,13 @@
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
-            label3.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label3.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(363, 14);
+            label3.Location = new Point(331, 14);
             label3.Name = "label3";
-            label3.Size = new Size(449, 65);
+            label3.Size = new Size(512, 65);
             label3.TabIndex = 29;
-            label3.Text = "Quản lý thông tin";
+            label3.Text = "Quản lý thông tin nhân sự";
             // 
             // FormQLHS
             // 

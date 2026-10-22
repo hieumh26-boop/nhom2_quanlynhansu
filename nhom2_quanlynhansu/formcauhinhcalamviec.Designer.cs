@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panelThongTin = new Panel();
@@ -79,10 +79,10 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.BackColor = SystemColors.GradientActiveCaption;
-            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            label1.Font = new Font("Segoe UI Black", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             label1.Location = new Point(388, 33);
             label1.Name = "label1";
-            label1.Size = new Size(408, 46);
+            label1.Size = new Size(423, 46);
             label1.TabIndex = 1;
             label1.Text = "CẤU HÌNH CA LÀM VIỆC";
             // 
@@ -117,24 +117,24 @@
             dgvCaLamViec.Anchor = AnchorStyles.Top;
             dgvCaLamViec.BackgroundColor = SystemColors.GradientActiveCaption;
             dgvCaLamViec.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(128, 255, 255);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCaLamViec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(128, 255, 255);
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle11.ForeColor = Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            dgvCaLamViec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             dgvCaLamViec.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCaLamViec.Columns.AddRange(new DataGridViewColumn[] { cloSTT, colMaCa, colGioBatDau, colGioKetThuc, colThoiLuongNghi, colChoPhepTre, colHanhDong });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvCaLamViec.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = SystemColors.Highlight;
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle12.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            dgvCaLamViec.DefaultCellStyle = dataGridViewCellStyle12;
             dgvCaLamViec.GridColor = Color.FromArgb(224, 224, 224);
             dgvCaLamViec.Location = new Point(28, 344);
             dgvCaLamViec.Name = "dgvCaLamViec";
@@ -205,20 +205,21 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(44, 316);
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            label12.Location = new Point(28, 313);
             label12.Name = "label12";
-            label12.Size = new Size(201, 25);
+            label12.Size = new Size(234, 28);
             label12.TabIndex = 0;
             label12.Text = "Danh Sách Ca Làm Việc";
+            label12.Click += label12_Click;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label6.Location = new Point(19, 86);
             label6.Name = "label6";
-            label6.Size = new Size(52, 20);
+            label6.Size = new Size(64, 25);
             label6.TabIndex = 18;
             label6.Text = "Mã Ca";
             // 
@@ -272,7 +273,7 @@
             // 
             // txtMoTa
             // 
-            txtMoTa.Location = new Point(797, 130);
+            txtMoTa.Location = new Point(822, 142);
             txtMoTa.Multiline = true;
             txtMoTa.Name = "txtMoTa";
             txtMoTa.Size = new Size(208, 82);
@@ -281,16 +282,16 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(590, 130);
+            label11.Font = new Font("Segoe UI", 10.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
+            label11.Location = new Point(569, 142);
             label11.Name = "label11";
-            label11.Size = new Size(198, 20);
+            label11.Size = new Size(227, 25);
             label11.TabIndex = 12;
             label11.Text = "Cho phép trễ/về sớm (phút)";
             // 
             // numThoiLuongNghi
             // 
-            numThoiLuongNghi.Location = new Point(797, 56);
+            numThoiLuongNghi.Location = new Point(822, 83);
             numThoiLuongNghi.Name = "numThoiLuongNghi";
             numThoiLuongNghi.Size = new Size(150, 27);
             numThoiLuongNghi.TabIndex = 11;
@@ -299,12 +300,13 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(590, 55);
+            label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
+            label10.Location = new Point(592, 86);
             label10.Name = "label10";
-            label10.Size = new Size(178, 20);
+            label10.Size = new Size(204, 25);
             label10.TabIndex = 10;
             label10.Text = "Thời Lượng Nghỉ ( phút )";
+            label10.Click += label10_Click;
             // 
             // dtpGioKetThuc
             // 
@@ -319,10 +321,10 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Font = new Font("Segoe UI", 10.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label9.Location = new Point(15, 185);
             label9.Name = "label9";
-            label9.Size = new Size(95, 20);
+            label9.Size = new Size(112, 25);
             label9.TabIndex = 8;
             label9.Text = "Giờ Kết Thúc";
             // 
@@ -339,10 +341,10 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Segoe UI", 10.8F, FontStyle.Italic, GraphicsUnit.Point, 163);
             label8.Location = new Point(13, 139);
             label8.Name = "label8";
-            label8.Size = new Size(90, 20);
+            label8.Size = new Size(108, 25);
             label8.TabIndex = 5;
             label8.Text = "Giờ Bắt Đầu";
             // 
@@ -350,10 +352,10 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = SystemColors.GradientActiveCaption;
-            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(15, 15);
+            label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
+            label5.Location = new Point(11, 3);
             label5.Name = "label5";
-            label5.Size = new Size(168, 20);
+            label5.Size = new Size(269, 31);
             label5.TabIndex = 0;
             label5.Text = "Thông Tin Ca Làm Việc ";
             // 

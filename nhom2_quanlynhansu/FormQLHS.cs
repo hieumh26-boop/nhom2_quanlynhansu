@@ -14,7 +14,7 @@ namespace nhom2_quanlynhansu
 
         private void KhoaThongTin(bool khoa)
         {
-            
+
             txtHoTen.ReadOnly = khoa;
             txtSDT.ReadOnly = khoa;
             txtCCCD.ReadOnly = khoa;
@@ -26,14 +26,14 @@ namespace nhom2_quanlynhansu
             rdoFullTime.Enabled = !khoa;
             rdoPartTime.Enabled = !khoa;
 
-            
+
             txtMaNV.ReadOnly = true;
             tbvt.ReadOnly = true;
             tbcsdl.ReadOnly = true;
-            cbmcs.Enabled = false; 
+            cbmcs.Enabled = false;
         }
 
-       
+
         private void LoadNhanVien(string maNV)
         {
             string sql = @"
@@ -89,7 +89,7 @@ namespace nhom2_quanlynhansu
                 }
 
                 // Gọi LoadBangLuong sau khi câu lệnh trên đã đóng hoàn toàn
-                
+
             }
             catch (Exception ex)
             {
@@ -98,9 +98,9 @@ namespace nhom2_quanlynhansu
         }
 
         // Lấy dữ liệu từ bảng BangLuong
-        
+
         // Cấu hình bảng bên phải để hiển thị lương
-        
+
 
         // Nút Toggle CheckBox Chỉnh sửa
         private void cbcs2_CheckedChanged(object sender, EventArgs e)
@@ -217,11 +217,11 @@ namespace nhom2_quanlynhansu
                 return;
             }
 
-           
+
         }
 
         // Nút Xem phiếu lương chi tiết
-        
+
 
         private void FormQLHS_Load(object sender, EventArgs e)
         {
@@ -231,7 +231,7 @@ namespace nhom2_quanlynhansu
 
                 if (btnLuu != null) btnLuu.Visible = false;
 
-                
+
                 KhoaThongTin(true);
 
                 // Nạp dữ liệu mới nhất từ SQL theo mã nhân viên đang đăng nhập
@@ -244,6 +244,16 @@ namespace nhom2_quanlynhansu
             {
                 MessageBox.Show("Lỗi hiển thị hồ sơ: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void rdoNam_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,14 +35,14 @@ namespace nhom2_quanlynhansu
         // Hàm kiểm tra quyền và ẩn/hiện các nút bấm chức năng
         private void kiemtraquyen()
         {
-           
+
             // Kiểm tra nếu vai trò là Chủ chuỗi hoặc Cửa hàng trưởng
             if (PhienDangNhap.VaiTro == "1" || PhienDangNhap.VaiTro == "2")
             {
                 bttnv.Visible = true;  // Tạo nhân viên
                 btchc.Visible = true;  // Cấu hình ca làm việc
                 btqlns.Visible = true; // Quản lý nhân sự
-                
+
 
                 // Chỉ riêng Chủ chuỗi mới mở được nút Phân quyền
                 if (PhienDangNhap.VaiTro == "1")
@@ -169,6 +169,16 @@ namespace nhom2_quanlynhansu
         private void guna2Panel2_Paint(object sender, PaintEventArgs e)
         {
             // Trống
+        }
+
+        private void btt_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void png_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
