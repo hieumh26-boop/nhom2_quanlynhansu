@@ -8,7 +8,7 @@ namespace nhom2_quanlynhansu
 {
     public partial class Formtaonhanvien : Form
     {
-        // Khởi tạo Random static để tránh trùng lặp số ngẫu nhiên khi click liên tục
+        
         private static readonly Random rd = new Random();
 
         public Formtaonhanvien()
@@ -18,7 +18,7 @@ namespace nhom2_quanlynhansu
 
         private void bttnv_Click(object sender, EventArgs e)
         {
-            // 1. Kiểm tra dữ liệu đầu vào (Validation)
+           
             if (string.IsNullOrWhiteSpace(tbmnv.Text) || !int.TryParse(tbmnv.Text, out int mnv))
             {
                 MessageBox.Show("Vui lòng nhấn nút tạo Mã nhân viên hợp lệ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -32,7 +32,7 @@ namespace nhom2_quanlynhansu
                 return;
             }
 
-            // Kiểm tra Giới tính
+           
             if (!rbtnam.Checked && !rbtnu.Checked)
             {
                 MessageBox.Show("Vui lòng chọn Giới tính!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -40,7 +40,7 @@ namespace nhom2_quanlynhansu
             }
             string gt = rbtnam.Checked ? "Nam" : "Nữ";
 
-            // Kiểm tra Hình thức làm việc
+            
             if (!rbtfull.Checked && !rbtpart.Checked)
             {
                 MessageBox.Show("Vui lòng chọn Hình thức làm việc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -48,7 +48,7 @@ namespace nhom2_quanlynhansu
             }
             string htlv = rbtfull.Checked ? "Full-time" : "Part-time";
 
-            // Kiểm tra Vai trò / Chức vụ
+           
             int mvt = 0;
             if (cbcv.SelectedItem != null)
             {
@@ -64,7 +64,7 @@ namespace nhom2_quanlynhansu
                 return;
             }
 
-            // Kiểm tra Mã cơ sở
+            
             string mcs = cbmcs.SelectedValue?.ToString() ?? cbmcs.SelectedItem?.ToString() ?? "";
             if (string.IsNullOrEmpty(mcs))
             {
@@ -72,7 +72,7 @@ namespace nhom2_quanlynhansu
                 return;
             }
 
-            // 2. Lệnh SQL tự động khởi tạo MaLuong mới với SoNgayCong = 1 trước khi INSERT NhanVien
+          
             string sqlFull = @"
                 -- 1. Chèn bản ghi mới vào bảng Luong với SoNgayCong = 1
                 INSERT INTO dbo.Luong (SoNgayCong, HeSoLuong, LuongCoBan)
@@ -183,7 +183,7 @@ namespace nhom2_quanlynhansu
             try
             {
                 int manvm = taomnv();
-                tbmnv.Text = manvm.ToString("D2"); // Hiển thị dạng 2 chữ số (01, 02, ..., 99)
+                tbmnv.Text = manvm.ToString("D2"); 
             }
             catch (Exception ex)
             {

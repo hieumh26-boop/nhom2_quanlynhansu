@@ -85,10 +85,10 @@ namespace nhom2_quanlynhansu
                             MessageBox.Show("Không tìm thấy nhân viên có mã " + maNV, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
-                    } // Reader đóng hoàn toàn tại đây
+                    } 
                 }
 
-                // Gọi LoadBangLuong sau khi câu lệnh trên đã đóng hoàn toàn
+                
 
             }
             catch (Exception ex)
@@ -97,12 +97,7 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        // Lấy dữ liệu từ bảng BangLuong
-
-        // Cấu hình bảng bên phải để hiển thị lương
-
-
-        // Nút Toggle CheckBox Chỉnh sửa
+        /
         private void cbcs2_CheckedChanged(object sender, EventArgs e)
         {
             if (cbcs2.Checked)
@@ -119,7 +114,7 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        // Nút Lưu thay đổi
+       
         private void btnLuuThayDoi_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtHoTen.Text))
@@ -208,19 +203,13 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        // Nút Xem bảng lương
-        private void btnXemBangLuong_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtMaNV.Text))
-            {
-                MessageBox.Show("Chưa có mã nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+     
+    
 
 
-        }
+        
 
-        // Nút Xem phiếu lương chi tiết
+ 
 
 
         private void FormQLHS_Load(object sender, EventArgs e)
@@ -234,7 +223,7 @@ namespace nhom2_quanlynhansu
 
                 KhoaThongTin(true);
 
-                // Nạp dữ liệu mới nhất từ SQL theo mã nhân viên đang đăng nhập
+               
                 if (PhienDangNhap.MaNhanVien > 0)
                 {
                     LoadNhanVien(PhienDangNhap.MaNhanVien.ToString());

@@ -12,14 +12,14 @@ namespace nhom2_quanlynhansu
             InitializeComponent();
         }
 
-        // Tự động load dữ liệu từ SQL lên DataGridView khi mở Form
+       
         private void formcauhinhcalamviec_Load(object sender, EventArgs e)
         {
-            txtMaCa.ReadOnly = true; // Khóa ô Mã ca vì MaCa là cột tự tăng trong SQL
+            txtMaCa.ReadOnly = true; 
             LoadDanhSachCaLamViec();
         }
 
-        // 1. Tải danh sách ca làm việc từ CSDL
+       
         private void LoadDanhSachCaLamViec()
         {
             string query = @"SELECT MaCa, GioBatDau, GioKetThuc, ThoiGianNghiGiuaCa, 
@@ -40,7 +40,7 @@ namespace nhom2_quanlynhansu
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        // Đổ trực tiếp các cột chuẩn từ SQL vào DataGridView
+                        
                         dgvCaLamViec.Rows.Add(
                             stt++,
                             row["MaCa"],
@@ -58,7 +58,7 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        // 2. Nút Thêm Mới Ca Làm Việc vào CSDL
+       
         private void txtThemmoi_Click(object sender, EventArgs e)
         {
             string gioBD = dtpGioBatDau.Value.ToString("HH:mm");
@@ -97,7 +97,7 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        // 3. Nút Sửa Ca Làm Việc trong CSDL
+       
         private void btnsua_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtMaCa.Text) || !int.TryParse(txtMaCa.Text, out int maCa))
@@ -147,7 +147,7 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        // 4. Nút Xóa Ca Làm Việc trong CSDL
+       
         private void btnXoa_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtMaCa.Text) || !int.TryParse(txtMaCa.Text, out int maCa))
@@ -186,39 +186,39 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        // 5. Sự kiện CellClick: Nhấp chuột vào bất kỳ vị trí nào trên dòng dữ liệu để lấy thông tin lên ô nhập
+       
         private void dgvCaLamViec_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex < dgvCaLamViec.Rows.Count)
             {
                 DataGridViewRow row = dgvCaLamViec.Rows[e.RowIndex];
 
-                // Cột 1: MaCa
+                
                 if (row.Cells[1].Value != null && row.Cells[1].Value != DBNull.Value)
                     txtMaCa.Text = row.Cells[1].Value.ToString();
 
-                // Cột 2: GioBatDau
+                
                 if (row.Cells[2].Value != null && row.Cells[2].Value != DBNull.Value &&
                     DateTime.TryParse(row.Cells[2].Value.ToString(), out DateTime gbd))
                     dtpGioBatDau.Value = gbd;
 
-                // Cột 3: GioKetThuc
+                
                 if (row.Cells[3].Value != null && row.Cells[3].Value != DBNull.Value &&
                     DateTime.TryParse(row.Cells[3].Value.ToString(), out DateTime gkt))
                     dtpGioKetThuc.Value = gkt;
 
-                // Cột 4: ThoiGianNghiGiuaCa
+                
                 if (row.Cells[4].Value != null && row.Cells[4].Value != DBNull.Value &&
                     decimal.TryParse(row.Cells[4].Value.ToString(), out decimal nghi))
                     numThoiLuongNghi.Value = nghi;
 
-                // Cột 5: Cho phap tre/ve som
+               
                 if (row.Cells[5].Value != null && row.Cells[5].Value != DBNull.Value)
                     txtMoTa.Text = row.Cells[5].Value.ToString();
             }
         }
 
-        // 6. Nút Làm Mới Ô Nhập
+        
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             txtMaCa.Clear();
@@ -228,7 +228,7 @@ namespace nhom2_quanlynhansu
             dtpGioKetThuc.Value = DateTime.Now;
         }
 
-        // Xóa hàm trống không sử dụng
+       
         private void dgvCaLamViec_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
 
         private void label10_Click(object sender, EventArgs e)

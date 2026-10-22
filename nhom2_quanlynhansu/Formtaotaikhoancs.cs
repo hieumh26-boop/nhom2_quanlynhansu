@@ -63,7 +63,7 @@ namespace nhom2_quanlynhansu
                         }
                     }
 
-                    // Thực hiện thêm tài khoản mới
+                    
                     using (SqlCommand lenh = new SqlCommand(them, kn))
                     {
                         lenh.Parameters.Add("@tdn", SqlDbType.VarChar, 50).Value = tbtdn2.Text.Trim();
@@ -75,7 +75,7 @@ namespace nhom2_quanlynhansu
                         {
                             MessageBox.Show("Tạo tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            // Xóa sạch 
+                            
                             tbtdn2.Clear();
                             tbmk2.Clear();
                             tbxnmk.Clear();

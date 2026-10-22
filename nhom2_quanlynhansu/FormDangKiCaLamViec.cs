@@ -17,11 +17,11 @@ namespace nhom2_quanlynhansu
             dtpNgayLam.Value = DateTime.Now;
 
             LoadDanhSachNhanVien();
-            LoadDanhSachCaLamViecCombox(); // Load ca làm việc từ CSDL vào ComboBox
-            LoadDanhSachCaLam();           // Load danh sách đã đăng ký lên DataGridView
+            LoadDanhSachCaLamViecCombox(); 
+            LoadDanhSachCaLam();           
         }
 
-        // 1. Tải danh sách Nhân viên vào ComboBox
+        
         private void LoadDanhSachNhanVien()
         {
             string query = "SELECT MaNhanVien, HoTen FROM dbo.NhanVien";
@@ -52,7 +52,7 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        // 2. Tải danh sách Ca làm việc từ bảng CaLamViec vào ComboBox cboCaLam
+        
         private void LoadDanhSachCaLamViecCombox()
         {
             string query = "SELECT MaCa, (N'Ca ' + CAST(MaCa AS NVARCHAR(10)) + ' (' + GioBatDau + ' - ' + GioKetThuc + ')') AS TenCa FROM dbo.CaLamViec";
@@ -85,7 +85,7 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        // Hiển thị Họ tên khi chọn Mã NV
+        
         private void cboMaNV_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboMaNV.SelectedIndex != -1 && cboMaNV.SelectedItem != null)
@@ -102,7 +102,7 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        // Hiển thị Giờ bắt đầu & Giờ kết thúc khi chọn Ca Làm
+       
         private void cboCaLam_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboCaLam.SelectedIndex != -1 && cboCaLam.SelectedValue != null)
@@ -139,7 +139,7 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        // 3. Tải danh sách Đăng ký ca lên DataGridView (Kết nối 3 bảng DangKiCaLamViec, NhanVien, CaLamViec)
+      
         private void LoadDanhSachCaLam()
         {
             string query = @"SELECT dk.MaDangKi, 
@@ -178,24 +178,24 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        // 4. Xử lý Đăng ký ca làm
+        
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            // Kiểm tra chọn Nhân viên
+            
             if (cboMaNV.SelectedIndex == -1 || cboMaNV.SelectedValue == null)
             {
                 MessageBox.Show("Vui lòng chọn nhân viên!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Kiểm tra chọn Ca làm
+           
             if (cboCaLam.SelectedIndex == -1 || cboCaLam.SelectedValue == null)
             {
                 MessageBox.Show("Vui lòng chọn ca làm việc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Lấy MaNhanVien và MaCa
+            
             string strMaNV = cboMaNV.SelectedValue is DataRowView drvNV ? drvNV["MaNhanVien"].ToString() : cboMaNV.SelectedValue.ToString();
             string strMaCa = cboCaLam.SelectedValue is DataRowView drvCa ? drvCa["MaCa"].ToString() : cboCaLam.SelectedValue.ToString();
 
@@ -207,7 +207,7 @@ namespace nhom2_quanlynhansu
 
             string trangThai = "Chờ duyệt";
 
-            // Lệnh INSERT lưu MaNhanVien, MaCa, TrangThaiDangKi vào bảng DangKiCaLamViec
+            
             string query = @"INSERT INTO dbo.DangKiCaLamViec (MaNhanVien, MaCa, TrangThaiDangKi) 
                              VALUES (@MaNhanVien, @MaCa, @TrangThaiDangKi)";
 
@@ -228,14 +228,14 @@ namespace nhom2_quanlynhansu
                         {
                             MessageBox.Show("Đăng ký ca làm việc thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            // Clear dữ liệu nhập
+                           
                             cboMaNV.SelectedIndex = -1;
                             cboCaLam.SelectedIndex = -1;
                             txtHoTen.Clear();
                             tbbd.Clear();
                             tbkt.Clear();
 
-                            // Reload danh sách lên DataGridView
+                            
                             LoadDanhSachCaLam();
                         }
                     }
