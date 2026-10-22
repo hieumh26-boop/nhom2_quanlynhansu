@@ -97,7 +97,7 @@ namespace nhom2_quanlynhansu
             }
         }
 
-        /
+        
         private void cbcs2_CheckedChanged(object sender, EventArgs e)
         {
             if (cbcs2.Checked)

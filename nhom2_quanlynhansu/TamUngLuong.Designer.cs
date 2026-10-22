@@ -79,14 +79,15 @@
             groupBox3.Controls.Add(dgvLichSu);
             groupBox3.Dock = DockStyle.Fill;
             groupBox3.Font = new Font("Calibri", 18F, FontStyle.Bold | FontStyle.Italic);
-            groupBox3.Location = new Point(2, 348);
+            groupBox3.Location = new Point(2, 563);
             groupBox3.Margin = new Padding(2);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(2);
-            groupBox3.Size = new Size(937, 246);
+            groupBox3.Size = new Size(1264, 372);
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "Lịch sử tạo đơn";
+            groupBox3.Enter += groupBox3_Enter;
             // 
             // dgvLichSu
             // 
@@ -97,7 +98,7 @@
             dgvLichSu.Location = new Point(2, 39);
             dgvLichSu.Name = "dgvLichSu";
             dgvLichSu.RowHeadersWidth = 62;
-            dgvLichSu.Size = new Size(933, 205);
+            dgvLichSu.Size = new Size(1260, 331);
             dgvLichSu.TabIndex = 1;
             // 
             // MaUngLuong
@@ -155,9 +156,9 @@
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 3;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 48.2816429F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 41.7435036F));
-            tableLayoutPanel4.Size = new Size(941, 596);
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tableLayoutPanel4.Size = new Size(1268, 937);
             tableLayoutPanel4.TabIndex = 9;
             // 
             // label1
@@ -171,7 +172,7 @@
             label1.Location = new Point(2, 0);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(937, 59);
+            label1.Size = new Size(1264, 44);
             label1.TabIndex = 10;
             label1.Text = "TẠM ỨNG LƯƠNG";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -192,11 +193,11 @@
             groupBox2.Dock = DockStyle.Fill;
             groupBox2.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             groupBox2.ForeColor = SystemColors.ControlText;
-            groupBox2.Location = new Point(472, 61);
+            groupBox2.Location = new Point(636, 95);
             groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(2);
-            groupBox2.Size = new Size(467, 283);
+            groupBox2.Size = new Size(630, 464);
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
             groupBox2.Text = "Đơn ứng lương";
@@ -205,38 +206,38 @@
             // 
             tbxLyDo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxLyDo.Font = new Font("Calibri", 14F);
-            tbxLyDo.Location = new Point(179, 125);
+            tbxLyDo.Location = new Point(179, 186);
             tbxLyDo.Margin = new Padding(2);
             tbxLyDo.Name = "tbxLyDo";
-            tbxLyDo.Size = new Size(284, 36);
+            tbxLyDo.Size = new Size(447, 36);
             tbxLyDo.TabIndex = 27;
             // 
             // tbxStchu
             // 
             tbxStchu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxStchu.Font = new Font("Calibri", 14F);
-            tbxStchu.Location = new Point(179, 94);
+            tbxStchu.Location = new Point(179, 134);
             tbxStchu.Margin = new Padding(2);
             tbxStchu.Name = "tbxStchu";
-            tbxStchu.Size = new Size(284, 36);
+            tbxStchu.Size = new Size(447, 36);
             tbxStchu.TabIndex = 25;
             // 
             // tbxStso
             // 
             tbxStso.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxStso.Font = new Font("Calibri", 14F);
-            tbxStso.Location = new Point(179, 62);
+            tbxStso.Location = new Point(179, 82);
             tbxStso.Margin = new Padding(2);
             tbxStso.Name = "tbxStso";
-            tbxStso.Size = new Size(284, 36);
+            tbxStso.Size = new Size(447, 36);
             tbxStso.TabIndex = 24;
             // 
             // btnHuy
             // 
-            btnHuy.BackColor = SystemColors.AppWorkspace;
+            btnHuy.BackColor = SystemColors.HotTrack;
             btnHuy.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btnHuy.ForeColor = SystemColors.ControlLightLight;
-            btnHuy.Location = new Point(290, 237);
+            btnHuy.Location = new Point(79, 309);
             btnHuy.Margin = new Padding(2);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(159, 45);
@@ -251,7 +252,7 @@
             btnGui.BackColor = SystemColors.HotTrack;
             btnGui.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btnGui.ForeColor = SystemColors.ControlLightLight;
-            btnGui.Location = new Point(46, 237);
+            btnGui.Location = new Point(425, 309);
             btnGui.Margin = new Padding(2);
             btnGui.Name = "btnGui";
             btnGui.Size = new Size(160, 45);
@@ -265,7 +266,7 @@
             label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            label10.Location = new Point(5, 126);
+            label10.Location = new Point(5, 198);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new Size(59, 28);
@@ -277,7 +278,7 @@
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            label8.Location = new Point(5, 95);
+            label8.Location = new Point(5, 143);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(161, 28);
@@ -289,7 +290,7 @@
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            label7.Location = new Point(5, 64);
+            label7.Location = new Point(5, 88);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(148, 28);
@@ -306,7 +307,7 @@
             datetime.Location = new Point(179, 30);
             datetime.Margin = new Padding(2);
             datetime.Name = "datetime";
-            datetime.Size = new Size(284, 36);
+            datetime.Size = new Size(447, 36);
             datetime.TabIndex = 17;
             // 
             // label6
@@ -323,7 +324,6 @@
             // 
             // groupBox1
             // 
-            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.BackColor = SystemColors.GradientActiveCaption;
             groupBox1.Controls.Add(tbxConlai);
             groupBox1.Controls.Add(label9);
@@ -341,12 +341,13 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(tbxMnv);
             groupBox1.Controls.Add(label2);
+            groupBox1.Dock = DockStyle.Fill;
             groupBox1.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
-            groupBox1.Location = new Point(2, 61);
+            groupBox1.Location = new Point(2, 95);
             groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(2);
-            groupBox1.Size = new Size(466, 283);
+            groupBox1.Size = new Size(630, 464);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Xác nhận thông tin";
@@ -354,21 +355,20 @@
             // 
             // tbxConlai
             // 
-            tbxConlai.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbxConlai.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             tbxConlai.Font = new Font("Calibri", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxConlai.Location = new Point(216, 248);
+            tbxConlai.Location = new Point(215, 348);
             tbxConlai.Margin = new Padding(2);
-            tbxConlai.Multiline = true;
             tbxConlai.Name = "tbxConlai";
             tbxConlai.ReadOnly = true;
-            tbxConlai.Size = new Size(250, 29);
-            tbxConlai.TabIndex = 34;
+            tbxConlai.Size = new Size(411, 36);
+            tbxConlai.TabIndex = 30;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            label9.Location = new Point(11, 249);
+            label9.Location = new Point(9, 356);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(162, 28);
@@ -379,18 +379,18 @@
             // 
             tbxLcb.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxLcb.Font = new Font("Calibri", 14F);
-            tbxLcb.Location = new Point(215, 156);
+            tbxLcb.Location = new Point(215, 211);
             tbxLcb.Margin = new Padding(2);
             tbxLcb.Name = "tbxLcb";
             tbxLcb.ReadOnly = true;
-            tbxLcb.Size = new Size(251, 36);
+            tbxLcb.Size = new Size(415, 36);
             tbxLcb.TabIndex = 32;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            label11.Location = new Point(8, 158);
+            label11.Location = new Point(9, 215);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
             label11.Size = new Size(192, 28);
@@ -401,18 +401,18 @@
             // 
             tbxLtt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxLtt.Font = new Font("Calibri", 14F);
-            tbxLtt.Location = new Point(215, 215);
+            tbxLtt.Location = new Point(215, 301);
             tbxLtt.Margin = new Padding(2);
             tbxLtt.Name = "tbxLtt";
             tbxLtt.ReadOnly = true;
-            tbxLtt.Size = new Size(251, 36);
+            tbxLtt.Size = new Size(415, 36);
             tbxLtt.TabIndex = 30;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            label5.Location = new Point(9, 215);
+            label5.Location = new Point(9, 309);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(145, 28);
@@ -423,18 +423,18 @@
             // 
             tbxDu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxDu.Font = new Font("Calibri", 14F);
-            tbxDu.Location = new Point(215, 185);
+            tbxDu.Location = new Point(215, 256);
             tbxDu.Margin = new Padding(2);
             tbxDu.Name = "tbxDu";
             tbxDu.ReadOnly = true;
-            tbxDu.Size = new Size(251, 36);
+            tbxDu.Size = new Size(415, 36);
             tbxDu.TabIndex = 28;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            label4.Location = new Point(9, 186);
+            label4.Location = new Point(9, 262);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(77, 28);
@@ -445,29 +445,29 @@
             // 
             tbxHsl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxHsl.Font = new Font("Calibri", 14F);
-            tbxHsl.Location = new Point(215, 125);
+            tbxHsl.Location = new Point(215, 166);
             tbxHsl.Margin = new Padding(2);
             tbxHsl.Name = "tbxHsl";
             tbxHsl.ReadOnly = true;
-            tbxHsl.Size = new Size(251, 36);
+            tbxHsl.Size = new Size(415, 36);
             tbxHsl.TabIndex = 26;
             // 
             // tbxSnc
             // 
             tbxSnc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxSnc.Font = new Font("Calibri", 14F);
-            tbxSnc.Location = new Point(215, 94);
+            tbxSnc.Location = new Point(215, 121);
             tbxSnc.Margin = new Padding(2);
             tbxSnc.Name = "tbxSnc";
             tbxSnc.ReadOnly = true;
-            tbxSnc.Size = new Size(251, 36);
+            tbxSnc.Size = new Size(415, 36);
             tbxSnc.TabIndex = 25;
             // 
             // label16
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            label16.Location = new Point(9, 125);
+            label16.Location = new Point(9, 168);
             label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
             label16.Size = new Size(117, 28);
@@ -478,7 +478,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            label15.Location = new Point(9, 94);
+            label15.Location = new Point(9, 121);
             label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
             label15.Size = new Size(130, 28);
@@ -489,18 +489,18 @@
             // 
             tbxTnv.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxTnv.Font = new Font("Calibri", 14F);
-            tbxTnv.Location = new Point(215, 62);
+            tbxTnv.Location = new Point(215, 76);
             tbxTnv.Margin = new Padding(2);
             tbxTnv.Name = "tbxTnv";
             tbxTnv.ReadOnly = true;
-            tbxTnv.Size = new Size(251, 36);
+            tbxTnv.Size = new Size(415, 36);
             tbxTnv.TabIndex = 18;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            label3.Location = new Point(9, 63);
+            label3.Location = new Point(9, 74);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(143, 28);
@@ -515,14 +515,14 @@
             tbxMnv.Margin = new Padding(2);
             tbxMnv.Name = "tbxMnv";
             tbxMnv.ReadOnly = true;
-            tbxMnv.Size = new Size(251, 36);
+            tbxMnv.Size = new Size(415, 36);
             tbxMnv.TabIndex = 16;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 163);
-            label2.Location = new Point(9, 31);
+            label2.Location = new Point(14, 35);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(138, 28);
@@ -534,7 +534,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(941, 596);
+            ClientSize = new Size(1268, 937);
             Controls.Add(tableLayoutPanel4);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);

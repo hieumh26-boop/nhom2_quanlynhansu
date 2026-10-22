@@ -120,7 +120,7 @@ namespace nhom2_quanlynhansu
             }
             DataGridViewRow selectRow = dgvXinNghiPhep.SelectedRows[0];
 
-            int maDonDuocChon = int.Parse(selectRow.Cells["MaDon"].Value.ToString());
+            int maDonDuocChon = int.Parse(selectRow.Cells["MaDonNP"].Value.ToString());
             string trangThai = selectRow.Cells["TrangThaiDuyet"].Value.ToString();
 
             if (trangThai == "Yes" || trangThai == "Đã duyệt" || trangThai == "Từ chối")
@@ -135,7 +135,7 @@ namespace nhom2_quanlynhansu
             int soBuoiConLaiHienTai = int.Parse(tbxCon.Text);
             int soBuoiConLaiMoi = soBuoiConLaiHienTai + 1;
 
-            string sqlDeleteDon = "DELETE FROM [NghiPhep] WHERE MaDon = " + maDonDuocChon;
+            string sqlDeleteDon = "DELETE FROM [NghiPhep] WHERE MaDonNP = " + maDonDuocChon;
             string sqlUpdateHanMuc = "UPDATE [NghiPhep] SET SoNgayNghiConLai = " + soBuoiConLaiMoi + " WHERE MaNhanVien = " + maNhanVien;
 
             classchung db = new classchung();

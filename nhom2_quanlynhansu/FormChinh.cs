@@ -109,6 +109,7 @@ namespace nhom2_quanlynhansu
         private void bttul_Click(object sender, EventArgs e)
         {
             MoForm(new fTamUngLuong(), "0");
+          
         }
 
         private void btxnp_Click(object sender, EventArgs e)
