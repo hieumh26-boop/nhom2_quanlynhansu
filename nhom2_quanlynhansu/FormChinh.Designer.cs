@@ -136,7 +136,7 @@
             btqlns.ForeColor = Color.White;
             btqlns.HoverState.FillColor = SystemColors.HotTrack;
             btqlns.HoverState.ForeColor = Color.White;
-            btqlns.Location = new Point(8, 352);
+            btqlns.Location = new Point(12, 301);
             btqlns.Name = "btqlns";
             btqlns.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btqlns.Size = new Size(123, 45);
@@ -160,7 +160,7 @@
             btpq.ForeColor = Color.White;
             btpq.HoverState.FillColor = SystemColors.HotTrack;
             btpq.HoverState.ForeColor = Color.White;
-            btpq.Location = new Point(10, 301);
+            btpq.Location = new Point(12, 403);
             btpq.Name = "btpq";
             btpq.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btpq.Size = new Size(123, 45);
@@ -204,7 +204,7 @@
             bttnv.FillColor = SystemColors.HotTrack;
             bttnv.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 163);
             bttnv.ForeColor = Color.White;
-            bttnv.Location = new Point(8, 403);
+            bttnv.Location = new Point(12, 352);
             bttnv.Name = "bttnv";
             bttnv.ShadowDecoration.CustomizableEdges = customizableEdges10;
             bttnv.Size = new Size(123, 45);
