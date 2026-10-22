@@ -45,7 +45,7 @@ namespace nhom2_quanlynhansu
                 
 
                 // Chỉ riêng Chủ chuỗi mới mở được nút Phân quyền
-                if (PhienDangNhap.VaiTro == "Chủ chuỗi")
+                if (PhienDangNhap.VaiTro == "1")
                 {
                     btpq.Visible = true; // Phân quyền
                 }
