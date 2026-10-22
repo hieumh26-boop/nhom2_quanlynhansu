@@ -80,9 +80,9 @@
             groupBox3.Dock = DockStyle.Fill;
             groupBox3.Font = new Font("Calibri", 18F, FontStyle.Bold | FontStyle.Italic);
             groupBox3.Location = new Point(2, 348);
-            groupBox3.Margin = new Padding(2, 2, 2, 2);
+            groupBox3.Margin = new Padding(2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(2, 2, 2, 2);
+            groupBox3.Padding = new Padding(2);
             groupBox3.Size = new Size(937, 246);
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
@@ -151,7 +151,7 @@
             tableLayoutPanel4.Controls.Add(groupBox1, 0, 1);
             tableLayoutPanel4.Dock = DockStyle.Fill;
             tableLayoutPanel4.Location = new Point(0, 0);
-            tableLayoutPanel4.Margin = new Padding(2, 2, 2, 2);
+            tableLayoutPanel4.Margin = new Padding(2);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 3;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
@@ -193,9 +193,9 @@
             groupBox2.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             groupBox2.ForeColor = SystemColors.ControlText;
             groupBox2.Location = new Point(472, 61);
-            groupBox2.Margin = new Padding(2, 2, 2, 2);
+            groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(2, 2, 2, 2);
+            groupBox2.Padding = new Padding(2);
             groupBox2.Size = new Size(467, 283);
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
@@ -206,7 +206,7 @@
             tbxLyDo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxLyDo.Font = new Font("Calibri", 14F);
             tbxLyDo.Location = new Point(179, 125);
-            tbxLyDo.Margin = new Padding(2, 2, 2, 2);
+            tbxLyDo.Margin = new Padding(2);
             tbxLyDo.Name = "tbxLyDo";
             tbxLyDo.Size = new Size(284, 36);
             tbxLyDo.TabIndex = 27;
@@ -216,7 +216,7 @@
             tbxStchu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxStchu.Font = new Font("Calibri", 14F);
             tbxStchu.Location = new Point(179, 94);
-            tbxStchu.Margin = new Padding(2, 2, 2, 2);
+            tbxStchu.Margin = new Padding(2);
             tbxStchu.Name = "tbxStchu";
             tbxStchu.Size = new Size(284, 36);
             tbxStchu.TabIndex = 25;
@@ -226,7 +226,7 @@
             tbxStso.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxStso.Font = new Font("Calibri", 14F);
             tbxStso.Location = new Point(179, 62);
-            tbxStso.Margin = new Padding(2, 2, 2, 2);
+            tbxStso.Margin = new Padding(2);
             tbxStso.Name = "tbxStso";
             tbxStso.Size = new Size(284, 36);
             tbxStso.TabIndex = 24;
@@ -237,7 +237,7 @@
             btnHuy.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btnHuy.ForeColor = SystemColors.ControlLightLight;
             btnHuy.Location = new Point(290, 237);
-            btnHuy.Margin = new Padding(2, 2, 2, 2);
+            btnHuy.Margin = new Padding(2);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(159, 45);
             btnHuy.TabIndex = 23;
@@ -252,7 +252,7 @@
             btnGui.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 163);
             btnGui.ForeColor = SystemColors.ControlLightLight;
             btnGui.Location = new Point(46, 237);
-            btnGui.Margin = new Padding(2, 2, 2, 2);
+            btnGui.Margin = new Padding(2);
             btnGui.Name = "btnGui";
             btnGui.Size = new Size(160, 45);
             btnGui.TabIndex = 22;
@@ -304,7 +304,7 @@
             datetime.Font = new Font("Calibri", 14F);
             datetime.Format = DateTimePickerFormat.Custom;
             datetime.Location = new Point(179, 30);
-            datetime.Margin = new Padding(2, 2, 2, 2);
+            datetime.Margin = new Padding(2);
             datetime.Name = "datetime";
             datetime.Size = new Size(284, 36);
             datetime.TabIndex = 17;
@@ -343,9 +343,9 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 163);
             groupBox1.Location = new Point(2, 61);
-            groupBox1.Margin = new Padding(2, 2, 2, 2);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2, 2, 2, 2);
+            groupBox1.Padding = new Padding(2);
             groupBox1.Size = new Size(466, 283);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
@@ -357,11 +357,11 @@
             tbxConlai.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxConlai.Font = new Font("Calibri", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbxConlai.Location = new Point(216, 248);
-            tbxConlai.Margin = new Padding(2, 2, 2, 2);
+            tbxConlai.Margin = new Padding(2);
             tbxConlai.Multiline = true;
             tbxConlai.Name = "tbxConlai";
             tbxConlai.ReadOnly = true;
-            tbxConlai.Size = new Size(250, 2);
+            tbxConlai.Size = new Size(250, 29);
             tbxConlai.TabIndex = 34;
             // 
             // label9
@@ -380,7 +380,7 @@
             tbxLcb.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxLcb.Font = new Font("Calibri", 14F);
             tbxLcb.Location = new Point(215, 156);
-            tbxLcb.Margin = new Padding(2, 2, 2, 2);
+            tbxLcb.Margin = new Padding(2);
             tbxLcb.Name = "tbxLcb";
             tbxLcb.ReadOnly = true;
             tbxLcb.Size = new Size(251, 36);
@@ -402,7 +402,7 @@
             tbxLtt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxLtt.Font = new Font("Calibri", 14F);
             tbxLtt.Location = new Point(215, 215);
-            tbxLtt.Margin = new Padding(2, 2, 2, 2);
+            tbxLtt.Margin = new Padding(2);
             tbxLtt.Name = "tbxLtt";
             tbxLtt.ReadOnly = true;
             tbxLtt.Size = new Size(251, 36);
@@ -424,7 +424,7 @@
             tbxDu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxDu.Font = new Font("Calibri", 14F);
             tbxDu.Location = new Point(215, 185);
-            tbxDu.Margin = new Padding(2, 2, 2, 2);
+            tbxDu.Margin = new Padding(2);
             tbxDu.Name = "tbxDu";
             tbxDu.ReadOnly = true;
             tbxDu.Size = new Size(251, 36);
@@ -446,7 +446,7 @@
             tbxHsl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxHsl.Font = new Font("Calibri", 14F);
             tbxHsl.Location = new Point(215, 125);
-            tbxHsl.Margin = new Padding(2, 2, 2, 2);
+            tbxHsl.Margin = new Padding(2);
             tbxHsl.Name = "tbxHsl";
             tbxHsl.ReadOnly = true;
             tbxHsl.Size = new Size(251, 36);
@@ -457,7 +457,7 @@
             tbxSnc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxSnc.Font = new Font("Calibri", 14F);
             tbxSnc.Location = new Point(215, 94);
-            tbxSnc.Margin = new Padding(2, 2, 2, 2);
+            tbxSnc.Margin = new Padding(2);
             tbxSnc.Name = "tbxSnc";
             tbxSnc.ReadOnly = true;
             tbxSnc.Size = new Size(251, 36);
@@ -490,7 +490,7 @@
             tbxTnv.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxTnv.Font = new Font("Calibri", 14F);
             tbxTnv.Location = new Point(215, 62);
-            tbxTnv.Margin = new Padding(2, 2, 2, 2);
+            tbxTnv.Margin = new Padding(2);
             tbxTnv.Name = "tbxTnv";
             tbxTnv.ReadOnly = true;
             tbxTnv.Size = new Size(251, 36);
@@ -512,7 +512,7 @@
             tbxMnv.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tbxMnv.Font = new Font("Calibri", 14F);
             tbxMnv.Location = new Point(215, 31);
-            tbxMnv.Margin = new Padding(2, 2, 2, 2);
+            tbxMnv.Margin = new Padding(2);
             tbxMnv.Name = "tbxMnv";
             tbxMnv.ReadOnly = true;
             tbxMnv.Size = new Size(251, 36);
@@ -537,7 +537,7 @@
             ClientSize = new Size(941, 596);
             Controls.Add(tableLayoutPanel4);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "fTamUngLuong";
             Text = "Tạm Ứng Lương";
             WindowState = FormWindowState.Maximized;
