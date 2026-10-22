@@ -377,7 +377,7 @@
             // 
             // tbxLcb
             // 
-            tbxLcb.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbxLcb.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             tbxLcb.Font = new Font("Calibri", 14F);
             tbxLcb.Location = new Point(215, 211);
             tbxLcb.Margin = new Padding(2);
@@ -399,7 +399,7 @@
             // 
             // tbxLtt
             // 
-            tbxLtt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbxLtt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             tbxLtt.Font = new Font("Calibri", 14F);
             tbxLtt.Location = new Point(215, 301);
             tbxLtt.Margin = new Padding(2);
@@ -421,7 +421,7 @@
             // 
             // tbxDu
             // 
-            tbxDu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbxDu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             tbxDu.Font = new Font("Calibri", 14F);
             tbxDu.Location = new Point(215, 256);
             tbxDu.Margin = new Padding(2);
@@ -443,7 +443,7 @@
             // 
             // tbxHsl
             // 
-            tbxHsl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbxHsl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             tbxHsl.Font = new Font("Calibri", 14F);
             tbxHsl.Location = new Point(215, 166);
             tbxHsl.Margin = new Padding(2);
@@ -454,7 +454,7 @@
             // 
             // tbxSnc
             // 
-            tbxSnc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbxSnc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             tbxSnc.Font = new Font("Calibri", 14F);
             tbxSnc.Location = new Point(215, 121);
             tbxSnc.Margin = new Padding(2);
@@ -487,7 +487,7 @@
             // 
             // tbxTnv
             // 
-            tbxTnv.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbxTnv.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             tbxTnv.Font = new Font("Calibri", 14F);
             tbxTnv.Location = new Point(215, 76);
             tbxTnv.Margin = new Padding(2);
@@ -509,7 +509,7 @@
             // 
             // tbxMnv
             // 
-            tbxMnv.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tbxMnv.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             tbxMnv.Font = new Font("Calibri", 14F);
             tbxMnv.Location = new Point(215, 31);
             tbxMnv.Margin = new Padding(2);
