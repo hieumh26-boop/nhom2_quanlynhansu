@@ -42,7 +42,9 @@ namespace nhom2_quanlynhansu
                 bttnv.Visible = true;  // Tạo nhân viên
                 btchc.Visible = true;  // Cấu hình ca làm việc
                 btqlns.Visible = true; // Quản lý nhân sự
-                
+                btdkc.Visible = false;
+                bttul.Visible = false;
+                btxnp.Visible = false;
 
                 // Chỉ riêng Chủ chuỗi mới mở được nút Phân quyền
                 if (PhienDangNhap.VaiTro == "1")
@@ -61,6 +63,9 @@ namespace nhom2_quanlynhansu
                 btchc.Visible = false;
                 btqlns.Visible = false;
                 btpq.Visible = false;
+                btdkc.Visible = true;
+                bttul.Visible = true;
+                btxnp.Visible = true;
             }
 
             // Mặc định mở Form Hồ sơ cá nhân khi đăng nhập thành công
