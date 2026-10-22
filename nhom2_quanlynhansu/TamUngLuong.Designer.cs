@@ -323,7 +323,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.BackColor = SystemColors.GradientActiveCaption;
             groupBox1.Controls.Add(tbxConlai);
             groupBox1.Controls.Add(label9);
