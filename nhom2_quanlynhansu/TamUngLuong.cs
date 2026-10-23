@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
+using System.ComponentModel.Design;
+using System.Windows.Markup;
 
 namespace nhom2_quanlynhansu
 {
@@ -26,10 +28,10 @@ namespace nhom2_quanlynhansu
             classchung db = new classchung();
             string sql = "select * from UngLuong";
             DataTable dt = db.ReadData(sql);
-            if (dt != null)
+            if(dt != null)
             {
-                dgvLichSu.AutoGenerateColumns = false;
                 dgvLichSu.DataSource = dt;
+                dgvLichSu.AutoGenerateColumns = false;
             }
         }
         private void LoadDataThongTinNhanVien()
@@ -45,7 +47,7 @@ namespace nhom2_quanlynhansu
             DataTable dt = db.ReadData(sql);
             if (dt != null && dt.Rows.Count > 0)
             {
-                currentMaLuong = dt.Rows[0]["MaLuong"].ToString();
+                //currentMaLuong = dt.Rows[0]["MaLuong"].ToString();
                 tbxMnv.Text = dt.Rows[0]["MaNhanVien"].ToString();
                 tbxTnv.Text = dt.Rows[0]["HoTen"].ToString();
                 tbxSnc.Text = dt.Rows[0]["SoNgayCong"].ToString();
@@ -63,6 +65,8 @@ namespace nhom2_quanlynhansu
                 tbxLcb.Text = luongCoBan.ToString("#,##0");
                 tbxDu.Text = ungLuong.ToString("#,##0");
                 tbxConlai.Text = conlai.ToString("#,##0");
+
+
             }
         }
 
@@ -120,7 +124,6 @@ namespace nhom2_quanlynhansu
             {
                 MessageBox.Show("Tạo đơn thất bại, vui lòng kiểm tra lại kết nối SQL!");
             }
-
 
         }
 
