@@ -70,6 +70,7 @@
             label1.TabIndex = 0;
             label1.Text = "Tạo tài khoản cho nhân viên";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -140,6 +141,7 @@
             cbmcs.Name = "cbmcs";
             cbmcs.Size = new Size(184, 28);
             cbmcs.TabIndex = 28;
+            cbmcs.SelectedIndexChanged += cbmcs_SelectedIndexChanged;
             // 
             // cbcv
             // 

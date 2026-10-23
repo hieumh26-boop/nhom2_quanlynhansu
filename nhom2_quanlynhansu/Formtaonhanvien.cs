@@ -8,7 +8,7 @@ namespace nhom2_quanlynhansu
 {
     public partial class Formtaonhanvien : Form
     {
-        
+
         private static readonly Random rd = new Random();
 
         public Formtaonhanvien()
@@ -18,7 +18,7 @@ namespace nhom2_quanlynhansu
 
         private void bttnv_Click(object sender, EventArgs e)
         {
-           
+
             if (string.IsNullOrWhiteSpace(tbmnv.Text) || !int.TryParse(tbmnv.Text, out int mnv))
             {
                 MessageBox.Show("Vui lòng nhấn nút tạo Mã nhân viên hợp lệ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -32,7 +32,7 @@ namespace nhom2_quanlynhansu
                 return;
             }
 
-           
+
             if (!rbtnam.Checked && !rbtnu.Checked)
             {
                 MessageBox.Show("Vui lòng chọn Giới tính!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -40,7 +40,7 @@ namespace nhom2_quanlynhansu
             }
             string gt = rbtnam.Checked ? "Nam" : "Nữ";
 
-            
+
             if (!rbtfull.Checked && !rbtpart.Checked)
             {
                 MessageBox.Show("Vui lòng chọn Hình thức làm việc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -48,7 +48,7 @@ namespace nhom2_quanlynhansu
             }
             string htlv = rbtfull.Checked ? "Full-time" : "Part-time";
 
-           
+
             int mvt = 0;
             if (cbcv.SelectedItem != null)
             {
@@ -64,15 +64,15 @@ namespace nhom2_quanlynhansu
                 return;
             }
 
-            
+
             string mcs = cbmcs.SelectedValue?.ToString() ?? cbmcs.SelectedItem?.ToString() ?? "";
-            if (string.IsNullOrEmpty(mcs))
+            if (string.IsNullOrEmpty(mcs))                                                             
             {
                 MessageBox.Show("Vui lòng chọn Cơ sở làm việc!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-          
+
             string sqlFull = @"
                 -- 1. Chèn bản ghi mới vào bảng Luong với SoNgayCong = 1
                 INSERT INTO dbo.Luong (SoNgayCong, HeSoLuong, LuongCoBan)
@@ -183,7 +183,7 @@ namespace nhom2_quanlynhansu
             try
             {
                 int manvm = taomnv();
-                tbmnv.Text = manvm.ToString("D2"); 
+                tbmnv.Text = manvm.ToString("D2");
             }
             catch (Exception ex)
             {
@@ -192,6 +192,16 @@ namespace nhom2_quanlynhansu
         }
 
         private void rbtnam_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbmcs_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

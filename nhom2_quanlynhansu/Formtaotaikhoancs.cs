@@ -42,7 +42,7 @@ namespace nhom2_quanlynhansu
             //kt coi co tendn giong ko
             string kiemtratontai = "SELECT COUNT(*) FROM NguoiDung WHERE TenDangNhap = @tdn";
             string them = "INSERT INTO NguoiDung (TenDangNhap, MatKhau, MaNhanVien) VALUES (@tdn, @mk, @mnv)";
-
+            
             using (SqlConnection kn = new SqlConnection(classchung.ketnoi))
             {
                 try
@@ -73,7 +73,8 @@ namespace nhom2_quanlynhansu
                         int rows = lenh.ExecuteNonQuery();
                         if (rows > 0)
                         {
-                            MessageBox.Show("Tạo tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Xin chao"+, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Ma Nhan Vien duoc cap" + maNhanVien);
 
                             
                             tbtdn2.Clear();

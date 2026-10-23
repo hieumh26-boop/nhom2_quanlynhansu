@@ -87,7 +87,7 @@
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "Lịch sử tạo đơn";
-            groupBox3.Enter += groupBox3_Enter;
+         
             // 
             // dgvLichSu
             // 
@@ -351,7 +351,7 @@
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Xác nhận thông tin";
-            groupBox1.Enter += groupBox1_Enter;
+           
             // 
             // tbxConlai
             // 
